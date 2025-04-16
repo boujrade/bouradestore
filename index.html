@@ -170,7 +170,49 @@
             background: #555;
             cursor: pointer;
           }
+          body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    direction: rtl;
+  }
 
+  .button-container {
+    display: flex;
+    flex-direction: column; /* يجعل الأزرار عمودية */
+    align-items: center;    /* توسيط الأزرار أفقيًا */
+    gap: 15px;              /* مسافة بين الأزرار */
+    margin-bottom: 30px;
+  }
+
+  button {
+    width: 250px;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    background-color: #dfd2d2;
+    color: rgb(31, 29, 29);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #e7c67d;
+  }
+
+  #log {
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: #f9f9f9;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  h2, h3 {
+    text-align: center;
+  }
+          
         </style>
     </head >
     <body>
@@ -277,16 +319,40 @@
        <textarea name="message" placeholder="البلدية"></textarea><br>
        <button id="submitBtn" disabled> إرسال </button>
        
-      <input type="hidden" name="orderCount" id="orderCount">
-      <button type="button"
-      onclik="submitOrder(1)">طلب علبة واحدة</button><br>
-      <button type="button"
-      onclik="submitOrder(2)">طلب علبتين وخصم %50 من سعر التوصيل</button><br>
-      <button type="button"
-      onclik="submitOrder(3)"> طلب أكثر من علبتين والتوصيل مجاني </button><br>  
-      <div id="formMessage"></div>
-      <a href="#" class="icon-button">
-        <i class="fa fa-lock"></i>
+       <h2>اختر طلبك:</h2>
+       <div class="button-container">
+       <button onclick="sendOrder('طلب علبة واحدة')">طلب علبة واحدة</button>
+       <button onclick="sendOrder('طلب علبتين وخصم %50 من سعر التوصيل')"> طلب علبتين وخصم %50 من سعر التوصيل</button>
+       <button onclick="sendOrder('طلب أكثر من علبتين والتوصيل مجاني')">طلب أكثر من علبتين والتوصيل مجاني  </button>
+         </div>
+       
+
+       <div id="log">
+         
+         <ul id="orderList"></ul>
+       </div>
+     
+       <script>
+         // تهيئة EmailJS
+         (function() {
+           emailjs.init("YOUR_USER_ID"); // استبدل YOUR_USER_ID بالمعرف من EmailJS
+         })();
+     
+         function sendOrder(item) {
+           // إرسال الإيميل
+           const templateParams = {
+             item_name: item,
+             customer_email: "example@example.com", // يمكن تغييره أو جعله إدخالًا من الزبون
+           };
+     
+           emailjs.send('your_service_id', 'your_template_id', templateParams)
+             .then(function(response) {
+               console.log("تم إرسال الإيميل:", response.status);
+               document.getElementById('orderList').innerHTML += `<li>${item} ✔️</li>`;
+             }, function(error) {
+               console.error("فشل في إرسال الإيميل:", error);
+             });
+         }
       </a>
     </form>
     </div>
@@ -325,6 +391,26 @@
           ++failedAttempts;
 
         }
+        // تهيئة EmailJS
+    (function() {
+      emailjs.init("YOUR_USER_ID"); // استبدل YOUR_USER_ID بالمعرف من EmailJS
+    })();
+
+    function sendOrder(item) {
+      // إرسال الإيميل
+      const templateParams = {
+        item_name: item,
+        customer_email: "example@example.com", // يمكن تغييره أو جعله إدخالًا من الزبون
+      };
+
+      emailjs.send('your_service_id', 'your_template_id', templateParams)
+        .then(function(response) {
+          console.log("تم إرسال الإيميل:", response.status);
+          document.getElementById('orderList').innerHTML += `<li>${item} ✔️</li>`;
+        }, function(error) {
+          console.error("فشل في إرسال الإيميل:", error);
+        });
+    }
 
 
   </script>
