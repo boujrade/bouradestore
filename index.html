@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
         <title>أيقونة بحث</title>
+        <title>خانات تعبئة باستخدام الأزرار</title>
         
         <style>
             .search-container {
@@ -189,7 +190,7 @@
     padding: 12px 20px;
     font-size: 18px;
     border: none;
-    background-color: #dfd2d2;
+    background-color: #ece6e6;
     color: rgb(31, 29, 29);
     border-radius: 8px;
     cursor: pointer;
@@ -310,40 +311,40 @@
         <p>استمارة الطلب</p>
     <form 
        
-     action="https://usebasin.com/f/5a1fe4d5870b"
+     action="https://usebasin.com/f/d908c7a81323"
      method="POST"
        <input type="text" name="name" placeholder="الإسم"required><br>
        <input type="text" name="name" placeholder="الإسم"required><br>
        <input type="text" name="phone" placeholder="رقم الهاتف" required><br>
        <textarea name="message" placeholder="الولاية"></textarea><br>
        <textarea name="message" placeholder="البلدية"></textarea><br>
-       <button id="submitBtn" disabled> إرسال </button>
        
-       <h2>اختر طلبك:</h2>
+       
+       <h3>اختر طلبك</h3>
        <div class="button-container">
-       <button onclick="sendOrder('طلب علبة واحدة')">طلب علبة واحدة</button>
-       <button onclick="sendOrder('طلب علبتين وخصم %50 من سعر التوصيل')"> طلب علبتين وخصم %50 من سعر التوصيل</button>
-       <button onclick="sendOrder('طلب أكثر من علبتين والتوصيل مجاني')">طلب أكثر من علبتين والتوصيل مجاني  </button>
+       <button onclick="fillInput('طلب علبة واحدة')">طلب علبة واحدة</button>
+       <button onclick="fillInput('طلب علبتين وخصم %50 من سعر التوصيل')"> طلب علبتين وخصم %50 من سعر التوصيل</button>
+       <button onclick="fillInput('طلب أكثر من علبتين والتوصيل مجاني')">طلب أكثر من علبتين والتوصيل مجاني  </button>
          </div>
        
-
+         
        <div id="log">
          
          <ul id="orderList"></ul>
        </div>
      
        <script>
+          
+          function fillInput(value) {
+              document.getElementById('genderInput').value = value;
+              }
+
          // تهيئة EmailJS
          (function() {
            emailjs.init("YOUR_USER_ID"); // استبدل YOUR_USER_ID بالمعرف من EmailJS
          })();
      
-         function sendOrder(item) {
-           // إرسال الإيميل
-           const templateParams = {
-             item_name: item,
-             customer_email: "example@example.com", // يمكن تغييره أو جعله إدخالًا من الزبون
-           };
+        
      
            emailjs.send('your_service_id', 'your_template_id', templateParams)
              .then(function(response) {
