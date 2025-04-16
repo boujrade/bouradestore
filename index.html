@@ -1,6 +1,85 @@
 <!--test.html-->
 <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موقع متجاوب</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .button {
+      display: inline-block;
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+
+    /* 👇 تنسيق خاص للجوال فقط */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .button {
+        font-size: 1.1rem;
+        padding: 12px;
+      }
+
+      .container {
+        padding: 15px;
+        border-radius: 0;
+        margin-top: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+
+
+
+
+
+
+
 <html lang="ar" dir="rtl">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -14,6 +93,12 @@
         <title>خانات تعبئة باستخدام الأزرار</title>
         
         <style>
+
+@media (max-width: 768px) {
+  /* هنا تضع التنسيقات الخاصة بالجوال */
+}
+
+
             .search-container {
       display: flex;
       justify-content: center;
@@ -325,8 +410,8 @@
        <button onclick="fillInput('طلب علبة واحدة')">طلب علبة واحدة</button>
        <button onclick="fillInput('طلب علبتين وخصم %50 من سعر التوصيل')"> طلب علبتين وخصم %50 من سعر التوصيل</button>
        <button onclick="fillInput('طلب أكثر من علبتين والتوصيل مجاني')">طلب أكثر من علبتين والتوصيل مجاني  </button>
-       <input type="text" id="genderInput" placeholder="النوع">
 
+       
          </div>
        
          
