@@ -614,6 +614,85 @@ button {
   }
 }
 
+/* تأثير Skeleton Loader */
+.skeleton {
+  background: linear-gradient(90deg, #f3f3f3 25%, #ecebeb 50%, #f3f3f3 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.2s infinite;
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* أزرار متوهجة */
+.glow-button {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: #672f80;
+  box-shadow: 0 0 15px rgba(103, 47, 128, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 25px rgba(103, 47, 128, 0.8);
+  background: #4c205f;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav li {
+  margin-bottom: 12px;
+  text-align: center;
+  position: relative;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #672f80;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* مسافة بين النص والأيقونة */
+  transition: all 0.3s ease-in-out;
+}
+
+/* إضافة أيقونة تشير إلى الانتقال */
+nav a::before {
+  content: "";
+  font-size: 1.4rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+  opacity: 1;
+  transform: translateX(-8px); /* تحريك الأيقونة قليلاً عند التمرير */
+}
+
+/* تأثير توهج للروابط */
+nav a:hover {
+  color: #4c205f;
+  text-shadow: 0px 4px 10px rgba(103, 47, 128, 0.5);
+}
 
   </style>
 </head>
