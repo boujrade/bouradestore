@@ -20,7 +20,7 @@
     :root {
       --primary-color: #1a202c;         /* لون أساسي داكن */
       --secondary-color: #2d3748;       /* لون تبايني أغمق */
-      --accent-color: #f08804;          /* لون تفاعلي/لمسة طازجة */
+      --accent-color: #837b71;          /* لون تفاعلي/لمسة طازجة */
       --background-color: #fffefe;      /* خلفية فاتحة نظيفة */
       --card-bg: #ffffff;               /* لون البطاقات */
       --input-bg: #edf2f7;              /* خلفية الحقول */
@@ -559,33 +559,69 @@ button {
 
 
 .elegant-title {
-  font-size: 1.5rem; /* حجم أكبر لعنوان مميز */
+  font-size: 2rem; /* حجم أكبر لإبراز العنوان */
   font-weight: bold;
-  color: #f7d567; /* لون كلاسيكي داكن */
+  color: #f6c442; /* لون ذهبي فاخر */
   text-align: center;
-  font-family: 'Playfair Display', serif; /* خط كلاسيكي عصري */
-  padding: 12px;
+  font-family: 'Playfair Display', serif;
+  padding: 16px 24px;
   position: relative;
-  background: linear-gradient(90deg, #6b685e, #111311);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #1a1a1a, #504a3c);
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px; /* زيادة المسافات للحصول على تأثير راقٍ */
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
 }
 
-/* سطر مزخرف بأسلوب كلاسيكي */
+/* تأثير توهج عند تمرير الماوس */
+.elegant-title:hover {
+  box-shadow: 0 8px 22px rgba(246, 196, 66, 0.6);
+  transform: scale(1.05);
+}
+
+/* سطر مزخرف بأسلوب فاخر */
+.elegant-title {
+  font-size: clamp(1.6rem, 4vw, 2rem); /* حجم متجاوب بين الأجهزة الصغيرة والكبيرة */
+  font-weight: bold;
+  color: #d4af37; /* لون ذهبي فاخر */
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  padding: 12px 18px;
+  position: relative;
+  background: linear-gradient(135deg, #b3b0b0, #4d4d4d);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* تأثير عند التفاعل */
+.elegant-title:hover {
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.6);
+  transform: scale(1.03);
+}
+
+/* سطر زخرفي يناسب الهواتف */
 .elegant-title::after {
-  content: "▬▬▬▬ ✧ ✦ ✧ ▬▬▬▬";
-  font-size: 0.5rem;
-  color: #f7d567;
+  content: "─ ✦ ✧ ✦ ─";
+  font-size: 0.7rem;
+  color: #d4af37;
   display: block;
   text-align: center;
   margin-top: 6px;
   font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 2px;
 }
 
-.inside-img {
-  width: 50px; /* حجم صغير للصورة */
-  margin: 10px auto; /* محاذاة وسطية */
-  display: block;
+/* توافق تلقائي مع عرض الشاشة */
+@media (max-width: 768px) {
+  .elegant-title {
+    font-size: 1.4rem;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
 }
 
 .moving-text {
@@ -754,7 +790,7 @@ nav a:hover {
 
 
 <div class="moving-text">
-  🔥 أكبر متجر الكتروني لبيع مواد التجميل في الطب البديل – التوصيل 58 ولاية إلى باب المنزل – مرحباً بالجميع 🎉
+  🔥 أكبر متجر الكتروني لبيع مواد التجميل في الطب البديل – التوصيل 58 ولاية و إلى باب المنزل – مرحباً بالجميع 🎉
 </div>
 
 
