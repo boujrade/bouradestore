@@ -588,6 +588,33 @@ button {
   display: block;
 }
 
+.moving-text {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background-color: #f8f9fa; /* لون خلفية اختياري */
+  padding: 5px 0;
+  font-size: 12px; /* تصغير حجم النص */
+  color: #333;
+}
+
+.moving-text span {
+  display: inline-block;
+  padding-left: 100%; /* ضروري لبدء الحركة من خارج الشاشة */
+  animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%); /* يبدأ خارج يمين الشاشة */
+  }
+  100% {
+    transform: translateX(-100%); /* يخرج من يسار الشاشة */
+  }
+}
+✅ النتيجة:
+
   </style>
 </head>
 <body class="bg-light">
@@ -598,7 +625,7 @@ button {
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="images/html.jjj.jpg" style="height: 40px; max-height: 8vh; margin-left: 8px;" alt="شعار المتجر" loading="lazy">
 
-<span style="font-size: 17px;">استكشف أفضل عروضنا الآن</span>
+<span style="font-size: 15px;">استكشف أفضل عروضنا الآن</span>
 
       <i class="bi bi-person" style="font-size: 17px;"></i>
 
@@ -647,7 +674,9 @@ button {
 
 
 
-<div class="moving-text">🔥    أكبر متجر الكتروني لبيع مواد التجميل في الطب البديل  التوصيل 58 ولاية الى باب المنزل مرحباً بالجميع🎉</div>
+<div class="moving-text">
+  🔥 أكبر متجر الكتروني لبيع مواد التجميل في الطب البديل – التوصيل 58 ولاية إلى باب المنزل – مرحباً بالجميع 🎉
+</div>
 
 
   <img src="images/html.gnn.jpg" style="height: 80px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر" loading="lazy" >
