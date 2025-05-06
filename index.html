@@ -37,7 +37,7 @@
  
 
 .nav-link:hover {
-  color: #f8d210; /* تغيير اللون عند التحويم */
+  color: #f81084; /* تغيير اللون عند التحويم */
   text-decoration: underline; /* إضافة خط تحت الرابط */
 }
    
@@ -48,7 +48,7 @@
 }
 
 .dropdown-item:hover {
-  background-color: #f8d210; /* تأثير عند التحويم */
+  background-color: #f81084; /* تأثير عند التحويم */
 }
 .navbar-toggler {
   background: none;
@@ -557,41 +557,18 @@ button {
 }
 
 
-
-.elegant-title {
-  font-size: 2rem; /* حجم أكبر لإبراز العنوان */
-  font-weight: bold;
-  color: #f6c442; /* لون ذهبي فاخر */
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  padding: 16px 24px;
-  position: relative;
-  background: linear-gradient(135deg, #1a1a1a, #504a3c);
-  border-radius: 15px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-  letter-spacing: 1px; /* زيادة المسافات للحصول على تأثير راقٍ */
-  text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
-}
-
-/* تأثير توهج عند تمرير الماوس */
-.elegant-title:hover {
-  box-shadow: 0 8px 22px rgba(246, 196, 66, 0.6);
-  transform: scale(1.05);
-}
-
 /* سطر مزخرف بأسلوب فاخر */
 .elegant-title {
   font-size: clamp(1.6rem, 4vw, 2rem); /* حجم متجاوب بين الأجهزة الصغيرة والكبيرة */
   font-weight: bold;
-  color: #f0d16c; /* لون ذهبي فاخر */
+  color: #f8f8f6; /* لون ذهبي فاخر */
   text-align: center;
   font-family: 'Playfair Display', serif;
   padding: 12px 18px;
   position: relative;
-  background: linear-gradient(135deg, #b3b0b0, #4d4d4d);
+  background: linear-gradient(135deg, #292826, #292826);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 12px rgba(236, 51, 165, 0.3);
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
@@ -599,7 +576,7 @@ button {
 
 /* تأثير عند التفاعل */
 .elegant-title:hover {
-  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.6);
+  box-shadow: 0 6px 18px rgba(230, 37, 149, 0.6);
   transform: scale(1.03);
 }
 
@@ -607,7 +584,7 @@ button {
 .elegant-title::after {
   content: "─ ✦ ✧ ✦ ─";
   font-size: 0.7rem;
-  color: #ebcc68;
+  color: #f03070;
   display: block;
   text-align: center;
   margin-top: 6px;
@@ -730,8 +707,46 @@ nav a:hover {
   text-shadow: 0px 4px 10px rgba(103, 47, 128, 0.5);
 }
 
+body{
+  font-family: Arial,sans-serif;
+  direction: rtl;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #c28222;
+}
+.header {
+background: #f03070;
+  background-color: Arial, sans-serif;
+ color: rgb(255, 255, 255);
+ padding: 15px;
+font-size: 18px;
+}
+
+.header a{
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+
+.promo{
+  background:#fce4ec;
+  background-color: Arial, sans-serif;
+ color: #ad1457;
+ padding: 25px;
+font-size: 18px;
+}
+}
+
   </style>
 </head>
+
+<div class="header">
+  اشتر الأن وادفع لاحقا مع خطة الدفع سهلة ومميزة مع chika store <br>
+  <a href="#">
+    اعرف المزيد
+  </a>
+</div>
+
 <body class="bg-light">
 
  <!-- شريط التنقل -->
@@ -791,10 +806,16 @@ nav a:hover {
 
 <div class="moving-text">
   🔥 أكبر متجر الكتروني لبيع مواد التجميل في الطب البديل – التوصيل 58 ولاية و إلى باب المنزل – مرحباً بالجميع 🎉
-</div>
+</div><br>
 
+ 
 
-  <img src="images/html.gnn.jpg" style="height: 80px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر" loading="lazy" >
+  <img src="images/html.gnn.jpg" style="height: 80px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر" loading="lazy" ><br>
+
+  <div class="promo">
+    دعوة خاصة لكي <br> احصلي على اطلالة ساحرة هذا الصيف  !
+      </div><br>
+    
  
   <div class="slider">
     
@@ -806,7 +827,6 @@ nav a:hover {
     <img src="images2/g.jpg" class="slide" loading="lazy"   >
     <img src="images2/h.jpg" class="slide"  loading="lazy"    >
    
-    
 </div>
 
 
@@ -930,6 +950,15 @@ nav a:hover {
   </div>
 </div><br>
  
+
+<div style="background: linear-gradient(to right,#ffebee,#fce4ec);padding:20px; text-align: center;">
+  <h2 style="color:#c2185b;">  تألقي هذا الصيف </h2>
+  <p style="font-size: 16px;color:#6a1b9a;">
+    اكتشفي أجمل مستحضرات التنحيف والتجميل بأسعار جد معقولة
+  </p>
+</div><br>
+
+
 
 <h2 class="elegant-title"> إليك بعض من منتجاتنا المميزة</h2>
 
