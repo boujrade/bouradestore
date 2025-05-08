@@ -744,7 +744,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const title = card.querySelector("h4");
         if (title) {
           const match = title.textContent.toLowerCase().includes(keyword);
-          card.style.visibility = match ? "visible" : "hidden";
+          card.style.opacity = match ? "1" : "0";
           
         }
       });
