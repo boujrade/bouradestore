@@ -5,64 +5,46 @@
   <title>منتجات متجرنا</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-  body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  margin: 0;
-  padding: 0; /* إزالة الهوامش الكاملة */
-  direction: rtl;
-  text-align: right;
-}
-
-.container {
-  width: 100%;
-  margin: 0;
-  padding: 0; /* نزع الهوامش الداخلية */
-  background: #fff;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.products-container {
+ .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2px;
-  padding: 0; /* نزع الهوامش خارج البطاقات */
-  width: 100%;
+  grid-template-columns: repeat(2, 1fr); /* دائمًا بطاقتان في الصف */
+  gap: 10px;
+  padding: 10px;
   box-sizing: border-box;
 }
-
 .product-card {
-  width: 100%;
-  height: 200px;
-  border-radius: 0;
-  box-shadow: 0 0 5px rgba(196, 191, 191, 0.5);
-  border: 1px solid rgb(216, 212, 212);
-  padding: 5px;
-  background: white;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.2s ease-in-out;
 }
-
-/* إصلاح hover */
 .product-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
-
-.product-card h4,
+.product-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.product-card h4 {
+  font-size: 14px;
+  margin: 10px 0 5px;
+  color: #333;
+}
 .product-card p {
-  font-size: 11px;
+  font-size: 12px;
+  color: #777;
+  margin: 0 0 5px;
 }
-
-/* تحسين العرض على الشاشات الصغيرة */
-@media (max-width: 768px) {
-  .products-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 500px) {
-  .products-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
+.divider {
+  height: 1px;
+  background: #eee;
+  margin-top: 10px;
 }
 
   </style>
