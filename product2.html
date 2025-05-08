@@ -7,11 +7,13 @@
   <style>
   body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    margin: 0;
-    padding: 20px;
+    background: #f3f2e7;
     direction: rtl;
     text-align: right; /* تحسين توافق RTL */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* يمنع التمرير الجانبي */
 }
 
 .container {
@@ -33,7 +35,7 @@
 
 .product-card {
     position: relative;
-    width: 130px;
+    width: 150px;
     height: 200px;
     background-size: cover;
     background-position:auto;
@@ -48,8 +50,8 @@
     transition: transform 0.3s ease-in-out;
     background: white;
     border-radius: 1px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* ظل أسود ساطع */
-     border: 1px solid black; /* خط أسود رقيق */
+    box-shadow: 0 0 5px rgba(172, 165, 165, 0.5); /* ظل أسود ساطع */
+     border: 1px solid rgb(204, 194, 194); /* خط أسود رقيق */
     padding: 15px;
 }
 
