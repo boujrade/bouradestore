@@ -15,7 +15,7 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
-  background: #f8f6e1;
+  background: #f3f3f0;
   font-family: Tahoma, sans-serif;
   direction: rtl;
   text-align: right;
@@ -149,18 +149,15 @@ body, html {
 }
 
 .suggestion-item {
+  display: block;
   padding: 12px;
-  cursor: pointer;
-  font-size: 14px;
   border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+  border-radius: 8px;
 }
 
 .suggestion-item:hover {
-  background-color: #f5f5f5;
-}
-
-.suggestion-item:last-child {
-  border-bottom: none;
+  background-color: #f0f0f0;
 }
 
   </style>
@@ -180,9 +177,9 @@ body, html {
 
 
 <div class="products-container">
-  <div class="product-card" data-bg="images2/opp.jpg" onclick="window.location.href='product1.html'">
+  <div class="product-card" data-bg="images2/opp.jpg" onclick="window.location.href='products/cream.html'">
    
-      <h4>شاشة Samsung Odyssey OLED G6  </h4>
+      <h4>كريمة ترطيب البشرة  </h4>
   </div>
 
   <div class="product-card" data-bg="images/produits/html.02.jpg" onclick="window.location.href='product2.html'">
@@ -735,57 +732,21 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <script>
-    const products = [
-      "كريم ترطيب البشرة",
-      "زيت الأرغان الطبيعي",
-      "ماسك الفحم لتنقية الوجه",
-      "مقشر الجسم بالسكر البني",
-      "غسول الوجه اليومي",
-      "سيروم فيتامين C",
-      "بلسم الشعر بالأفوكادو",
-      "كريم الوقاية من الشمس",
-      "مرطب الشفاه بزبدة الشيا",
-      "صابونة الفحم النباتي"
-    ];
-
-    const searchBox = document.getElementById("searchBox");
-    const suggestionsContainer = document.getElementById("suggestions");
-
-    searchBox.addEventListener("input", function () {
-      const input = this.value.toLowerCase();
-      suggestionsContainer.innerHTML = "";
-
-      if (input.trim() === "") {
-        suggestionsContainer.style.display = "none";
-        return;
-      }
-
-      const matches = products.filter(p => p.toLowerCase().includes(input));
-
-      if (matches.length > 0) {
-        matches.forEach(match => {
-          const item = document.createElement("div");
-          item.classList.add("suggestion-item");
-          item.textContent = match;
-          item.addEventListener("click", () => {
-            searchBox.value = match;
-            suggestionsContainer.style.display = "none";
-          });
-          suggestionsContainer.appendChild(item);
-        });
-        suggestionsContainer.style.display = "block";
-      } else {
-        suggestionsContainer.style.display = "none";
-      }
-    });
-
-    document.addEventListener("click", function (e) {
-      if (!document.getElementById("searchContainer").contains(e.target)) {
-        suggestionsContainer.style.display = "none";
-      }
+    const searchInput = document.getElementById("searchBox");
+    const cards = document.querySelectorAll(".product-card");
+  
+    searchInput.addEventListener("input", function () {
+      const keyword = this.value.toLowerCase().trim();
+  
+      cards.forEach(card => {
+        const title = card.querySelector("h4");
+        if (title) {
+          const match = title.textContent.toLowerCase().includes(keyword);
+          card.style.display = match ? "block" : "none";
+        }
+      });
     });
   </script>
-
 <script>
     document.querySelectorAll('.product-card').forEach(card => {
       const bg = card.getAttribute('data-bg');
