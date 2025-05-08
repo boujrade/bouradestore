@@ -54,7 +54,7 @@ body, html {
   padding: 10px;
   color: white;
   font-weight: bold;
- 
+  transition: opacity 0.3s ease;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
 }
@@ -64,6 +64,8 @@ body, html {
   color: #333;
   margin: 6px 0 0;
   text-align: center;
+  min-height: 40px; /* أو أي رقم يناسبك */
+  overflow: hidden;
 }
 
 .product-card p {
@@ -162,7 +164,7 @@ body, html {
 
   </style>
 </head>
-<body>
+<body><br>
 
     <h2 style="text-align: center;">🌸 كريمات للترطيب والتجميل 🌸</h2><br>
 
@@ -742,7 +744,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const title = card.querySelector("h4");
         if (title) {
           const match = title.textContent.toLowerCase().includes(keyword);
-          card.style.display = match ? "block" : "none";
+          card.style.visibility = match ? "visible" : "hidden";
+          
         }
       });
     });
