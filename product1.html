@@ -33,11 +33,11 @@
 
 .product-card {
     position: relative;
-    width: 130px;
-    height: 200px;
+    width:200px;
+    height: 220px;
     background-size: cover;
     background-position:auto;
-    border-radius: 2px;
+    border-radius: 1px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -47,9 +47,8 @@
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
     background: white;
-    border-radius: 1px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* ظل أسود ساطع */
-     border: 1px solid black; /* خط أسود رقيق */
+    box-shadow: 0 0 5px rgba(216, 209, 209, 0.5); /* ظل أسود ساطع */
+     border: 0px solid rgb(146, 142, 142); /* خط أسود رقيق */
     padding: 15px;
 }
 
@@ -82,20 +81,69 @@ product-card:hover {
 @media (max-width: 50px) {
     .products-container {
         grid-template-columns: repeat(1, 1fr);
+    }  
+   
+}
+
+
+body {
+      font-family: Tahoma, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+      color: #333;
     }
 
+    #searchContainer {
+      position: relative;
+      max-width: 500px;
+      margin: auto;
+    }
 
+    #searchBox {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
 
-   
+    .suggestions {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 1000;
+    }
 
-    
-    /* تعديل بحيث تكون البطاقات مناسبة للشاشات الصغيرة */
-}
+    .suggestion-item {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .suggestion-item:hover {
+      background-color: #f1f1f1;
+    }
+
   </style>
 </head>
 <body>
 
-<h1>منتجاتنا</h1>
+
+    <h2 style="text-align: center;"> ابحثي عن المنتج الذي ترغبين به</h2>
+
+    <div id="searchContainer">
+      <input type="text" id="searchBox" placeholder="🔍اكتبي اسم المنتج...">
+      <div id="suggestions" class="suggestions" style="display: none;"></div>
+    </div>
+    
+<h1> كريمات للترطيب والتجميل </h1>
 
 <div class="products-container">
   <div class="product-card" data-bg="images/produits/html.01.jpg" onclick="window.location.href='product1.html'">
@@ -457,6 +505,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 </script>
+
+<script>
+    const products = [
+      "كريم ترطيب البشرة",
+      "زيت الأرغان الطبيعي",
+      "ماسك الفحم لتنقية الوجه",
+      "مقشر الجسم بالسكر البني",
+      "غسول الوجه اليومي",
+      "سيروم فيتامين C",
+      "بلسم الشعر بالأفوكادو",
+      "كريم الوقاية من الشمس",
+      "مرطب الشفاه بزبدة الشيا",
+      "صابونة الفحم النباتي"
+    ];
+
+    const searchBox = document.getElementById("searchBox");
+    const suggestionsContainer = document.getElementById("suggestions");
+
+    searchBox.addEventListener("input", function () {
+      const input = this.value.toLowerCase();
+      suggestionsContainer.innerHTML = "";
+
+      if (input.trim() === "") {
+        suggestionsContainer.style.display = "none";
+        return;
+      }
+
+      const matches = products.filter(p => p.toLowerCase().includes(input));
+
+      if (matches.length > 0) {
+        matches.forEach(match => {
+          const item = document.createElement("div");
+          item.classList.add("suggestion-item");
+          item.textContent = match;
+          item.addEventListener("click", () => {
+            searchBox.value = match;
+            suggestionsContainer.style.display = "none";
+          });
+          suggestionsContainer.appendChild(item);
+        });
+        suggestionsContainer.style.display = "block";
+      } else {
+        suggestionsContainer.style.display = "none";
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!document.getElementById("searchContainer").contains(e.target)) {
+        suggestionsContainer.style.display = "none";
+      }
+    });
+  </script>
+
+
 
 </body>
 </html>
