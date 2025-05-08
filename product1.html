@@ -33,11 +33,11 @@
 
 .product-card {
     position: relative;
-    width:180px;
+    width: 150px;
     height: 200px;
     background-size: cover;
     background-position:auto;
-    border-radius: 1px;
+    border-radius: 2px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -47,11 +47,11 @@
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
     background: white;
-    box-shadow: 0 0 5px rgba(216, 209, 209, 0.5); /* ظل أسود ساطع */
-     border: 0px solid rgb(146, 142, 142); /* خط أسود رقيق */
+    border-radius: 1px;
+    box-shadow: 0 0 5px rgba(196, 191, 191, 0.5); /* ظل أسود ساطع */
+     border: 1px solid rgb(192, 188, 188); /* خط أسود رقيق */
     padding: 15px;
 }
-
 product-card:hover {
     transform: scale(1.05);
 }
@@ -143,7 +143,7 @@ body {
     <div id="searchContainer">
       <input type="text" id="searchBox" placeholder="🔍اكتبي اسم المنتج...">
       <div id="suggestions" class="suggestions" style="display: none;"></div>
-    </div>
+    </div><br>
     
 
 
