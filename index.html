@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+  
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <title>المنتجات</title>
+  
+  <!-- Bootstrap RTL CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+  <title>صورة محددة متجاوبة</title>
+
+  <title>معرض الصور</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* تعريف المتغيرات الأساسية للألوان */
+    :root {
+      --primary-color: #1a202c;         /* لون أساسي داكن */
+      --secondary-color: #2d3748;       /* لون تبايني أغمق */
+      --accent-color: #837b71;          /* لون تفاعلي/لمسة طازجة */
+      --background-color: #fffefe;      /* خلفية فاتحة نظيفة */
+      --card-bg: #ffffff;               /* لون البطاقات */
+      --input-bg: #edf2f7;              /* خلفية الحقول */
+      --hover-input-bg: #e2e8f0;         /* خلفية الحقول عند التركيز */
+    }
+  
+    
+    
+    /* شريط التنقل */
+    .navbar {
+  background-color: #292826;
+  }
+  
+ 
+
+.nav-link:hover {
+  color: #f81084; /* تغيير اللون عند التحويم */
+  text-decoration: underline; /* إضافة خط تحت الرابط */
+}
+   
+
+/* تحسين لون العناصر داخل القائمة */
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #f81084; /* تأثير عند التحويم */
+}
+.navbar-toggler {
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none !important;
+}
+
+.navbar-toggler:focus, 
+.navbar-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+  background-color: #eee6e6;
+  border-radius: 2px;
+  width: 30px;
+  height: 4px;
+  display: block;
+  margin: 4px 0;
+}
+
+
+    
+body {
+  direction: rtl;
+  font-family: 'Arial', sans-serif;
+}
+
+.open-btn {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: -300px; /* مخفية بالبداية */
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  z-index: 1001;
+  transition: right 0.3s ease;
+}
+
+.sidebar.active {
+  right: 0; /* تظهر */
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  background: #f5f5f5;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  flex: 1;
+  padding: 10px;
+  outline: none;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 15px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+/* الخلفية السوداء */
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5); /* لون أسود نصف شفاف */
+  display: none;
+  z-index: 1000;
+}
+
+.overlay.active {
+  display: block;
+}
+/* زر القائمة */
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 35px;
+  height: 30px;
+  padding: 0;
+  z-index: 1002;
+}
+
+/* الخطوط الثلاثة */
+.menu-btn span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff; /* لون الخطوط، غيّره حسب لون الخلفية */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* عند تفعيل الزر (فتح القائمة) */
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.overlay.active {
+  display: block;
+}
+
+.open-btn, .close-btn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: white; /* لون الأيقونة */
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* تأثير hover */
+.open-btn:hover, .close-btn:hover {
+  transform: scale(1.2);
+  color: #ff9800;
+}
+
+.menu-btn {
+  all: unset; /* مسح جميع التنسيقات الافتراضية */
+  font-size: 26px; /* حجم رمز ☰ */
+  color: white; /* لون أبيض */
+  cursor: pointer; /* يظهر شكل اليد عند المرور */
+  position: fixed;
+  top: 125px;
+  left: 10px; /* لاحظ هنا: من اليسار بدل اليمين */
+  z-index: 1003;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* حركة لطيفة عند المرور Hover */
+.menu-btn:hover {
+  transform: rotate(90deg) scale(1.2);
+  color: #ffcc00; /* يتغير إلى أصفر ذهبي عند المرور */
+}
+
+
+    .moving-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #141314;
+    text-align: center;
+    display: block;
+    position: relative;
+    animation: moveText  4s ease-in-out infinite alternate;
+}
+
+@keyframes moveText {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(50px);
+    }
+}
+
+
+
+    /* البطاقات */
+    .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ضمان محاذاة المحتوى */
+  min-width: 180px;
+  height: 100%;
+  text-shadow: 1px 1px 2px rgb(105, 102, 102);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%; /* جعل الصورة تأخذ 80% من البطاقة */
+  object-fit: cover; /* ضمان تغطية الصورة بشكل جميل */
+  border-radius: 0px 0px 0 ; /* تقريب الحواف العلوية */
+}
+
+.card-body {
+  flex-grow: 1; /* السماح للجزء النصي بأخذ المساحة المتبقية */
+  padding: 10px;
+}
+
+
+.card-body {
+  flex-grow: 1;
+}
+.card-img-top {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* الأسعار */
+.price {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.old-price {
+  color: #a0aec0;
+  text-decoration: line-through;
+}
+
+.lazy-img {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.lazy-img.loaded {
+    opacity: 1;
+}
+
+
+
+
+
+    
+    /* الأسعار */
+    .price {
+      color: var(--accent-color);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .old-price {
+      color: #a0aec0;
+      text-decoration: line-through;
+    }
+    
+  
+    /* زر الطلب */
+    .btn-success {
+      background-color: var(--accent-color);
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      padding: 0.55rem 1.25rem;
+      transition: background-color 0.3s ease;
+      color: #fcf082;
+    }
+    .btn-success:hover {
+      background-color: #161614;
+    }
+  
+    /* نموذج الطلب */
+    #orderForm {
+      border-radius: 20px;
+      max-width: 600px;
+      background: var(--card-bg);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      margin: 2rem auto;
+    }
+    #orderForm .form-control,
+    #orderForm textarea {
+      border: none;
+      border-radius: 30px;
+      background-color: var(--input-bg);
+      padding: 0.75rem 1rem;
+      transition: background-color 0.3s ease;
+    }
+    #orderForm .form-control:focus,
+    #orderForm textarea:focus {
+      background-color: var(--hover-input-bg);
+    }
+  
+
+    /* الأقسام المخفية */
+ section.hidden-section {
+  display: none;
+  background-color: #ffffff;
+  padding: 30px 20px;
+  margin: 30px auto;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+ }
+
+ section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #af4dc7;
+ }
+    /* الأجهزة الصغيرة */
+    @media (max-width: 768px) {
+      .card .card-body {
+        padding: 1rem 0.75rem;
+      }
+      .product-img {
+        height: 180px;
+      }
+      h3, h4 {
+        font-size: 1rem;
+      }
+    }
+
+    #special-image {         /*صورة محددة متجاوبة*/
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+
+
+    /*صوراوبة*/   
+    .slider {
+    position: relative;
+    width: 100vw; /* جعل العرض بكامل الشاشة */
+    max-width: 100vw;
+    margin: 0; /* إزالة الهوامش */
+    overflow: hidden;
+}
+
+.slide {
+    width: 100vw; /* جعل الصورة تمتد بكامل عرض الشاشة */
+    height: auto; /* الحفاظ على نسبة الأبعاد */
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#prevBtn {
+    left: 5px; /* تقليل المسافة للحصول على مظهر أكثر تناسقًا */
+}
+
+#nextBtn {
+    right: 5px; /* تقليل المسافة كذلك */
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+/* شريط التشبيح */
+.skeleton-bar {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #f0f5ef 5%, #f03070  50%, #f03070 75%);
+  background-size: 200% 10%;
+  
+  border-radius: 5px;
+}
+
+/* تأثير التحميل */
+@keyframes loadingAnimation {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+
+.divider {
+  width: 80%;
+  height: 1px;
+  background-color: #69d681;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+.loading-bar {
+  width: 100%;
+  height: 2px;
+  background-color: #292826; /* برتقالي */
+  border-radius: 5px;
+}
+
+/* البطاقات الأفقية تحويل*/
+
+/* الحاوية الخاصة بالتمرير الأفقي */
+.special-card-container {
+  display: flex;
+  overflow-x: auto; /* تمكين التمرير الأفقي */
+  gap: 5px; /* تقليل المسافة بين البطاقات */
+  padding: 10px;
+  scrollbar-width: thin;
+  justify-content: start; /* الترتيب من اليسار لليمين */
+}
+
+/* تحسين شريط التمرير */
+.special-card-container::-webkit-scrollbar {
+  height: 1px;
+}
+
+.special-card-container::-webkit-scrollbar-thumb {
+  background-color: #292724;
+  border-radius: 10px;
+}
+
+/* ضبط حجم البطاقات */
+.special-card {
+  min-width: 200px; /* عرض محدد */
+  height: 220px; /* ارتفاع محدد */
+  background: white;
+  border-radius: 1px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 0px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تحسين الصور داخل البطاقات */
+.special-card img {
+  width: 100%;
+  height: 100%; /* ضبط حجم الصورة */
+  object-fit: cover;
+  border-radius: 1px;
+}
+
+/* تأثير عند التحويم */
+.special-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* سطر مزخرف بأسلوب فاخر */
+.elegant-title {
+  font-size: clamp(1.6rem, 4vw, 2rem); /* حجم متجاوب بين الأجهزة الصغيرة والكبيرة */
+  font-weight: bold;
+  color: #f8f8f6; /* لون ذهبي فاخر */
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  padding: 12px 18px;
+  position: relative;
+  background: linear-gradient(135deg, #292826, #292826);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(236, 51, 165, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* تأثير عند التفاعل */
+.elegant-title:hover {
+  box-shadow: 0 6px 18px rgba(230, 37, 149, 0.6);
+  transform: scale(1.03);
+}
+
+/* سطر زخرفي يناسب الهواتف */
+.elegant-title::after {
+  content: "─ ✦ ✧ ✦ ─";
+  font-size: 0.7rem;
+  color: #f03070;
+  display: block;
+  text-align: center;
+  margin-top: 6px;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 2px;
+}
+
+/* توافق تلقائي مع عرض الشاشة */
+@media (max-width: 768px) {
+  .elegant-title {
+    font-size: 1.4rem;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+}
+
+.moving-text {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background-color: #f7f2f5; /* لون خلفية اختياري */
+  padding: 10px 0;
+  font-size: 12px; /* تصغير حجم النص */
+  color: #333;
+}
+
+.moving-text span {
+  display: inline-block;
+  padding-left: 100%; /* ضروري لبدء الحركة من خارج الشاشة */
+  animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%); /* يبدأ خارج يمين الشاشة */
+  }
+  100% {
+    transform: translateX(-100%); /* يخرج من يسار الشاشة */
+  }
+}
+
+/* تأثير Skeleton Loader */
+.skeleton {
+  background: linear-gradient(90deg, #f3f3f3 25%, #ecebeb 50%, #f3f3f3 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.2s infinite;
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* أزرار متوهجة */
+.glow-button {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: #672f80;
+  box-shadow: 0 0 15px rgba(103, 47, 128, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 25px rgba(103, 47, 128, 0.8);
+  background: #4c205f;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav li {
+  margin-bottom: 12px;
+  text-align: center;
+  position: relative;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #672f80;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* مسافة بين النص والأيقونة */
+  transition: all 0.3s ease-in-out;
+}
+
+/* إضافة أيقونة تشير إلى الانتقال */
+nav a::before {
+  content: "";
+  font-size: 1.4rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+  opacity: 1;
+  transform: translateX(-8px); /* تحريك الأيقونة قليلاً عند التمرير */
+}
+
+/* تأثير توهج للروابط */
+nav a:hover {
+  color: #4c205f;
+  text-shadow: 0px 4px 10px rgba(103, 47, 128, 0.5);
+}
+
+body{
+  font-family: Arial,sans-serif;
+  direction: rtl;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #c28222;
+}
+.header {
+background: #f03070;
+  background-color: Arial, sans-serif;
+ color: rgb(255, 255, 255);
+ padding: 15px;
+font-size: 18px;
+}
+
+.header a{
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+
+.promo{
+  background:#fce4ec;
+  background-color: Arial, sans-serif;
+ color: #ad1457;
+ padding: 25px;
+font-size: 18px;
+}
+
+
+  </style>
+</head>
+
+<div class="header">
+  اشتر الأن وادفع لاحقا مع خطة الدفع سهلة ومميزة مع chika store <br>
+  <a href="df.html">
+     <h6>
+        اعرف المزيد
+
+     </h6> 
+  </a>
+</div>
+
+<body class="bg-light">
+
+ <!-- شريط التنقل -->
+ <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="images2/html.jjj.jpg" style="height: 35px; max-height: 8vh; margin-right: 2px;" alt="شعار المتجر" loading="lazy">
+
+        <span style="font-size: 15px; color: #f03070;">استكشف أفضل عروضنا الآن</span>
+
+      <i class="bi bi-person" style="font-size: 17px;"></i>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button id="open-sidebar" class="menu-btn" style="font-size: 19px; padding: 2px 6px;">
+    ☰ Menu
+  </button>
+</nav>
+
+
+          
+          <!-- خلفية شفافة سوداء -->
+          <div id="overlay" class="overlay"></div>
+          
+
+<!-- القائمة الجانبية -->
+
+
+<div id="sidebar" class="sidebar">
+  <button id="close-sidebar" class="close-btn">✖</button>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="ما الذي تبحث عنه؟">
+</div>
+<ul id="searchResults"></ul>
+<ul id="searchResults"></ul>
+  <ul class="menu">
+    <li><a href="index.html">الرئيسية</a></li>
+    <li><a href="products.html">منتجاتنا</a></li>
+    <li><a href="offers.html">عروض اليوم</a></li>
+    <li><a href="contact.html">تواصل معنا</a></li>
+  </ul>
+</div>
+   </div>
+      </nav>   
+      </div>
+    </div>
+  </nav> 
+ 
+
+<div class="skeleton-bar"></div>
+<div class="loading-bar"></div>
+
+
+<!-- نص متحرك تحت شريط التنقل -->
+
+
+
+<div class="moving-text">
+  🔥 أكبر متجر الكتروني لبيع منتجات أصلية للعناية بالبشرة والجمال, مصنوعة من مواد طبيعية وزيوت أساسية لضمان تجربة مثالية للعناية الشخصية والصحة الجسمية  – التوصيل 58 ولاية و إلى باب المنزل – مرحباً بالجميع 🎉
+</div><br>
+
+ 
+
+<img src="images2/html.gnn.jpg" style="height: 80px; max-height: 30vh; margin-right: 3px;" alt="شعار المتجر" loading="lazy"><br>
+
+  <div class="promo">
+    دعوة خاصة لكي <br> احصلي على اطلالة ساحرة هذا الصيف  !
+      </div><br>
+    
+ 
+  <div class="slider">
+    
+    <img src="images2/a.jpg" class="slide active" loading="lazy"  >
+    <img src="images2/c.jpg" class="slide"  loading="lazy"  > 
+    <img src="images2/d.jpg" class="slide"   loading="lazy"    >
+    <img src="images2/e.jpg" class="slide"  loading="lazy"   >   
+    <img src="images2/f.jpg" class="slide"  loading="lazy"  >
+    <img src="images2/g.jpg" class="slide" loading="lazy"   >
+    <img src="images2/h.jpg" class="slide"  loading="lazy"    >
+   
+</div>
+
+
+  
+  
+  <div class="moving-text">   "عروض مذهلة"    " منتجات مميزة"     " أسرع خدمة توصيل!</div>
+<!-- قسم المنتجات -->
+<div class="container py-4">
+  <h3 class="mb-4">جميع المنتجات</h3>
+  <div class="row g-4">
+
+    <!-- منتج 1 -->
+    <div class="col-md-6 col-lg-4">
+     
+      <div class="card position-relative"> 
+        <img src="images2/p1.jpg" class="card-img-top product-img" alt="حقيبة"  loading="lazy"  >
+        
+        <div class="card-body text-center">
+          <p class="card-title"> كريمات  للترطيب والتجميل</p>
+         
+          <a href="product1.html" class="btn btn-success mt-2">📦 اختيار منتج</a>
+        
+        </div>
+      </div>
+    </div>
+
+    <!-- منتج 2 -->
+    <div class="col-md-6 col-lg-4">
+     
+      <div class="card position-relative"> 
+        <img src="images2/p2.jpg" class="card-img-top product-img" alt="حقيبة"  loading="lazy"  >
+        
+        <div class="card-body text-center">
+          <p class="card-title"> زيوت نقية وممزوجة للشعر والبشرة</p>
+         
+          <a href="product2.html" class="btn btn-success mt-2">📦 اختيار منتج</a>
+        
+        </div>
+      </div>
+    </div>
+
+    <!-- منتج 3 -->
+     <div class="col-md-6 col-lg-4">
+     
+      <div class="card position-relative"> 
+        <img src="images2/p3.jpg" class="card-img-top product-img" alt="حقيبة"  loading="lazy"  >
+        
+        <div class="card-body text-center">
+          <p class="card-title">  أقنعة ومقشرات للوجه</p>
+         
+          <a href="product3.html" class="btn btn-success mt-2">📦 اختيار منتج</a>
+        
+        </div>
+      </div>
+    </div>
+
+    <!-- منتج 4 -->
+    <div class="col-md-6 col-lg-4">
+     
+      <div class="card position-relative"> 
+        <img src="images2/p4.jpg" class="card-img-top product-img" alt="حقيبة"  loading="lazy"  >
+        
+        <div class="card-body text-center">
+          <p class="card-title"> شامبو وصابون طبيعية ومسطنعة</p>
+         
+          <a href="product4.html" class="btn btn-success mt-2">📦 اختيار منتج</a>
+        
+        </div>
+      </div>
+    </div>
+
+<!-- منتج 5 -->
+<div class="col-md-6 col-lg-4">
+     
+  <div class="card position-relative"> 
+    <img src="images2/p5.jpg" class="card-img-top product-img" alt="حقيبة"  loading="lazy"  >
+    
+    <div class="card-body text-center">
+      <p class="card-title"> بخاخات وعطور </p>
+     
+      <a href="product5.html" class="btn btn-success mt-2">📦 اختيار منتج</a>
+    
+    </div>
+  </div>
+</div>
+
+<!-- منتج 6 -->
+<div class="col-md-6 col-lg-4">
+     
+  <div class="card position-relative"> 
+    <img src="images2/p6.jpg" class="card-img-top product-img" alt="حقيبة"  loading="lazy"  >
+    
+    <div class="card-body text-center">
+      <p class="card-title"> بلسم ومرطبات الشفاه </p>
+     
+      <a href="product6.html" class="btn btn-success mt-2">📦 اختيار منتج</a>
+    
+    </div>
+  </div>
+</div>
+
+<!-- منتج 7 -->
+<div class="col-md-6 col-lg-4">
+     
+  <div class="card position-relative"> 
+    <img src="images2/p7.jpg" class="card-img-top product-img" alt="حقيبة"  loading="lazy"  >
+    
+    <div class="card-body text-center">
+      <p class="card-title">  عوامل التنحيف وزيادة الوزن </p>
+     
+      <a href="product7.html" class="btn btn-success mt-2">📦 اختيار منتج</a>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  </div>
+</div><br>
+ 
+
+<div style="background: linear-gradient(to right,#ffebee,#fce4ec);padding:20px; text-align: center;">
+  <h2 style="color:#c2185b;"> اشراقة ساحرة تميزك</h2>
+  <p style="font-size: 16px;color:#6a1b9a;">
+    اكتشفي أجمل مستحضرات التنحيف والتجميل بأسعار جد معقولة
+  </p>
+</div><br>
+
+
+
+<h2 class="elegant-title"> إليك بعض من منتجاتنا المميزة</h2>
+
+<div class="special-card-container">
+  <div class="special-card" onclick="window.location.href='page1.html'">
+    <img src="images2/01.jpg" alt="منتج 1">
+  </div>
+  <div class="special-card" onclick="window.location.href='page2.html'">
+    <img src="images2/11.jpg" alt="منتج 2">
+  </div>
+  <div class="special-card" onclick="window.location.href='page3.html'">
+    <img src="images2/01.jpg" alt="منتج 3">
+  </div>
+  <div class="special-card" onclick="window.location.href='page4.html'">
+    <img src="images2/11.jpg" alt="منتج 4">
+  </div>
+  <div class="special-card" onclick="window.location.href='page5.html'">
+    <img src="images2/01.jpg" alt="منتج 5">
+  </div>
+  <div class="special-card" onclick="window.location.href='page6.html'">
+    <img src="images2/11.jpg" alt="منتج 6">
+  </div>
+  <div class="special-card" onclick="window.location.href='page7.html'">
+    <img src="images2/01.jpg" alt="منتج 7">
+  </div>
+  <div class="special-card" onclick="window.location.href='page8.html'">
+    <img src="images2/11.jpg" alt="منتج 8">
+  </div>
+  <div class="special-card" onclick="window.location.href='page9.html'">
+    <img src="images2/01.jpg" alt="منتج 9">
+  </div>
+  <div class="special-card" onclick="window.location.href='page10.html'">
+    <img src="images2/11.jpg" alt="منتج 10">
+  </div>
+  <div class="special-card" onclick="window.location.href='page11.html'">
+    <img src="images2/01.jpg" alt="منتج 11">
+  </div>
+  <div class="special-card" onclick="window.location.href='page12.html'">
+    <img src="images2/11.jpg" alt="منتج 12">
+  </div>
+  <div class="special-card" onclick="window.location.href='page13.html'">
+    <img src="images2/01.jpg" alt="منتج 13">
+  </div>
+  <div class="special-card" onclick="window.location.href='page14.html'">
+    <img src="images2/11.jpg" alt="منتج 14">
+  </div>
+  <div class="special-card" onclick="window.location.href='page15.html'">
+    <img src="images2/01.jpg" alt="منتج 15">
+  </div>
+</div>
+
+
+<img src="images/html.gnn.jpg" style="height: 80px; max-height: 30vh; margin-right: 3px;" alt="شعار المتجر" loading="lazy"><br>
+<!-- معلومات إضافية -->
+<nav style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
+    <ul style="list-style: none; padding: 0; text-align: center;">
+      <!-- روابط التنقل -->
+      <li style="margin-bottom: 10px;">
+        <a href="#privacy" onclick="showSection('privacy')" style="text-decoration: none; color: #0c0b0c; font-size: 1.5rem;">سياسة الخصوصية</a>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <a href="#contact" onclick="showSection('contact')" style="text-decoration: none; color: #0c0b0c; font-size: 1.5rem;">اتصل بنا</a>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <a href="#faq" onclick="showSection('faq')" style="text-decoration: none; color: #0c0b0c; font-size: 1.5rem;">الأسئلة المتكررة</a>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <a href="#about" onclick="showSection('about')" style="text-decoration: none; color: #0c0b0c; font-size: 1.5rem;">عن المتجر</a>
+      </li>
+      <li style="margin-bottom: 10px;">
+        <a href="#payment" onclick="showSection('payment')" style="text-decoration: none; color: #0c0b0c; font-size: 1.5rem;">طرق الدفع</a>
+      </li>
+         
+  
+      <li style="margin-bottom: 10px;">
+        <a href="#shipping" onclick="showSection('shipping')" style="text-decoration: none; color: #0c0b0c; font-size: 1.5rem;">الشحن والتسليم</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- الأقسام المخفية -->
+  <section id="privacy" class="hidden-section">
+    <h4>🔒 سياسة الخصوصية</h4>
+    <p>  تفاصيل سياسة الخصوصية...</p>
+    <div id="privacy-policy" style="direction: rtl; text-align: right; font-family: Arial, sans-serif; padding: 20px; line-height: 1.8;">
+      <h2 style="color: #672f80;">🛡️ سياسة الخصوصية</h2>
+      <p>نحن في <strong>chika store </strong> نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. توضح هذه السياسة كيف نجمع ونستخدم ونحفظ المعلومات التي تقدمها لنا عند استخدامك لموقعنا.</p>
+    
+      <h3> المعلومات التي نجمعها</h3>
+      <p>عند زيارتك لمتجرنا أو قيامك بالطلب، قد نقوم بجمع المعلومات التالية:</p>
+      <ul>
+        <li>الاسم الكامل</li>
+        <li>رقم الهاتف</li>
+        <li>عنوان الشحن والفوترة</li>
+        <li>تفاصيل الطلبات والمنتجات</li>
+        <li>معلومات الدفع (لا يتم تخزين بيانات البطاقة الائتمانية مباشرة لدينا، بل تتم معالجتها عبر بوابات دفع آمنة)</li>
+      </ul>
+    
+      <h3> كيفية استخدام المعلومات</h3>
+      <p>نستخدم بياناتك من أجل:</p>
+      <ul>
+        <li>معالجة طلبات الشراء وتوصيل المنتجات</li>
+        <li>التواصل معك بشأن الطلبات أو الاستفسارات</li>
+        <li>إرسال عروض أو تحديثات (إذا وافقت على ذلك)</li>
+        <li>تحسين تجربة المستخدم وتطوير الموقع</li>
+      </ul>
+    
+      <h3> مشاركة البيانات</h3>
+      <p>نحن لا نشارك معلوماتك الشخصية مع أطراف خارجية إلا في الحالات التالية:</p>
+      <ul>
+        <li>شركات الشحن لتوصيل الطلبات</li>
+        <li>بوابات الدفع الآمنة لإتمام عملية الدفع</li>
+        <li>إذا تطلب الأمر ذلك قانونيًا</li>
+      </ul>
+    
+      <h3> حماية المعلومات</h3>
+      <p>نلتزم بتطبيق معايير الأمان المناسبة لحماية بياناتك من الوصول غير المصرح به أو التعديل أو الكشف أو الإتلاف.</p>
+    
+      <h3> حقوقك</h3>
+      <p>يحق لك:</p>
+      <ul>
+        <li>طلب معرفة البيانات التي نحتفظ بها عنك</li>
+        <li>طلب تعديل أو حذف بياناتك</li>
+        <li>إلغاء الاشتراك من الرسائل التسويقية في أي وقت</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="hidden-section">
+    <h4>📞 اتصل بنا</h4>
+    <p>معلومات التواصل...</p>
+    <h3>7. الاتصال بنا</h3>
+<p>إذا كان لديك أي أسئلة حول سياسة الخصوصية، يمكنك التواصل معنا عبر:</p>
+<ul>
+  <li>📧 البريد الإلكتروني: <a href="mailto:example@email.com">chikhastore@gmail.com</a></li>
+  <li>📞 رقم الهاتف: <a href="tel:رقمك-هنا">0552973177</a></li>
+</ul>
+
+  </section>
+
+  <section id="faq" class="hidden-section">
+    <h4>❓ الأسئلة المتكررة</h4>
+    <p>أجوبة على الأسئلة الشائعة...</p>
+    <div id="faq" style="direction: rtl; text-align: right; font-family: Arial, sans-serif; padding: 20px; line-height: 1.8;">
+      <h2 style="color: #0c0b0c;">❓ الأسئلة المتكررة</h2>
+    
+      <h4> كيف يمكنني تقديم طلب؟</h4>
+      <p>يمكنك تصفح المنتجات وإضافتها إلى سلة التسوق، ثم متابعة عملية الدفع باتباع التعليمات على الشاشة.</p>
+    
+      <h4> ما هي طرق الدفع المتاحة؟</h4>
+      <p>نقبل الدفع عند الاستلام، التحويل البنكي، وبطاقات الائتمان، بالإضافة إلى باي بال.</p>
+    
+      <h4> كم يستغرق توصيل الطلب؟</h4>
+      <p>عادةً ما يتم توصيل الطلبات خلال 3 إلى 5 أيام كحدأقصى </p>
+    
+      <h4> هل يمكنني إرجاع أو استبدال المنتج؟</h4>
+      <p>نعم، يمكنك إرجاع المنتج خلال24 ساعة من استلامه إذا كان به عطل أو في غير حالته الأصلية، طبقًا لسياسة الاسترجاع.</p>
+    
+      <h4> كيف أتواصل مع خدمة العملاء؟</h4>
+      <p>يمكنك التواصل معنا عبر البريد الإلكتروني أو رقم الهاتف المذكور في قسم <a href="#privacy-policy">سياسة الخصوصية</a>.</p>
+    </div>
+  </section>
+
+  <section id="about" class="hidden-section">
+    <h4>🏪 عن المتجر</h4>
+    <p>معلومات عن المتجر...</p>
+    <div id="about-store" style="direction: rtl; text-align: right; font-family: Arial, sans-serif; padding: 20px; line-height: 1.8;">
+      <h2 style="color: #672f80;">🏬 معلومات حول المتجر</h2>
+      <p>
+        مرحبًا بك في <strong> chika store </strong>، وجهتك الأولى للتسوق الإلكتروني حيث الجودة والموثوقية.  
+        نسعى لتقديم تجربة تسوق مريحة وآمنة، مع مجموعة مختارة بعناية من المنتجات التي تناسب جميع الأذواق والاحتياجات.
+      </p>
+    
+      <p>
+         من حين الى حين نعمل على تطوير خدماتنا باستمرار لضمان رضا عملائنا الكرام
+      </p>
+    
+      <p>
+        رؤيتنا هي توفير منتجات عالية الجودة بأسعار تنافسية، مع خدمة عملاء متميزة وشحن سريع إلى جميع أنحاء الوطن في 58 ولاية.
+      </p>
+    
+      <p>
+        شكراً لثقتك بـ <strong> chika store </strong> 💜
+      </p>
+    </div>
+  </section>
+
+  <section id="payment" class="hidden-section">
+    <h4>💳 طرق الدفع</h4>
+    <p>تفاصيل طرق الدفع المقبولة...</p>
+     <!-- قسم طرق الدفع -->
+  <div id="payment" class="section">
+    <h2>طرق الدفع</h2>
+    <p>نقبل عدة وسائل للدفع، منها:</p>
+    <ul>
+      <li>الدفع نقدًا عند الاستلام</li>
+      <li>الدفع عبر باي بال</li>
+      <li>بطاقات الائتمان (Visa / MasterCard)</li>
+    </ul>
+  </div>
+  </section>
+
+  <section id="shipping" class="hidden-section">
+    <h4>🚚 الشحن والتسليم</h4>
+    <p>تفاصيل الشحن ومواعيد التسليم...</p>
+    <div id="shipping" style="direction: rtl; text-align: right; font-family: Arial, sans-serif; padding: 20px; line-height: 1.8;">
+      <h2 style="color: #672f80;">🚚 عن الشحن والتسليم</h2>
+    
+      <p>
+        نحن في <strong>chika store</strong> نسعى لتوصيل طلباتكم بأسرع وقت ممكن وبأفضل جودة خدمة.
+      </p>
+    
+      <h4>مدة التوصيل:</h4>
+      <p>
+        - داخل المدينة: من 1 إلى 2 يوم <BR>
+        - باقي المناطق: من 3 إلى 5 أيام  <BR> 
+        - التوصيل الدولي (إن وجد): من 7 إلى 14 يوم 
+      </p>
+    
+      <h4>شركات الشحن المعتمدة:</h4>
+      <p>
+        نتعامل مع أفضل شركات الشحن  Yalidine ,  ZR expresse لضمان وصول الطلب بأمان وفي الوقت المحدد.
+      </p>
+    
+      <h4>رسوم الشحن:</h4>
+      <p>
+        - الشحن مجاني للطلبات التي تتجاوز 3000 DA <br>
+        - للطلبات الأقل سعراً رسوم الشحن متغيرة حسب مكان تواجد الزبون <br>
+        -   من 200 الى 300 دينار كسعر ثابت للتوصيل داخل الولاية (غرداية) <br>
+      </p>
+    
+      <h4>ملاحظات:</h4>
+      <ul>
+        <li>يرجى التأكد من إدخال عنوان الشحن بشكل صحيح لتجنب التأخير.</li>
+        <li>في حال وجود أي مشكلة في التوصيل، يرجى التواصل معنا عبر قسم <a href="#privacy-policy">الاتصال بنا</a>.</li>
+      </ul>
+    </div>
+  </section><br>
+
+
+
+
+  <img src="images2/opp.jpg" style="height: 80px; max-height: 30vh; margin-right: 3px;" alt="شعار المتجر" loading="lazy"><br>
+
+<br><br><br><br><br><br>
+
+<h6> كل الحقوق محفوظة </h6>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("img.lazy-img").forEach(img => {
+        img.src = img.dataset.src;
+        img.classList.add("loaded");
+    });
+});
+</script>
+
+   <script>
+   const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
+
+// تغيير الصورة كل 6 ثوانٍ تلقائيًا
+setInterval(nextSlide, 6000);
+  </script>
+  <script>
+    const openBtn = document.getElementById('open-sidebar');
+    const closeBtn = document.getElementById('close-sidebar');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+  
+    openBtn.addEventListener('click', () => {
+      sidebar.classList.add('active');
+      overlay.classList.add('active');
+    });
+  
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  </script>
+  
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const text = "🔥 مرحباً بك في متجرنا الإلكتروني! استمتع بأفضل العروض 🎉";
+        let i = 0;
+
+        function typeEffect() {
+            let animatedText = document.getElementById("animatedText");
+            if (!animatedText) {
+                console.error("العنصر animatedText غير موجود!");
+                return;
+            }
+
+            if (i < text.length) {
+                animatedText.innerHTML += text[i];
+                i++;
+                setTimeout(typeEffect, 100);
+            }
+        }
+
+        typeEffect(); // تشغيل التأثير بعد تحميل الصفحة
+    });
+</script>
+
+<script>
+  function loadPage(page) {
+    let contentDiv = document.getElementById("page-content");
+
+    // جلب المحتوى من ملفات خارجية
+    fetch(`${page}.html`)
+        .then(response => response.text())
+        .then(data => contentDiv.innerHTML = data)
+        .catch(() => contentDiv.innerHTML = "<h2>صفحة غير موجودة</h2>");
+}
+</script>
+
+  <script>
+    function showSection(id) {
+      // إخفاء جميع الأقسام أولاً
+      document.querySelectorAll('.hidden-section').forEach(section => {
+        section.style.display = 'none';
+      });
+
+      // إظهار القسم المطلوب
+      const target = document.getElementById(id);
+      if (target) {
+        target.style.display = 'block';
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+  <script>
+
+// فتح وإغلاق القائمة عند الضغط على زر التبديل
+document.addEventListener('DOMContentLoaded', function () {
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.querySelector('#navbarNav');
+
+  navbarToggler.addEventListener('click', function () {
+    navbarCollapse.classList.toggle('show');
+  });
+});
+
+// وظيفة البحث عن منتج
+const searchInput = document.getElementById("searchInput");
+const resultsContainer = document.getElementById("searchResults");
+
+searchInput.addEventListener("input", debounce(() => {
+    const searchQuery = searchInput.value.trim().toLowerCase();
+    resultsContainer.innerHTML = ""; // مسح النتائج القديمة
+
+    if (searchQuery === "") return; // إذا كان فارغًا، لا تعرض شيء
+
+    const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchQuery));
+
+    if (filteredProducts.length === 0) {
+        resultsContainer.innerHTML = "<li>لا توجد نتائج</li>";
+    } else {
+        filteredProducts.forEach(product => {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${product.name} - ${product.category}`;
+            resultsContainer.appendChild(listItem);
+        });
+    }
+}, 300)); // تقليل عمليات البحث الزائدة باستخدام debounce
+
+// وظيفة debounce لتقليل الضغط على المتصفح عند الكتابة السريعة
+function debounce(func, delay) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func(...args), delay);
+    };
+}
+  </script>
+  
+  <script>
+    function shareProduct(name) {
+      const url = window.location.href;
+      if (navigator.share) {
+        navigator.share({
+          title: name,
+          text: `اطلع على هذا المنتج: ${name}`,
+          url: url
+        }).catch((err) => console.log("لم تتم المشاركة:", err));
+      } else {
+        alert("المشاركة غير مدعومة على هذا المتصفح.");
+      }
+    }
+  
+    function goToDetails(name) {
+      alert(`سيتم توجيهك إلى صفحة تفاصيل: ${name} (مثال فقط)`);
+      // في موقع فعلي، استبدل هذا بـ window.location.href = 'product1.html';
+    }
+  </script>
+
+  <script>
+  let products = [
+  { id: 1, name: "هاتف سامسونج", category: "إلكترونيات" },
+  { id: 2, name: "لابتوب ديل", category: "إلكترونيات" }
+];
+
+// إضافة منتج جديد
+products.push({ id: 3, name: "ساعة ذكية", category: "إكسسوارات" });
+
+// تحديث اسم المنتج
+products = products.map(product => 
+  product.id === 1 ? { ...product, name: "هاتف سامسونج الجديد" } : product
+);
+
+console.log(products);
+
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
