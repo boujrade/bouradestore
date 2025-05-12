@@ -1,1684 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>منتجات متجرنا</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background: #f5eff2;
-  font-family: Tahoma, sans-serif;
-  direction: rtl;
-  text-align: right;
-  overflow-x: hidden;
-}
-
-.container {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  border-radius: 0;
-  box-shadow: none;
-  padding:5px;
-}
-
-.products-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* بطاقتان في كل صف */
-  gap: 0;
-  width: 100%;
-  padding: 0;
-}
-
-.product-card {
-  width: 100%;
-  height: 200px;
-  border: 1px solid #dcdcdc;
-  background-size: cover; /* لملء البطاقة بالكامل */
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: 0 0 5px rgba(200, 200, 200, 0.3);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 10px;
-  color: white;
-  font-weight: bold;
- 
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-}
-
-.product-card h4 {
-  font-size: 12px;
-  color: #333;
-  margin: 6px 0 0;
-  text-align: center;
-}
-
-.product-card p {
-  font-size: 11px;
-  color: #777;
-  text-align: center;
-  margin: 2px 0;
-}
-
-product-card:hover {
-    transform: scale(1.05);
-}
-
-.product-card img {
-    display: none;
-}
-
-.product-card h4,
-.product-card .rating,
-.product-card p,
-.product-card .share-btn {
-    background: none;
-    padding: 5px;
-    border-radius: 5;
-    color: rgb(37, 30, 30);
-    font-size: 10px;
-    font-weight: bold;
-}
-
-@media (max-width: 76px) {
-    .products-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 50px) {
-    .products-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-
-
-  
-    
-}
-
-#searchContainer {
-  position: relative;
-  max-width: 100%;
-  margin: 15px 0;
-  padding: 0 12px;
-  box-sizing: border-box;
-}
-
-#searchBox {
-  width: 100%;
-  padding: 14px 44px 14px 16px; /* مساحة للرمز */
-  border: none;
-  border-radius: 25px;
-  background-color: #ffffff;
-  font-size: 15px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  background-image: url('data:image/svg+xml;utf8,<svg fill="%23999" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16a6.471 6.471 0 004.23-1.57l.27.28v.79l5 5L20.49 19l-4.99-5zM10 14a4 4 0 110-8 4 4 0 010 8z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: 12px center;
-  background-size: 20px;
-  direction: rtl;
-}
-
-#searchBox::placeholder {
-  color: #999;
-}
-
-#searchBox:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 140, 255, 0.3);
-}
-
-.suggestions {
-  position: absolute;
-  top: 100%;
-  right: 12px;
-  left: 12px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  max-height: 200px;
-  overflow-y: auto;
-  z-index: 1000;
-  display: none;
-}
-
-.suggestion-item {
-  padding: 12px;
-  cursor: pointer;
-  font-size: 14px;
-  border-bottom: 1px solid #eee;
-}
-
-.suggestion-item:hover {
-  background-color: #f5f5f5;
-}
-
-.suggestion-item:last-child {
-  border-bottom: none;
-}
-
-
-
-.product-card[hidden] {
-  display: none;  /* إخفاء العناصر */
-}
-
-
-  </style>
-</head>
-<body>
-
-
-
-
-<h2 style="text-align: center;">🌸 شامبو وصابون طبيعية ومسطنعة🌸</h2><br>
-
-
-    <h5 style="text-align: center;"> ابحث عن المنتج الذي ترغب به</h5>
-
-    <div id="searchContainer">
-        <input type="text" id="searchBox" placeholder="اكتب اسم المنتج...">
-        <div id="suggestions" class="suggestions" style="display: none;"></div>
-      </div><br>
-    
-<div class="products-container">
-  <div class="product-card" data-bg="images/shampoo/01.jpg" onclick="window.location.href='product1.html'">
-    <h4>شامبو زيت الأرغان - Moroccanoil</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/02.jpg" onclick="window.location.href='product2.html'">
-    <h4>شامبو جوز الهند الطبيعي - OGX Coconut Milk</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/03.jpg" onclick="window.location.href='product3.html'">
-    <h4>شامبو العسل والبابونج - Herbal Essences Honey & Chamomile</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/04.jpg" onclick="window.location.href='product4.html'">
-    <h4>شامبو الشاي الأخضر - Garnier Ultra Doux Green Tea</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/05.jpg" onclick="window.location.href='product5.html'">
-    <h4>شامبو زيت الزيتون - Klorane Olive Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/06.jpg" onclick="window.location.href='product6.html'">
-    <h4>صابون الطين المغربي - Saboun Al Atlas</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/07.jpg" onclick="window.location.href='product7.html'">
-    <h4>صابون الغار الطبيعي - Aleppo Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/08.jpg" onclick="window.location.href='product8.html'">
-    <h4>صابون الحليب وزبدة الشيا - L'Occitane Shea Milk Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/09.jpg" onclick="window.location.href='product9.html'">
-    <h4>صابون الفحم المنشط - Dr. Squatch Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/10.jpg" onclick="window.location.href='product10.html'">
-    <h4>صابون الألوفيرا المرطب - The Body Shop Aloe Vera Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/11.jpg" onclick="window.location.href='product11.html'">
-    <h4>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/12.jpg" onclick="window.location.href='product12.html'">
-    <h4>شامبو الأعشاب الطبيعية - Aveda Rosemary Mint Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/13.jpg" onclick="window.location.href='product13.html'">
-    <h4>شامبو زيت جوز الهند وزبدة الشيا - SheaMoisture Coconut & Shea Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/14.jpg" onclick="window.location.href='product14.html'">
-    <h4>شامبو نباتات البحر - Seaweed & Algae Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/15.jpg" onclick="window.location.href='product15.html'">
-    <h4>شامبو الأرز المخمر الياباني - Rice Water Bright Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/16.jpg" onclick="window.location.href='product16.html'">
-    <h4>صابون الفحم النشط - Black Activated Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/17.jpg" onclick="window.location.href='product17.html'">
-    <h4>صابون القهوة وزيت اللوز - Coffee Almond Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/18.jpg" onclick="window.location.href='product18.html'">
-    <h4>صابون المشمش وزبدة الكاكاو - Apricot & Cocoa Butter Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/19.jpg" onclick="window.location.href='product19.html'">
-    <h4>صابون الطحالب البحرية - Seaweed Detox Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/20.jpg" onclick="window.location.href='product20.html'">
-    <h4>صابون العسل والشوفان - Honey & Oatmeal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/21.jpg" onclick="window.location.href='product21.html'">
-    <h4>شامبو الصبار والليمون - Aloe & Lemon Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/22.jpg" onclick="window.location.href='product22.html'">
-    <h4>شامبو الشيا والبابايا - Shea & Papaya Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/23.jpg" onclick="window.location.href='product23.html'">
-    <h4>شامبو الأفوكادو وزيت الأرغان - Avocado & Argan Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/24.jpg" onclick="window.location.href='product24.html'">
-    <h4>شامبو الأعشاب الإفريقية - African Herbal Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/25.jpg" onclick="window.location.href='product25.html'">
-    <h4>شامبو الخزامى وزيت اللوز - Lavender Almond Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/26.jpg" onclick="window.location.href='product26.html'">
-    <h4>صابون زيت الجوجوبا والتوت - Jojoba & Berry Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/27.jpg" onclick="window.location.href='product27.html'">
-    <h4>صابون الليمون وقشر البرتقال - Lemon Orange Peel Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/28.jpg" onclick="window.location.href='product28.html'">
-    <h4>صابون الجرجير والصبار - Watercress & Aloe Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/29.jpg" onclick="window.location.href='product29.html'">
-    <h4>صابون النعناع والأوكالبتوس - Mint & Eucalyptus Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/30.jpg" onclick="window.location.href='product30.html'">
-    <h4>صابون الرمان وزيت جوز الهند - Pomegranate Coconut Soap</h4>
-  </div>
-
-<div class="product-card" data-bg="images/shampoo/01.jpg" onclick="window.location.href='product1.html'">
-    <h4>شامبو زيت الأرغان - Moroccanoil</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/02.jpg" onclick="window.location.href='product2.html'">
-    <h4>شامبو جوز الهند الطبيعي - OGX Coconut Milk</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/03.jpg" onclick="window.location.href='product3.html'">
-    <h4>شامبو العسل والبابونج - Herbal Essences Honey & Chamomile</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/04.jpg" onclick="window.location.href='product4.html'">
-    <h4>شامبو الشاي الأخضر - Garnier Ultra Doux Green Tea</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/05.jpg" onclick="window.location.href='product5.html'">
-    <h4>شامبو زيت الزيتون - Klorane Olive Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/06.jpg" onclick="window.location.href='product6.html'">
-    <h4>صابون الطين المغربي - Saboun Al Atlas</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/07.jpg" onclick="window.location.href='product7.html'">
-    <h4>صابون الغار الطبيعي - Aleppo Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/08.jpg" onclick="window.location.href='product8.html'">
-    <h4>صابون الحليب وزبدة الشيا - L'Occitane Shea Milk Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/09.jpg" onclick="window.location.href='product9.html'">
-    <h4>صابون الفحم المنشط - Dr. Squatch Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/10.jpg" onclick="window.location.href='product10.html'">
-    <h4>صابون الألوفيرا المرطب - The Body Shop Aloe Vera Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/11.jpg" onclick="window.location.href='product11.html'">
-    <h4>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/12.jpg" onclick="window.location.href='product12.html'">
-    <h4>شامبو الأعشاب الطبيعية - Aveda Rosemary Mint Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/13.jpg" onclick="window.location.href='product13.html'">
-    <h4>شامبو زيت جوز الهند وزبدة الشيا - SheaMoisture Coconut & Shea Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/14.jpg" onclick="window.location.href='product14.html'">
-    <h4>شامبو نباتات البحر - Seaweed & Algae Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/15.jpg" onclick="window.location.href='product15.html'">
-    <h4>شامبو الأرز المخمر الياباني - Rice Water Bright Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/16.jpg" onclick="window.location.href='product16.html'">
-    <h4>صابون الفحم النشط - Black Activated Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/17.jpg" onclick="window.location.href='product17.html'">
-    <h4>صابون القهوة وزيت اللوز - Coffee Almond Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/18.jpg" onclick="window.location.href='product18.html'">
-    <h4>صابون المشمش وزبدة الكاكاو - Apricot & Cocoa Butter Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/19.jpg" onclick="window.location.href='product19.html'">
-    <h4>صابون الطحالب البحرية - Seaweed Detox Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/20.jpg" onclick="window.location.href='product20.html'">
-    <h4>صابون العسل والشوفان - Honey & Oatmeal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/21.jpg" onclick="window.location.href='product21.html'">
-    <h4>شامبو الصبار والليمون - Aloe & Lemon Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/22.jpg" onclick="window.location.href='product22.html'">
-    <h4>شامبو الشيا والبابايا - Shea & Papaya Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/23.jpg" onclick="window.location.href='product23.html'">
-    <h4>شامبو الأفوكادو وزيت الأرغان - Avocado & Argan Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/24.jpg" onclick="window.location.href='product24.html'">
-    <h4>شامبو الأعشاب الإفريقية - African Herbal Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/25.jpg" onclick="window.location.href='product25.html'">
-    <h4>شامبو الخزامى وزيت اللوز - Lavender Almond Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/26.jpg" onclick="window.location.href='product26.html'">
-    <h4>صابون زيت الجوجوبا والتوت - Jojoba & Berry Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/27.jpg" onclick="window.location.href='product27.html'">
-    <h4>صابون الليمون وقشر البرتقال - Lemon Orange Peel Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/28.jpg" onclick="window.location.href='product28.html'">
-    <h4>صابون الجرجير والصبار - Watercress & Aloe Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/29.jpg" onclick="window.location.href='product29.html'">
-    <h4>صابون النعناع والأوكالبتوس - Mint & Eucalyptus Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/30.jpg" onclick="window.location.href='product30.html'">
-    <h4>صابون الرمان وزيت جوز الهند - Pomegranate Coconut Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/01.jpg" onclick="window.location.href='product1.html'">
-    <h4>شامبو زيت الأرغان - Moroccanoil</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/02.jpg" onclick="window.location.href='product2.html'">
-    <h4>شامبو جوز الهند الطبيعي - OGX Coconut Milk</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/03.jpg" onclick="window.location.href='product3.html'">
-    <h4>شامبو العسل والبابونج - Herbal Essences Honey & Chamomile</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/04.jpg" onclick="window.location.href='product4.html'">
-    <h4>شامبو الشاي الأخضر - Garnier Ultra Doux Green Tea</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/05.jpg" onclick="window.location.href='product5.html'">
-    <h4>شامبو زيت الزيتون - Klorane Olive Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/06.jpg" onclick="window.location.href='product6.html'">
-    <h4>صابون الطين المغربي - Saboun Al Atlas</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/07.jpg" onclick="window.location.href='product7.html'">
-    <h4>صابون الغار الطبيعي - Aleppo Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/08.jpg" onclick="window.location.href='product8.html'">
-    <h4>صابون الحليب وزبدة الشيا - L'Occitane Shea Milk Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/09.jpg" onclick="window.location.href='product9.html'">
-    <h4>صابون الفحم المنشط - Dr. Squatch Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/10.jpg" onclick="window.location.href='product10.html'">
-    <h4>صابون الألوفيرا المرطب - The Body Shop Aloe Vera Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/11.jpg" onclick="window.location.href='product11.html'">
-    <h4>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/12.jpg" onclick="window.location.href='product12.html'">
-    <h4>شامبو الأعشاب الطبيعية - Aveda Rosemary Mint Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/13.jpg" onclick="window.location.href='product13.html'">
-    <h4>شامبو زيت جوز الهند وزبدة الشيا - SheaMoisture Coconut & Shea Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/14.jpg" onclick="window.location.href='product14.html'">
-    <h4>شامبو نباتات البحر - Seaweed & Algae Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/15.jpg" onclick="window.location.href='product15.html'">
-    <h4>شامبو الأرز المخمر الياباني - Rice Water Bright Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/16.jpg" onclick="window.location.href='product16.html'">
-    <h4>صابون الفحم النشط - Black Activated Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/17.jpg" onclick="window.location.href='product17.html'">
-    <h4>صابون القهوة وزيت اللوز - Coffee Almond Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/18.jpg" onclick="window.location.href='product18.html'">
-    <h4>صابون المشمش وزبدة الكاكاو - Apricot & Cocoa Butter Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/19.jpg" onclick="window.location.href='product19.html'">
-    <h4>صابون الطحالب البحرية - Seaweed Detox Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/20.jpg" onclick="window.location.href='product20.html'">
-    <h4>صابون العسل والشوفان - Honey & Oatmeal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/21.jpg" onclick="window.location.href='product21.html'">
-    <h4>شامبو الصبار والليمون - Aloe & Lemon Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/22.jpg" onclick="window.location.href='product22.html'">
-    <h4>شامبو الشيا والبابايا - Shea & Papaya Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/23.jpg" onclick="window.location.href='product23.html'">
-    <h4>شامبو الأفوكادو وزيت الأرغان - Avocado & Argan Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/24.jpg" onclick="window.location.href='product24.html'">
-    <h4>شامبو الأعشاب الإفريقية - African Herbal Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/25.jpg" onclick="window.location.href='product25.html'">
-    <h4>شامبو الخزامى وزيت اللوز - Lavender Almond Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/26.jpg" onclick="window.location.href='product26.html'">
-    <h4>صابون زيت الجوجوبا والتوت - Jojoba & Berry Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/27.jpg" onclick="window.location.href='product27.html'">
-    <h4>صابون الليمون وقشر البرتقال - Lemon Orange Peel Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/28.jpg" onclick="window.location.href='product28.html'">
-    <h4>صابون الجرجير والصبار - Watercress & Aloe Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/29.jpg" onclick="window.location.href='product29.html'">
-    <h4>صابون النعناع والأوكالبتوس - Mint & Eucalyptus Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/30.jpg" onclick="window.location.href='product30.html'">
-    <h4>صابون الرمان وزيت جوز الهند - Pomegranate Coconut Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/01.jpg" onclick="window.location.href='product1.html'">
-    <h4>شامبو زيت الأرغان - Moroccanoil</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/02.jpg" onclick="window.location.href='product2.html'">
-    <h4>شامبو جوز الهند الطبيعي - OGX Coconut Milk</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/03.jpg" onclick="window.location.href='product3.html'">
-    <h4>شامبو العسل والبابونج - Herbal Essences Honey & Chamomile</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/04.jpg" onclick="window.location.href='product4.html'">
-    <h4>شامبو الشاي الأخضر - Garnier Ultra Doux Green Tea</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/05.jpg" onclick="window.location.href='product5.html'">
-    <h4>شامبو زيت الزيتون - Klorane Olive Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/06.jpg" onclick="window.location.href='product6.html'">
-    <h4>صابون الطين المغربي - Saboun Al Atlas</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/07.jpg" onclick="window.location.href='product7.html'">
-    <h4>صابون الغار الطبيعي - Aleppo Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/08.jpg" onclick="window.location.href='product8.html'">
-    <h4>صابون الحليب وزبدة الشيا - L'Occitane Shea Milk Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/09.jpg" onclick="window.location.href='product9.html'">
-    <h4>صابون الفحم المنشط - Dr. Squatch Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/10.jpg" onclick="window.location.href='product10.html'">
-    <h4>صابون الألوفيرا المرطب - The Body Shop Aloe Vera Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/11.jpg" onclick="window.location.href='product11.html'">
-    <h4>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/12.jpg" onclick="window.location.href='product12.html'">
-    <h4>شامبو الأعشاب الطبيعية - Aveda Rosemary Mint Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/13.jpg" onclick="window.location.href='product13.html'">
-    <h4>شامبو زيت جوز الهند وزبدة الشيا - SheaMoisture Coconut & Shea Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/14.jpg" onclick="window.location.href='product14.html'">
-    <h4>شامبو نباتات البحر - Seaweed & Algae Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/15.jpg" onclick="window.location.href='product15.html'">
-    <h4>شامبو الأرز المخمر الياباني - Rice Water Bright Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/16.jpg" onclick="window.location.href='product16.html'">
-    <h4>صابون الفحم النشط - Black Activated Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/17.jpg" onclick="window.location.href='product17.html'">
-    <h4>صابون القهوة وزيت اللوز - Coffee Almond Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/18.jpg" onclick="window.location.href='product18.html'">
-    <h4>صابون المشمش وزبدة الكاكاو - Apricot & Cocoa Butter Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/19.jpg" onclick="window.location.href='product19.html'">
-    <h4>صابون الطحالب البحرية - Seaweed Detox Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/20.jpg" onclick="window.location.href='product20.html'">
-    <h4>صابون العسل والشوفان - Honey & Oatmeal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/21.jpg" onclick="window.location.href='product21.html'">
-    <h4>شامبو الصبار والليمون - Aloe & Lemon Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/22.jpg" onclick="window.location.href='product22.html'">
-    <h4>شامبو الشيا والبابايا - Shea & Papaya Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/23.jpg" onclick="window.location.href='product23.html'">
-    <h4>شامبو الأفوكادو وزيت الأرغان - Avocado & Argan Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/24.jpg" onclick="window.location.href='product24.html'">
-    <h4>شامبو الأعشاب الإفريقية - African Herbal Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/25.jpg" onclick="window.location.href='product25.html'">
-    <h4>شامبو الخزامى وزيت اللوز - Lavender Almond Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/26.jpg" onclick="window.location.href='product26.html'">
-    <h4>صابون زيت الجوجوبا والتوت - Jojoba & Berry Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/27.jpg" onclick="window.location.href='product27.html'">
-    <h4>صابون الليمون وقشر البرتقال - Lemon Orange Peel Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/28.jpg" onclick="window.location.href='product28.html'">
-    <h4>صابون الجرجير والصبار - Watercress & Aloe Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/29.jpg" onclick="window.location.href='product29.html'">
-    <h4>صابون النعناع والأوكالبتوس - Mint & Eucalyptus Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/30.jpg" onclick="window.location.href='product30.html'">
-    <h4>صابون الرمان وزيت جوز الهند - Pomegranate Coconut Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/01.jpg" onclick="window.location.href='product1.html'">
-    <h4>شامبو زيت الأرغان - Moroccanoil</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/02.jpg" onclick="window.location.href='product2.html'">
-    <h4>شامبو جوز الهند الطبيعي - OGX Coconut Milk</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/03.jpg" onclick="window.location.href='product3.html'">
-    <h4>شامبو العسل والبابونج - Herbal Essences Honey & Chamomile</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/04.jpg" onclick="window.location.href='product4.html'">
-    <h4>شامبو الشاي الأخضر - Garnier Ultra Doux Green Tea</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/05.jpg" onclick="window.location.href='product5.html'">
-    <h4>شامبو زيت الزيتون - Klorane Olive Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/06.jpg" onclick="window.location.href='product6.html'">
-    <h4>صابون الطين المغربي - Saboun Al Atlas</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/07.jpg" onclick="window.location.href='product7.html'">
-    <h4>صابون الغار الطبيعي - Aleppo Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/08.jpg" onclick="window.location.href='product8.html'">
-    <h4>صابون الحليب وزبدة الشيا - L'Occitane Shea Milk Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/09.jpg" onclick="window.location.href='product9.html'">
-    <h4>صابون الفحم المنشط - Dr. Squatch Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/10.jpg" onclick="window.location.href='product10.html'">
-    <h4>صابون الألوفيرا المرطب - The Body Shop Aloe Vera Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/11.jpg" onclick="window.location.href='product11.html'">
-    <h4>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/12.jpg" onclick="window.location.href='product12.html'">
-    <h4>شامبو الأعشاب الطبيعية - Aveda Rosemary Mint Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/13.jpg" onclick="window.location.href='product13.html'">
-    <h4>شامبو زيت جوز الهند وزبدة الشيا - SheaMoisture Coconut & Shea Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/14.jpg" onclick="window.location.href='product14.html'">
-    <h4>شامبو نباتات البحر - Seaweed & Algae Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/15.jpg" onclick="window.location.href='product15.html'">
-    <h4>شامبو الأرز المخمر الياباني - Rice Water Bright Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/16.jpg" onclick="window.location.href='product16.html'">
-    <h4>صابون الفحم النشط - Black Activated Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/17.jpg" onclick="window.location.href='product17.html'">
-    <h4>صابون القهوة وزيت اللوز - Coffee Almond Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/18.jpg" onclick="window.location.href='product18.html'">
-    <h4>صابون المشمش وزبدة الكاكاو - Apricot & Cocoa Butter Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/19.jpg" onclick="window.location.href='product19.html'">
-    <h4>صابون الطحالب البحرية - Seaweed Detox Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/20.jpg" onclick="window.location.href='product20.html'">
-    <h4>صابون العسل والشوفان - Honey & Oatmeal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/21.jpg" onclick="window.location.href='product21.html'">
-    <h4>شامبو الصبار والليمون - Aloe & Lemon Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/22.jpg" onclick="window.location.href='product22.html'">
-    <h4>شامبو الشيا والبابايا - Shea & Papaya Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/23.jpg" onclick="window.location.href='product23.html'">
-    <h4>شامبو الأفوكادو وزيت الأرغان - Avocado & Argan Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/24.jpg" onclick="window.location.href='product24.html'">
-    <h4>شامبو الأعشاب الإفريقية - African Herbal Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/25.jpg" onclick="window.location.href='product25.html'">
-    <h4>شامبو الخزامى وزيت اللوز - Lavender Almond Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/26.jpg" onclick="window.location.href='product26.html'">
-    <h4>صابون زيت الجوجوبا والتوت - Jojoba & Berry Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/27.jpg" onclick="window.location.href='product27.html'">
-    <h4>صابون الليمون وقشر البرتقال - Lemon Orange Peel Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/28.jpg" onclick="window.location.href='product28.html'">
-    <h4>صابون الجرجير والصبار - Watercress & Aloe Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/29.jpg" onclick="window.location.href='product29.html'">
-    <h4>صابون النعناع والأوكالبتوس - Mint & Eucalyptus Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/30.jpg" onclick="window.location.href='product30.html'">
-    <h4>صابون الرمان وزيت جوز الهند - Pomegranate Coconut Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/01.jpg" onclick="window.location.href='product1.html'">
-    <h4>شامبو زيت الأرغان - Moroccanoil</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/02.jpg" onclick="window.location.href='product2.html'">
-    <h4>شامبو جوز الهند الطبيعي - OGX Coconut Milk</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/03.jpg" onclick="window.location.href='product3.html'">
-    <h4>شامبو العسل والبابونج - Herbal Essences Honey & Chamomile</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/04.jpg" onclick="window.location.href='product4.html'">
-    <h4>شامبو الشاي الأخضر - Garnier Ultra Doux Green Tea</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/05.jpg" onclick="window.location.href='product5.html'">
-    <h4>شامبو زيت الزيتون - Klorane Olive Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/06.jpg" onclick="window.location.href='product6.html'">
-    <h4>صابون الطين المغربي - Saboun Al Atlas</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/07.jpg" onclick="window.location.href='product7.html'">
-    <h4>صابون الغار الطبيعي - Aleppo Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/08.jpg" onclick="window.location.href='product8.html'">
-    <h4>صابون الحليب وزبدة الشيا - L'Occitane Shea Milk Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/09.jpg" onclick="window.location.href='product9.html'">
-    <h4>صابون الفحم المنشط - Dr. Squatch Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/10.jpg" onclick="window.location.href='product10.html'">
-    <h4>صابون الألوفيرا المرطب - The Body Shop Aloe Vera Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/11.jpg" onclick="window.location.href='product11.html'">
-    <h4>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/12.jpg" onclick="window.location.href='product12.html'">
-    <h4>شامبو الأعشاب الطبيعية - Aveda Rosemary Mint Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/13.jpg" onclick="window.location.href='product13.html'">
-    <h4>شامبو زيت جوز الهند وزبدة الشيا - SheaMoisture Coconut & Shea Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/14.jpg" onclick="window.location.href='product14.html'">
-    <h4>شامبو نباتات البحر - Seaweed & Algae Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/15.jpg" onclick="window.location.href='product15.html'">
-    <h4>شامبو الأرز المخمر الياباني - Rice Water Bright Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/16.jpg" onclick="window.location.href='product16.html'">
-    <h4>صابون الفحم النشط - Black Activated Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/17.jpg" onclick="window.location.href='product17.html'">
-    <h4>صابون القهوة وزيت اللوز - Coffee Almond Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/18.jpg" onclick="window.location.href='product18.html'">
-    <h4>صابون المشمش وزبدة الكاكاو - Apricot & Cocoa Butter Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/19.jpg" onclick="window.location.href='product19.html'">
-    <h4>صابون الطحالب البحرية - Seaweed Detox Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/20.jpg" onclick="window.location.href='product20.html'">
-    <h4>صابون العسل والشوفان - Honey & Oatmeal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/21.jpg" onclick="window.location.href='product21.html'">
-    <h4>شامبو الصبار والليمون - Aloe & Lemon Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/22.jpg" onclick="window.location.href='product22.html'">
-    <h4>شامبو الشيا والبابايا - Shea & Papaya Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/23.jpg" onclick="window.location.href='product23.html'">
-    <h4>شامبو الأفوكادو وزيت الأرغان - Avocado & Argan Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/24.jpg" onclick="window.location.href='product24.html'">
-    <h4>شامبو الأعشاب الإفريقية - African Herbal Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/25.jpg" onclick="window.location.href='product25.html'">
-    <h4>شامبو الخزامى وزيت اللوز - Lavender Almond Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/26.jpg" onclick="window.location.href='product26.html'">
-    <h4>صابون زيت الجوجوبا والتوت - Jojoba & Berry Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/27.jpg" onclick="window.location.href='product27.html'">
-    <h4>صابون الليمون وقشر البرتقال - Lemon Orange Peel Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/28.jpg" onclick="window.location.href='product28.html'">
-    <h4>صابون الجرجير والصبار - Watercress & Aloe Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/29.jpg" onclick="window.location.href='product29.html'">
-    <h4>صابون النعناع والأوكالبتوس - Mint & Eucalyptus Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/30.jpg" onclick="window.location.href='product30.html'">
-    <h4>صابون الرمان وزيت جوز الهند - Pomegranate Coconut Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/01.jpg" onclick="window.location.href='product1.html'">
-    <h4>شامبو زيت الأرغان - Moroccanoil</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/02.jpg" onclick="window.location.href='product2.html'">
-    <h4>شامبو جوز الهند الطبيعي - OGX Coconut Milk</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/03.jpg" onclick="window.location.href='product3.html'">
-    <h4>شامبو العسل والبابونج - Herbal Essences Honey & Chamomile</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/04.jpg" onclick="window.location.href='product4.html'">
-    <h4>شامبو الشاي الأخضر - Garnier Ultra Doux Green Tea</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/05.jpg" onclick="window.location.href='product5.html'">
-    <h4>شامبو زيت الزيتون - Klorane Olive Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/06.jpg" onclick="window.location.href='product6.html'">
-    <h4>صابون الطين المغربي - Saboun Al Atlas</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/07.jpg" onclick="window.location.href='product7.html'">
-    <h4>صابون الغار الطبيعي - Aleppo Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/08.jpg" onclick="window.location.href='product8.html'">
-    <h4>صابون الحليب وزبدة الشيا - L'Occitane Shea Milk Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/09.jpg" onclick="window.location.href='product9.html'">
-    <h4>صابون الفحم المنشط - Dr. Squatch Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/10.jpg" onclick="window.location.href='product10.html'">
-    <h4>صابون الألوفيرا المرطب - The Body Shop Aloe Vera Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/11.jpg" onclick="window.location.href='product11.html'">
-    <h4>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/12.jpg" onclick="window.location.href='product12.html'">
-    <h4>شامبو الأعشاب الطبيعية - Aveda Rosemary Mint Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/13.jpg" onclick="window.location.href='product13.html'">
-    <h4>شامبو زيت جوز الهند وزبدة الشيا - SheaMoisture Coconut & Shea Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/14.jpg" onclick="window.location.href='product14.html'">
-    <h4>شامبو نباتات البحر - Seaweed & Algae Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/15.jpg" onclick="window.location.href='product15.html'">
-    <h4>شامبو الأرز المخمر الياباني - Rice Water Bright Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/16.jpg" onclick="window.location.href='product16.html'">
-    <h4>صابون الفحم النشط - Black Activated Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/17.jpg" onclick="window.location.href='product17.html'">
-    <h4>صابون القهوة وزيت اللوز - Coffee Almond Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/18.jpg" onclick="window.location.href='product18.html'">
-    <h4>صابون المشمش وزبدة الكاكاو - Apricot & Cocoa Butter Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/19.jpg" onclick="window.location.href='product19.html'">
-    <h4>صابون الطحالب البحرية - Seaweed Detox Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/20.jpg" onclick="window.location.href='product20.html'">
-    <h4>صابون العسل والشوفان - Honey & Oatmeal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/21.jpg" onclick="window.location.href='product21.html'">
-    <h4>شامبو الصبار والليمون - Aloe & Lemon Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/22.jpg" onclick="window.location.href='product22.html'">
-    <h4>شامبو الشيا والبابايا - Shea & Papaya Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/23.jpg" onclick="window.location.href='product23.html'">
-    <h4>شامبو الأفوكادو وزيت الأرغان - Avocado & Argan Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/24.jpg" onclick="window.location.href='product24.html'">
-    <h4>شامبو الأعشاب الإفريقية - African Herbal Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/25.jpg" onclick="window.location.href='product25.html'">
-    <h4>شامبو الخزامى وزيت اللوز - Lavender Almond Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/26.jpg" onclick="window.location.href='product26.html'">
-    <h4>صابون زيت الجوجوبا والتوت - Jojoba & Berry Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/27.jpg" onclick="window.location.href='product27.html'">
-    <h4>صابون الليمون وقشر البرتقال - Lemon Orange Peel Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/28.jpg" onclick="window.location.href='product28.html'">
-    <h4>صابون الجرجير والصبار - Watercress & Aloe Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/29.jpg" onclick="window.location.href='product29.html'">
-    <h4>صابون النعناع والأوكالبتوس - Mint & Eucalyptus Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/30.jpg" onclick="window.location.href='product30.html'">
-    <h4>صابون الرمان وزيت جوز الهند - Pomegranate Coconut Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/01.jpg" onclick="window.location.href='product1.html'">
-    <h4>شامبو زيت الأرغان - Moroccanoil</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/02.jpg" onclick="window.location.href='product2.html'">
-    <h4>شامبو جوز الهند الطبيعي - OGX Coconut Milk</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/03.jpg" onclick="window.location.href='product3.html'">
-    <h4>شامبو العسل والبابونج - Herbal Essences Honey & Chamomile</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/04.jpg" onclick="window.location.href='product4.html'">
-    <h4>شامبو الشاي الأخضر - Garnier Ultra Doux Green Tea</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/05.jpg" onclick="window.location.href='product5.html'">
-    <h4>شامبو زيت الزيتون - Klorane Olive Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/06.jpg" onclick="window.location.href='product6.html'">
-    <h4>صابون الطين المغربي - Saboun Al Atlas</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/07.jpg" onclick="window.location.href='product7.html'">
-    <h4>صابون الغار الطبيعي - Aleppo Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/08.jpg" onclick="window.location.href='product8.html'">
-    <h4>صابون الحليب وزبدة الشيا - L'Occitane Shea Milk Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/09.jpg" onclick="window.location.href='product9.html'">
-    <h4>صابون الفحم المنشط - Dr. Squatch Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/10.jpg" onclick="window.location.href='product10.html'">
-    <h4>صابون الألوفيرا المرطب - The Body Shop Aloe Vera Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/11.jpg" onclick="window.location.href='product11.html'">
-    <h4>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/12.jpg" onclick="window.location.href='product12.html'">
-    <h4>شامبو الأعشاب الطبيعية - Aveda Rosemary Mint Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/13.jpg" onclick="window.location.href='product13.html'">
-    <h4>شامبو زيت جوز الهند وزبدة الشيا - SheaMoisture Coconut & Shea Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/14.jpg" onclick="window.location.href='product14.html'">
-    <h4>شامبو نباتات البحر - Seaweed & Algae Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/15.jpg" onclick="window.location.href='product15.html'">
-    <h4>شامبو الأرز المخمر الياباني - Rice Water Bright Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/16.jpg" onclick="window.location.href='product16.html'">
-    <h4>صابون الفحم النشط - Black Activated Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/17.jpg" onclick="window.location.href='product17.html'">
-    <h4>صابون القهوة وزيت اللوز - Coffee Almond Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/18.jpg" onclick="window.location.href='product18.html'">
-    <h4>صابون المشمش وزبدة الكاكاو - Apricot & Cocoa Butter Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/19.jpg" onclick="window.location.href='product19.html'">
-    <h4>صابون الطحالب البحرية - Seaweed Detox Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/20.jpg" onclick="window.location.href='product20.html'">
-    <h4>صابون العسل والشوفان - Honey & Oatmeal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/21.jpg" onclick="window.location.href='product21.html'">
-    <h4>شامبو الصبار والليمون - Aloe & Lemon Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/22.jpg" onclick="window.location.href='product22.html'">
-    <h4>شامبو الشيا والبابايا - Shea & Papaya Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/23.jpg" onclick="window.location.href='product23.html'">
-    <h4>شامبو الأفوكادو وزيت الأرغان - Avocado & Argan Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/24.jpg" onclick="window.location.href='product24.html'">
-    <h4>شامبو الأعشاب الإفريقية - African Herbal Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/25.jpg" onclick="window.location.href='product25.html'">
-    <h4>شامبو الخزامى وزيت اللوز - Lavender Almond Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/26.jpg" onclick="window.location.href='product26.html'">
-    <h4>صابون زيت الجوجوبا والتوت - Jojoba & Berry Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/27.jpg" onclick="window.location.href='product27.html'">
-    <h4>صابون الليمون وقشر البرتقال - Lemon Orange Peel Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/28.jpg" onclick="window.location.href='product28.html'">
-    <h4>صابون الجرجير والصبار - Watercress & Aloe Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/29.jpg" onclick="window.location.href='product29.html'">
-    <h4>صابون النعناع والأوكالبتوس - Mint & Eucalyptus Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/30.jpg" onclick="window.location.href='product30.html'">
-    <h4>صابون الرمان وزيت جوز الهند - Pomegranate Coconut Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/01.jpg" onclick="window.location.href='product1.html'">
-    <h4>شامبو زيت الأرغان - Moroccanoil</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/02.jpg" onclick="window.location.href='product2.html'">
-    <h4>شامبو جوز الهند الطبيعي - OGX Coconut Milk</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/03.jpg" onclick="window.location.href='product3.html'">
-    <h4>شامبو العسل والبابونج - Herbal Essences Honey & Chamomile</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/04.jpg" onclick="window.location.href='product4.html'">
-    <h4>شامبو الشاي الأخضر - Garnier Ultra Doux Green Tea</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/05.jpg" onclick="window.location.href='product5.html'">
-    <h4>شامبو زيت الزيتون - Klorane Olive Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/06.jpg" onclick="window.location.href='product6.html'">
-    <h4>صابون الطين المغربي - Saboun Al Atlas</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/07.jpg" onclick="window.location.href='product7.html'">
-    <h4>صابون الغار الطبيعي - Aleppo Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/08.jpg" onclick="window.location.href='product8.html'">
-    <h4>صابون الحليب وزبدة الشيا - L'Occitane Shea Milk Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/09.jpg" onclick="window.location.href='product9.html'">
-    <h4>صابون الفحم المنشط - Dr. Squatch Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/10.jpg" onclick="window.location.href='product10.html'">
-    <h4>صابون الألوفيرا المرطب - The Body Shop Aloe Vera Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/11.jpg" onclick="window.location.href='product11.html'">
-    <h4>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/12.jpg" onclick="window.location.href='product12.html'">
-    <h4>شامبو الأعشاب الطبيعية - Aveda Rosemary Mint Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/13.jpg" onclick="window.location.href='product13.html'">
-    <h4>شامبو زيت جوز الهند وزبدة الشيا - SheaMoisture Coconut & Shea Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/14.jpg" onclick="window.location.href='product14.html'">
-    <h4>شامبو نباتات البحر - Seaweed & Algae Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/15.jpg" onclick="window.location.href='product15.html'">
-    <h4>شامبو الأرز المخمر الياباني - Rice Water Bright Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/16.jpg" onclick="window.location.href='product16.html'">
-    <h4>صابون الفحم النشط - Black Activated Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/17.jpg" onclick="window.location.href='product17.html'">
-    <h4>صابون القهوة وزيت اللوز - Coffee Almond Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/18.jpg" onclick="window.location.href='product18.html'">
-    <h4>صابون المشمش وزبدة الكاكاو - Apricot & Cocoa Butter Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/19.jpg" onclick="window.location.href='product19.html'">
-    <h4>صابون الطحالب البحرية - Seaweed Detox Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/20.jpg" onclick="window.location.href='product20.html'">
-    <h4>صابون العسل والشوفان - Honey & Oatmeal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/21.jpg" onclick="window.location.href='product21.html'">
-    <h4>شامبو الصبار والليمون - Aloe & Lemon Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/22.jpg" onclick="window.location.href='product22.html'">
-    <h4>شامبو الشيا والبابايا - Shea & Papaya Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/23.jpg" onclick="window.location.href='product23.html'">
-    <h4>شامبو الأفوكادو وزيت الأرغان - Avocado & Argan Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/24.jpg" onclick="window.location.href='product24.html'">
-    <h4>شامبو الأعشاب الإفريقية - African Herbal Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/25.jpg" onclick="window.location.href='product25.html'">
-    <h4>شامبو الخزامى وزيت اللوز - Lavender Almond Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/26.jpg" onclick="window.location.href='product26.html'">
-    <h4>صابون زيت الجوجوبا والتوت - Jojoba & Berry Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/27.jpg" onclick="window.location.href='product27.html'">
-    <h4>صابون الليمون وقشر البرتقال - Lemon Orange Peel Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/28.jpg" onclick="window.location.href='product28.html'">
-    <h4>صابون الجرجير والصبار - Watercress & Aloe Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/29.jpg" onclick="window.location.href='product29.html'">
-    <h4>صابون النعناع والأوكالبتوس - Mint & Eucalyptus Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/30.jpg" onclick="window.location.href='product30.html'">
-    <h4>صابون الرمان وزيت جوز الهند - Pomegranate Coconut Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/01.jpg" onclick="window.location.href='product1.html'">
-    <h4>شامبو زيت الأرغان - Moroccanoil</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/02.jpg" onclick="window.location.href='product2.html'">
-    <h4>شامبو جوز الهند الطبيعي - OGX Coconut Milk</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/03.jpg" onclick="window.location.href='product3.html'">
-    <h4>شامبو العسل والبابونج - Herbal Essences Honey & Chamomile</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/04.jpg" onclick="window.location.href='product4.html'">
-    <h4>شامبو الشاي الأخضر - Garnier Ultra Doux Green Tea</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/05.jpg" onclick="window.location.href='product5.html'">
-    <h4>شامبو زيت الزيتون - Klorane Olive Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/06.jpg" onclick="window.location.href='product6.html'">
-    <h4>صابون الطين المغربي - Saboun Al Atlas</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/07.jpg" onclick="window.location.href='product7.html'">
-    <h4>صابون الغار الطبيعي - Aleppo Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/08.jpg" onclick="window.location.href='product8.html'">
-    <h4>صابون الحليب وزبدة الشيا - L'Occitane Shea Milk Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/09.jpg" onclick="window.location.href='product9.html'">
-    <h4>صابون الفحم المنشط - Dr. Squatch Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/10.jpg" onclick="window.location.href='product10.html'">
-    <h4>صابون الألوفيرا المرطب - The Body Shop Aloe Vera Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/11.jpg" onclick="window.location.href='product11.html'">
-    <h4>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/12.jpg" onclick="window.location.href='product12.html'">
-    <h4>شامبو الأعشاب الطبيعية - Aveda Rosemary Mint Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/13.jpg" onclick="window.location.href='product13.html'">
-    <h4>شامبو زيت جوز الهند وزبدة الشيا - SheaMoisture Coconut & Shea Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/14.jpg" onclick="window.location.href='product14.html'">
-    <h4>شامبو نباتات البحر - Seaweed & Algae Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/15.jpg" onclick="window.location.href='product15.html'">
-    <h4>شامبو الأرز المخمر الياباني - Rice Water Bright Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/16.jpg" onclick="window.location.href='product16.html'">
-    <h4>صابون الفحم النشط - Black Activated Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/17.jpg" onclick="window.location.href='product17.html'">
-    <h4>صابون القهوة وزيت اللوز - Coffee Almond Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/18.jpg" onclick="window.location.href='product18.html'">
-    <h4>صابون المشمش وزبدة الكاكاو - Apricot & Cocoa Butter Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/19.jpg" onclick="window.location.href='product19.html'">
-    <h4>صابون الطحالب البحرية - Seaweed Detox Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/20.jpg" onclick="window.location.href='product20.html'">
-    <h4>صابون العسل والشوفان - Honey & Oatmeal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/21.jpg" onclick="window.location.href='product21.html'">
-    <h4>شامبو الصبار والليمون - Aloe & Lemon Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/22.jpg" onclick="window.location.href='product22.html'">
-    <h4>شامبو الشيا والبابايا - Shea & Papaya Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/23.jpg" onclick="window.location.href='product23.html'">
-    <h4>شامبو الأفوكادو وزيت الأرغان - Avocado & Argan Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/24.jpg" onclick="window.location.href='product24.html'">
-    <h4>شامبو الأعشاب الإفريقية - African Herbal Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/25.jpg" onclick="window.location.href='product25.html'">
-    <h4>شامبو الخزامى وزيت اللوز - Lavender Almond Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/26.jpg" onclick="window.location.href='product26.html'">
-    <h4>صابون زيت الجوجوبا والتوت - Jojoba & Berry Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/27.jpg" onclick="window.location.href='product27.html'">
-    <h4>صابون الليمون وقشر البرتقال - Lemon Orange Peel Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/28.jpg" onclick="window.location.href='product28.html'">
-    <h4>صابون الجرجير والصبار - Watercress & Aloe Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/29.jpg" onclick="window.location.href='product29.html'">
-    <h4>صابون النعناع والأوكالبتوس - Mint & Eucalyptus Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/30.jpg" onclick="window.location.href='product30.html'">
-    <h4>صابون الرمان وزيت جوز الهند - Pomegranate Coconut Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/01.jpg" onclick="window.location.href='product1.html'">
-    <h4>شامبو زيت الأرغان - Moroccanoil</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/02.jpg" onclick="window.location.href='product2.html'">
-    <h4>شامبو جوز الهند الطبيعي - OGX Coconut Milk</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/03.jpg" onclick="window.location.href='product3.html'">
-    <h4>شامبو العسل والبابونج - Herbal Essences Honey & Chamomile</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/04.jpg" onclick="window.location.href='product4.html'">
-    <h4>شامبو الشاي الأخضر - Garnier Ultra Doux Green Tea</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/05.jpg" onclick="window.location.href='product5.html'">
-    <h4>شامبو زيت الزيتون - Klorane Olive Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/06.jpg" onclick="window.location.href='product6.html'">
-    <h4>صابون الطين المغربي - Saboun Al Atlas</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/07.jpg" onclick="window.location.href='product7.html'">
-    <h4>صابون الغار الطبيعي - Aleppo Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/08.jpg" onclick="window.location.href='product8.html'">
-    <h4>صابون الحليب وزبدة الشيا - L'Occitane Shea Milk Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/09.jpg" onclick="window.location.href='product9.html'">
-    <h4>صابون الفحم المنشط - Dr. Squatch Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/10.jpg" onclick="window.location.href='product10.html'">
-    <h4>صابون الألوفيرا المرطب - The Body Shop Aloe Vera Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/11.jpg" onclick="window.location.href='product11.html'">
-    <h4>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/12.jpg" onclick="window.location.href='product12.html'">
-    <h4>شامبو الأعشاب الطبيعية - Aveda Rosemary Mint Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/13.jpg" onclick="window.location.href='product13.html'">
-    <h4>شامبو زيت جوز الهند وزبدة الشيا - SheaMoisture Coconut & Shea Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/14.jpg" onclick="window.location.href='product14.html'">
-    <h4>شامبو نباتات البحر - Seaweed & Algae Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/15.jpg" onclick="window.location.href='product15.html'">
-    <h4>شامبو الأرز المخمر الياباني - Rice Water Bright Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/16.jpg" onclick="window.location.href='product16.html'">
-    <h4>صابون الفحم النشط - Black Activated Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/17.jpg" onclick="window.location.href='product17.html'">
-    <h4>صابون القهوة وزيت اللوز - Coffee Almond Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/18.jpg" onclick="window.location.href='product18.html'">
-    <h4>صابون المشمش وزبدة الكاكاو - Apricot & Cocoa Butter Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/19.jpg" onclick="window.location.href='product19.html'">
-    <h4>صابون الطحالب البحرية - Seaweed Detox Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/20.jpg" onclick="window.location.href='product20.html'">
-    <h4>صابون العسل والشوفان - Honey & Oatmeal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/21.jpg" onclick="window.location.href='product21.html'">
-    <h4>شامبو الصبار والليمون - Aloe & Lemon Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/22.jpg" onclick="window.location.href='product22.html'">
-    <h4>شامبو الشيا والبابايا - Shea & Papaya Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/23.jpg" onclick="window.location.href='product23.html'">
-    <h4>شامبو الأفوكادو وزيت الأرغان - Avocado & Argan Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/24.jpg" onclick="window.location.href='product24.html'">
-    <h4>شامبو الأعشاب الإفريقية - African Herbal Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/25.jpg" onclick="window.location.href='product25.html'">
-    <h4>شامبو الخزامى وزيت اللوز - Lavender Almond Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/26.jpg" onclick="window.location.href='product26.html'">
-    <h4>صابون زيت الجوجوبا والتوت - Jojoba & Berry Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/27.jpg" onclick="window.location.href='product27.html'">
-    <h4>صابون الليمون وقشر البرتقال - Lemon Orange Peel Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/28.jpg" onclick="window.location.href='product28.html'">
-    <h4>صابون الجرجير والصبار - Watercress & Aloe Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/29.jpg" onclick="window.location.href='product29.html'">
-    <h4>صابون النعناع والأوكالبتوس - Mint & Eucalyptus Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/30.jpg" onclick="window.location.href='product30.html'">
-    <h4>صابون الرمان وزيت جوز الهند - Pomegranate Coconut Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/01.jpg" onclick="window.location.href='product1.html'">
-    <h4>شامبو زيت الأرغان - Moroccanoil</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/02.jpg" onclick="window.location.href='product2.html'">
-    <h4>شامبو جوز الهند الطبيعي - OGX Coconut Milk</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/03.jpg" onclick="window.location.href='product3.html'">
-    <h4>شامبو العسل والبابونج - Herbal Essences Honey & Chamomile</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/04.jpg" onclick="window.location.href='product4.html'">
-    <h4>شامبو الشاي الأخضر - Garnier Ultra Doux Green Tea</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/05.jpg" onclick="window.location.href='product5.html'">
-    <h4>شامبو زيت الزيتون - Klorane Olive Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/06.jpg" onclick="window.location.href='product6.html'">
-    <h4>صابون الطين المغربي - Saboun Al Atlas</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/07.jpg" onclick="window.location.href='product7.html'">
-    <h4>صابون الغار الطبيعي - Aleppo Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/08.jpg" onclick="window.location.href='product8.html'">
-    <h4>صابون الحليب وزبدة الشيا - L'Occitane Shea Milk Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/09.jpg" onclick="window.location.href='product9.html'">
-    <h4>صابون الفحم المنشط - Dr. Squatch Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/10.jpg" onclick="window.location.href='product10.html'">
-    <h4>صابون الألوفيرا المرطب - The Body Shop Aloe Vera Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/11.jpg" onclick="window.location.href='product11.html'">
-    <h4>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/12.jpg" onclick="window.location.href='product12.html'">
-    <h4>شامبو الأعشاب الطبيعية - Aveda Rosemary Mint Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/13.jpg" onclick="window.location.href='product13.html'">
-    <h4>شامبو زيت جوز الهند وزبدة الشيا - SheaMoisture Coconut & Shea Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/14.jpg" onclick="window.location.href='product14.html'">
-    <h4>شامبو نباتات البحر - Seaweed & Algae Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/15.jpg" onclick="window.location.href='product15.html'">
-    <h4>شامبو الأرز المخمر الياباني - Rice Water Bright Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/16.jpg" onclick="window.location.href='product16.html'">
-    <h4>صابون الفحم النشط - Black Activated Charcoal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/17.jpg" onclick="window.location.href='product17.html'">
-    <h4>صابون القهوة وزيت اللوز - Coffee Almond Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/18.jpg" onclick="window.location.href='product18.html'">
-    <h4>صابون المشمش وزبدة الكاكاو - Apricot & Cocoa Butter Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/19.jpg" onclick="window.location.href='product19.html'">
-    <h4>صابون الطحالب البحرية - Seaweed Detox Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/20.jpg" onclick="window.location.href='product20.html'">
-    <h4>صابون العسل والشوفان - Honey & Oatmeal Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/21.jpg" onclick="window.location.href='product21.html'">
-    <h4>شامبو الصبار والليمون - Aloe & Lemon Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/22.jpg" onclick="window.location.href='product22.html'">
-    <h4>شامبو الشيا والبابايا - Shea & Papaya Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/23.jpg" onclick="window.location.href='product23.html'">
-    <h4>شامبو الأفوكادو وزيت الأرغان - Avocado & Argan Oil Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/24.jpg" onclick="window.location.href='product24.html'">
-    <h4>شامبو الأعشاب الإفريقية - African Herbal Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/shampoo/25.jpg" onclick="window.location.href='product25.html'">
-    <h4>شامبو الخزامى وزيت اللوز - Lavender Almond Shampoo</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/26.jpg" onclick="window.location.href='product26.html'">
-    <h4>صابون زيت الجوجوبا والتوت - Jojoba & Berry Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/27.jpg" onclick="window.location.href='product27.html'">
-    <h4>صابون الليمون وقشر البرتقال - Lemon Orange Peel Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/28.jpg" onclick="window.location.href='product28.html'">
-    <h4>صابون الجرجير والصبار - Watercress & Aloe Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/29.jpg" onclick="window.location.href='product29.html'">
-    <h4>صابون النعناع والأوكالبتوس - Mint & Eucalyptus Soap</h4>
-  </div>
-
-  <div class="product-card" data-bg="images/soap/30.jpg" onclick="window.location.href='product30.html'">
-    <h4>صابون الرمان وزيت جوز الهند - Pomegranate Coconut Soap</h4>
-  </div>
-
- </div>
-
-
-<script>
-    function normalizeArabic(text) {
-      return text
-        .replace(/[إأآا]/g, 'ا')
-        .replace(/ى/g, 'ي')
-        .replace(/ؤ/g, 'و')
-        .replace(/ئ/g, 'ي')
-        .replace(/ة/g, 'ه');
-    }
-    
-    document.getElementById('searchBox').addEventListener('input', searchCards);
-
-function searchCards() {
-  const input = normalizeArabic(document.getElementById('searchBox').value.toLowerCase().trim());
-  const cards = document.querySelectorAll('.product-card');
-
-  // إخفاء البطاقات التي لا تتطابق مع البحث
-  cards.forEach(card => {
-    const titleElement = card.querySelector('h4');
-    const title = normalizeArabic(titleElement ? titleElement.textContent.toLowerCase() : "");
-
-    if (title.includes(input)) {
-      card.hidden = false;  // إظهار البطاقة
-    } else {
-      card.hidden = true;   // إخفاء البطاقة
-    }
-  });
-}
-    </script>
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".product-card").forEach(card => {
-        const bgImage = card.getAttribute("data-bg");
-        card.style.backgroundImage = `url(${bgImage})`;
-    });
-});
-
-
-</script>
-
-</body>
-</html>
