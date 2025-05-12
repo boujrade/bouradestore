@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>منتجات متجرنا</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #f5eff2;
+  font-family: Tahoma, sans-serif;
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  padding:5px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* بطاقتان في كل صف */
+  gap: 0;
+  width: 100%;
+  padding: 0;
+}
+
+.product-card {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #dcdcdc;
+  background-size: cover; /* لملء البطاقة بالكامل */
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 5px rgba(200, 200, 200, 0.3);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+ 
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card h4 {
+  font-size: 12px;
+  color: #333;
+  margin: 6px 0 0;
+  text-align: center;
+}
+
+.product-card p {
+  font-size: 11px;
+  color: #777;
+  text-align: center;
+  margin: 2px 0;
+}
+
+product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    display: none;
+}
+
+.product-card h4,
+.product-card .rating,
+.product-card p,
+.product-card .share-btn {
+    background: none;
+    padding: 5px;
+    border-radius: 5;
+    color: rgb(37, 30, 30);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 76px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 50px) {
+    .products-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+
+  
+    
+}
+
+#searchContainer {
+  position: relative;
+  max-width: 100%;
+  margin: 15px 0;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+#searchBox {
+  width: 100%;
+  padding: 14px 44px 14px 16px; /* مساحة للرمز */
+  border: none;
+  border-radius: 25px;
+  background-color: #ffffff;
+  font-size: 15px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23999" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16a6.471 6.471 0 004.23-1.57l.27.28v.79l5 5L20.49 19l-4.99-5zM10 14a4 4 0 110-8 4 4 0 010 8z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 20px;
+  direction: rtl;
+}
+
+#searchBox::placeholder {
+  color: #999;
+}
+
+#searchBox:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 140, 255, 0.3);
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  right: 12px;
+  left: 12px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+}
+
+.suggestion-item {
+  padding: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:hover {
+  background-color: #f5f5f5;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+
+
+.product-card[hidden] {
+  display: none;  /* إخفاء العناصر */
+}
+
+
+  </style>
+</head>
+<body>
+
+
+
+
+<h2 style="text-align: center;">🌸 بخاخات وعطور 🌸</h2><br>
+
+
+    <h5 style="text-align: center;"> ابحث عن المنتج الذي ترغب به</h5>
+
+    <div id="searchContainer">
+        <input type="text" id="searchBox" placeholder="اكتب اسم المنتج...">
+        <div id="suggestions" class="suggestions" style="display: none;"></div>
+      </div><br>
+    
+<div class="products-container">
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>عطر Bleu de Chanel - شانيل</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>عطر Dior Sauvage - ديور</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>عطر Tom Ford Black Orchid - توم فورد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>عطر Creed Aventus - كريد</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>عطر YSL La Nuit De L'Homme - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>عطر Giorgio Armani Acqua Di Gio - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>عطر Lancôme La Vie Est Belle - لانكوم</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>عطر Bvlgari Man In Black - بولغاري</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>بخاخ الجسم Victoria's Secret Bare Vanilla</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>عطر Dolce & Gabbana Light Blue - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>عطر Gucci Guilty - غوتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>عطر Paco Rabanne 1 Million - باكو رابان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>عطر Carolina Herrera Good Girl - كارولينا هيريرا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>عطر Hugo Boss Bottled - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>عطر Jean Paul Gaultier Le Male - جان بول غوتييه</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>عطر Narciso Rodriguez For Her - نارسيسو رودريغيز</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>عطر Versace Eros - فرزاتشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>عطر Montblanc Legend - مون بلان</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>بخاخ الجسم Bath & Body Works Japanese Cherry Blossom</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>عطر Yves Saint Laurent Libre - إيف سان لوران</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>عطر Givenchy Gentleman - جيفنشي</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>عطر Mugler Alien - موغلر</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>عطر Salvatore Ferragamo Uomo - سلفاتوري فيراغامو</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>عطر Boucheron Jaipur Homme - بوشيرون</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>عطر Dolce & Gabbana The One - دولتشي آند غابانا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>عطر Prada Luna Rossa - برادا</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>عطر Emporio Armani Stronger With You - أرماني</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>عطر Hugo Boss The Scent - هوغو بوس</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>بخاخ الجسم Victoria's Secret Love Spell</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/perfumes/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>عطر Issey Miyake L'Eau d'Issey - إيسي مياكي</h4>
+  </div>
+
+
+  
+ </div>
+
+
+
+<script>
+    function normalizeArabic(text) {
+      return text
+        .replace(/[إأآا]/g, 'ا')
+        .replace(/ى/g, 'ي')
+        .replace(/ؤ/g, 'و')
+        .replace(/ئ/g, 'ي')
+        .replace(/ة/g, 'ه');
+    }
+    
+    document.getElementById('searchBox').addEventListener('input', searchCards);
+
+function searchCards() {
+  const input = normalizeArabic(document.getElementById('searchBox').value.toLowerCase().trim());
+  const cards = document.querySelectorAll('.product-card');
+
+  // إخفاء البطاقات التي لا تتطابق مع البحث
+  cards.forEach(card => {
+    const titleElement = card.querySelector('h4');
+    const title = normalizeArabic(titleElement ? titleElement.textContent.toLowerCase() : "");
+
+    if (title.includes(input)) {
+      card.hidden = false;  // إظهار البطاقة
+    } else {
+      card.hidden = true;   // إخفاء البطاقة
+    }
+  });
+}
+    </script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".product-card").forEach(card => {
+        const bgImage = card.getAttribute("data-bg");
+        card.style.backgroundImage = `url(${bgImage})`;
+    });
+});
+
+
+</script>
+
+</body>
+</html>

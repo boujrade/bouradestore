@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>منتجات متجرنا</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #f5eff2;
+  font-family: Tahoma, sans-serif;
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  padding:5px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* بطاقتان في كل صف */
+  gap: 0;
+  width: 100%;
+  padding: 0;
+}
+
+.product-card {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #dcdcdc;
+  background-size: cover; /* لملء البطاقة بالكامل */
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 5px rgba(200, 200, 200, 0.3);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+ 
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card h4 {
+  font-size: 12px;
+  color: #333;
+  margin: 6px 0 0;
+  text-align: center;
+}
+
+.product-card p {
+  font-size: 11px;
+  color: #777;
+  text-align: center;
+  margin: 2px 0;
+}
+
+product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    display: none;
+}
+
+.product-card h4,
+.product-card .rating,
+.product-card p,
+.product-card .share-btn {
+    background: none;
+    padding: 5px;
+    border-radius: 5;
+    color: rgb(37, 30, 30);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 76px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 50px) {
+    .products-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+
+  
+    
+}
+
+#searchContainer {
+  position: relative;
+  max-width: 100%;
+  margin: 15px 0;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+#searchBox {
+  width: 100%;
+  padding: 14px 44px 14px 16px; /* مساحة للرمز */
+  border: none;
+  border-radius: 25px;
+  background-color: #ffffff;
+  font-size: 15px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23999" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16a6.471 6.471 0 004.23-1.57l.27.28v.79l5 5L20.49 19l-4.99-5zM10 14a4 4 0 110-8 4 4 0 010 8z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 20px;
+  direction: rtl;
+}
+
+#searchBox::placeholder {
+  color: #999;
+}
+
+#searchBox:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 140, 255, 0.3);
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  right: 12px;
+  left: 12px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+}
+
+.suggestion-item {
+  padding: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:hover {
+  background-color: #f5f5f5;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+
+
+.product-card[hidden] {
+  display: none;  /* إخفاء العناصر */
+}
+
+
+  </style>
+</head>
+<body>
+
+
+
+
+<h2 style="text-align: center;">🌸 عوامل التنحيف وزيادة الوزن 🌸</h2><br>
+
+
+    <h5 style="text-align: center;"> ابحث عن المنتج الذي ترغب به</h5>
+
+    <div id="searchContainer">
+        <input type="text" id="searchBox" placeholder="اكتب اسم المنتج...">
+        <div id="suggestions" class="suggestions" style="display: none;"></div>
+      </div><br>
+    
+<div class="products-container">
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+ <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+  
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  <div class="product-card" data-bg="images/weight/01.jpg" onclick="window.location.href='product1.html'">
+    <h4>مكمل البروتين لزيادة الوزن - Optimum Nutrition Serious Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/02.jpg" onclick="window.location.href='product2.html'">
+    <h4>حارق الدهون الطبيعي - Lipo-6 Black Ultra Concentrate</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/03.jpg" onclick="window.location.href='product3.html'">
+    <h4>مكمل الكرياتين لتعزيز العضلات - MuscleTech Platinum Creatine</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/04.jpg" onclick="window.location.href='product4.html'">
+    <h4>شاي الأعشاب للتنحيف - Fit Tea 28-Day Detox</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/05.jpg" onclick="window.location.href='product5.html'">
+    <h4>مكمل غذائي لزيادة الوزن - Dymatize Super Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/06.jpg" onclick="window.location.href='product6.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Bean Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/07.jpg" onclick="window.location.href='product7.html'">
+    <h4>مكمل الأحماض الأمينية لزيادة النشاط - BCAA 5000 Powder</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/08.jpg" onclick="window.location.href='product8.html'">
+    <h4>مشروب البروتين الطبيعي - Orgain Organic Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/09.jpg" onclick="window.location.href='product9.html'">
+    <h4>حارق الدهون بالكيتونات - Keto Burn Xtreme</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/10.jpg" onclick="window.location.href='product10.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو - Avocado Weight Gain Blend</h4>
+  </div>
+
+   <div class="product-card" data-bg="images/weight/11.jpg" onclick="window.location.href='product11.html'">
+    <h4>مكمل البروتين لزيادة الوزن - BSN True Mass</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/12.jpg" onclick="window.location.href='product12.html'">
+    <h4>مسحوق زيادة الوزن بالأفوكادو والموز - Bulk Muscle Mass Gainer</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/13.jpg" onclick="window.location.href='product13.html'">
+    <h4>مكمل غذائي غني بالألياف - Nature’s Way Weight Management Fiber</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/14.jpg" onclick="window.location.href='product14.html'">
+    <h4>حارق الدهون بحمض الكولين - Animal Cuts Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/15.jpg" onclick="window.location.href='product15.html'">
+    <h4>مشروب البروتين النباتي - Vega Protein & Greens</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/16.jpg" onclick="window.location.href='product16.html'">
+    <h4>شاي الأعشاب للتنحيف - Yogi Tea Detox Blend</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/17.jpg" onclick="window.location.href='product17.html'">
+    <h4>كبسولات مستخلص الشاي الأخضر - Green Tea Extract Fat Burner</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/18.jpg" onclick="window.location.href='product18.html'">
+    <h4>مشروب الطاقة لزيادة الوزن - Boost High Protein Drink</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/19.jpg" onclick="window.location.href='product19.html'">
+    <h4>مكمل زيادة الشهية - Appetite Boost Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/20.jpg" onclick="window.location.href='product20.html'">
+    <h4>حارق الدهون بالكيتونات الطبيعية - Keto Slim Advanced</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/21.jpg" onclick="window.location.href='product21.html'">
+    <h4>مكمل الأحماض الأمينية لتضخيم العضلات - Amino 3000</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/22.jpg" onclick="window.location.href='product22.html'">
+    <h4>مشروب الفواكه لزيادة الوزن - Naked Mass Weight Gain</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/23.jpg" onclick="window.location.href='product23.html'">
+    <h4>مسحوق البروتين بالأرز البني - Orgain Organic Superfoods Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/24.jpg" onclick="window.location.href='product24.html'">
+    <h4>كبسولات القهوة الخضراء لحرق الدهون - Green Coffee Pure Extract</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/25.jpg" onclick="window.location.href='product25.html'">
+    <h4>حارق الدهون بالألياف الطبيعية - Fiber Thin Weight Control</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/26.jpg" onclick="window.location.href='product26.html'">
+    <h4>مسحوق زيادة الوزن بالكربوهيدرات - Universal Real Gains</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/27.jpg" onclick="window.location.href='product27.html'">
+    <h4>مكملات الجلوتامين لاستعادة العضلات - L-Glutamine Recovery Formula</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/28.jpg" onclick="window.location.href='product28.html'">
+    <h4>شاي الأعشاب للتنظيف وحرق الدهون - Baetea Detox Herbal Tea</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/29.jpg" onclick="window.location.href='product29.html'">
+    <h4>مكمل البروتين بالنكهات الطبيعية - Premier Protein Shake</h4>
+  </div>
+
+  <div class="product-card" data-bg="images/weight/30.jpg" onclick="window.location.href='product30.html'">
+    <h4>حارق الدهون بالكارنيتين - L-Carnitine Fat Burning Formula</h4>
+  </div>
+
+
+  
+
+
+
+<script>
+    function normalizeArabic(text) {
+      return text
+        .replace(/[إأآا]/g, 'ا')
+        .replace(/ى/g, 'ي')
+        .replace(/ؤ/g, 'و')
+        .replace(/ئ/g, 'ي')
+        .replace(/ة/g, 'ه');
+    }
+    
+    document.getElementById('searchBox').addEventListener('input', searchCards);
+
+function searchCards() {
+  const input = normalizeArabic(document.getElementById('searchBox').value.toLowerCase().trim());
+  const cards = document.querySelectorAll('.product-card');
+
+  // إخفاء البطاقات التي لا تتطابق مع البحث
+  cards.forEach(card => {
+    const titleElement = card.querySelector('h4');
+    const title = normalizeArabic(titleElement ? titleElement.textContent.toLowerCase() : "");
+
+    if (title.includes(input)) {
+      card.hidden = false;  // إظهار البطاقة
+    } else {
+      card.hidden = true;   // إخفاء البطاقة
+    }
+  });
+}
+    </script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".product-card").forEach(card => {
+        const bgImage = card.getAttribute("data-bg");
+        card.style.backgroundImage = `url(${bgImage})`;
+    });
+});
+
+
+</script>
+
+</body>
+</html>
