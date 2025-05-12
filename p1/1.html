@@ -69,7 +69,7 @@
 <div class="container">
   <h2>Nivea Soft Moisturizing Cream</h2>
   <div class="gallery">
-    <img id="mainImage" src="/im1/01.jpg" alt="Nivea Soft" loading="lazy">
+    <img id="mainImage" src="/im1/01.jpg" alt="Nivea Soft"  loading="lazy">
    
   </div>
 
@@ -121,24 +121,7 @@
   });
 });
 </script>
-<script>
-    const images = [
-      "im1/01.jpg",
-      
-    ];
-    let index = 0;
-    const img = document.getElementById("mainImage");
-  
-    function nextImage() {
-      index = (index + 1) % images.length;
-      img.src = images[index];
-    }
-  
-    function prevImage() {
-      index = (index - 1 + images.length) % images.length;
-      img.src = images[index];
-    }
-  </script>
+
 <script>
   function shareProduct(name) {
     const url = window.location.href;
