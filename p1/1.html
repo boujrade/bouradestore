@@ -62,6 +62,15 @@
     font-size: 27px; /* تكبير حجم النص */
 }
 
+.img-placeholder {
+    filter: blur(10px);
+    transition: filter 0.5s ease-in-out;
+}
+
+.img-loaded {
+    filter: blur(0);
+}
+
  </style>
 </head>
 <body>
@@ -83,7 +92,7 @@
   </div>
 
   <div dir="rtl" style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 100%; margin: auto; padding: 10px; font-size: 14px;">
-    <h3 style="font-size: 16px;">🌸 🌸المكونات الفعالة</h3>
+    <h3 style="font-size: 16px;"> 🌸المكونات الفعالة</h3>
     <ul>
       <li><strong>زيت الجوجوبا:</strong> يغذي البشرة بعمق دون انسداد المسام.</li>
       <li><strong>فيتامين E:</strong> يساعد في الحماية من العوامل البيئية الضارة.</li>
@@ -114,19 +123,24 @@
   </div>
 </div>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const img = document.querySelector("#mainImage");
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.src = "/im1/01.webp";
-                observer.unobserve(entry.target);
-            }
-        });
-    });
-    observer.observe(img);
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
 });
 </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const img = document.getElementById("mainImage");
+    img.onload = function() {
+        img.classList.add("img-loaded");
+    };
+});
+</script>
+
 
 <script>
   function shareProduct(name) {
