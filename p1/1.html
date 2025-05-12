@@ -92,7 +92,7 @@
   </div>
 
   <div dir="rtl" style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 100%; margin: auto; padding: 10px; font-size: 14px;">
-    <h3 style="font-size: 16px;">🌸المكونات الفعالة</h3>
+    <h3 style="font-size: 16px;">🌸🌸المكونات الفعالة</h3>
     <ul>
       <li><strong>زيت الجوجوبا:</strong> يغذي البشرة بعمق دون انسداد المسام.</li>
       <li><strong>فيتامين E:</strong> يساعد في الحماية من العوامل البيئية الضارة.</li>
@@ -123,18 +123,14 @@
   </div>
 </div>
 <script>
-  const supportsWebP = () => {
-    const elem = document.createElement("canvas");
-    if (elem.getContext && elem.getContext("2d")) {
-        return elem.toDataURL("image/webp").indexOf("data:image/webp") === 0;
-    }
-    return false;
-};
-
-if (supportsWebP()) {
-    document.getElementById("mainImage").src = "/im1/01.webp";
-}
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
 </script>
+
 
 
 <script>
