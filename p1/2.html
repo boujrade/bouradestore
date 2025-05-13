@@ -29,22 +29,20 @@
       padding: 15px 25px; border: none; border-radius: 6px;
       font-size: 1em; cursor: pointer;
     }
-    .add-cart { background: #ffd814; }
+    .add-cart { background: #ffd814;  }
     .buy-now { background: #f08804; color: white; }
  
     .share-btn {
-      background: #96e714;
-      color: #f5f3f1;
-      font-size: 40px;
+      background: #80c70f;
+      color: #0c0c0b;
+     font-size:50px;
     }
-    .share-btn, .buy-btn, .cart-btn {
-    font-size: 40px; /* تكبير حجم النص */
-    padding: 30px 30px; /* زيادة المساحة داخل الزر */
-    width: 30%; /* جعل الزر يأخذ عرض العنصر الأب */
-    border-radius: 1px; /* تحسين الزوايا */
-}
+    
 
-.buy-now button {
+/* تنسيق موحد لجميع الأزرار */
+.buy-now button,
+.add-cart button,
+.share-btn button {
     font-size: 50px; /* تكبير حجم النص */
     padding: 19px 35px; /* توسيع المساحة داخل الزر */
     background-color: #ff7300; /* لون برتقالي مميز */
@@ -54,6 +52,16 @@
     font-weight: bold; /* جعل النص أكثر وضوحًا */
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+}
+
+
+
+/* تأثير عند تمرير الماوس أو الضغط */
+.buy-now button:hover,
+.add-cart button:hover,
+.share-btn button:hover {
+    background: #00e660; /* تغيير لون الخلفية عند التفاعل */
+    transform: scale(1.15); /* تكبير الزر عند تمرير الماوس */
 }
 
 .buy-now button:hover {
