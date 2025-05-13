@@ -518,11 +518,12 @@ button {
   padding: 10px;
   scrollbar-width: thin;
   justify-content: start; /* الترتيب من اليسار لليمين */
+  padding-bottom: 60px; /* زيادة المسافة بين البطاقات وشريط الإزاحة */
 }
 
 /* تحسين شريط التمرير */
 .special-card-container::-webkit-scrollbar {
-  height: 1px;
+  height: 10px;
 }
 
 .special-card-container::-webkit-scrollbar-thumb {
@@ -555,20 +556,35 @@ button {
   transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8px;
+  color: #020202; /* لون ذهبي مخفف */
+}
 
+.divider {
+  width: 50%;
+  margin: 4px auto;
+  border: 0;
+  height: 1px;
+  background: #1f1c1c; /* لون رمادي ناعم */
+}
 
 /* سطر مزخرف بأسلوب فاخر */
 .elegant-title {
-  font-size: clamp(1.6rem, 4vw, 2rem); /* حجم متجاوب بين الأجهزة الصغيرة والكبيرة */
+  font-size: clamp(1.6rem, 4vw, 2rem);
   font-weight: bold;
-  color: #f8f8f6; /* لون ذهبي فاخر */
+  color: #d4c9b5; /* لون ذهبي منخفض التأثير */
   text-align: center;
   font-family: 'Playfair Display', serif;
   padding: 12px 18px;
   position: relative;
-  background: linear-gradient(135deg, #292826, #292826);
+  background: rgba(42, 42, 40, 0.8); /* تأثير زجاجي */
+  backdrop-filter: blur(10px);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(236, 51, 165, 0.3);
+  box-shadow: 0 4px 12px rgba(236, 51, 165, 0.15); /* ظل مخفف */
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
@@ -737,6 +753,30 @@ font-size: 18px;
 }
 
 
+.classic-menu {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.classic-menu li {
+  margin-bottom: 12px;
+}
+
+.classic-menu a {
+  text-decoration: none;
+  color: #2c2b2b;
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif; /* خط كلاسيكي */
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.classic-menu a:hover {
+  color: #aa8453; /* لون كلاسيكي فاخر عند التحويم */
+}
+
+
   </style>
 </head>
 
@@ -820,7 +860,7 @@ font-size: 18px;
  
   <div class="slider">
     
-    <img src="images2/a.jpg" class="slide active" loading="lazy"  >
+    <img src="images2/r.jpg" class="slide active" loading="lazy"  >
     <img src="images2/c.jpg" class="slide"  loading="lazy"  > 
     <img src="images2/d.jpg" class="slide"   loading="lazy"    >
     <img src="images2/e.jpg" class="slide"  loading="lazy"   >   
@@ -966,78 +1006,107 @@ font-size: 18px;
 <div class="special-card-container">
   <div class="special-card" onclick="window.location.href='p1/37.html'">
     <img src="im1/37.jpg" alt="منتج 1">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/26.html'">
+    <h6 class="card-title"> DERMEDIC Hydrain3 Hialuro Cream </h6>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/26.html'">
     <img src="im1/26.jpg" alt="منتج 2">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/23.html'">
+    <p class="card-title"> Weleda Skin Food </p>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/23.html'">
     <img src="im1/23.jpg" alt="منتج 3">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/44.html'">
+    <p class="card-title">Alverde Bio Wildrose</p>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/44.html'">
     <img src="im1/44.jpg" alt="منتج 4">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/50.html'">
+    <h6 class="card-title"> Missha Super Aqua Hydrating Cream </h6>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/50.html'">
     <img src="im1/50.jpg" alt="منتج 5">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/36.html'">
+    <h6 class="card-title">Etude House SoonJung Moist Cream</h6>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/36.html'">
     <img src="im1/36.jpg" alt="منتج 6">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/47.html'">
+    <h6 class="card-title">Farmasi Dr. C. Tuna Moisturizing  </h6>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/47.html'">
     <img src="im1/47.jpg" alt="منتج 7">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/28.html'">
+    <h6 class="card-title">The Face Shop Chia Seed Moisture Recharge Cream</h6>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/28.html'">
     <img src="im1/28.jpg" alt="منتج 8">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/49.html'">
+    <h6 class="card-title">Himalaya Herbals Nourishing Cream</h6>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/49.html'">
     <img src="im1/49.jpg" alt="منتج 9">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/10.html'">
+    <h6 class="card-title">Etude House SoonJung Moist Cream</h6>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/10.html'">
     <img src="im1/10.jpg" alt="منتج 10">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/11.html'">
+    <h6 class="card-title">Caudalie Vinosource Moisturizing Cream </h6>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/11.html'">
     <img src="im1/11.jpg" alt="منتج 11">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/12.html'">
+    <h6 class="card-title">Garnier SkinActive Moisture Rescue</h6>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/12.html'">
     <img src="im1/12.jpg" alt="منتج 12">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/13.html'">
+    <p class="card-title">Pond's Dry Skin Cream</p>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/13.html'">
     <img src="im1/13.jpg" alt="منتج 13">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/14.html'">
+    <h6 class="card-title"> Bobbi Brown Vitamin Enriched Face Base</h6>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/14.html'">
     <img src="im1/14.jpg" alt="منتج 14">
-  </div>
-  <div class="special-card" onclick="window.location.href='p1/15.html'">
+    <h6 class="card-title"> Sukin Hydrating Facial Moisturizer </h6>
+    <hr class="divider">
+</div>
+
+<div class="special-card" onclick="window.location.href='p1/15.html'">
     <img src="im1/15.jpg" alt="منتج 15">
-  </div>
+    <h6 class="card-title">Clarins Hydra-Essentiel Silky Cream </h6>
+    <hr class="divider">
+</div>
 </div><br><br>
 
 
 <img src="images2/html.gnn.jpg" style="height: 80px; max-height: 30vh; margin-right: 3px;" alt="شعار المتجر" loading="lazy"><br>
 <!-- معلومات إضافية -->
 <nav style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;">
-    <ul style="list-style: none; padding: 0; text-align: center;">
-      <!-- روابط التنقل -->
-      <li style="margin-bottom: 10px;">
-        <a href="#privacy" onclick="showSection('privacy')" style="text-decoration: none; color: #0c0b0c; font-size: 1.5rem;">سياسة الخصوصية</a>
-      </li>
-      <li style="margin-bottom: 10px;">
-        <a href="#contact" onclick="showSection('contact')" style="text-decoration: none; color: #0c0b0c; font-size: 1.5rem;">اتصل بنا</a>
-      </li>
-      <li style="margin-bottom: 10px;">
-        <a href="#faq" onclick="showSection('faq')" style="text-decoration: none; color: #0c0b0c; font-size: 1.5rem;">الأسئلة المتكررة</a>
-      </li>
-      <li style="margin-bottom: 10px;">
-        <a href="#about" onclick="showSection('about')" style="text-decoration: none; color: #0c0b0c; font-size: 1.5rem;">عن المتجر</a>
-      </li>
-      <li style="margin-bottom: 10px;">
-        <a href="#payment" onclick="showSection('payment')" style="text-decoration: none; color: #0c0b0c; font-size: 1.5rem;">طرق الدفع</a>
-      </li>
-         
-  
-      <li style="margin-bottom: 10px;">
-        <a href="#shipping" onclick="showSection('shipping')" style="text-decoration: none; color: #0c0b0c; font-size: 1.5rem;">الشحن والتسليم</a>
-      </li>
-    </ul>
+    <ul class="classic-menu">
+  <li><a href="#privacy" onclick="showSection('privacy')">سياسة الخصوصية</a></li>
+  <li><a href="#contact" onclick="showSection('contact')">اتصل بنا</a></li>
+  <li><a href="#faq" onclick="showSection('faq')">الأسئلة المتكررة</a></li>
+  <li><a href="#about" onclick="showSection('about')">عن المتجر</a></li>
+  <li><a href="#payment" onclick="showSection('payment')">طرق الدفع</a></li>
+  <li><a href="#shipping" onclick="showSection('shipping')">الشحن والتسليم</a></li>
+</ul>
   </nav>
 
   <!-- الأقسام المخفية -->

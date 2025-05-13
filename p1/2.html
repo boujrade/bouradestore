@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>TP-Link BE170</title>
   <style>
-    body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; direction: rtl; }
+     body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; direction: rtl; }
     .container {
       max-width: 900px; margin: auto; background: #fff; padding: 20px;
       border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -33,15 +33,15 @@
     .buy-now { background: #f08804; color: white; }
  
     .share-btn {
-      background: #ee780a;
+      background: #96e714;
       color: #f5f3f1;
-      font-size: 13px;
+      font-size: 25px;
     }
     .share-btn, .buy-btn, .cart-btn {
-    font-size: 18px; /* تكبير حجم النص */
-    padding: 12px 15px; /* زيادة المساحة داخل الزر */
-    width: 10%; /* جعل الزر يأخذ عرض العنصر الأب */
-    border-radius: 8px; /* تحسين الزوايا */
+    font-size: 22px; /* تكبير حجم النص */
+    padding: 15px 15px; /* زيادة المساحة داخل الزر */
+    width: 20%; /* جعل الزر يأخذ عرض العنصر الأب */
+    border-radius: 1px; /* تحسين الزوايا */
 }
 
 .buy-now button {
@@ -62,6 +62,20 @@
     font-size: 27px; /* تكبير حجم النص */
 }
 
+.img-placeholder {
+    filter: blur(10px);
+    transition: filter 0.5s ease-in-out;
+}
+
+.img-loaded {
+    filter: blur(0);
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
  </style>
 </head>
 <body>
