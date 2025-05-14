@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+  
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <title>المنتجات</title>
+  
+  <!-- Bootstrap RTL CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+ 
+ 
+
+
+<style>
+    /* تعريف المتغيرات الأساسية للألوان */
+    :root {
+      --primary-color: #1a202c;         /* لون أساسي داكن */
+      --secondary-color: #2d3748;       /* لون تبايني أغمق */
+      --accent-color: #f08804;          /* لون تفاعلي/لمسة طازجة */
+      --background-color: #f7fafc;      /* خلفية فاتحة نظيفة */
+      --card-bg: #ffffff;               /* لون البطاقات */
+      --input-bg: #edf2f7;              /* خلفية الحقول */
+      --hover-input-bg: #e2e8f0;         /* خلفية الحقول عند التركيز */
+    }
+  
+    
+    
+    /* شريط التنقل */
+    .navbar {
+  background-color: #2c2c2e;
+  }
+  
+ 
+
+.nav-link:hover {
+  color: #f8d210; /* تغيير اللون عند التحويم */
+  text-decoration: underline; /* إضافة خط تحت الرابط */
+}
+   
+
+/* تحسين لون العناصر داخل القائمة */
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #f8d210; /* تأثير عند التحويم */
+}
+.navbar-toggler {
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none !important;
+}
+
+.navbar-toggler:focus, 
+.navbar-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+  background-color: #eee6e6;
+  border-radius: 2px;
+  width: 30px;
+  height: 4px;
+  display: block;
+  margin: 4px 0;
+}
+
+.dropdown-item {
+  color: rgb(114, 105, 105);
+}
+
+.dropdown-item:hover {
+  background-color: #f8d210;
+}
+    
+body {
+  direction: rtl;
+  font-family: 'Arial', sans-serif;
+}
+
+.open-btn {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: -300px; /* مخفية بالبداية */
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  z-index: 1001;
+  transition: right 0.3s ease;
+}
+
+.sidebar.active {
+  right: 0; /* تظهر */
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  background: #f5f5f5;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  flex: 1;
+  padding: 10px;
+  outline: none;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 15px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+/* الخلفية السوداء */
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5); /* لون أسود نصف شفاف */
+  display: none;
+  z-index: 1000;
+}
+
+.overlay.active {
+  display: block;
+}
+/* زر القائمة */
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 35px;
+  height: 30px;
+  padding: 0;
+  z-index: 1002;
+}
+
+/* الخطوط الثلاثة */
+.menu-btn span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff; /* لون الخطوط، غيّره حسب لون الخلفية */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* عند تفعيل الزر (فتح القائمة) */
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.overlay.active {
+  display: block;
+}
+
+.open-btn, .close-btn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: white; /* لون الأيقونة */
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* تأثير hover */
+.open-btn:hover, .close-btn:hover {
+  transform: scale(1.2);
+  color: #ff9800;
+}
+
+.menu-btn {
+  all: unset; /* مسح جميع التنسيقات الافتراضية */
+  font-size: 28px; /* حجم رمز ☰ */
+  color: white; /* لون أبيض */
+  cursor: pointer; /* يظهر شكل اليد عند المرور */
+  position: fixed;
+  top: 20px;
+  left: 20px; /* لاحظ هنا: من اليسار بدل اليمين */
+  z-index: 1003;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* حركة لطيفة عند المرور Hover */
+.menu-btn:hover {
+  transform: rotate(90deg) scale(1.2);
+  color: #ffcc00; /* يتغير إلى أصفر ذهبي عند المرور */
+}
+
+
+    .moving-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #141314;
+    text-align: center;
+    display: block;
+    position: relative;
+    animation: moveText  4s ease-in-out infinite alternate;
+}
+
+@keyframes moveText {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(50px);
+    }
+}
+
+
+
+    /* البطاقات */
+    .card {
+      border: none;
+      border-radius: 20px;
+      background: var(--card-bg);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+    .product-img {
+      height: 220px;
+      object-fit: cover;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  
+    /* الأسعار */
+    .price {
+      color: var(--accent-color);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .old-price {
+      color: #a0aec0;
+      text-decoration: line-through;
+    }
+    .badge-sale {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #f6ad55;
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+    }
+  
+    /* زر الطلب */
+    .btn-success {
+      background-color: var(--accent-color);
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      padding: 0.55rem 1.25rem;
+      transition: background-color 0.3s ease;
+      color: #fff;
+    }
+    .btn-success:hover {
+      background-color: #fce300;
+    }
+  
+    /* نموذج الطلب */
+    #orderForm {
+      border-radius: 20px;
+      max-width: 600px;
+      background: var(--card-bg);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      margin: 2rem auto;
+    }
+    #orderForm .form-control,
+    #orderForm textarea {
+      border: none;
+      border-radius: 30px;
+      background-color: var(--input-bg);
+      padding: 0.75rem 1rem;
+      transition: background-color 0.3s ease;
+    }
+    #orderForm .form-control:focus,
+    #orderForm textarea:focus {
+      background-color: var(--hover-input-bg);
+    }
+  
+
+    /* الأقسام المخفية */
+ section.hidden-section {
+  display: none;
+  background-color: #ffffff;
+  padding: 30px 20px;
+  margin: 30px auto;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+ }
+
+ section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #af4dc7;
+ }
+    /* الأجهزة الصغيرة */
+    @media (max-width: 768px) {
+      .card .card-body {
+        padding: 1rem 0.75rem;
+      }
+      .product-img {
+        height: 180px;
+      }
+      h3, h4 {
+        font-size: 1rem;
+      }
+    }
+
+    #special-image {         /*صورة محددة متجاوبة*/
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+
+
+  </style>
+</head>
+<body class="bg-light">
+
+  <img src="images2/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر"><br>
+
+<!-- نموذج الطلب -->
+<form action="https://usebasin.com/f/d908c7a81323" method="POST">
+  <div class="container mt-5 bg-white p-4 rounded shadow" id="orderForm">
+    <h4 class="mb-3">📋 نموذج الطلب</h4>
+
+    <div class="mb-3">
+      <label for="product" class="form-label">اسم المنتج</label>
+      <input type="text" class="form-control" id="product" name="product" placeholder="مثال: الحقيبة الأمريكية" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="name" class="form-label">الاسم الكامل</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="أدخل اسمك" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">رقم الهاتف</label>
+      <input type="tel" class="form-control" id="phone" name="phone" placeholder=" ادخل رقمك الهاتف" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="wilaya" class="form-label">الولاية</label>
+      <input type="text" class="form-control" id="wilaya" name="wilaya" placeholder=" ولايتك"required>
+    </div>
+
+    <div class="mb-3">
+      <label for="address" class="form-label">العنوان الكامل</label>
+      <textarea class="form-control" id="address"  placeholder="أدخل العنوان بالتفصيل" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="address" class="form-label">الكمية المطلوبة</label>
+      <textarea class="form-control" id="message" name="message" placeholder=" أكتب العدد"required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary"> تأكيد الطلب</button>
+  </div>
+</form><br>
+
+
+  <script>
+    function showSection(id) {
+      // إخفاء جميع الأقسام أولاً
+      document.querySelectorAll('.hidden-section').forEach(section => {
+        section.style.display = 'none';
+      });
+
+      // إظهار القسم المطلوب
+      const target = document.getElementById(id);
+      if (target) {
+        target.style.display = 'block';
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+  <script>
+
+// فتح وإغلاق القائمة عند الضغط على زر التبديل
+document.addEventListener('DOMContentLoaded', function () {
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.querySelector('#navbarNav');
+
+  navbarToggler.addEventListener('click', function () {
+    navbarCollapse.classList.toggle('show');
+  });
+});
+
+// وظيفة البحث عن منتج
+document.querySelector('.search-bar').addEventListener('keypress', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // منع إعادة تحميل الصفحة
+    const query = event.target.value.trim(); // النص المدخل
+    if (query) {
+      alert(`تم البحث عن المنتج: ${query}`); // عرض رسالة البحث
+    } else {
+      alert('يرجى إدخال اسم المنتج للبحث!');
+    }
+  }
+});
+
+// تأثير بسيط عند الضغط على الروابط
+document.querySelectorAll('.nav-link').forEach(function (link) {
+  link.addEventListener('click', function () {
+    alert(`تم الانتقال إلى: ${link.textContent}`);
+  });
+});
+
+  </script>
+  
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
