@@ -29,24 +29,22 @@
       padding: 15px 25px; border: none; border-radius: 6px;
       font-size: 1em; cursor: pointer;
     }
-    .add-cart { background: #ffd814; }
+    .add-cart { background: #ffd814;  }
     .buy-now { background: #f08804; color: white; }
  
     .share-btn {
-      background: #ee780a;
-      color: #f5f3f1;
-      font-size: 13px;
+      background: #80c70f;
+      color: #0c0c0b;
+     font-size:50px;
     }
-    .share-btn, .buy-btn, .cart-btn {
-    font-size: 18px; /* تكبير حجم النص */
-    padding: 12px 15px; /* زيادة المساحة داخل الزر */
-    width: 10%; /* جعل الزر يأخذ عرض العنصر الأب */
-    border-radius: 8px; /* تحسين الزوايا */
-}
+    
 
-.buy-now button {
-    font-size: 28px; /* تكبير حجم النص */
-    padding: 12px 28px; /* توسيع المساحة داخل الزر */
+/* تنسيق موحد لجميع الأزرار */
+.buy-now button,
+.add-cart button,
+.share-btn button {
+    font-size: 50px; /* تكبير حجم النص */
+    padding: 19px 35px; /* توسيع المساحة داخل الزر */
     background-color: #ff7300; /* لون برتقالي مميز */
     color: white; /* لون النص */
     border: 3px solid #e68900; /* إضافة إطار برتقالي داكن */
@@ -56,24 +54,45 @@
     transition: all 0.3s ease-in-out;
 }
 
+
+
+/* تأثير عند تمرير الماوس أو الضغط */
+.buy-now button:hover,
+.add-cart button:hover,
+.share-btn button:hover {
+    background: #00e660; /* تغيير لون الخلفية عند التفاعل */
+    transform: scale(1.15); /* تكبير الزر عند تمرير الماوس */
+}
+
 .buy-now button:hover {
     background: #00e660; /* تغيير لون الخلفية عند التفاعل */
     transform: scale(1.3); /* تكبير الزر عند تمرير الماوس */
-    font-size: 27px; /* تكبير حجم النص */
+    font-size: 40px; /* تكبير حجم النص */
 }
 
+.img-placeholder {
+    filter: blur(10px);
+    transition: filter 0.5s ease-in-out;
+}
+
+.img-loaded {
+    filter: blur(0);
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
  </style>
 </head>
 <body>
 
 <div class="container">
-  <h2>Hada Labo Gokujyun Moist Cream</h2>
-  <div class="gallery">
-    <img id="mainImage" src="/im1/46.jpg" alt="Hada Labo Gokujyun Moist Cream" loading="lazy">
-    
-  </div>
+  <h1>Hada Labo Gokujyun Moist Cream</h1>
+  
 
-  <div class="price" style="color: rgb(121, 121, 113); font-size: 18px; font-weight: bold;">DA 5400 DZD</div>
+  <div class="price" style="color: rgb(50, 231, 14); font-size: 22px; font-weight: bold;">DA 5400 DZD</div>
 
   <div class="desc" style="font-size: 14px; line-height: 1.6;">
     كريم **مرطب مكثف غني بحمض الهيالورونيك الفائق التركيز**، <br>
