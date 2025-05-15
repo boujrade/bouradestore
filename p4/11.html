@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>TP-Link BE170</title>
+  <style>
+     body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; direction: rtl; }
+    .container {
+      max-width: 900px; margin: auto; background: #fff; padding: 20px;
+      border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .gallery { position: relative; text-align: center; }
+    .gallery img {
+      width: 100%; max-height: 400px; border-radius: 10px; object-fit: contain;
+    }
+    .buttons button {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5); color: white; border: none;
+      padding: 10px; cursor: pointer; font-size: 20px;
+    }
+    .buttons .prev { left: 10px; }
+    .buttons .next { right: 10px; }
+
+    .desc { margin-top: 20px; font-size: 1.1em; color: #333; line-height: 1.6; text-align: right; }
+    .price { font-size: 2em; color: #111; margin: 20px 0; }
+
+    .btns { display: flex; gap: 15px; margin-top: 20px; justify-content: flex-end; }
+    .btns button {
+      padding: 15px 25px; border: none; border-radius: 6px;
+      font-size: 1em; cursor: pointer;
+    }
+    .add-cart { background: #ffd814;  }
+    .buy-now { background: #f08804; color: white; }
+ 
+    .share-btn {
+      background: #80c70f;
+      color: #0c0c0b;
+     font-size:50px;
+    }
+    
+
+/* تنسيق موحد لجميع الأزرار */
+.buy-now button,
+.add-cart button,
+.share-btn button {
+    font-size: 50px; /* تكبير حجم النص */
+    padding: 19px 35px; /* توسيع المساحة داخل الزر */
+    background-color: #ff7300; /* لون برتقالي مميز */
+    color: white; /* لون النص */
+    border: 3px solid #e68900; /* إضافة إطار برتقالي داكن */
+    border-radius: 10px; /* زوايا ناعمة */
+    font-weight: bold; /* جعل النص أكثر وضوحًا */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+/* تأثير عند تمرير الماوس أو الضغط */
+.buy-now button:hover,
+.add-cart button:hover,
+.share-btn button:hover {
+    background: #00e660; /* تغيير لون الخلفية عند التفاعل */
+    transform: scale(1.15); /* تكبير الزر عند تمرير الماوس */
+}
+
+.buy-now button:hover {
+    background: #00e660; /* تغيير لون الخلفية عند التفاعل */
+    transform: scale(1.3); /* تكبير الزر عند تمرير الماوس */
+    font-size: 40px; /* تكبير حجم النص */
+}
+
+.img-placeholder {
+    filter: blur(10px);
+    transition: filter 0.5s ease-in-out;
+}
+
+.img-loaded {
+    filter: blur(0);
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+ </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>شامبو العسل والبروبوليس - Apivita Propolis Honey Shampoo</h1>
+
+  <div class="price" style="color: rgb(50, 231, 14); font-size: 22px; font-weight: bold;">DA 6100 DZD</div>
+
+  <div class="desc" style="font-size: 14px; line-height: 1.6;">
+    شامبو العسل والبروبوليس الطبيعي بتركيبة غنية بمستخلصات العسل والبروبوليس، <br>
+    يساعد في تغذية وتقوية الشعر، مع تعزيز حيويته ولمعانه الطبيعي.<br>
+    مثالي لفروة الرأس الحساسة، حيث يوفر حماية متوازنة وتنظيفًا لطيفًا.<br>
+    <span style="color: rgb(235, 219, 5);">★★★★★</span> تقييم – 4.9/5.
+  </div>
+
+  <div dir="rtl" style="font-family: Arial, sans-serif; line-height:1.6; max-width:100%; margin:auto; padding:10px; font-size:14px;">
+    <h3 style="font-size:16px;">🌸المكونات الفعالة</h3>
+    <ul>
+      <li><strong>مستخلص العسل العضوي:</strong> يغذي الشعر ويرطبه بعمق.</li>
+      <li><strong>البروبوليس الطبيعي:</strong> يحمي فروة الرأس ويعزز صحة الشعر.</li>
+      <li><strong>زيوت نباتية:</strong> تمنح الشعر قوة ولمعانًا مذهلًا.</li>
+      <li><strong>مضادات الأكسدة:</strong> تساعد في حماية الشعر من العوامل البيئية الضارة.</li>
+    </ul>
+  </div>
+
+  <div dir="rtl" style="font-family: Arial, sans-serif; line-height:1.6; max-width:100%; margin:auto; padding:10px; font-size:14px;">
+    <h3 style="font-size:16px;">✅ المميزات البارزة</h3>
+    <ul>
+      <li><strong>ترطيب مكثف:</strong> يمنح الشعر نعومة وانتعاشًا يدوم طويلًا.</li>
+      <li><strong>تقوية الشعر:</strong> يساعد في تقليل التساقط ويعزز كثافته.</li>
+      <li><strong>مناسب لفروة الرأس الحساسة:</strong> يوفر تنظيفًا لطيفًا دون تهيج.</li>
+      <li><strong>إحساس فاخر:</strong> تجربة استثنائية للعناية بالشعر برائحة العسل المهدئة.</li>
+    </ul>
+  </div>
+  
+  <div class="btns">
+
+    <button class="share-btn" onclick="shareProduct('راوتر TP-Link Archer BE550')">🔗 مشاركة</button>
+    <button class="add-cart">أضف إلى السلة</button>
+    <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
+   
+  </div>
+  
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
+  }
+
+  function goToDetails(name) {
+    alert(`سيتم توجيهك إلى صفحة تفاصيل: ${name} (مثال فقط)`);
+    // في موقع فعلي، استبدل هذا بـ window.location.href = 'product1.html';
+  }
+</script>
+
+
+</body>
+</html>
