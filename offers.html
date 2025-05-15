@@ -82,96 +82,11 @@
 
        
 
-  <img src="images/html.gnn.jpg" style="height: 100px; max-height: 30vh; margin-right: 150px;" alt="شعار المتجر"><br>
-
-<!-- نموذج الطلب -->
-<form action="https://usebasin.com/f/d908c7a81323" method="POST">
-  <div class="container mt-5 bg-white p-4 rounded shadow" id="orderForm">
-    <h4 class="mb-3">📋 نموذج الطلب</h4>
-
-    <div class="mb-3">
-      <label for="product" class="form-label">اسم المنتج</label>
-      <input type="text" class="form-control" id="product" name="product" placeholder="مثال: الحقيبة الأمريكية" required>
-    </div>
-
-    <div class="mb-3">
-      <label for="name" class="form-label">الاسم الكامل</label>
-      <input type="text" class="form-control" id="name" name="name" placeholder="أدخل اسمك" required>
-    </div>
-
-    <div class="mb-3">
-      <label for="phone" class="form-label">رقم الهاتف</label>
-      <input type="tel" class="form-control" id="phone" name="phone" placeholder=" ادخل رقمك الهاتف" required>
-    </div>
-
-    <div class="mb-3">
-      <label for="wilaya" class="form-label">الولاية</label>
-      <input type="text" class="form-control" id="wilaya" name="wilaya" placeholder=" ولايتك"required>
-    </div>
-
-    <div class="mb-3">
-      <label for="address" class="form-label">العنوان الكامل</label>
-      <textarea class="form-control" id="address"  placeholder="أدخل العنوان بالتفصيل" required></textarea>
-    </div>
-
-    <div class="mb-3">
-      <label for="address" class="form-label">الكمية المطلوبة</label>
-      <textarea class="form-control" id="message" name="message" placeholder=" أكتب العدد"required></textarea>
-    </div>
-
-    <button type="submit" class="btn btn-primary"> تأكيد الطلب</button>
-  </div>
-</form><br>
+  <div style="text-align: center;">
+    <img src="images2/html.gnn.jpg" style="height: 100px; max-height: 30vh; display: inline-block;" alt="شعار المتجر">
+</div>
 
 
-  <script>
-    function showSection(id) {
-      // إخفاء جميع الأقسام أولاً
-      document.querySelectorAll('.hidden-section').forEach(section => {
-        section.style.display = 'none';
-      });
-
-      // إظهار القسم المطلوب
-      const target = document.getElementById(id);
-      if (target) {
-        target.style.display = 'block';
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  </script>
-  <script>
-
-// فتح وإغلاق القائمة عند الضغط على زر التبديل
-document.addEventListener('DOMContentLoaded', function () {
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navbarCollapse = document.querySelector('#navbarNav');
-
-  navbarToggler.addEventListener('click', function () {
-    navbarCollapse.classList.toggle('show');
-  });
-});
-
-// وظيفة البحث عن منتج
-document.querySelector('.search-bar').addEventListener('keypress', function (event) {
-  if (event.key === 'Enter') {
-    event.preventDefault(); // منع إعادة تحميل الصفحة
-    const query = event.target.value.trim(); // النص المدخل
-    if (query) {
-      alert(`تم البحث عن المنتج: ${query}`); // عرض رسالة البحث
-    } else {
-      alert('يرجى إدخال اسم المنتج للبحث!');
-    }
-  }
-});
-
-// تأثير بسيط عند الضغط على الروابط
-document.querySelectorAll('.nav-link').forEach(function (link) {
-  link.addEventListener('click', function () {
-    alert(`تم الانتقال إلى: ${link.textContent}`);
-  });
-});
-
-  </script>
   
 
 <!-- Bootstrap JS -->
