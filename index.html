@@ -21,7 +21,7 @@
       --primary-color: #1a202c;         /* لون أساسي داكن */
       --secondary-color: #2d3748;       /* لون تبايني أغمق */
       --accent-color: #837b71;          /* لون تفاعلي/لمسة طازجة */
-      --background-color: #fffffe;      /* خلفية فاتحة نظيفة */
+      --background-color: #fffefe;      /* خلفية فاتحة نظيفة */
       --card-bg: #ffffff;               /* لون البطاقات */
       --input-bg: #edf2f7;              /* خلفية الحقول */
       --hover-input-bg: #e2e8f0;         /* خلفية الحقول عند التركيز */
@@ -622,36 +622,27 @@ button {
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
-  background-color: #fd8cd0; /* لون خلفية اختياري */
+  background-color: #f7f2f5; /* لون خلفية اختياري */
   padding: 10px 0;
   font-size: 12px; /* تصغير حجم النص */
   color: #333;
 }
 
-.moving-text {
-  overflow: hidden;
-  white-space: nowrap;
-   width: 100vw; /* التأكد من أن النص يمتد عبر الشاشة بالكامل */
-}
-
 .moving-text span {
   display: inline-block;
-  padding-left: 100%; /* يبدأ من خارج الشاشة */
+  padding-left: 100%; /* ضروري لبدء الحركة من خارج الشاشة */
   animation: scrollText 15s linear infinite;
-  transform: translateX(100%);
 }
 
 @keyframes scrollText {
-  from {
-    transform: translateX(100%);
+  0% {
+    transform: translateX(100%); /* يبدأ خارج يمين الشاشة */
   }
-  to {
-    transform: translateX(-100%);
+  100% {
+    transform: translateX(-100%); /* يخرج من يسار الشاشة */
   }
 }
-
-
-
+ئ
 /* تأثير Skeleton Loader */
 .skeleton {
   background: linear-gradient(90deg, #f3f3f3 25%, #ecebeb 50%, #f3f3f3 75%);
@@ -807,7 +798,7 @@ font-size: 18px;
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="images2/html.jjj.jpg" style="height: 35px; max-height: 8vh; margin-right: 2px;" alt="شعار المتجر" loading="lazy">
 
-        <span style="font-size: 15px; color: #f03070; margin-right: 30px;   ">استكشف أفضل عروضنا الآن</span>
+        <span style="font-size: 15px; color: #f03070; margin-right: 370px;   ">استكشف أفضل عروضنا الآن</span>
 
       <i class="bi bi-person" style="font-size: 17px;"></i>
 
@@ -855,7 +846,7 @@ font-size: 18px;
 
 
 <div class="moving-text">
-  🔥 أكبر متجر الكتروني لبيع منتجات أصلية للعناية بالبشرة والجمال وزيوت أساسية لضمان تجربة مثالية للعناية الشخصية والصحة الجسمية  "التوصيل 58 ولاية و إلى باب المنزل" مرحباً بالجميع 🎉
+  🔥 أكبر متجر الكتروني لبيع منتجات أصلية للعناية بالبشرة والجمال, مصنوعة من مواد طبيعية وزيوت أساسية لضمان تجربة مثالية للعناية الشخصية والصحة الجسمية  "التوصيل 58 ولاية و إلى باب المنزل" مرحباً بالجميع 🎉
 </div><br>
 
  
@@ -1013,9 +1004,9 @@ font-size: 18px;
 <h2 class="elegant-title"> إليك بعض من منتجاتنا المميزة</h2><br><br>
 
 <div class="special-card-container">
-  <div class="special-card" onclick="window.location.href='p1/21.html'">
-    <img src="im1/21.jpg" alt="منتج 1">
-    <h6 class="card-title">Avene Eau Thermale XeraCalm </h6>
+  <div class="special-card" onclick="window.location.href='p1/37.html'">
+    <img src="im1/37.jpg" alt="منتج 1">
+    <h6 class="card-title"> DERMEDIC Hydrain3 Hialuro Cream </h6>
     <hr class="divider">
 </div>
 
@@ -1031,27 +1022,27 @@ font-size: 18px;
     <hr class="divider">
 </div>
 
-<div class="special-card" onclick="window.location.href='p1/15.html'">
-    <img src="im1/15.jpg" alt="منتج 4">
-    <h6 class="card-title"> Clarins Hydra-Essentiel Silky Cream </h6>
+<div class="special-card" onclick="window.location.href='p1/44.html'">
+    <img src="im1/44.jpg" alt="منتج 4">
+    <h6 class="card-title"> Missha Super Aqua Hydrating Cream </h6>
     <hr class="divider">
 </div>
 
-<div class="special-card" onclick="window.location.href='p1/5.html'">
-    <img src="im1/05.jpg" alt="منتج 5">
-    <h6 class="card-title">Clinique Moisture Surge</h6>
+<div class="special-card" onclick="window.location.href='p1/50.html'">
+    <img src="im1/50.jpg" alt="منتج 5">
+    <h6 class="card-title">Etude House SoonJung Moist Cream</h6>
     <hr class="divider">
 </div>
 
-<div class="special-card" onclick="window.location.href='p1/16.html'">
-    <img src="im1/16.jpg" alt="منتج 6">
-    <h6 class="card-title">Kiehl's Ultra Facial Cream </h6>
+<div class="special-card" onclick="window.location.href='p1/36.html'">
+    <img src="im1/36.jpg" alt="منتج 6">
+    <h6 class="card-title">Farmasi Dr. C. Tuna Moisturizing  </h6>
     <hr class="divider">
 </div>
 
-<div class="special-card" onclick="window.location.href='p1/29.html'">
-    <img src="im1/29.jpg" alt="منتج 7">
-    <h6 class="card-title">Simple Kind to Skin Hydrating Light Moisturizer</h6>
+<div class="special-card" onclick="window.location.href='p1/47.html'">
+    <img src="im1/47.jpg" alt="منتج 7">
+    <h6 class="card-title">The Face Shop Chia Seed Moisture Recharge Cream</h6>
     <hr class="divider">
 </div>
 
@@ -1061,9 +1052,9 @@ font-size: 18px;
     <hr class="divider">
 </div>
 
-<div class="special-card" onclick="window.location.href='p1/24.html'">
-    <img src="im1/24.jpg" alt="منتج 9">
-    <h6 class="card-title">Yves Rocher Hydra Vegetal</h6>
+<div class="special-card" onclick="window.location.href='p1/49.html'">
+    <img src="im1/49.jpg" alt="منتج 9">
+    <h6 class="card-title">Etude House SoonJung Moist Cream</h6>
     <hr class="divider">
 </div>
 
