@@ -604,8 +604,8 @@ button {
   width: 100%;
   overflow: hidden;
   direction: rtl; /* عرض النص من اليمين لليسار */
-  background: #f5d2e6;
-  padding: 8px 0;
+  background: #f8e0ee;
+  padding: 1px 0;
   white-space: nowrap;
   position: relative;
 }
@@ -613,17 +613,18 @@ button {
 .text-content {
   display: inline-block;
   padding-left: 100%; /* حتى يبدأ خارج الشاشة */
-  animation: scroll-text 60s linear infinite;
+  animation: scroll-text 25s linear infinite;
 }
 
 @keyframes scroll-text {
   0% {
-    transform: translateX(0%);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(0%);
   }
 }
+
 /* تأثير Skeleton Loader */
 .skeleton {
   background: linear-gradient(90deg, #f3f3f3 25%, #ecebeb 50%, #f3f3f3 75%);
