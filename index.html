@@ -15,7 +15,7 @@
   <title>معرض الصور</title>
   <link rel="stylesheet" href="styles.css">
 
-  <style>
+   <style>
     /* تعريف المتغيرات الأساسية للألوان */
     :root {
       --primary-color: #1a202c;         /* لون أساسي داكن */
@@ -245,24 +245,7 @@ body {
 }
 
 
-    .moving-text {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #141314;
-    text-align: center;
-    display: block;
-    position: relative;
-    animation: moveText  4s ease-in-out infinite alternate;
-}
-
-@keyframes moveText {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(50px);
-    }
-}
+    
 
 
 
@@ -618,20 +601,29 @@ button {
 }
 
 .moving-text {
-    white-space: nowrap; /* يمنع التفاف النص */
-    overflow: hidden; /* يمنع الاختفاء خارج الحدود */
-    text-overflow: clip; /* يقطع النص بدلاً من إخفائه */
+  width: 100%;
+  overflow: hidden;
+  direction: rtl; /* عرض النص من اليمين لليسار */
+  background: #f8caf2;
+  padding: 10px 0;
+  white-space: nowrap;
+  position: relative;
 }
 
-@keyframes scrollText {
+.text-content {
+  display: inline-block;
+  padding-left: 100%; /* حتى يبدأ خارج الشاشة */
+  animation: scroll-text 19s linear infinite;
+}
+
+@keyframes scroll-text {
   0% {
-    transform: translateX(100%); /* يبدأ خارج يمين الشاشة */
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%); /* يخرج من يسار الشاشة */
+    transform: translateX(-100%);
   }
 }
-
 /* تأثير Skeleton Loader */
 .skeleton {
   background: linear-gradient(90deg, #f3f3f3 25%, #ecebeb 50%, #f3f3f3 75%);
@@ -765,7 +757,6 @@ font-size: 18px;
   color: #aa8453; /* لون كلاسيكي فاخر عند التحويم */
 }
 
-
   </style>
 </head>
 
@@ -835,7 +826,9 @@ font-size: 18px;
 
 
 <div class="moving-text">
-  🔥 أكبر متجر الكتروني لبيع منتجات أصلية للعناية بالبشرة والجمال وزيوت أساسية لضمان تجربة مثالية للعناية الشخصية والصحة الجسمية  "التوصيل 58 ولاية و إلى باب المنزل" مرحباً بالجميع 🎉
+  <div class="text-content">
+    🔥 أكبر متجر الكتروني لبيع منتجات أصلية للعناية بالبشرة والجمال وزيوت أساسية,عطور شعبية لضمان تجربة مثالية للعناية الشخصية والصحة الجسمية "التوصيل 58 ولاية و إلى باب المنزل" مرحباً بالجميع 🔥
+  </div>
 </div><br>
 
  
@@ -862,7 +855,11 @@ font-size: 18px;
 
   
   
-  <div class="moving-text">   "عروض مذهلة"    " منتجات مميزة"     " أسرع خدمة توصيل!</div>
+  <div class="moving-text">
+    <div class="text-content">   "عروض مذهلة"    " منتجات مميزة"     " أسرع خدمة توصيل!</div>
+    </div>
+
+
 <!-- قسم المنتجات -->
 <div class="container py-4">
   <h3 class="mb-4">جميع المنتجات</h3>
