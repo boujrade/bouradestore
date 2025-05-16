@@ -252,15 +252,15 @@ body {
     text-align: center;
     display: block;
     position: relative;
-    animation: moveText  19s ease-in-out infinite alternate;
+    animation: moveText  4s ease-in-out infinite alternate;
 }
 
 @keyframes moveText {
     from {
-        transform: translateX(100%);
+        transform: translateX(0);
     }
     to {
-        transform: translateX(-100%);
+        transform: translateX(50px);
     }
 }
 
@@ -622,18 +622,23 @@ button {
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
-  background-color: #fd8cd0; /* تثبيت الخلفية */
+  background-color: #fd8cd0; /* لون خلفية اختياري */
   padding: 10px 0;
-  font-size: 12px;
-  color: #222121;
+  font-size: 12px; /* تصغير حجم النص */
+  color: #333;
+}
+
+.moving-text {
+  overflow: hidden;
+  white-space: nowrap;
+   width: 100vw; /* التأكد من أن النص يمتد عبر الشاشة بالكامل */
 }
 
 .moving-text span {
   display: inline-block;
-  position: absolute;
-  left: 100%;
+  padding-left: 100%; /* يبدأ من خارج الشاشة */
   animation: scrollText 15s linear infinite;
-  will-change: transform; /* تحسين الأداء */
+  transform: translateX(100%);
 }
 
 @keyframes scrollText {
