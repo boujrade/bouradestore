@@ -192,9 +192,17 @@ textarea {
 </form><br>
 
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const storedProduct = localStorage.getItem("selectedProduct");
+    if (storedProduct) {
+        document.getElementById("product").value = storedProduct;
+    }
+});
+</script>
+
   <script>
-
-
 
     function showSection(id) {
       // إخفاء جميع الأقسام أولاً
