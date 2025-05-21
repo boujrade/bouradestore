@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>سلة المشتريات</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .cart-item {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .cart-item button {
+      margin: 5px 3px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .inc { background: #28a745; color: white; }
+    .dec { background: #ffc107; color: black; }
+    .del { background: #dc3545; color: white; }
+    .clear {
+      background: #6c757d;
+      color: white;
+      padding: 10px 16px;
+      margin-top: 20px;
+      display: inline-block;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 5px;
+      color: #007bff;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    #total {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+      color: #333;
+    }
+    #return-last {
+      margin-top: 20px;
+      text-align: center;
+    }
+    #return-last a {
+      background: #17a2b8;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🛒 سلة المشتريات</h1>
+<div id="cart-items">جاري تحميل السلة...</div>
+<div id="total">الإجمالي: 0 DA</div>
+
+<button class="clear" onclick="clearCart()">🧹 تفريغ السلة</button>
+
+<div id="return-last"></div>
+
+<script>
+  function loadCart() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartDiv = document.getElementById('cart-items');
+    const totalDiv = document.getElementById('total');
+    cartDiv.innerHTML = '';
+    let total = 0;
+
+    if (cart.length === 0) {
+      cartDiv.innerHTML = '<p style="text-align:center; font-size: 1.1rem; color: #666;">السلة فارغة</p>';
+      totalDiv.textContent = 'الإجمالي: DA 0';
+      return;
+    }
+
+    cart.forEach((item, index) => {
+      const itemTotal = item.price * item.qty;
+      total += itemTotal;
+      const link = item.link || "p1/"; // الرابط الديناميكي المحفوظ مع المنتج
+
+      cartDiv.innerHTML += `
+        <div class="cart-item">
+          <p><strong>${item.name}</strong> × ${item.qty} = ${itemTotal} DA</p>
+          <button class="inc" onclick="changeQty(${index}, 1)">➕</button>
+          <button class="dec" onclick="changeQty(${index}, -1)">➖</button>
+          <button class="del" onclick="removeItem(${index})">🗑️ حذف</button>
+          <br />
+          <a class="back-link" href="${link}">🔙 العودة إلى ${item.name}</a>
+        </div>
+      `;
+    });
+
+    totalDiv.textContent = `الإجمالي: DA ${total}`;
+  }
+
+  function changeQty(index, amount) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (!cart[index]) return;
+    cart[index].qty += amount;
+    if (cart[index].qty <= 0) {
+      cart.splice(index, 1);
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    loadCart();
+  }
+
+  function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    loadCart();
+  }
+
+  window.onload = loadCart;
+</script>
+
+</body>
+</html>
