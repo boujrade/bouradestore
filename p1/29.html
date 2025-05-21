@@ -2,122 +2,170 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>Vaseline Intensive Care</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <style>
+  <title>كريم Vaseline Intensive Care</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
     body {
-      font-family: Arial;
-      background: #f9f9f9;
-      padding: 20px;
+      font-family: 'Arial', sans-serif;
+      background: #f0f0f0;
+      padding: 15px;
+      margin: 0;
     }
+
     .container {
       background: white;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px #ccc;
-      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
       margin: auto;
     }
+
+    h1 {
+      font-size: 20px;
+      color: #000;
+      margin-bottom: 8px;
+      text-align: right;
+    }
+
     .price {
-      color: #27ae60;
-      font-size: 30px;
+      color: goldenrod;
+      font-size: 22px;
       font-weight: bold;
       margin-bottom: 10px;
+      text-align: right;
     }
+
     .desc, ul {
-      font-size: 15px;
-      line-height: 1.6;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #333;
     }
+
+    ul {
+      padding-right: 20px;
+    }
+
     .btns {
-      margin-top: 15px;
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
     }
+
     button {
-      padding: 10px 15px;
-      margin: 5px;
-      background: #007bff;
+      flex: 1 1 100%;
+      padding: 10px;
+      background: #333;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 13px;
+      transition: background 0.3s;
     }
+
+    button:hover {
+      background: #000;
+    }
+
     .buy-now {
-      background-color: #28a745;
+      background-color: #b30000;
     }
+
     .share-btn {
-      background-color: #ffc107;
-      color: black;
+      background-color: goldenrod;
+      color: #000;
     }
+
     a {
-      color: #007bff;
+      color: gray;
       text-decoration: none;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 15px;
+      display: block;
+      margin-top: 20px;
+      text-align: center;
     }
+
     .emoji {
-      font-size: 3em;
+      font-size: 1.5em;
       vertical-align: middle;
+      margin-left: 5px;
+    }
+
+    @media (min-width: 600px) {
+      .container {
+        max-width: 700px;
+      }
+
+      .btns {
+        flex-wrap: nowrap;
+      }
+
+      button {
+        flex: 1;
+      }
     }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>Vaseline Intensive Care</h1>
+  <h1>كريم Vaseline Intensive Care</h1>
 
-  <div class="price">DA 1900</div>
+  <div class="price">DA 2900</div>
 
   <div class="desc">
-    مرطب غني مصمم خصيصًا لترطيب البشرة الجافة والمتهيجة بعمق، <br>
-    يحتوي على قطرات من الفازلين النقي للمساعدة في إصلاح البشرة واستعادة نعومتها الطبيعية.<br>
-    مناسب للاستخدام اليومي على الجسم بالكامل.<br>
-    <span style="color: rgb(235, 219, 5); font-size: 1.2em;">★★★★★</span> تقييم – 4.6/5.
+    كريم <strong>Vaseline Intensive Care</strong> يعمل على ترطيب البشرة الجافة والعميقة من الداخل باستخدام تركيبة غنية بالفازلين النقي ومرطبات فعالة.<br>
+    يساعد على استعادة نعومة البشرة ويحافظ على ترطيبها لفترة طويلة.<br>
+    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.6/5
   </div>
 
   <div>
-    <h3>🧴 المكونات الفعالة</h3>
+    <h3>🌿 المكونات الفعالة</h3>
     <ul>
-      <li><strong>الفازلين النقي:</strong> يساعد في تكوين حاجز واقٍ على البشرة.</li>
-      <li><strong>الجلسرين:</strong> يجذب الرطوبة ويحافظ عليها في طبقات البشرة.</li>
-      <li><strong>الفيتامينات:</strong> لتحسين نعومة البشرة وصحتها.</li>
-      <li><strong>قوام غير دهني:</strong> يمتص بسرعة دون ترك أثر دهني.</li>
+      <li><strong>فازلين نقي 100%:</strong> يكوّن حاجزًا لحبس الرطوبة داخل البشرة.</li>
+      <li><strong>جليسيرين:</strong> يساعد على جذب الرطوبة إلى الجلد.</li>
+      <li><strong>مكونات مغذية:</strong> لتهدئة وشفاء البشرة المتشققة والجافة.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ المميزات البارزة</h3>
+    <h3>✅ المميزات</h3>
     <ul>
-      <li><strong>إصلاح فوري للبشرة:</strong> يرطب ويعيد الحيوية للبشرة الجافة.</li>
-      <li><strong>مناسب لجميع أفراد العائلة:</strong> يمكن استخدامه على جميع أنواع البشرة.</li>
-      <li><strong>نتائج واضحة:</strong> ترطيب يدوم طوال اليوم.</li>
-      <li><strong>يمنح النعومة والمرونة:</strong> بشرة أكثر راحة وانتعاشًا.</li>
+      <li><strong>ترطيب مكثف يدوم حتى 24 ساعة.</strong></li>
+      <li><strong>مثالي للبشرة الجافة جداً والتالفة.</strong></li>
+      <li><strong>يمتص بسرعة ولا يترك أثرًا دهنيًا.</strong></li>
+      <li><strong>مناسب للاستخدام اليومي.</strong></li>
     </ul>
   </div>
 
   <div class="btns">
-    <button class="share-btn" onclick="shareProduct('Vaseline Intensive Care')">
+    <button class="share-btn" onclick="shareProduct('كريم Vaseline Intensive Care')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('Vaseline Intensive Care', 1900)">
-      <span class="emoji">🛒</span> أضف إلى السلة
+    <button onclick="addToCart('كريم Vaseline Intensive Care', 2900)">
+      <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('Vaseline Intensive Care')">
+    <button class="buy-now" onclick="storeProductAndRedirect('كريم Vaseline Intensive Care')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
 
-  <br>
-  <a href="cart.html"><span class="emoji">🛒</span> عرض سلة المشتريات</a>
+  <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
 
 <script>
   function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let link = window.location.href;
     let itemIndex = cart.findIndex(item => item.name === name);
     if (itemIndex !== -1) {
       cart[itemIndex].qty += 1;
     } else {
-      cart.push({ name, price, qty: 1 });
+      cart.push({ name, price, qty: 1, link });
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     localStorage.setItem("lastProduct", name);

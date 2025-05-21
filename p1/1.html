@@ -7,50 +7,43 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #f0f0f0;
-      margin: 0;
+      background: #f0f0f0;
       padding: 15px;
-      color: #333;
+      margin: 0;
     }
 
     .container {
-      background-color: #fff;
+      background: white;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
       max-width: 100%;
       margin: auto;
     }
 
     h1 {
       font-size: 20px;
-      color: #111;
+      color: #000;
+      margin-bottom: 8px;
       text-align: right;
-      margin-bottom: 5px;
     }
 
     .price {
+      color: goldenrod;
       font-size: 22px;
       font-weight: bold;
-      color: goldenrod;
+      margin-bottom: 10px;
       text-align: right;
-      margin-bottom: 15px;
     }
 
     .desc, ul {
       font-size: 14px;
       line-height: 1.7;
-      color: #555;
+      color: #333;
     }
 
     ul {
       padding-right: 20px;
-    }
-
-    h3 {
-      color: #000;
-      margin-top: 20px;
-      font-size: 16px;
     }
 
     .btns {
@@ -64,34 +57,36 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      font-size: 14px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+      background: #333;
       color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #000;
+    }
+
+    .buy-now {
+      background-color: #b30000;
     }
 
     .share-btn {
       background-color: goldenrod;
-      color: black;
-    }
-
-    .buy-now {
-      background-color: #111;
-    }
-
-    .btns button:not(.buy-now):not(.share-btn) {
-      background-color: #666;
+      color: #000;
     }
 
     a {
-      display: block;
-      text-align: center;
-      margin-top: 20px;
+      color: gray;
       text-decoration: none;
-      color: #000;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 15px;
+      display: block;
+      margin-top: 20px;
+      text-align: center;
     }
 
     .emoji {
@@ -119,7 +114,8 @@
 
 <div class="container">
   <h1>كريم الترطيب نيفيا سوفت</h1>
-  <div class="price">3200 د.ج</div>
+
+  <div class="price">DA 3200</div>
 
   <div class="desc">
     كريم <strong>Nivea</strong> بتركيبة خفيفة ترطّب الوجه والجسم واليدين.<br>
@@ -151,14 +147,14 @@
       <span class="emoji">🔗</span> مشاركة
     </button>
     <button onclick="addToCart('كريم نيفيا سوفت', 3200)">
-      <span class="emoji">🛒</span> أضف إلى السلة
+      <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
     <button class="buy-now" onclick="storeProductAndRedirect('كريم نيفيا سوفت')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
 
-  <a href="cart.html"><span class="emoji">🛒</span> عرض السلة</a>
+  <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
 
 <script>
@@ -173,7 +169,7 @@
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     localStorage.setItem("lastProduct", name);
-    alert(`✅ تمت إضافة "${name}" إلى السلة بسعر ${price} د.ج!`);
+    alert(`✅ تمت إضافة "${name}" إلى السلة بسعر ${price} DA!`);
   }
 
   function storeProductAndRedirect(productName) {
