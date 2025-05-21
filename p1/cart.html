@@ -2,37 +2,45 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>سلة المشتريات</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f4f4f4;
-      padding: 20px;
-      max-width: 700px;
+      padding: 15px;
+      max-width: 100%;
       margin: auto;
     }
     h2 {
       text-align: center;
       margin-bottom: 20px;
       color: #333;
+      font-size: 1.6rem;
     }
     .cart-item {
       background: #fff;
       border: 1px solid #ccc;
-      padding: 15px;
+      padding: 12px;
       margin-bottom: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .cart-item p {
-      margin: 5px 0;
-      font-size: 18px;
+      margin: 0 0 10px;
+      font-size: 1rem;
       font-weight: bold;
       color: #222;
     }
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
     .cart-item button {
-      margin: 5px 5px 5px 0;
-      padding: 8px 12px;
+      flex: 1;
+      padding: 8px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -51,14 +59,14 @@
       color: white;
     }
     .back-link {
-      display: inline-block;
+      display: block;
       margin-top: 8px;
       color: #007bff;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 14px;
     }
     #total {
-      font-size: 22px;
+      font-size: 1.3rem;
       font-weight: bold;
       margin-top: 25px;
       text-align: center;
@@ -66,9 +74,21 @@
     }
     #empty-msg {
       text-align: center;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #666;
       margin-top: 40px;
+    }
+
+    @media (min-width: 600px) {
+      .cart-item p {
+        font-size: 1.1rem;
+      }
+      .cart-item button {
+        font-size: 15px;
+      }
+      .back-link {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
@@ -79,7 +99,6 @@
 <h3 id="total">الإجمالي: DA 0</h3>
 
 <script>
-  // تحميل محتويات السلة وعرضها
   function loadCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartDiv = document.getElementById('cart-items');
@@ -96,18 +115,17 @@
     cart.forEach((item, index) => {
       const itemTotal = item.price * item.qty;
       total += itemTotal;
-
-      // رابط صفحة الطلب مع تمرير اسم المنتج مشفر في الرابط
       const encodedName = encodeURIComponent(item.name);
       const orderLink = `demande.html?product=${encodedName}`;
 
       cartDiv.innerHTML += `
         <div class="cart-item">
           <p>${item.name} × ${item.qty} = ${itemTotal.toLocaleString()} DA</p>
-          <button class="inc" onclick="changeQty(${index}, 1)">➕</button>
-          <button class="dec" onclick="changeQty(${index}, -1)">➖</button>
-          <button class="del" onclick="removeItem(${index})">🗑️ حذف</button>
-          <br />
+          <div class="button-group">
+            <button class="inc" onclick="changeQty(${index}, 1)">➕</button>
+            <button class="dec" onclick="changeQty(${index}, -1)">➖</button>
+            <button class="del" onclick="removeItem(${index})">🗑️ حذف</button>
+          </div>
           <a class="back-link" href="${orderLink}">🔙 العودة إلى طلب ${item.name}</a>
         </div>
       `;
@@ -116,7 +134,6 @@
     totalDiv.textContent = `الإجمالي: DA ${total.toLocaleString()}`;
   }
 
-  // تغيير كمية المنتج في السلة
   function changeQty(index, amount) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (!cart[index]) return;
@@ -128,7 +145,6 @@
     loadCart();
   }
 
-  // حذف منتج من السلة
   function removeItem(index) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.splice(index, 1);
