@@ -5,60 +5,117 @@
   <title>Sukin Hydrating Facial Moisturizer</title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: Arial;
-      background: #f9f9f9;
-      padding: 20px;
-    }
+  body {
+    font-family: Arial;
+    background: #f9f9f9;
+    padding: 15px;
+    margin: 0;
+  }
+
+  .container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #ccc;
+    max-width: 100%;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .price {
+    color: rgb(50, 231, 14);
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .desc, ul {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  ul {
+    padding-right: 20px;
+  }
+
+  .btns {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  button {
+    flex: 1 1 100%;
+    padding: 8px;
+    background: #2edae0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .buy-now {
+    background-color: orangered;
+  }
+
+  .share-btn {
+    background-color: #ffc107;
+    color: black;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .emoji {
+    font-size: 1.8em;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+
+  @media (min-width: 600px) {
     .container {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px #ccc;
       max-width: 700px;
-      margin: auto;
     }
-    .price {
-      color: #d35400;
-      font-size: 30px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    .desc, ul {
-      font-size: 15px;
-      line-height: 1.6;
-    }
+
     .btns {
-      margin-top: 15px;
+      flex-wrap: nowrap;
     }
+
     button {
-      padding: 10px 15px;
-      margin: 5px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
+      flex: 1;
     }
-    .buy-now {
-      background-color: #28a745;
-    }
-    .share-btn {
-      background-color: #ffc107;
-      color: black;
-    }
-    a {
-      color: #007bff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    .emoji {
-      font-size: 3em;
-      vertical-align: middle;
-    }
-  </style>
+  }
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: right; /* تمت الإضافة */
+}
+
+.price {
+  color: rgb(50, 231, 14);
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: right; /* تمت الإضافة */
+}
+
+
+</style>
 </head>
 <body>
 
