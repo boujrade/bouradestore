@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Avène Hydrance Aqua-Gel</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px #ccc;
+      max-width: 700px;
+      margin: auto;
+    }
+    .price {
+      color: #00aaff; /* لون أزرق مائي */
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .desc, ul {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .btns {
+      margin-top: 15px;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .buy-now {
+      background-color: #28a745;
+    }
+    .share-btn {
+      background-color: #ffc107;
+      color: black;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    /* تكبير الإيموجي */
+    .emoji {
+      font-size: 3em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Avène Hydrance Aqua-Gel</h1>
+
+  <div class="price">DA 3800</div>
+
+  <div class="desc">
+    جل مرطب خفيف ومرطب للبشرة، يحتوي على مياه Avène الحرارية المهدئة.<br>
+    يمنح ترطيبًا مكثفًا ويترك البشرة ناعمة ومشرقة دون إحساس دهني.<br>
+    مناسب للبشرة العادية إلى المختلطة.<br>
+    <span style="color: rgb(235, 219, 5); font-size: 1.2em;">★★★★★</span> تقييم – 4.6/5.
+  </div>
+
+  <div>
+    <h3>🌊 المكونات الفعالة</h3>
+    <ul>
+      <li><strong>مياه Avène الحرارية:</strong> مهدئة ومضادة للالتهابات.</li>
+      <li><strong>حمض الهيالورونيك:</strong> يرطب البشرة بعمق ويملأ الخطوط الدقيقة.</li>
+      <li><strong>تركيبة خفيفة الوزن:</strong> تمتص بسرعة دون ترك أثر دهني.</li>
+      <li><strong>خالي من العطور:</strong> مناسب للبشرة الحساسة.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>✅ المميزات البارزة</h3>
+    <ul>
+      <li><strong>ترطيب فوري ومكثف:</strong> يمنح البشرة شعورًا بالراحة والنضارة.</li>
+      <li><strong>تهدئة البشرة:</strong> يقلل الاحمرار ويخفف التهيجات.</li>
+      <li><strong>قوام هلامي خفيف:</strong> مثالي للبشرة المختلطة والعادية.</li>
+      <li><strong>تركيبة آمنة:</strong> خالية من المواد المهيجة والبارابين.</li>
+    </ul>
+  </div>
+
+  <div class="btns">
+    <button class="share-btn" onclick="shareProduct('Avène Hydrance Aqua-Gel')">
+      <span class="emoji">🔗</span> مشاركة
+    </button>
+    <button onclick="addToCart('Avène Hydrance Aqua-Gel', 3800)">
+      <span class="emoji">🛒</span> أضف إلى السلة
+    </button>
+    <button class="buy-now" onclick="storeProductAndRedirect('Avène Hydrance Aqua-Gel')">
+      <span class="emoji">💳</span> اشترِ الآن
+    </button>
+  </div>
+
+  <br>
+  <a href="cart.html"><span class="emoji">🛒</span> عرض سلة المشتريات</a>
+</div>
+
+<script>
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let itemIndex = cart.findIndex(item => item.name === name);
+    if (itemIndex !== -1) {
+      cart[itemIndex].qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("lastProduct", name);
+    alert(`✅ تمت إضافة "${name}" إلى السلة بسعر ${price} DA!`);
+  }
+
+  function storeProductAndRedirect(productName) {
+    localStorage.setItem("selectedProduct", productName);
+    window.location.href = "demande.html";
+  }
+
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
+  }
+</script>
+
+</body>
+</html>
