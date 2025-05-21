@@ -786,7 +786,62 @@ footer {
 }
 
 
-
+/* قواعد خاصة للهواتف والشاشات الصغيرة */
+@media (max-width: 768px) {
+  /* تأكد أن الحاويات لا تتجاوز العرض */
+  body, .container, .card, .sidebar, nav ul {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px; /* مساحات داخلية مناسبة */
+    box-sizing: border-box;
+  }
+  
+  /* تعديل حجم الخطوص لتناسب الشاشات الصغيرة */
+  body, h1, h2, h3, h4, p, nav a {
+    font-size: 90%; /* تصغير الخط قليلاً */
+  }
+  
+  /* جعل البطاقات تتخذ عرض كامل أو شبه كامل */
+  .card, .special-card {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* تصغير ارتفاع الصور لتناسب الهواتف */
+  .card-img-top, .special-card img {
+    height: 150px !important;
+    object-fit: cover;
+  }
+  
+  /* ضبط قائمة التنقل لتكون عمودية بالكامل */
+  nav ul {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  /* تفعيل التمرير الأفقي للبطاقات الأفقية */
+  .special-card-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* تصغير الأزرار ومساحات الحواف */
+  .btn-success, .menu-btn, .open-btn {
+    font-size: 16px !important;
+    padding: 8px 12px !important;
+  }
+  
+  /* تحسين مساحة البحث */
+  .search-box {
+    flex-direction: column;
+  }
+  
+  .search-box input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
 
 
   </style>

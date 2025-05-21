@@ -1,147 +1,182 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-   <title>Chika Store</title>
+  <meta charset="UTF-8" />
+  <title>كريم Weleda Skin Food</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-     body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; direction: rtl; }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f0f0f0;
+      padding: 15px;
+      margin: 0;
+    }
+
     .container {
-      max-width: 900px; margin: auto; background: #fff; padding: 20px;
-      border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      margin: auto;
     }
-    .gallery { position: relative; text-align: center; }
-    .gallery img {
-      width: 100%; max-height: 400px; border-radius: 10px; object-fit: contain;
-    }
-    .buttons button {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,0.5); color: white; border: none;
-      padding: 10px; cursor: pointer; font-size: 20px;
-    }
-    .buttons .prev { left: 10px; }
-    .buttons .next { right: 10px; }
 
-    .desc { margin-top: 20px; font-size: 1.1em; color: #333; line-height: 1.6; text-align: right; }
-    .price { font-size: 2em; color: #111; margin: 20px 0; }
-
-    .btns { display: flex; gap: 15px; margin-top: 20px; justify-content: flex-end; }
-    .btns button {
-      padding: 15px 25px; border: none; border-radius: 6px;
-      font-size: 1em; cursor: pointer;
+    h1 {
+      font-size: 20px;
+      color: #000;
+      margin-bottom: 8px;
+      text-align: right;
     }
-    .add-cart { background: #ffd814;  }
-    .buy-now { background: #f08804; color: white; }
- 
+
+    .price {
+      color: goldenrod;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+
+    .desc, ul {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    ul {
+      padding-right: 20px;
+    }
+
+    .btns {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    button {
+      flex: 1 1 100%;
+      padding: 10px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #000;
+    }
+
+    .buy-now {
+      background-color: #b30000;
+    }
+
     .share-btn {
-      background: #80c70f;
-      color: #0c0c0b;
-     font-size:50px;
+      background-color: goldenrod;
+      color: #000;
     }
-    
 
-/* تنسيق موحد لجميع الأزرار */
-.buy-now button,
-.add-cart button,
-.share-btn button {
-    font-size: 50px; /* تكبير حجم النص */
-    padding: 19px 35px; /* توسيع المساحة داخل الزر */
-    background-color: #ff7300; /* لون برتقالي مميز */
-    color: white; /* لون النص */
-    border: 3px solid #e68900; /* إضافة إطار برتقالي داكن */
-    border-radius: 10px; /* زوايا ناعمة */
-    font-weight: bold; /* جعل النص أكثر وضوحًا */
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
+    a {
+      color: gray;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+    }
 
+    .emoji {
+      font-size: 1.5em;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
 
+    @media (min-width: 600px) {
+      .container {
+        max-width: 700px;
+      }
 
-/* تأثير عند تمرير الماوس أو الضغط */
-.buy-now button:hover,
-.add-cart button:hover,
-.share-btn button:hover {
-    background: #00e660; /* تغيير لون الخلفية عند التفاعل */
-    transform: scale(1.15); /* تكبير الزر عند تمرير الماوس */
-}
+      .btns {
+        flex-wrap: nowrap;
+      }
 
-.buy-now button:hover {
-    background: #00e660; /* تغيير لون الخلفية عند التفاعل */
-    transform: scale(1.3); /* تكبير الزر عند تمرير الماوس */
-    font-size: 40px; /* تكبير حجم النص */
-}
-
-.img-placeholder {
-    filter: blur(10px);
-    transition: filter 0.5s ease-in-out;
-}
-
-.img-loaded {
-    filter: blur(0);
-}
-
-.gallery img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
- </style>
+      button {
+        flex: 1;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>مسحوق زيادة الوزن بالكربوهيدرات -SERIOUS MASS</h1>
+  <h1>كريم Weleda Skin Food</h1>
 
-  <div class="price" style="color: rgb(50, 231, 14); font-size: 22px; font-weight: bold;">DA 9600 DZD</div>
+  <div class="price">DA 3900</div>
 
-  <div class="desc" style="font-size: 14px; line-height: 1.6;">
-    تركيبة قوية من البروتينات والكربوهيدرات لدعم زيادة الوزن وتحفيز نمو العضلات بشكل صحي وطبيعي.<br>
-    غني بالسعرات الحرارية العالية التي تساعد في تحقيق ضخامة عضلية دون إضافة دهون غير مرغوبة.<br>
-    يحتوي على مزيج متوازن من البروتينات والدهون الصحية لتعزيز الطاقة والقوة البدنية.<br>
-    <span style="color: rgb(235, 219, 5);">★★★★★</span> تقييم – 4.8/5.
+  <div class="desc">
+    كريم <strong>Skin Food</strong> من <strong>Weleda</strong> هو الحل الطبيعي والمثالي لترطيب البشرة الجافة والخشنة.<br>
+    تركيبة غنية بالأعشاب والزيوت الطبيعية لتهدئة وتغذية البشرة بعمق.<br>
+    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.9/5
   </div>
 
-  <div dir="rtl" style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 100%; margin: auto; padding: 10px; font-size: 14px;">
-    <h3 style="font-size: 16px;">💪 المكونات الفعالة</h3>
+  <div>
+    <h3>🌱 المكونات الفعالة</h3>
     <ul>
-      <li><strong>بروتين مصل اللبن:</strong> يدعم النمو العضلي ويساعد في استشفاء العضلات.</li>
-      <li><strong>الكربوهيدرات المعقدة:</strong> توفر طاقة طويلة الأمد دون تقلبات في مستويات السكر.</li>
-      <li><strong>الدهون الصحية:</strong> تحتوي على زيت MCT لضمان دعم غذائي متوازن.</li>
-      <li><strong>الأحماض الأمينية:</strong> تساعد في تحسين الأداء الرياضي وتقليل الإرهاق.</li>
+      <li><strong>خلاصة البابونج:</strong> لتهدئة البشرة المتهيجة.</li>
+      <li><strong>خلاصة الآذريون (Calendula):</strong> تعزز تجدد الخلايا.</li>
+      <li><strong>زيت دوار الشمس:</strong> يغذي ويحمي البشرة.</li>
     </ul>
   </div>
 
-  <div dir="rtl" style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 100%; margin: auto; padding: 10px; font-size: 14px;">
-    <h3 style="font-size: 16px;">✅ المميزات البارزة</h3>
+  <div>
+    <h3>✅ المميزات</h3>
     <ul>
-      <li><strong>زيادة الوزن بطريقة صحية:</strong> يحتوي على سعرات حرارية عالية دون دهون غير مرغوبة.</li>
-      <li><strong>تحسين الأداء البدني:</strong> يوفر طاقة مستدامة أثناء التدريبات المكثفة.</li>
-      <li><strong>امتصاص فعال:</strong> تركيبة متطورة لضمان أفضل استفادة من العناصر الغذائية.</li>
-      <li><strong>نكهات لذيذة:</strong> متوفر بنكهات متعددة تناسب جميع الأذواق.</li>
+      <li><strong>يرطب البشرة الجافة والخشنة بعمق.</strong></li>
+      <li><strong>مناسب لليدين، القدمين، والوجه.</strong></li>
+      <li><strong>تركيبة نباتية 100% وخالية من المواد الكيميائية الضارة.</strong></li>
+      <li><strong>معتمد من NATRUE كمستحضر تجميل طبيعي.</strong></li>
     </ul>
   </div>
 
-  
   <div class="btns">
+    <button class="share-btn" onclick="shareProduct('كريم Weleda Skin Food')">
+      <span class="emoji">🔗</span> مشاركة
+    </button>
+    <button onclick="addToCart('كريم Weleda Skin Food', 3900)">
+      <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
+    </button>
+    <button class="buy-now" onclick="storeProductAndRedirect('كريم Weleda Skin Food')">
+      <span class="emoji">💳</span> اشترِ الآن
+    </button>
+  </div>
 
-    <button class="share-btn" onclick="shareProduct('راوتر TP-Link Archer BE550')">🔗 مشاركة</button>
-    <button class="add-cart">أضف إلى السلة</button>
-    <a href="demande.html" class="buy-now" ><button> اشترِ الآن</button></a>
-   
-  </div>
-  
-  </div>
+  <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("img.lazy-img").forEach(img => {
-      img.src = img.dataset.src;
-      img.classList.add("loaded");
-  });
-});
-</script>
 
 <script>
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let link = window.location.href;
+    let itemIndex = cart.findIndex(item => item.name === name);
+    if (itemIndex !== -1) {
+      cart[itemIndex].qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1, link });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("lastProduct", name);
+    alert(`✅ تمت إضافة "${name}" إلى السلة بسعر ${price} DA!`);
+  }
+
+  function storeProductAndRedirect(productName) {
+    localStorage.setItem("selectedProduct", productName);
+    window.location.href = "demande.html";
+  }
+
   function shareProduct(name) {
     const url = window.location.href;
     if (navigator.share) {
@@ -154,13 +189,7 @@
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
   }
-
-  function goToDetails(name) {
-    alert(`سيتم توجيهك إلى صفحة تفاصيل: ${name} (مثال فقط)`);
-    // في موقع فعلي، استبدل هذا بـ window.location.href = 'product1.html';
-  }
 </script>
-
 
 </body>
 </html>
