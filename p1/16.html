@@ -1,147 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <title>Kiehl's Ultra Facial Cream</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial;
-      background: #f9f9f9;
-      padding: 20px;
-    }
-    .container {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px #ccc;
-      max-width: 700px;
-      margin: auto;
-    }
-    .price {
-      color: #d35400;
-      font-size: 30px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    .desc, ul {
-      font-size: 15px;
-      line-height: 1.6;
-    }
-    .btns {
-      margin-top: 15px;
-    }
-    button {
-      padding: 10px 15px;
-      margin: 5px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    .buy-now {
-      background-color: #28a745;
-    }
-    .share-btn {
-      background-color: #ffc107;
-      color: black;
-    }
-    a {
-      color: #007bff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    .emoji {
-      font-size: 3em;
-      vertical-align: middle;
-    }
-  </style>
-</head>
-<body>
-
-<div class="container">
-  <h1>Kiehl's Ultra Facial Cream</h1>
-
-  <div class="price">DA 4500</div>
-
-  <div class="desc">
-    كريم مرطب مكثف يحافظ على توازن رطوبة البشرة طوال اليوم.<br>
-    تركيبة خفيفة ومناسبة لجميع أنواع البشرة، حتى الحساسة.<br>
-    يمنح البشرة مظهرًا ناعمًا وصحيًا مع حماية من الجفاف.<br>
-    <span style="color: rgb(235, 219, 5); font-size: 1.2em;">★★★★★</span> تقييم – 4.7/5.
-  </div>
-
-  <div>
-    <h3>🌿 المكونات الفعالة</h3>
-    <ul>
-      <li><strong>سكر الجلوكوز:</strong> يساعد على ترطيب البشرة بعمق.</li>
-      <li><strong>زيت الأفيكانسيا:</strong> يغذي البشرة ويقوي حاجزها الطبيعي.</li>
-      <li><strong>جليسرين:</strong> يرطب البشرة ويحافظ على نعومتها.</li>
-      <li><strong>خالي من البارابين:</strong> آمن للبشرة الحساسة.</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>✅ المميزات البارزة</h3>
-    <ul>
-      <li><strong>ترطيب مكثف 24 ساعة:</strong> يحافظ على رطوبة البشرة طوال اليوم.</li>
-      <li><strong>تركيبة خفيفة غير دهنية:</strong> تمتص بسرعة دون ترك أي أثر.</li>
-      <li><strong>مناسب لجميع أنواع البشرة:</strong> حتى البشرة الحساسة.</li>
-      <li><strong>يحمي من العوامل البيئية:</strong> يقلل من تأثير الجفاف والتلوث.</li>
-    </ul>
-  </div>
-
-  <div class="btns">
-    <button class="share-btn" onclick="shareProduct('Kiehl\'s Ultra Facial Cream')">
-      <span class="emoji">🔗</span> مشاركة
-    </button>
-    <button onclick="addToCart('Kiehl\'s Ultra Facial Cream', 4500)">
-      <span class="emoji">🛒</span> أضف إلى السلة
-    </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('Kiehl\'s Ultra Facial Cream')">
-      <span class="emoji">💳</span> اشترِ الآن
-    </button>
-  </div>
-
-  <br>
-  <a href="cart.html"><span class="emoji">🛒</span> عرض سلة المشتريات</a>
-</div>
-
-<script>
-  function addToCart(name, price) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let itemIndex = cart.findIndex(item => item.name === name);
-    if (itemIndex !== -1) {
-      cart[itemIndex].qty += 1;
-    } else {
-      cart.push({ name, price, qty: 1 });
-    }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    localStorage.setItem("lastProduct", name);
-    alert(`✅ تمت إضافة "${name}" إلى السلة بسعر ${price} DA!`);
-  }
-
-  function storeProductAndRedirect(productName) {
-    localStorage.setItem("selectedProduct", productName);
-    window.location.href = "demande.html";
-  }
-
-  function shareProduct(name) {
-    const url = window.location.href;
-    if (navigator.share) {
-      navigator.share({
-        title: name,
-        text: `اطلع على هذا المنتج: ${name}`,
-        url: url
-      }).catch((err) => console.log("لم تتم المشاركة:", err));
-    } else {
-      alert("المشاركة غير مدعومة على هذا المتصفح.");
-    }
-  }
-</script>
-
-</body>
-</html>
