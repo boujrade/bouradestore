@@ -1,85 +1,151 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>سلة المشتريات</title>
   <style>
-    body {
-      font-family: Arial;
-      background: #f4f4f4;
-      padding: 20px;
+     body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 12px;
+      color: #1a1a1a;
     }
-    h1 {
+
+    h2 {
       text-align: center;
-      color: #333;
+      margin-bottom: 18px;
+      color: #000;
+      font-size: 1.4rem;
+      text-shadow: 0 0 2px #999;
     }
+
     .cart-item {
       background: #fff;
       border: 1px solid #ccc;
-      padding: 15px;
-      margin-bottom: 15px;
+      padding: 12px;
+      margin-bottom: 14px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      font-weight: 500;
+      transition: transform 0.2s ease;
     }
-    .cart-item button {
-      margin: 5px 3px;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
+
+    .cart-item:hover {
+      transform: scale(1.01);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
     }
-    .inc { background: #28a745; color: white; }
-    .dec { background: #ffc107; color: black; }
-    .del { background: #dc3545; color: white; }
-    .clear {
-      background: #6c757d;
-      color: white;
-      padding: 10px 16px;
-      margin-top: 20px;
-      display: inline-block;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .back-link {
-      display: inline-block;
-      margin-top: 5px;
-      color: #007bff;
-      text-decoration: none;
-      font-size: 15px;
-    }
-    #total {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 20px;
-      text-align: center;
+
+    .cart-item p {
+      margin: 0 0 8px;
+      font-size: 1rem;
       color: #333;
     }
-    #return-last {
-      margin-top: 20px;
-      text-align: center;
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-start;
     }
-    #return-last a {
-      background: #17a2b8;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 16px;
+
+    /* أزرار زيادة ونقصان صغيرة بحواف ذهبية */
+    .inc, .dec {
+      width: 28px;
+      height: 28px;
+      background: #f9f7f1;
+      color: #a97c00;
+      border: 2px solid #d4af37;
+      box-shadow: none;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 24px;
+      padding: 0;
+      cursor: pointer;
+      border-radius: 6px;
+      text-align: center;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      user-select: none;
+    }
+
+    .inc:hover, .dec:hover {
+      background: #fff7d1;
+      border-color: #b58800;
+      color: #805f00;
+    }
+
+    /* زر حذف */
+    .del {
+      background: #555;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      user-select: none;
+    }
+
+    .del:hover {
+      background: #222;
+    }
+
+    .back-link {
       display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+
+    .back-link:hover {
+      background: #e6e6e6;
+      color: #000;
+    }
+
+    #total {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      color: #222;
+      margin-top: 20px;
+    }
+
+    #empty-msg {
+      text-align: center;
+      font-size: 1rem;
+      color: #666;
+      margin-top: 35px;
+      font-weight: 500;
+    }
+
+    @media (min-width: 600px) {
+      .cart-item p {
+        font-size: 1.05rem;
+      }
+      .del {
+        font-size: 15px;
+        padding: 8px 16px;
+      }
+      .back-link {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
 
-<h1>🛒 سلة المشتريات</h1>
-<div id="cart-items">جاري تحميل السلة...</div>
-<div id="total">الإجمالي: 0 DA</div>
-
-<button class="clear" onclick="clearCart()">🧹 تفريغ السلة</button>
-
-<div id="return-last"></div>
+<h2>🛒 سلة المشتريات</h2>
+<div id="cart-items">جاري التحميل...</div>
+<h3 id="total">الإجمالي: DA 0</h3>
 
 <script>
   function loadCart() {
@@ -90,7 +156,7 @@
     let total = 0;
 
     if (cart.length === 0) {
-      cartDiv.innerHTML = '<p style="text-align:center; font-size: 1.1rem; color: #666;">السلة فارغة</p>';
+      cartDiv.innerHTML = '<p id="empty-msg">السلة فارغة</p>';
       totalDiv.textContent = 'الإجمالي: DA 0';
       return;
     }
@@ -98,21 +164,25 @@
     cart.forEach((item, index) => {
       const itemTotal = item.price * item.qty;
       total += itemTotal;
-      const link = item.link || "p1/"; // الرابط الديناميكي المحفوظ مع المنتج
+      const encodedName = encodeURIComponent(item.name);
+      const orderLink = `demande.html?product=${encodedName}`;
 
       cartDiv.innerHTML += `
         <div class="cart-item">
-          <p><strong>${item.name}</strong> × ${item.qty} = ${itemTotal} DA</p>
-          <button class="inc" onclick="changeQty(${index}, 1)">➕</button>
-          <button class="dec" onclick="changeQty(${index}, -1)">➖</button>
-          <button class="del" onclick="removeItem(${index})">🗑️ حذف</button>
-          <br />
-          <a class="back-link" href="${link}">🔙 العودة إلى ${item.name}</a>
+          <p>${item.name} × ${item.qty} = ${itemTotal.toLocaleString()} DA</p>
+          <div class="button-group">
+            <button class="inc" onclick="changeQty(${index}, 1)">➕</button>
+            <button class="dec" onclick="changeQty(${index}, -1)">➖</button>
+            <button class="del" onclick="removeItem(${index})">🗑️ حذف</button>
+          </div>
+          <a class="back-link" href="${orderLink}" title="العودة إلى طلب ${item.name}">
+             قفل طلب ${item.name}
+          </a>
         </div>
       `;
     });
 
-    totalDiv.textContent = `الإجمالي: DA ${total}`;
+    totalDiv.textContent = `الإجمالي: DA ${total.toLocaleString()}`;
   }
 
   function changeQty(index, amount) {

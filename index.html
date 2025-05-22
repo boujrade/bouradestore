@@ -232,12 +232,12 @@ body {
 
 .menu-btn {
   all: unset; /* مسح جميع التنسيقات الافتراضية */
-  font-size: 26px; /* حجم رمز ☰ */
+  font-size: 20px; /* حجم رمز ☰ */
   color: white; /* لون أبيض */
   cursor: pointer; /* يظهر شكل اليد عند المرور */
   position: fixed;
   top: 150px;
-  left: 10px; /* لاحظ هنا: من اليسار بدل اليمين */
+  left: 0px; /* لاحظ هنا: من اليسار بدل اليمين */
   z-index: 1003;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -775,16 +775,14 @@ font-size: 18px;
 
 footer {
     background: linear-gradient(to right, #f74b25, #f72a6e);
-     background-size: cover;
-    padding: 140px; /* زيادة المساحة الداخلية */
-    min-height: 150px; /* تحديد ارتفاع أدنى */
+    background-size: cover;
+    padding: 40px;
+    min-height: 150px;
     color: white;
     text-align: center;
-    font-size: 12px; /* تعديل حجم النص */
-    font-weight: bold; /* جعل النص أكثر وضوحًا */
-
+    font-size: 10px;     /* تصغير النص */
+    font-weight: 100;    /* ترقيق الخط */
 }
-
 @media (max-width: 480px) {
   h2 {
     font-size: 18px;
@@ -831,9 +829,9 @@ footer {
  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="images2/html.jjj.jpg" style="height: 35px; max-height: 8vh; margin-right: 2px;" alt="شعار المتجر" loading="lazy">
+        <img src="images2/html.jjj.jpg" style="height: 35px; max-height: 8vh; float: right; margin-right: 0px;" alt="شعار المتجر" loading="lazy">
 
-        <span style="font-size: 12px; color: #f72a6e; margin-right: 17px;   "> Découvrez nos meilleures offres  </span>
+        <span style="font-size: 8px; color: #f72a6e; margin-right: 17px;   "> Découvrez nos meilleures offres  </span>
 
       <i class="bi bi-person" style="font-size: 17px;"></i>
 
@@ -1331,7 +1329,7 @@ footer {
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 5px; text-align: center; margin-top: 20px;">
   
-  <span style="font-size: 15px; font-weight: bold; color: #f6fafa;">  كل الحقوق محفوظة ⓒ  </span>
+  <span style="font-size: 2x; color: #f6fafa; font-weight: 300;">كل الحقوق محفوظة ⓒ</span>
 </div>
 
     </footer>
