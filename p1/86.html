@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>كريم Bee Venom لتخفيف الآلام</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f5f5f5;
+      padding: 15px;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 20px;
+      color: #000;
+      margin-bottom: 8px;
+      text-align: right;
+    }
+
+    .price {
+      color: goldenrod;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+
+    .desc, ul {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    ul {
+      padding-right: 20px;
+    }
+
+    .btns {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    button {
+      flex: 1 1 100%;
+      padding: 10px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #000;
+    }
+
+    .buy-now {
+      background-color: #b30000;
+    }
+
+    .share-btn {
+      background-color: goldenrod;
+      color: #000;
+    }
+
+    a {
+      color: gray;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .emoji {
+      font-size: 1.5em;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+
+    @media (min-width: 600px) {
+      .container {
+        max-width: 700px;
+      }
+
+      .btns {
+        flex-wrap: nowrap;
+      }
+
+      button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>كريم Bee Venom لتخفيف الآلام</h1>
+
+  <div class="price">DA 4200</div>
+
+  <div class="desc">
+    كريم طبيعي يحتوي على سم النحل، معروف بفعاليته في تخفيف الآلام العضلية والمفاصل. يساهم في تحسين الدورة الدموية وتقليل الالتهابات.
+    <br>
+    مناسب للرياضيين وكبار السن وكل من يعاني من آلام مزمنة أو مؤقتة.
+    <br>
+    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.9/5
+  </div>
+
+  <div>
+    <h3>🌿 المكونات</h3>
+    <ul>
+      <li><strong>سم النحل:</strong> مضاد طبيعي للالتهابات ومسكن للألم.</li>
+      <li><strong>زيت الكافور:</strong> يحفز الدورة الدموية ويقلل التورم.</li>
+      <li><strong>زيت النعناع:</strong> يبرد المنطقة ويخفف التوتر العضلي.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>✅ الفوائد</h3>
+    <ul>
+      <li><strong>تخفيف آلام المفاصل والعضلات.</strong></li>
+      <li><strong>تقليل الالتهابات والتورم.</strong></li>
+      <li><strong>تحسين مرونة الحركة.</strong></li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>🧴 طريقة الاستعمال</h3>
+    <ul>
+      <li>توضع كمية مناسبة على المنطقة المصابة.</li>
+      <li>يدلك بلطف حتى يتم الامتصاص بالكامل.</li>
+      <li>يستخدم من 2 إلى 3 مرات يوميًا.</li>
+    </ul>
+  </div>
+
+  <div class="btns">
+    <button class="share-btn" onclick="shareProduct('كريم Bee Venom لتخفيف الآلام')">
+      <span class="emoji">🔗</span> مشاركة
+    </button>
+    <button onclick="addToCart('كريم Bee Venom لتخفيف الآلام', 4200)">
+      <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
+    </button>
+    <button class="buy-now" onclick="storeProductAndRedirect('كريم Bee Venom لتخفيف الآلام')">
+      <span class="emoji">💳</span> اشترِ الآن
+    </button>
+  </div>
+
+  <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
+</div>
+
+<script>
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let link = window.location.href;
+    let itemIndex = cart.findIndex(item => item.name === name);
+    if (itemIndex !== -1) {
+      cart[itemIndex].qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1, link });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("lastProduct", name);
+    alert(`✅ تمت إضافة "${name}" إلى السلة بسعر ${price} DA!`);
+  }
+
+  function storeProductAndRedirect(productName) {
+    localStorage.setItem("selectedProduct", productName);
+    window.location.href = "demande.html";
+  }
+
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
+  }
+</script>
+
+</body>
+</html>

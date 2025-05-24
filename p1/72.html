@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>كريمة إزالة الشعر شافر فاي الطبيعي Plus Vite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f0f0f0;
+      padding: 15px;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 20px;
+      color: #000;
+      margin-bottom: 8px;
+      text-align: right;
+    }
+
+    .price {
+      color: goldenrod;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+
+    .desc, ul {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    ul {
+      padding-right: 20px;
+    }
+
+    .btns {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    button {
+      flex: 1 1 100%;
+      padding: 10px;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #000;
+    }
+
+    .buy-now {
+      background-color: #b30000;
+    }
+
+    .share-btn {
+      background-color: goldenrod;
+      color: #000;
+    }
+
+    a {
+      color: gray;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .emoji {
+      font-size: 1.5em;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+
+    @media (min-width: 600px) {
+      .container {
+        max-width: 700px;
+      }
+
+      .btns {
+        flex-wrap: nowrap;
+      }
+
+      button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>كريمة إزالة الشعر شافر فاي الطبيعي Plus Vite</h1>
+
+  <div class="price">DA 3700</div>
+
+  <div class="desc">
+    كريمة شافر فاي الطبيعي من Plus Vite لإزالة الشعر بلطف وفعالية مع ترطيب عميق للبشرة.<br>
+    تركيبة طبيعية تقلل من تهيج الجلد وتحافظ على نعومته.<br>
+    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.6/5
+  </div>
+
+  <div>
+    <h3>🌿 المكونات الرئيسية</h3>
+    <ul>
+      <li>مستخلصات طبيعية تعمل على إزالة الشعر بفعالية.</li>
+      <li>الألوفيرا لترطيب وتهدئة البشرة.</li>
+      <li>فيتامين E لمساعدة البشرة على التعافي بسرعة.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>✅ الفوائد</h3>
+    <ul>
+      <li>إزالة شعر فعالة ولطيفة على البشرة.</li>
+      <li>ترطيب وحماية الجلد من الالتهابات.</li>
+      <li>تقليل نمو الشعر مع الاستخدام المنتظم.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>🧴 طريقة الاستخدام</h3>
+    <ul>
+      <li>ضعي طبقة من الكريمة على المنطقة المراد إزالة الشعر منها.</li>
+      <li>اتركيها 5-8 دقائق حسب نوع البشرة.</li>
+      <li>استخدمي قطعة قماش مخصصة لإزالة الشعر ثم اشطفي بالماء.</li>
+      <li>استخدميها مرتين أسبوعيًا للحصول على أفضل النتائج.</li>
+    </ul>
+  </div>
+
+  <div class="btns">
+    <button class="share-btn" onclick="shareProduct('كريمة إزالة الشعر شافر فاي الطبيعي Plus Vite')">
+      <span class="emoji">🔗</span> مشاركة
+    </button>
+    <button onclick="addToCart('كريمة إزالة الشعر شافر فاي الطبيعي Plus Vite', 3700)">
+      <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
+    </button>
+    <button class="buy-now" onclick="storeProductAndRedirect('كريمة إزالة الشعر شافر فاي الطبيعي Plus Vite')">
+      <span class="emoji">💳</span> اشترِ الآن
+    </button>
+  </div>
+
+  <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
+</div>
+
+<script>
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let link = window.location.href;
+    let itemIndex = cart.findIndex(item => item.name === name);
+    if (itemIndex !== -1) {
+      cart[itemIndex].qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1, link });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("lastProduct", name);
+    alert(`✅ تمت إضافة "${name}" إلى السلة بسعر ${price} DA!`);
+  }
+
+  function storeProductAndRedirect(productName) {
+    localStorage.setItem("selectedProduct", productName);
+    window.location.href = "demande.html";
+  }
+
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
+  }
+</script>
+
+</body>
+</html>
