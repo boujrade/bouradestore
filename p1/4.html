@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background: #f8f8f8;
+      background: #f0f0f0;
       padding: 15px;
       margin: 0;
     }
@@ -15,30 +15,30 @@
     .container {
       background: white;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
       margin: auto;
     }
 
     h1 {
-      font-size: 22px;
-      color: #1c1c1c;
-      margin-bottom: 10px;
+      font-size: 20px;
+      color: #000;
+      margin-bottom: 8px;
       text-align: right;
     }
 
     .price {
-      color: #0070c0;
-      font-size: 20px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       text-align: right;
     }
 
     .desc, ul {
-      font-size: 15px;
-      line-height: 1.8;
+      font-size: 14px;
+      line-height: 1.7;
       color: #333;
     }
 
@@ -57,12 +57,12 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 5px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13px;
       transition: background 0.3s;
     }
 
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-  background-color: #b30000;
-}
+      background-color: #e75757;
+    }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -90,12 +90,16 @@
     }
 
     .emoji {
-      font-size: 1.3em;
+      font-size: 1.5em;
       vertical-align: middle;
       margin-left: 5px;
     }
 
     @media (min-width: 600px) {
+      .container {
+        max-width: 700px;
+      }
+
       .btns {
         flex-wrap: nowrap;
       }
@@ -104,6 +108,48 @@
         flex: 1;
       }
     }
+
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
@@ -111,41 +157,39 @@
 <div class="container">
   <h1>كريم النيلة الزرقاء Nila Bleu</h1>
 
-  <div class="price">DA 3500</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im1/nila_bleu.jpg" alt="كريم النيلة الزرقاء Nila Bleu" loading="lazy">
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br>
+
+  <div class="price">DA 2500</div>
 
   <div class="desc">
-    كريم <strong>Nila Bleu</strong> الطبيعي يساعد على تفتيح البشرة وتوحيد لونها بفعالية.<br>
-    مستخلص من النيلة الصحراوية المغربية المعروفة بخصائصها الجمالية.<br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.8/5
+    كريم <strong>Nila Bleu</strong> مستخلص من النيلة الزرقاء الطبيعية، يمنح بشرتك ترطيبًا عميقًا ولمعانًا صحيًا.<br>
+    مثالي لعلاج التصبغات وتوحيد لون البشرة مع تركيبة لطيفة وآمنة.<br>
+    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.5/5
   </div>
 
   <div>
-    <h3>🌿 المكونات الفعالة</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>النيلة الزرقاء:</strong> تعمل على تفتيح وتوحيد لون البشرة.</li>
-      <li><strong>زيت الأرغان:</strong> يغذي البشرة بعمق.</li>
-      <li><strong>زبدة الشيا:</strong> ترطب وتحمي من الجفاف.</li>
-      <li><strong>ماء الورد:</strong> يهدئ البشرة ويعطيها إشراقة طبيعية.</li>
+      <li><strong>تفتيح وتوحيد:</strong> يقلل من البقع والتصبغات بفعالية.</li>
+      <li><strong>ترطيب عميق:</strong> يغذي البشرة ويحافظ على نضارتها.</li>
+      <li><strong>تركيبة طبيعية:</strong> آمنة لجميع أنواع البشرة.</li>
+      <li><strong>سريع الامتصاص:</strong> لا يترك أثرًا دهنيًا.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ المميزات</h3>
+    <h3>🎀 طريقة الاستعمال</h3>
     <ul>
-      <li><strong>نتائج سريعة:</strong> يظهر تأثيره من أول أسبوع.</li>
-      <li><strong>آمن على البشرة:</strong> خالٍ من المواد الكيميائية القاسية.</li>
-      <li><strong>يمنح إشراقة طبيعية:</strong> دون تفتيح مبالغ فيه.</li>
-      <li><strong>يناسب جميع أنواع البشرة:</strong> خاصة الباهتة أو المتعبة.</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>📌 طريقة الاستعمال</h3>
-    <ul>
-      <li>ضعي كمية صغيرة من الكريم على بشرة نظيفة وجافة.</li>
-      <li>دلكي بلطف بحركات دائرية حتى يتم امتصاصه.</li>
-      <li>يُستخدم مرة أو مرتين يوميًا.</li>
-      <li>لنتائج أفضل، يُستخدم مساءً قبل النوم.</li>
+      <li>ضعي كمية مناسبة من الكريم على الوجه والرقبة.</li>
+      <li>دلكي بلطف حتى يتم الامتصاص الكامل.</li>
+      <li>يُستخدم صباحًا ومساءً للحصول على أفضل النتائج.</li>
+      <li>ينصح باستخدام واقي شمس خلال النهار.</li>
     </ul>
   </div>
 
@@ -153,7 +197,7 @@
     <button class="share-btn" onclick="shareProduct('كريم النيلة الزرقاء Nila Bleu')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('كريم النيلة الزرقاء Nila Bleu', 3500)">
+    <button onclick="addToCart('كريم النيلة الزرقاء Nila Bleu', 2500)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
     <button class="buy-now" onclick="storeProductAndRedirect('كريم النيلة الزرقاء Nila Bleu')">
@@ -195,6 +239,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // يمكن لاحقًا دعم التنقل بين الصور
+  }
+
+  function nextImage() {
+    // يمكن لاحقًا دعم التنقل بين الصور
   }
 </script>
 

@@ -29,8 +29,8 @@
     }
 
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
@@ -57,7 +57,7 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -108,6 +108,48 @@
         flex: 1;
       }
     }
+
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
@@ -115,41 +157,39 @@
 <div class="container">
   <h1>كريم الجليسيرين Vioryle</h1>
 
-  <div class="price">DA 2700</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im1/03.jpg" alt="كريم الجليسيرين Vioryle" loading="lazy">
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br>
+
+  <div class="price">DA 2200</div>
 
   <div class="desc">
-    كريم <strong>Vioryle</strong> الغني بالجليسيرين الطبيعي يرطّب البشرة بعمق ويحافظ على نعومتها طوال اليوم.<br>
-    مثالي لليدين والقدمين والبشرة الجافة، مناسب لكل الأعمار والبشرات.<br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.6/5
+    كريم <strong>Vioryle</strong> بالجليسيرين يرطّب البشرة بعمق ويمنحها ملمسًا ناعمًا ونضارة طبيعية. مثالي للاستخدام اليومي لجميع أنواع البشرة.<br>
+    يحتوي على تركيبة فعالة وآمنة تعتمد على الجليسيرين النقي. <br>
+    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.2/5
   </div>
 
   <div>
-    <h3>🌿 المكونات الفعالة</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>الجليسيرين:</strong> يرطب البشرة بعمق ويمنع جفافها.</li>
-      <li><strong>زبدة الشيا:</strong> تغذي البشرة وتمنحها نعومة فائقة.</li>
-      <li><strong>زيت اللوز:</strong> يلطّف التهيج ويحسن ملمس الجلد.</li>
-      <li><strong>فيتامين E:</strong> مضاد للأكسدة يساعد في تجديد الخلايا.</li>
+      <li><strong>ترطيب مكثف:</strong> يغذي البشرة الجافة بعمق.</li>
+      <li><strong>مناسب للجميع:</strong> يُستخدم لجميع أنواع البشرة، حتى الحساسة.</li>
+      <li><strong>نتائج فورية:</strong> يمنح نعومة ملحوظة من أول استخدام.</li>
+      <li><strong>آمن وخفيف:</strong> لا يسبب انسداد المسام أو التهيّج.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ المميزات</h3>
+    <h3>🎀 طريقة الاستعمال</h3>
     <ul>
-      <li><strong>ترطيب طويل الأمد:</strong> مثالي للبشرة الجافة جدًا.</li>
-      <li><strong>ملمس ناعم:</strong> لا يترك طبقة دهنية مزعجة.</li>
-      <li><strong>مناسب للعائلة:</strong> يمكن استخدامه من قبل الكبار والصغار.</li>
-      <li><strong>يُحسّن من مظهر البشرة:</strong> مع الاستعمال المنتظم.</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>📌 طريقة الاستعمال</h3>
-    <ul>
-      <li>ضعي كمية مناسبة من الكريم على المنطقة الجافة.</li>
-      <li>دلكي بلطف حتى يتم الامتصاص تمامًا.</li>
-      <li>يُستخدم صباحًا ومساءً أو عند الحاجة.</li>
-      <li>لأفضل النتائج، استخدميه بعد الاستحمام.</li>
+      <li>ضعي كمية مناسبة من الكريم على المناطق الجافة أو المراد ترطيبها.</li>
+      <li>دلكي بلطف حتى تمتصه البشرة تمامًا.</li>
+      <li>يمكن استخدامه صباحًا ومساءً.</li>
+      <li>لأفضل النتائج، استخدميه بانتظام.</li>
     </ul>
   </div>
 
@@ -157,7 +197,7 @@
     <button class="share-btn" onclick="shareProduct('كريم الجليسيرين Vioryle')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('كريم الجليسيرين Vioryle', 2700)">
+    <button onclick="addToCart('كريم الجليسيرين Vioryle', 2200)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
     <button class="buy-now" onclick="storeProductAndRedirect('كريم الجليسيرين Vioryle')">
@@ -199,6 +239,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // يمكن لاحقًا دعم التنقل بين الصور
+  }
+
+  function nextImage() {
+    // يمكن لاحقًا دعم التنقل بين الصور
   }
 </script>
 
