@@ -108,12 +108,64 @@
         flex: 1;
       }
     }
+.gallery {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.buttons button {
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
   </style>
 </head>
 <body>
 
 <div class="container">
   <h1>كريم دكتور راشيل لإزالة علامات التمدد</h1>
+
+<div class="gallery">
+        <img id="mainImage" src="/im1/01.jpg" alt="راوتر TP-Link" loading="lazy"  >
+        <div class="buttons">
+          <button class="prev" onclick="prevImage()">❮</button>
+          <button class="next" onclick="nextImage()">❯</button>
+        </div>
+      </div>
+
 
   <div class="price">DA 4200</div>
 
@@ -123,18 +175,9 @@
     <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.3/5
   </div>
 
+ 
   <div>
-    <h3>🌿 المكونات الفعالة</h3>
-    <ul>
-      <li><strong>زبدة الكاكاو:</strong> تغذي البشرة وتقلل من علامات التمدد.</li>
-      <li><strong>زيت الجوجوبا:</strong> يرطّب بعمق ويحسن مرونة الجلد.</li>
-      <li><strong>زيت زهرة الربيع:</strong> يعزز نعومة البشرة.</li>
-      <li><strong>الكولاجين:</strong> يحفز تجديد الخلايا ويقلل من ترهلات البشرة.</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>✅ المميزات</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
       <li><strong>تقليل ملحوظ لعلامات التمدد:</strong> بفضل التركيبة المركزة والطبيعية.</li>
       <li><strong>تركيبة خفيفة:</strong> تمتصها البشرة بسرعة دون أن تترك أثرًا دهنيًا.</li>
@@ -144,7 +187,7 @@
   </div>
 
   <div>
-    <h3>📌 طريقة الاستعمال</h3>
+    <h3>🎀 طريقة الاستعمال</h3>
     <ul>
       <li>ضعي كمية مناسبة من الكريم على مناطق علامات التمدد.</li>
       <li>دلكي بلطف بحركات دائرية حتى الامتصاص الكامل.</li>
