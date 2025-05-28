@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>Nivea Soft Moisturizing Cream</title>
+  <title>زيت التليو - قطر الطبيعة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -29,8 +29,8 @@
     }
 
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
@@ -57,7 +57,7 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -108,48 +108,112 @@
         flex: 1;
       }
     }
+.gallery {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  height: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-top: -100px;
+  margin-bottom: -200px;
+}
+
+.buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.buttons button {
+  background-color: rgba(248, 243, 243, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 1px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: rgba(218, 207, 207, 0.8);
+}
+
+
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>كريم الترطيب نيفيا سوفت</h1>
+  <h1>زيت التليو - قطر الطبيعة</h1>
 
-  <div class="price">DA 3200</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im2/01.jpg" alt="زيت التليو قطر الطبيعة" loading="lazy">
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br>
+
+  <div class="price">DA 1200</div>
 
   <div class="desc">
-    كريم <strong>Nivea</strong> بتركيبة خفيفة ترطّب الوجه والجسم واليدين.<br>
-    سريع الامتصاص، يمنحك نعومة وانتعاش دون ملمس دهني.<br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.5/5
+    زيت <strong>التليو الطبيعي</strong> من قطر الطبيعة، معروف بخصائصه المهدئة والمضادة للالتهابات.<br>
+    يُستخدم لتحسين النوم، تخفيف التوتر، وترطيب البشرة بتركيبة طبيعية وآمنة.<br>
+    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.5/5
   </div>
 
   <div>
-    <h3>🌿 المكونات الفعالة</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>فيتامين E:</strong> يحمي البشرة من الجفاف.</li>
-      <li><strong>زيت الجوجوبا:</strong> يرطب البشرة بعمق.</li>
-      <li><strong>تركيبة خفيفة:</strong> تمتص بسرعة دون بقايا.</li>
+      <li><strong>تهدئة الأعصاب:</strong> يخفف من القلق والإجهاد ويساعد على النوم المريح.</li>
+      <li><strong>عناية بالبشرة:</strong> يقلل من التهيج والجفاف ويمنح ترطيبًا عميقًا.</li>
+      <li><strong>مضاد طبيعي:</strong> يحتوي على خصائص مضادة للالتهابات والأكسدة.</li>
+      <li><strong>يقي من التجاعيد الرفيعة:</strong> ويساعد في تأخير علامات الشيخوخة المبكرة.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ المميزات</h3>
+    <h3>🎀 طريقة الاستعمال</h3>
     <ul>
-      <li><strong>ترطيب فوري:</strong> يمنحك شعورًا بالانتعاش.</li>
-      <li><strong>متعدد الاستخدام:</strong> للوجه والجسم واليدين.</li>
-      <li><strong>يناسب كل أنواع البشرة:</strong> حتى الحساسة.</li>
-      <li><strong>حجم اقتصادي:</strong> يدوم لفترة طويلة.</li>
+      <li>ضعي قطرات قليلة على راحة اليد.</li>
+      <li>دلكي بلطف على البشرة أو الرقبة أو خلف الأذن.</li>
+      <li>يُستخدم مساءً قبل النوم أو عند الحاجة للاسترخاء.</li>
+      <li>للاستخدام الخارجي فقط.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>⚠️ احتياطات الاستعمال</h3>
+    <ul>
+      <li>لا يُنصح باستخدامه للنساء الحوامل أو المرضعات.</li>
+      <li>يُمنع استخدامه للأطفال.</li>
+      <li>تجنّبي ملامسة العينين.</li>
     </ul>
   </div>
 
   <div class="btns">
-    <button class="share-btn" onclick="shareProduct('كريم نيفيا سوفت')">
+    <button class="share-btn" onclick="shareProduct('زيت التليو - قطر الطبيعة')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('كريم نيفيا سوفت', 3200)">
+    <button onclick="addToCart('زيت التليو - قطر الطبيعة', 1200)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('كريم نيفيا سوفت')">
+    <button class="buy-now" onclick="storeProductAndRedirect('زيت التليو - قطر الطبيعة')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
@@ -157,6 +221,39 @@
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
+
+  
 <script>
   function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];

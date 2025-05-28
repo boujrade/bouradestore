@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>كريم Vichy Aqualia Thermal</title>
+  <title>زيت كبد الحوت – قطر الطبيعة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -29,8 +29,8 @@
     }
 
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
@@ -57,7 +57,7 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -108,54 +108,146 @@
         flex: 1;
       }
     }
+
+    .gallery {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  height: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-top: -100px;
+  margin-bottom: -200px;
+}
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>كريم Vichy Aqualia Thermal</h1>
+  <h1>زيت كبد الحوت – قطر الطبيعة</h1>
 
-  <div class="price">DA 6800</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im2/09.jpg" alt="زيت كبد الحوت - قطر الطبيعة" loading="lazy">
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br>
+
+  <div class="price">DA 2500</div>
 
   <div class="desc">
-    كريم ترطيب عميق يعتمد على مياه Vichy الحرارية الغنية بالمعادن.<br>
-    يمنح البشرة ترطيبًا مكثفًا وراحة تدوم طوال اليوم.<br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.7/5
+    زيت <strong>كبد الحوت</strong> الطبيعي من قطر الطبيعة، غني بالأوميغا-3، فيتامين A وD.<br>
+    يدعم صحة القلب، العظام، والمناعة، ويساعد على تحسين وظائف الدماغ.<br>
+    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.8/5
   </div>
 
   <div>
-    <h3>🌿 المكونات الفعالة</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>مياه Vichy الحرارية:</strong> تغذي البشرة وتمنحها حيوية.</li>
-      <li><strong>حمض الهيالورونيك:</strong> يرطب البشرة بعمق ويحافظ على الرطوبة.</li>
-      <li><strong>تركيبة خفيفة غير دهنية:</strong> تمتص بسرعة ولا تترك بقايا.</li>
+      <li><strong>غني بالأوميغا-3:</strong> يعزز صحة القلب والأوعية الدموية.</li>
+      <li><strong>مصدر جيد لفيتامين A وD:</strong> يدعم صحة العظام والبشرة.</li>
+      <li><strong>يعزز المناعة:</strong> يقوي جهاز المناعة لمقاومة الأمراض.</li>
+      <li><strong>يدعم صحة الدماغ والعينين:</strong> يحسن الذاكرة والتركيز.</li>
+      <li><strong>يساعد في تقليل الالتهابات.</strong></li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ المميزات</h3>
+    <h3>🎀 طريقة الاستعمال</h3>
     <ul>
-      <li><strong>ترطيب طويل الأمد:</strong> يدوم لساعات عديدة.</li>
-      <li><strong>يحسن ملمس البشرة:</strong> يمنحها نعومة ونعومة ملحوظة.</li>
-      <li><strong>مناسب للبشرة الحساسة:</strong> تم اختباره تحت إشراف أطباء الجلد.</li>
-      <li><strong>يحمي البشرة من العوامل البيئية:</strong> يقلل من علامات التعب والإجهاد.</li>
+      <li>تناول ملعقة صغيرة يوميًا مع الطعام أو حسب توصية الطبيب.</li>
+      <li>يمكن استخدامه كمكمل غذائي لتحسين الصحة العامة.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>⚠️ احتياطات الاستعمال</h3>
+    <ul>
+      <li>لا يُنصح باستخدامه للنساء الحوامل أو المرضعات دون استشارة الطبيب.</li>
+      <li>استشر الطبيب في حال تناول أدوية مسيلة للدم.</li>
+      <li>يحفظ بعيدًا عن متناول الأطفال.</li>
     </ul>
   </div>
 
   <div class="btns">
-    <button class="share-btn" onclick="shareProduct('كريم Vichy Aqualia Thermal')">
+    <button class="share-btn" onclick="shareProduct('زيت كبد الحوت – قطر الطبيعة')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('كريم Vichy Aqualia Thermal', 6800)">
+    <button onclick="addToCart('زيت كبد الحوت – قطر الطبيعة', 2500)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('كريم Vichy Aqualia Thermal')">
+    <button class="buy-now" onclick="storeProductAndRedirect('زيت كبد الحوت – قطر الطبيعة')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
 
 <script>
   function addToCart(name, price) {
@@ -188,6 +280,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // دعم مستقبلي للتنقل بين الصور
+  }
+
+  function nextImage() {
+    // دعم مستقبلي للتنقل بين الصور
   }
 </script>
 

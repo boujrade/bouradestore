@@ -2,8 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>كريم BioDerma Hydrabio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زيت الجنسنغ – قطر الطبيعة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -16,7 +16,7 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
       max-width: 100%;
       margin: auto;
     }
@@ -29,8 +29,8 @@
     }
 
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
@@ -57,7 +57,7 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -108,54 +108,151 @@
         flex: 1;
       }
     }
+
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      height: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      margin-top: -100px;
+      margin-bottom: -200px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>كريم BioDerma Hydrabio</h1>
+  <h1>زيت الجنسنغ – قطر الطبيعة</h1>
 
-  <div class="price">DA 4700</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im2/22.jpg" alt="زيت الجنسنغ – قطر الطبيعة" loading="lazy">
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br>
+
+  <div class="price">DA 3600</div>
 
   <div class="desc">
-    كريم <strong>Hydrabio</strong> من <strong>BioDerma</strong> يعزز ترطيب البشرة من العمق ويعيد إليها نضارتها بفضل تقنية Aquagenium™.<br>
-    مثالي للبشرة الجافة والباهتة، يمنحها إشراقة صحية ولمسة ناعمة.<br>
+    زيت <strong>الجنسنغ الطبيعي</strong> من قطر الطبيعة يُستخدم لتحفيز الدورة الدموية وتنشيط الجسم بشكل عام.<br>
+    يساعد في تقوية بصيلات الشعر، وتحسين صحة البشرة، وزيادة الطاقة والحيوية.<br>
+    كما يُعرف بدوره في تقوية المناعة، وتحسين التركيز، وتفتيح البشرة بفضل خصائصه الطبيعية.<br>
     <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.6/5
   </div>
 
   <div>
-    <h3>🌿 المكونات الفعالة</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>Aquagenium™:</strong> يساعد على إعادة تنشيط عملية الترطيب الطبيعية للبشرة.</li>
-      <li><strong>Niacinamide:</strong> يحسن وظيفة الحاجز الواقي للبشرة ويقلل الالتهابات.</li>
-      <li><strong>فيتامين E:</strong> مضاد للأكسدة، يحمي من العوامل البيئية الضارة.</li>
+      <li><strong>يعزز نمو الشعر:</strong> يقوي الجذور ويمنع التساقط.</li>
+      <li><strong>يقضي على الشيب المبكر:</strong> يساعد على استعادة لون الشعر الطبيعي تدريجيًا.</li>
+      <li><strong>يعالج مشكلة الصلع:</strong> بفضل تنشيط الدورة الدموية وتحفيز بصيلات الشعر.</li>
+      <li><strong>مبيض طبيعي للبشرة:</strong> يوحد اللون ويُزيل البقع الداكنة.</li>
+      <li><strong>يقضي على التجاعيد:</strong> يحفّز إنتاج الكولاجين ويؤخر علامات التقدم في السن.</li>
+      <li><strong>ينشط الجسم والذهن:</strong> يرفع الطاقة والتركيز.</li>
+      <li><strong>يرطب البشرة:</strong> يعزز نضارتها ومرونتها.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ المميزات</h3>
+    <h3>🎀 طريقة الاستعمال</h3>
     <ul>
-      <li><strong>ترطيب عميق وطويل الأمد.</strong></li>
-      <li><strong>ملمس ناعم وغير دهني.</strong></li>
-      <li><strong>مناسب للبشرة الحساسة.</strong></li>
-      <li><strong>قاعدة ممتازة قبل المكياج.</strong></li>
+      <li>يُدلك الزيت على فروة الرأس لتنشيط الدورة الدموية وتحفيز نمو الشعر.</li>
+      <li>يمكن استخدامه موضعيًا على البشرة بعد تنظيفها لتفتيحها وتغذيتها.</li>
+      <li>يُستعمل مساءً ويُترك لمدة 1 إلى 2 ساعة ثم يُغسل.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>⚠️ احتياطات الاستعمال</h3>
+    <ul>
+      <li>للاستخدام الخارجي فقط.</li>
+      <li>يُحفظ بعيدًا عن متناول الأطفال، وفي مكان بارد وجاف.</li>
+      <li>تُجرى تجربة على جزء صغير من الجلد قبل الاستخدام الكامل.</li>
     </ul>
   </div>
 
   <div class="btns">
-    <button class="share-btn" onclick="shareProduct('كريم BioDerma Hydrabio')">
+    <button class="share-btn" onclick="shareProduct('زيت الجنسنغ – قطر الطبيعة')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('كريم BioDerma Hydrabio', 4700)">
+    <button onclick="addToCart('زيت الجنسنغ – قطر الطبيعة', 3600)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('كريم BioDerma Hydrabio')">
+    <button class="buy-now" onclick="storeProductAndRedirect('زيت الجنسنغ – قطر الطبيعة')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
 
 <script>
   function addToCart(name, price) {
@@ -188,6 +285,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // إضافة دعم صور متعددة مستقبلاً
+  }
+
+  function nextImage() {
+    // إضافة دعم صور متعددة مستقبلاً
   }
 </script>
 

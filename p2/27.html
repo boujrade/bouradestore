@@ -2,8 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>كريم Himalaya Herbals Nourishing</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زيت الفيجل – قطر الطبيعة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -16,7 +16,7 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
       max-width: 100%;
       margin: auto;
     }
@@ -29,8 +29,8 @@
     }
 
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
@@ -57,7 +57,7 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -108,54 +108,148 @@
         flex: 1;
       }
     }
+
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      height: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      margin-top: -100px;
+      margin-bottom: -200px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>كريم Himalaya Herbals Nourishing</h1>
+  <h1>زيت الفيجل – قطر الطبيعة</h1>
 
-  <div class="price">DA 2900</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im2/27.jpg" alt="زيت الفيجل – قطر الطبيعة" loading="lazy">
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br>
+
+  <div class="price">DA 4000</div>
 
   <div class="desc">
-    كريم <strong>Himalaya Herbals Nourishing</strong> يمنحك ترطيبًا عميقًا وتغذية للبشرة طوال اليوم بفضل تركيبته الطبيعية.<br>
-    مثالي للبشرة الجافة والعادية، ويترك بشرتك ناعمة ونضرة.<br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.6/5
+    زيت <strong>الفيجل</strong> الطبيعي من قطر الطبيعة، يُستخرج من نبتة الفيجل المعروفة بفوائدها العلاجية المتنوعة، ويُستخدم منذ القدم في الطب التقليدي.<br>
+    يُساهم في تعزيز صحة الجسم، تهدئة الآلام، ويُعتبر من الزيوت المميزة للعناية بالمفاصل والجهاز العصبي.<br>
+    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.2/5
   </div>
 
   <div>
-    <h3>🌿 المكونات الفعالة</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>الصبار:</strong> يهدئ ويرطب البشرة.</li>
-      <li><strong>شتلات الكرز:</strong> تساعد في تجديد خلايا البشرة.</li>
-      <li><strong>أشواجاندا:</strong> تغذي وتحمي البشرة من العوامل البيئية.</li>
+      <li><strong>يخفف آلام المفاصل:</strong> بفضل خصائصه المضادة للالتهاب.</li>
+      <li><strong>مهدئ للأعصاب:</strong> يُساعد على الاسترخاء والتقليل من التوتر.</li>
+      <li><strong>يساعد على النوم:</strong> يُستعمل قبل النوم لتحسين جودة النوم.</li>
+      <li><strong>مضاد للتشنجات:</strong> يُستخدم موضعيًا لتخفيف التقلصات العضلية.</li>
+      <li><strong>مفيد للبشرة والشعر:</strong> يعزز ترطيب البشرة ويقوي الشعر من الجذور حتى الأطراف.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ المميزات</h3>
+    <h3>🎀 طريقة الاستعمال</h3>
     <ul>
-      <li><strong>ترطيب طويل الأمد للبشرة الجافة والعادية.</strong></li>
-      <li><strong>تركيبة طبيعية وخالية من البارابين.</strong></li>
-      <li><strong>مناسب للاستخدام اليومي.</strong></li>
-      <li><strong>آمن لجميع أفراد العائلة.</strong></li>
+      <li>يُوضع موضعيًا على مناطق الألم أو التوتر مع تدليك لطيف.</li>
+      <li>يمكن استنشاقه عبر حمام بخاري لتخفيف التوتر العصبي.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>⚠️ احتياطات الاستعمال</h3>
+    <ul>
+      <li>للاستخدام الخارجي فقط.</li>
+      <li>لا يُنصح باستخدامه من طرف النساء الحوامل أو المرضعات أو الأطفال.</li>
+      <li>يُحفظ بعيدًا عن متناول الأطفال وفي مكان بارد وجاف.</li>
+      <li>يُنصح بإجراء اختبار تحسس قبل أول استخدام.</li>
     </ul>
   </div>
 
   <div class="btns">
-    <button class="share-btn" onclick="shareProduct('كريم Himalaya Herbals Nourishing')">
+    <button class="share-btn" onclick="shareProduct('زيت الفيجل – قطر الطبيعة')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('كريم Himalaya Herbals Nourishing', 2900)">
+    <button onclick="addToCart('زيت الفيجل – قطر الطبيعة', 4000)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('كريم Himalaya Herbals Nourishing')">
+    <button class="buy-now" onclick="storeProductAndRedirect('زيت الفيجل – قطر الطبيعة')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
 
 <script>
   function addToCart(name, price) {
@@ -188,6 +282,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // يمكن إضافة وظائف لتغيير الصور لاحقاً
+  }
+
+  function nextImage() {
+    // يمكن إضافة وظائف لتغيير الصور لاحقاً
   }
 </script>
 

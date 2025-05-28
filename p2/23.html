@@ -2,8 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>كريم Alverde Bio Wildrose</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زيت القراص – قطر الطبيعة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -16,7 +16,7 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
       max-width: 100%;
       margin: auto;
     }
@@ -29,8 +29,8 @@
     }
 
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
@@ -57,7 +57,7 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -108,54 +108,148 @@
         flex: 1;
       }
     }
+
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      height: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      margin-top: -100px;
+      margin-bottom: -200px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>كريم Alverde Bio Wildrose</h1>
+  <h1>زيت القراص – قطر الطبيعة</h1>
 
-  <div class="price">DA 2800</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im2/23.jpg" alt="زيت القراص – قطر الطبيعة" loading="lazy">
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br>
+
+  <div class="price">DA 3400</div>
 
   <div class="desc">
-    كريم <strong>Alverde</strong> العضوي بخلاصة <strong>زهرة الورد البرّي</strong> يرطّب البشرة بلطف ويمنحها نضارة طبيعية.<br>
-    مثالي للبشرة الجافة والعادية، مكوناته طبيعية وعضوية بنسبة عالية.<br>
-    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.3/5
+    زيت <strong>القراص الطبيعي</strong> من قطر الطبيعة معروف بخصائصه العلاجية والمغذية لفروة الرأس والبشرة.<br>
+    يساعد في تقوية الشعر، تقليل تساقطه، وتنقية البشرة من الشوائب والبثور.<br>
+    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.5/5
   </div>
 
   <div>
-    <h3>🌿 المكونات الفعالة</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>زيت الورد البري:</strong> يغذي البشرة ويحسن مرونتها.</li>
-      <li><strong>زبدة الشيا:</strong> ترطيب عميق ونعومة فورية.</li>
-      <li><strong>فيتامين C:</strong> يعزز إشراقة البشرة.</li>
+      <li><strong>يقضي على حب الشباب:</strong> بفضل خصائصه المضادة للبكتيريا والالتهابات.</li>
+      <li><strong>تقوية الشعر من الجذور:</strong> يقلل من التساقط ويعزز النمو الصحي.</li>
+      <li><strong>تنظيف فروة الرأس:</strong> يزيل القشرة ويقلل من الحكة والاحمرار.</li>
+      <li><strong>تحفيز الدورة الدموية:</strong> يدعم صحة بصيلات الشعر.</li>
+      <li><strong>يُقلل من التهابات الجلد:</strong> يهدئ البشرة ويخفف من تهيجها.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ المميزات</h3>
+    <h3>🎀 طريقة الاستعمال</h3>
     <ul>
-      <li><strong>طبيعي وعضوي 100%.</strong></li>
-      <li><strong>ترطيب يدوم طوال اليوم.</strong></li>
-      <li><strong>خالٍ من البارابين والسيليكون.</strong></li>
-      <li><strong>مناسب للبشرة الحساسة.</strong></li>
+      <li>يُطبّق الزيت على فروة الرأس ويدلك جيدًا بحركات دائرية.</li>
+      <li>يُترك لمدة تتراوح بين 1 إلى 2 ساعة ثم يُغسل بالشامبو.</li>
+      <li>يمكن استخدامه أيضًا للبشرة بوضع كمية صغيرة وتدليكها بلطف.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>⚠️ احتياطات الاستعمال</h3>
+    <ul>
+      <li>للاستخدام الخارجي فقط.</li>
+      <li>تجنّب ملامسة العينين.</li>
+      <li>يُفضّل إجراء اختبار تحسس قبل الاستعمال الكامل.</li>
+      <li><strong>لا يُنصح باستعماله للنساء الحوامل، المرضعات، والأطفال.</strong></li>
     </ul>
   </div>
 
   <div class="btns">
-    <button class="share-btn" onclick="shareProduct('كريم Alverde Bio Wildrose')">
+    <button class="share-btn" onclick="shareProduct('زيت القراص – قطر الطبيعة')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('كريم Alverde Bio Wildrose', 2800)">
+    <button onclick="addToCart('زيت القراص – قطر الطبيعة', 3400)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('كريم Alverde Bio Wildrose')">
+    <button class="buy-now" onclick="storeProductAndRedirect('زيت القراص – قطر الطبيعة')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
 
 <script>
   function addToCart(name, price) {
@@ -188,6 +282,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // دعم تعدد الصور مستقبلاً
+  }
+
+  function nextImage() {
+    // دعم تعدد الصور مستقبلاً
   }
 </script>
 

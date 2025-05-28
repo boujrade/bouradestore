@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>كريم Caudalie Vinosource Moisturizing</title>
+  <title>زيت الجوز – قطر الطبيعة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -29,8 +29,8 @@
     }
 
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
@@ -57,7 +57,7 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -108,54 +108,147 @@
         flex: 1;
       }
     }
+
+    .gallery {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  height: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-top: -100px;
+  margin-bottom: -200px;
+}
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>كريم Caudalie Vinosource Moisturizing</h1>
+  <h1>زيت الجوز – قطر الطبيعة</h1>
 
-  <div class="price">DA 5900</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im2/10.jpg" alt="زيت الجوز – قطر الطبيعة" loading="lazy">
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br>
+
+  <div class="price">DA 3200</div>
 
   <div class="desc">
-    كريم مرطب لطيف يعتمد على مكونات طبيعية من مستخلصات العنب.<br>
-    يوفر ترطيبًا مكثفًا ويهدئ البشرة الحساسة.<br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.6/5
+    زيت <strong>الجوز</strong> الطبيعي من قطر الطبيعة، غني بالفيتامينات ومضادات الأكسدة التي تعزز صحة البشرة والشعر.<br>
+    يعمل على ترطيب البشرة بعمق، تقوية الشعر، وتحسين مرونة الجلد.<br>
+    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.7/5
   </div>
 
   <div>
-    <h3>🌿 المكونات الفعالة</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>مستخلصات العنب:</strong> مضادات أكسدة قوية تحمي البشرة.</li>
-      <li><strong>حمض الهيالورونيك الطبيعي:</strong> يرطب البشرة بعمق.</li>
-      <li><strong>تركيبة لطيفة:</strong> مناسبة لجميع أنواع البشرة، خاصة الحساسة.</li>
+      <li><strong>مرطب فعال للبشرة والشعر.</strong></li>
+      <li><strong>يقي من التجاعيد وعلامات الشيخوخة المبكرة.</strong></li>
+      <li><strong>غني بمضادات الأكسدة التي تحارب الجذور الحرة.</strong></li>
+      <li><strong>يعزز نمو الشعر ويقوي بصيلاته.</strong></li>
+      <li><strong>يساعد على تهدئة التهابات الجلد وتخفيف الاحمرار.</strong></li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ المميزات</h3>
+    <h3>🎀 طريقة الاستعمال</h3>
     <ul>
-      <li><strong>ترطيب فوري وطويل الأمد:</strong> يدوم طوال اليوم.</li>
-      <li><strong>يحسن ملمس البشرة:</strong> يمنحها نعومة وحيوية.</li>
-      <li><strong>خالي من العطور الصناعية:</strong> يقلل من خطر التهيج.</li>
-      <li><strong>اختبار طبيب الجلد:</strong> آمن للبشرة الحساسة.</li>
+      <li>يُطبق الزيت مساءً على الشعر من الجذور إلى الأطراف لمدة لا تتجاوز 3 ساعات.</li>
+      <li>يُدلك الشعر بحركات دائرية لتنشيط الدورة الدموية وضمان تغلغل الزيت.</li>
+      <li>بعد ذلك يُغسل الشعر بالماء والشامبو.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>⚠️ احتياطات الاستعمال</h3>
+    <ul>
+      <li>لا يُنصح باستخدامه للنساء الحوامل والمرضعات دون استشارة الطبيب.</li>
+      <li>اختبر حساسية الجلد قبل الاستخدام لأول مرة.</li>
+      <li>يحفظ بعيدًا عن متناول الأطفال.</li>
     </ul>
   </div>
 
   <div class="btns">
-    <button class="share-btn" onclick="shareProduct('كريم Caudalie Vinosource Moisturizing')">
+    <button class="share-btn" onclick="shareProduct('زيت الجوز – قطر الطبيعة')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('كريم Caudalie Vinosource Moisturizing', 5900)">
+    <button onclick="addToCart('زيت الجوز – قطر الطبيعة', 3200)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('كريم Caudalie Vinosource Moisturizing')">
+    <button class="buy-now" onclick="storeProductAndRedirect('زيت الجوز – قطر الطبيعة')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
 
 <script>
   function addToCart(name, price) {
@@ -188,6 +281,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // دعم مستقبلي للتنقل بين الصور
+  }
+
+  function nextImage() {
+    // دعم مستقبلي للتنقل بين الصور
   }
 </script>
 

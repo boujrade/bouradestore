@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>L'Oréal Paris Revitalift Cream</title>
+  <title>زيت المسك الأسود – قطر الطبيعة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -29,8 +29,8 @@
     }
 
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
@@ -57,7 +57,7 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -108,55 +108,147 @@
         flex: 1;
       }
     }
+
+    .gallery {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  height: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-top: -100px;
+  margin-bottom: -200px;
+}
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>كريم L'Oréal Paris Revitalift</h1>
+  <h1>زيت المسك الأسود – قطر الطبيعة</h1>
 
-  <div class="price">DA 5800</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im2/02.jpg" alt="زيت المسك الأسود - قطر الطبيعة" loading="lazy">
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br>
+
+  <div class="price">DA 1300</div>
 
   <div class="desc">
-    كريم <strong>L'Oréal Revitalift</strong> لتجديد البشرة ومقاومة التجاعيد،<br>
-    يمنحك بشرة أكثر تماسكاً ونضارة في 7 أيام فقط.<br>
-    مناسب للبشرة العادية والجافة.<br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.8/5
+    زيت <strong>المسك الأسود</strong> من قطر الطبيعة، برائحة عطرية فاخرة وخصائص مهدئة ومنعشة للبشرة.<br>
+    مثالي للاستخدام اليومي على الجسم أو خلف الأذنين ويمنح إحساسًا بالنظافة والانتعاش يدوم طويلاً.<br>
+    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.7/5
   </div>
 
   <div>
-    <h3>🌿 المكونات الفعالة</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>حمض الهيالورونيك:</strong> يرطب البشرة بعمق.</li>
-      <li><strong>Pro-Retinol:</strong> يحفز تجديد خلايا البشرة ويقلل التجاعيد.</li>
-      <li><strong>فيتامين C:</strong> يوحد لون البشرة ويعزز الإشراقة.</li>
+      <li><strong>رائحة جذابة وثابتة:</strong> يعطّر الجسم لساعات طويلة.</li>
+      <li><strong>ينظف البشرة:</strong> يزيل البقع وآثار حب الشباب بفضل خصائصه الطبيعية.</li>
+      <li><strong>يزيل رائحة العرق:</strong> يمنح شعورًا دائمًا بالنظافة والانتعاش.</li>
+      <li><strong>يساعد على الاسترخاء:</strong> يخفف التوتر والقلق ويُحسّن المزاج.</li>
+      <li><strong>مهدئ ومضاد للالتهابات:</strong> يلطّف البشرة ويخفف التهيجات.</li>
+      <li><strong>يقي من التجاعيد الرفيعة:</strong> ويساهم في الحفاظ على شباب البشرة.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ المميزات</h3>
+    <h3>🎀 طريقة الاستعمال</h3>
     <ul>
-      <li><strong>مكافحة التجاعيد:</strong> يقلل من الخطوط الرفيعة ويشد البشرة.</li>
-      <li><strong>ترطيب مكثف:</strong> يدوم حتى 24 ساعة.</li>
-      <li><strong>تحسين ملمس البشرة:</strong> يجعلها أكثر نعومة ومرونة.</li>
-      <li><strong>تركيبة خفيفة:</strong> تمتص بسرعة دون ملمس دهني.</li>
+      <li>توضع كمية قليلة على نقاط النبض (خلف الأذن، الرقبة، المعصمين).</li>
+      <li>يُستخدم بعد الاستحمام أو عند الحاجة للانتعاش.</li>
+      <li>يُستخدم خارجيًا فقط.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>⚠️ احتياطات الاستعمال</h3>
+    <ul>
+      <li>لا يُنصح باستخدامه للنساء الحوامل أو المرضعات.</li>
+      <li>يُمنع استخدامه للأطفال.</li>
+      <li>تجنّبي ملامسة العينين والمناطق الحساسة.</li>
     </ul>
   </div>
 
   <div class="btns">
-    <button class="share-btn" onclick="shareProduct('كريم L\'Oréal Revitalift')">
+    <button class="share-btn" onclick="shareProduct('زيت المسك الأسود – قطر الطبيعة')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('كريم L\'Oréal Revitalift', 5800)">
+    <button onclick="addToCart('زيت المسك الأسود – قطر الطبيعة', 1300)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('كريم L\'Oréal Revitalift')">
+    <button class="buy-now" onclick="storeProductAndRedirect('زيت المسك الأسود – قطر الطبيعة')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
 
 <script>
   function addToCart(name, price) {
@@ -189,6 +281,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // يُمكنك لاحقًا إضافة دعم تبديل الصور
+  }
+
+  function nextImage() {
+    // يُمكنك لاحقًا إضافة دعم تبديل الصور
   }
 </script>
 
