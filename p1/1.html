@@ -123,8 +123,8 @@
   height: auto;
   display: block;
   border-radius: 10px;
-  margin-top: -100px;
-  margin-bottom: -200px;
+  margin-top: -30px;
+  margin-bottom: -50px;
 }
 
 .buttons {
@@ -215,6 +215,15 @@
 </div>
 
  
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
 
 <script>
   const images = [
