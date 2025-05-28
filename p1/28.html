@@ -16,7 +16,7 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
       max-width: 100%;
       margin: auto;
     }
@@ -29,8 +29,8 @@
     }
 
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
@@ -57,7 +57,7 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -108,6 +108,51 @@
         flex: 1;
       }
     }
+
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      height: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      margin-top: -100px;
+      margin-bottom: -200px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
@@ -115,38 +160,38 @@
 <div class="container">
   <h1>زباد كريم AL hayat لمعالجة فراغات الشعر</h1>
 
-  <div class="price">DA 3200</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im1/28.jpg" alt="زباد كريم AL hayat لمعالجة فراغات الشعر" loading="lazy" />
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br />
+
+  <div class="price">DA 1800</div>
 
   <div class="desc">
-    <strong>زباد كريم AL hayat</strong> تركيبة فعالة طبيعية تساعد على تعزيز نمو الشعر ومعالجة فراغات الشعر.<br>
-    يغذي فروة الرأس ويقوي بصيلات الشعر ليمنحك شعرًا أكثر كثافة وحيوية.<br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.9/5
+    زباد كريم AL hayat هو علاج فعال لمعالجة فراغات الشعر وتعزيز نمو الشعر بطريقة طبيعية.<br />
+    يحتوي على مكونات مغذية تحفز بصيلات الشعر وتقويها.<br />
+    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.5/5
   </div>
 
   <div>
-    <h3>🌿 المكونات</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>زيت الخروع:</strong> محفز لنمو الشعر وتقوية البصيلات.</li>
-      <li><strong>زيت الأركان:</strong> يغذي الشعر ويمنحه اللمعان.</li>
-      <li><strong>فيتامين B5:</strong> يدعم صحة فروة الرأس ويقلل من التساقط.</li>
+      <li>يعزز نمو الشعر ويقلل من تساقطه.</li>
+      <li>يغذي فروة الرأس بعمق.</li>
+      <li>تركيبة طبيعية خالية من المواد الكيميائية الضارة.</li>
+      <li>سهل الاستخدام ومناسب لجميع أنواع الشعر.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ الفوائد</h3>
+    <h3>🎀 طريقة الاستخدام</h3>
     <ul>
-      <li><strong>يعالج فراغات الشعر:</strong> يعزز نمو الشعر في المناطق الخفيفة.</li>
-      <li><strong>يقوي بصيلات الشعر:</strong> يقلل من تساقط الشعر ويحسن كثافته.</li>
-      <li><strong>يرطب فروة الرأس:</strong> يمنع الجفاف والحكة.</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>🧴 طريقة الاستعمال</h3>
-    <ul>
-      <li>نظف فروة الرأس بلطف.</li>
-      <li>ضع كمية مناسبة من الكريم وادلك فروة الرأس برفق.</li>
-      <li>يستخدم مرتين يومياً صباحاً ومساءً للحصول على أفضل النتائج.</li>
+      <li>ضع كمية مناسبة على فروة الرأس بعد غسل الشعر.</li>
+      <li>يدلك بلطف لتحفيز الدورة الدموية.</li>
+      <li>يستخدم يوميًا صباحًا ومساءً للحصول على نتائج أفضل.</li>
     </ul>
   </div>
 
@@ -154,7 +199,7 @@
     <button class="share-btn" onclick="shareProduct('زباد كريم AL hayat لمعالجة فراغات الشعر')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('زباد كريم AL hayat لمعالجة فراغات الشعر', 3200)">
+    <button onclick="addToCart('زباد كريم AL hayat لمعالجة فراغات الشعر', 1800)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
     <button class="buy-now" onclick="storeProductAndRedirect('زباد كريم AL hayat لمعالجة فراغات الشعر')">
@@ -164,6 +209,37 @@
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
 
 <script>
   function addToCart(name, price) {
@@ -196,6 +272,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // وظائف تغيير الصور يمكن إضافتها مستقبلاً
+  }
+
+  function nextImage() {
+    // وظائف تغيير الصور يمكن إضافتها مستقبلاً
   }
 </script>
 

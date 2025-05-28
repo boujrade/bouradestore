@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>كريم Shabash للأعقاب الجافة والمتشققة</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -29,8 +29,8 @@
     }
 
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
@@ -57,7 +57,7 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -108,6 +108,51 @@
         flex: 1;
       }
     }
+
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      height: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      margin-top: -100px;
+      margin-bottom: -200px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
@@ -115,41 +160,39 @@
 <div class="container">
   <h1>كريم Shabash للأعقاب الجافة والمتشققة</h1>
 
-  <div class="price">DA 2600</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im1/15.jpg" alt="كريم Shabash للأعقاب الجافة والمتشققة" loading="lazy">
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br>
+
+  <div class="price">DA 2000</div>
 
   <div class="desc">
-    كريم <strong>Shabash</strong> يوفر العناية المكثفة للكعوب الجافة والمتشققة.<br>
-    بتركيبة غنية تعزز ترطيب البشرة وتجديدها لتترك قدميك ناعمة وصحية.<br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.7/5
+    كريم <strong>Shabash</strong> غني بالمرطبات الطبيعية لعلاج جفاف الكعبين وتشقق الأقدام. يُعيد للبشرة نعومتها ويحسن مظهرها خلال أيام.<br>
+    تركيبته فعالة وآمنة للاستخدام اليومي.<br>
+    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.5/5
   </div>
 
   <div>
-    <h3>🌿 المكونات</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>زيت جوز الهند:</strong> يغذي البشرة بعمق ويمنع الجفاف.</li>
-      <li><strong>زبدة الشيا:</strong> ترطب وتساعد في التئام التشققات.</li>
-      <li><strong>فيتامين E:</strong> يساعد في تجديد خلايا الجلد.</li>
-      <li><strong>مستخلص الصبار:</strong> يهدئ ويرطّب البشرة الحساسة.</li>
+      <li><strong>ترطيب عميق:</strong> يغذي الجلد الجاف بفعالية عالية.</li>
+      <li><strong>نتائج سريعة:</strong> يقلل من التشققات خلال أيام قليلة.</li>
+      <li><strong>تركيبة لطيفة:</strong> مناسبة لجميع أنواع البشرة.</li>
+      <li><strong>بدون دهون:</strong> لا يترك أثرًا زيتيًا بعد الاستخدام.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ المميزات</h3>
+    <h3>🎀 طريقة الاستخدام</h3>
     <ul>
-      <li><strong>يعالج التشققات:</strong> نتائج واضحة من أول أسبوع.</li>
-      <li><strong>تركيبة طبيعية:</strong> بدون روائح أو مواد كيميائية قوية.</li>
-      <li><strong>سريع الامتصاص:</strong> لا يترك طبقة دهنية على الجلد.</li>
-      <li><strong>آمن لجميع أنواع البشرة:</strong> حتى البشرة الحساسة.</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>🧴 طريقة الاستعمال</h3>
-    <ul>
-      <li>اغسل قدميك جيدًا وجففها قبل الاستخدام.</li>
-      <li>ضع كمية مناسبة من الكريم على الكعب والمنطقة المتشققة.</li>
-      <li>دلك بلطف حتى يتم امتصاصه بالكامل.</li>
-      <li>لنتائج أفضل، استخدمه مرتين يوميًا.</li>
+      <li>اغسل قدميك وجففها جيدًا.</li>
+      <li>ضع كمية مناسبة من الكريم على الكعب ومناطق التشقق.</li>
+      <li>دلك بلطف حتى يتم امتصاص الكريم بالكامل.</li>
+      <li>يُستخدم مرتين يوميًا صباحًا ومساءً.</li>
     </ul>
   </div>
 
@@ -157,7 +200,7 @@
     <button class="share-btn" onclick="shareProduct('كريم Shabash للأعقاب الجافة والمتشققة')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('كريم Shabash للأعقاب الجافة والمتشققة', 2600)">
+    <button onclick="addToCart('كريم Shabash للأعقاب الجافة والمتشققة', 2000)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
     <button class="buy-now" onclick="storeProductAndRedirect('كريم Shabash للأعقاب الجافة والمتشققة')">
@@ -167,6 +210,39 @@
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
+
 
 <script>
   function addToCart(name, price) {
@@ -199,6 +275,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // صور إضافية يمكن إضافتها لاحقًا
+  }
+
+  function nextImage() {
+    // صور إضافية يمكن إضافتها لاحقًا
   }
 </script>
 

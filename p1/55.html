@@ -11,41 +11,35 @@
       padding: 15px;
       margin: 0;
     }
-
     .container {
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
       max-width: 100%;
       margin: auto;
     }
-
     h1 {
       font-size: 20px;
       color: #000;
       margin-bottom: 8px;
       text-align: right;
     }
-
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
     }
-
     .desc, ul {
       font-size: 14px;
       line-height: 1.7;
       color: #333;
     }
-
     ul {
       padding-right: 20px;
     }
-
     .btns {
       margin-top: 20px;
       display: flex;
@@ -53,11 +47,10 @@
       gap: 10px;
       justify-content: space-between;
     }
-
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -65,22 +58,18 @@
       font-size: 13px;
       transition: background 0.3s;
     }
-
     button:hover {
       background: #000;
     }
-
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
-
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
-
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -88,25 +77,61 @@
       margin-top: 20px;
       text-align: center;
     }
-
     .emoji {
       font-size: 1.5em;
       vertical-align: middle;
       margin-left: 5px;
     }
-
     @media (min-width: 600px) {
       .container {
         max-width: 700px;
       }
-
       .btns {
         flex-wrap: nowrap;
       }
-
       button {
         flex: 1;
       }
+    }
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      height: auto;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      margin-top: -100px;
+      margin-bottom: -200px;
+    }
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
     }
   </style>
 </head>
@@ -115,37 +140,38 @@
 <div class="container">
   <h1>فازلين بزيت الحبة السوداء</h1>
 
-  <div class="price">DA 1250</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im1/55.jpg" alt="فازلين بزيت الحبة السوداء" loading="lazy" />
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br />
+
+  <div class="price">DA 1500</div>
 
   <div class="desc">
-    فازلين غني بزيت الحبة السوداء الطبيعية يمنح بشرتك ترطيبًا وتهدئة فعالة، ويتميز بخواص مضادة للبكتيريا ومغذية للبشرة.<br>
-    مثالي للبشرة الجافة والحساسة، ويمنح نعومة وراحة تدوم طويلًا.<br>
+    فازلين طبيعي غني بزيت الحبة السوداء المعروف بخصائصه العلاجية، يرطب البشرة بعمق ويساعد على علاج التشققات وتهدئة الالتهابات.<br />
+    تركيبة مناسبة لجميع أنواع البشرة، خاصة الجافة والحساسة.<br />
     <span style="color: goldenrod;">★★★★★</span> تقييم: 4.9/5
   </div>
 
   <div>
-    <h3>🌿 المكونات</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>زيت الحبة السوداء:</strong> مضاد للالتهابات ويغذي البشرة بعمق.</li>
-      <li><strong>شمع العسل:</strong> يساعد على حماية الجلد واحتباس الرطوبة.</li>
-      <li><strong>فيتامين E:</strong> يحارب الجذور الحرة ويساهم في تجديد الخلايا.</li>
+      <li>ترطيب فعال ومكثف لبشرة ناعمة.</li>
+      <li>يحتوي على زيت الحبة السوداء الطبيعي.</li>
+      <li>يساعد في تهدئة الالتهابات الجلدية.</li>
+      <li>يعزز من صحة الجلد ويحميه من الجفاف.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ الفوائد</h3>
+    <h3>🎀 طريقة الاستخدام</h3>
     <ul>
-      <li><strong>ترطيب عميق:</strong> يمنع الجفاف ويحافظ على رطوبة البشرة.</li>
-      <li><strong>مهدئ للبشرة:</strong> مثالي للبشرة الملتهبة أو الحساسة.</li>
-      <li><strong>مضاد للبكتيريا:</strong> يساعد في حماية البشرة من الشوائب.</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>🧴 طريقة الاستعمال</h3>
-    <ul>
-      <li>يُطبق على البشرة الجافة ويدلك بلطف حتى يتم الامتصاص.</li>
-      <li>يستخدم حسب الحاجة، ويفضل استخدامه يوميًا.</li>
+      <li>يوضع على البشرة النظيفة والجافة حسب الحاجة.</li>
+      <li>يدلك بلطف حتى الامتصاص الكامل.</li>
+      <li>يمكن استخدامه صباحاً ومساءً.</li>
     </ul>
   </div>
 
@@ -153,7 +179,7 @@
     <button class="share-btn" onclick="shareProduct('فازلين بزيت الحبة السوداء')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('فازلين بزيت الحبة السوداء', 1250)">
+    <button onclick="addToCart('فازلين بزيت الحبة السوداء', 1500)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
     <button class="buy-now" onclick="storeProductAndRedirect('فازلين بزيت الحبة السوداء')">
@@ -163,6 +189,37 @@
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
 
 <script>
   function addToCart(name, price) {
@@ -195,6 +252,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // صور إضافية لاحقًا
+  }
+
+  function nextImage() {
+    // صور إضافية لاحقًا
   }
 </script>
 

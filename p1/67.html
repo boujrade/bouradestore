@@ -11,41 +11,35 @@
       padding: 15px;
       margin: 0;
     }
-
     .container {
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
       max-width: 100%;
       margin: auto;
     }
-
     h1 {
       font-size: 20px;
       color: #000;
       margin-bottom: 8px;
       text-align: right;
     }
-
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
     }
-
     .desc, ul {
       font-size: 14px;
       line-height: 1.7;
       color: #333;
     }
-
     ul {
       padding-right: 20px;
     }
-
     .btns {
       margin-top: 20px;
       display: flex;
@@ -53,11 +47,10 @@
       gap: 10px;
       justify-content: space-between;
     }
-
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -65,22 +58,18 @@
       font-size: 13px;
       transition: background 0.3s;
     }
-
     button:hover {
       background: #000;
     }
-
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
-
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
-
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -88,25 +77,61 @@
       margin-top: 20px;
       text-align: center;
     }
-
     .emoji {
       font-size: 1.5em;
       vertical-align: middle;
       margin-left: 5px;
     }
-
     @media (min-width: 600px) {
       .container {
         max-width: 700px;
       }
-
       .btns {
         flex-wrap: nowrap;
       }
-
       button {
         flex: 1;
       }
+    }
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      height: auto;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      margin-top: -100px;
+      margin-bottom: -200px;
+    }
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
     }
   </style>
 </head>
@@ -115,40 +140,38 @@
 <div class="container">
   <h1>كريم أيشون بيوتي لمكافحة علامات التمدد</h1>
 
+  <div class="gallery">
+    <img id="mainImage" src="/im1/67" alt="كريم أيشون بيوتي لمكافحة علامات التمدد" loading="lazy" />
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br />
+
   <div class="price">DA 3500</div>
 
   <div class="desc">
-    كريم موضعي يقلل من ظهور علامات التمدد الناتجة عن الحمل، فقدان الوزن أو التغيرات الهرمونية.<br>
-    يرطب البشرة ويعزز مرونتها ويعمل على تجديد خلايا الجلد.<br>
+    كريم <strong>أيشون بيوتي</strong> فعال في تقليل علامات التمدد وترطيب البشرة بعمق.<br />
+    يعزز مرونة الجلد ويحسن مظهره ليبدو ناعمًا ومشدودًا.<br />
     <span style="color: goldenrod;">★★★★★</span> تقييم: 4.7/5
   </div>
 
   <div>
-    <h3>🌿 المكونات الرئيسية</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>مستخلص الحلزون:</strong> يساعد على تجديد خلايا الجلد وتحفيز إنتاج الكولاجين.</li>
-      <li><strong>زبدة الشيا وزيت الزيتون:</strong> ترطيب عميق وتغذية للبشرة.</li>
-      <li><strong>الكولاجين المائي:</strong> يعزز مرونة الجلد وقوته.</li>
-      <li><strong>الألانثوين:</strong> يهدئ البشرة ويحفز تجديد الخلايا.</li>
+      <li>تقليل علامات التمدد بفعالية ملحوظة.</li>
+      <li>ترطيب عميق للبشرة وتحسين مرونتها.</li>
+      <li>تركيبة طبيعية وآمنة لجميع أنواع البشرة.</li>
+      <li>يساعد على شد الجلد وتحسين مظهره.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ الفوائد</h3>
+    <h3>🎀 طريقة الاستخدام</h3>
     <ul>
-      <li>تقليل ظهور علامات التمدد.</li>
-      <li>تحسين مرونة الجلد ونعومته.</li>
-      <li>ترطيب وتجديد خلايا البشرة.</li>
-      <li>مناسب لجميع أنواع البشرة.</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>🧴 طريقة الاستخدام</h3>
-    <ul>
-      <li>نظف المنطقة المراد علاجها جيدًا.</li>
-      <li>ضع كمية مناسبة من الكريم ودلك بلطف حتى يمتصه الجلد.</li>
-      <li>يستخدم مرتين يوميًا صباحًا ومساءً للحصول على أفضل النتائج.</li>
+      <li>ضع كمية مناسبة من الكريم على المناطق المتأثرة بعلامات التمدد.</li>
+      <li>دلك بلطف بحركات دائرية حتى الامتصاص الكامل.</li>
+      <li>استخدمه مرتين يومياً للحصول على أفضل النتائج.</li>
     </ul>
   </div>
 
@@ -166,6 +189,37 @@
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
 
 <script>
   function addToCart(name, price) {
@@ -198,6 +252,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // صور إضافية لاحقًا
+  }
+
+  function nextImage() {
+    // صور إضافية لاحقًا
   }
 </script>
 

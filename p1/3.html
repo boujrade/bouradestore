@@ -110,20 +110,23 @@
     }
 
     .gallery {
-      position: relative;
-      max-width: 100%;
-      margin: auto;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  height: auto;
+}
 
-    .gallery img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 10px;
-    }
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-top: -100px;
+  margin-bottom: -200px;
+}
 
     .buttons {
       position: absolute;
@@ -207,6 +210,37 @@
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
 
 <script>
   function addToCart(name, price) {

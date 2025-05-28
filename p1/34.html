@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>كريم Eleis Crème de Blé للشعر</title>
+  <title>كريم Eleis Crème de Blé للعناية بالشعر</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
@@ -16,7 +16,7 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
       max-width: 100%;
       margin: auto;
     }
@@ -29,8 +29,8 @@
     }
 
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
@@ -57,7 +57,7 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -108,6 +108,51 @@
         flex: 1;
       }
     }
+
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      height: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      margin-top: -100px;
+      margin-bottom: -200px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
@@ -115,55 +160,86 @@
 <div class="container">
   <h1>كريم Eleis Crème de Blé للعناية بالشعر</h1>
 
-  <div class="price">DA 2000</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im1/36.jpg" alt="كريم Eleis Crème de Blé للعناية بالشعر" loading="lazy" />
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br />
+
+  <div class="price">DA 2100</div>
 
   <div class="desc">
-    كريم <strong>Eleis Crème de Blé</strong> للشعر يوفر تغذية عميقة ويمنح شعرك نعومة ولمعانًا طبيعيًا.<br>
-    غني بخلاصة القمح التي تقوّي جذور الشعر وتحميه من التقصف والتكسر.<br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.8/5
+    كريم Eleis Crème de Blé غني بالزيوت الطبيعية والفيتامينات التي تغذي الشعر وتحسن من ملمسه.<br />
+    يرطب الشعر الجاف ويمنحه لمعاناً صحياً وحيوية.<br />
+    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.5/5
   </div>
 
   <div>
-    <h3>🌾 المكونات</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>خلاصة القمح:</strong> تغذية وتقوية بصيلات الشعر.</li>
-      <li><strong>فيتامين B5:</strong> يعيد الحيوية واللمعان للشعر التالف.</li>
-      <li><strong>زيت الأرغان:</strong> يرطب الشعر ويقلل من الهيشان.</li>
+      <li>ترطيب عميق وفعّال للشعر.</li>
+      <li>يعزز قوة الشعر ويقلل التكسر.</li>
+      <li>يساعد على تنعيم الشعر وتحسين اللمعان.</li>
+      <li>خالي من المواد الكيميائية الضارة.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ الفوائد</h3>
+    <h3>🎀 طريقة الاستخدام</h3>
     <ul>
-      <li><strong>يغذي فروة الرأس:</strong> ويحفز نمو الشعر.</li>
-      <li><strong>يمنع التساقط:</strong> ويزيد من كثافة الشعر.</li>
-      <li><strong>يناسب جميع أنواع الشعر:</strong> للنساء والرجال.</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>🧴 طريقة الاستعمال</h3>
-    <ul>
-      <li>ضعي كمية مناسبة على شعر نظيف ورطب.</li>
-      <li>وزعي الكريم من الجذور حتى الأطراف.</li>
-      <li>لا حاجة للشطف – يستخدم ككريم يومي أو قبل التصفيف.</li>
+      <li>ضع كمية مناسبة من الكريم على الشعر النظيف والرطب.</li>
+      <li>دلك بلطف من الجذور حتى الأطراف.</li>
+      <li>يمكن استخدامه يومياً أو حسب الحاجة.</li>
     </ul>
   </div>
 
   <div class="btns">
-    <button class="share-btn" onclick="shareProduct('كريم Eleis Crème de Blé للشعر')">
+    <button class="share-btn" onclick="shareProduct('كريم Eleis Crème de Blé للعناية بالشعر')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('كريم Eleis Crème de Blé للشعر', 2000)">
+    <button onclick="addToCart('كريم Eleis Crème de Blé للعناية بالشعر', 2100)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('كريم Eleis Crème de Blé للشعر')">
+    <button class="buy-now" onclick="storeProductAndRedirect('كريم Eleis Crème de Blé للعناية بالشعر')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
 
 <script>
   function addToCart(name, price) {
@@ -196,6 +272,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // يمكن إضافة عرض صور متعددة مستقبلاً
+  }
+
+  function nextImage() {
+    // يمكن إضافة عرض صور متعددة مستقبلاً
   }
 </script>
 

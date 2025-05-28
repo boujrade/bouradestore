@@ -2,8 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>دهن الوسيلة</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دهن الوسيلة لقلع الثآليل ومسامير الأرجل والبواسير</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -29,8 +29,8 @@
     }
 
     .price {
-      color: goldenrod;
-      font-size: 22px;
+      color: rgb(247, 178, 3);
+      font-size: 25px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
@@ -57,7 +57,7 @@
     button {
       flex: 1 1 100%;
       padding: 10px;
-      background: #333;
+      background: #706e6e;
       color: white;
       border: none;
       border-radius: 5px;
@@ -71,16 +71,16 @@
     }
 
     .buy-now {
-      background-color: #b30000;
+      background-color: #e75757;
     }
 
     .share-btn {
-      background-color: goldenrod;
+      background-color: rgb(238, 184, 49);
       color: #000;
     }
 
     a {
-      color: gray;
+      color: rgb(153, 150, 150);
       text-decoration: none;
       font-weight: bold;
       font-size: 15px;
@@ -108,6 +108,51 @@
         flex: 1;
       }
     }
+
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      height: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      margin-top: -100px;
+      margin-bottom: -200px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
@@ -115,41 +160,39 @@
 <div class="container">
   <h1>دهن الوسيلة لقلع الثآليل ومسامير الأرجل والبواسير الخارجية</h1>
 
-  <div class="price">DA 1500</div>
+  <div class="gallery">
+    <img id="mainImage" src="/im1/18.jpg" alt="دهن الوسيلة لقلع الثآليل ومسامير الأرجل والبواسير" loading="lazy">
+    <div class="buttons">
+      <button class="prev" onclick="prevImage()">❮</button>
+      <button class="next" onclick="nextImage()">❯</button>
+    </div>
+  </div><br>
+
+  <div class="price">DA 1300</div>
 
   <div class="desc">
-    <strong>دهن الوسيلة</strong> تركيبة تقليدية فعالة تُستخدم في إزالة الثآليل، مسامير الأرجل، وتخفيف أعراض البواسير الخارجية.<br>
-    يحتوي على مواد طبيعية وكاوية تعمل على تقشير الجلد الزائد وتهدئة التهيج.<br>
-    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.5/5
+    دهن <strong>الوسيلة</strong> علاج طبيعي تقليدي يساعد في قلع <strong>الثآليل</strong> ومسامير الأرجل والبواسير الخارجية بطريقة فعالة وسريعة.<br>
+    يحتوي على تركيبة عشبية مركّزة تُستخدم موضعيًا وتُعرف بنتائجها الممتازة منذ القدم.<br>
+    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.2/5
   </div>
 
   <div>
-    <h3>🌿 المكونات</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>الزرنيخ النباتي:</strong> مادة فعالة لحرق الثآليل والجلد الزائد.</li>
-      <li><strong>الشب الطبيعي:</strong> قابض ومطهر للجلد.</li>
-      <li><strong>خلاصة الخل الأبيض:</strong> يساعد في التقشير والتعقيم.</li>
+      <li><strong>فعال في القضاء على الثآليل:</strong> يُزيلها من الجذور دون ألم.</li>
+      <li><strong>يعالج مسامير الأرجل:</strong> يخفف الألم ويُسهّل الإزالة.</li>
+      <li><strong>يهدئ البواسير الخارجية:</strong> بفضل مكوناته العشبية.</li>
+      <li><strong>آمن للاستخدام الخارجي:</strong> بدون آثار جانبية تذكر.</li>
     </ul>
   </div>
 
   <div>
-    <h3>✅ المميزات</h3>
+    <h3>🎀 طريقة الاستخدام</h3>
     <ul>
-      <li><strong>يزيل الثآليل:</strong> يقضي على الثآليل الجلدية من الجذور.</li>
-      <li><strong>يعالج مسامير الأرجل:</strong> يلين ويذيب النتوءات الصلبة.</li>
-      <li><strong>يخفف البواسير الخارجية:</strong> يقلل التورم والحكة.</li>
-      <li><strong>مناسب للاستعمال الخارجي فقط:</strong> سهل التطبيق.</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>🧴 طريقة الاستعمال</h3>
-    <ul>
-      <li>نظّف المنطقة المصابة جيدًا قبل الاستعمال.</li>
-      <li>ضع كمية صغيرة من الدهن على المكان المستهدف.</li>
-      <li>اتركه يجف، ولا تغسله فورًا.</li>
-      <li>يُستخدم مرة واحدة يوميًا حتى زوال الأثر.</li>
-      <li style="color:red;"><strong>تحذير:</strong> لا يُستخدم داخل الجسم أو على مناطق حساسة دون استشارة طبية.</li>
+      <li>نظف المنطقة المصابة جيدًا بالماء الدافئ.</li>
+      <li>ضع كمية صغيرة من الدهن على المنطقة.</li>
+      <li>كرر الاستخدام مرتين يوميًا.</li>
+      <li>ينصح بالاستمرار حتى زوال الأعراض بالكامل.</li>
     </ul>
   </div>
 
@@ -157,7 +200,7 @@
     <button class="share-btn" onclick="shareProduct('دهن الوسيلة لقلع الثآليل ومسامير الأرجل والبواسير الخارجية')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('دهن الوسيلة لقلع الثآليل ومسامير الأرجل والبواسير الخارجية', 1500)">
+    <button onclick="addToCart('دهن الوسيلة لقلع الثآليل ومسامير الأرجل والبواسير الخارجية', 1300)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
     <button class="buy-now" onclick="storeProductAndRedirect('دهن الوسيلة لقلع الثآليل ومسامير الأرجل والبواسير الخارجية')">
@@ -167,6 +210,36 @@
 
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
 
 <script>
   function addToCart(name, price) {
@@ -199,6 +272,14 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
+  }
+
+  function prevImage() {
+    // لإضافة دعم معرض صور متعدد لاحقًا
+  }
+
+  function nextImage() {
+    // لإضافة دعم معرض صور متعدد لاحقًا
   }
 </script>
 
