@@ -142,10 +142,75 @@
 
   <div class="gallery">
     <img id="mainImage" src="/im1/87.jpg" alt="بخاخ سم النحل لعلاج المفاصل والعظام" loading="lazy" />
-    <div class="buttons">
-      <button class="prev" onclick="prevImage()">❮</button>
-      <button class="next" onclick="nextImage()">❯</button>
-    </div>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "/im2/01.jpg",
+    "/im2/001.jpg",
+    "/im2/0001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
+
+  
+<script>
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let link = window.location.href;
+    let itemIndex = cart.findIndex(item => item.name === name);
+    if (itemIndex !== -1) {
+      cart[itemIndex].qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1, link });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("lastProduct", name);
+    alert(`✅ تمت إضافة "${name}" إلى السلة بسعر ${price} DA!`);
+  }
+
+  function storeProductAndRedirect(productName) {
+    localStorage.setItem("selectedProduct", productName);
+    window.location.href = "demande.html";
+  }
+
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
+  }
+</script>
+
+</body>
+</html>
   </div><br />
 
   <div class="price">DA 2200</div>
@@ -203,8 +268,9 @@
 <script>
   const images = [
     
-    "images/produits/html.01.jpg",
-    "images/produits/html.001.jpg",
+    "/im2/01.jpg",
+    "/im2/001.jpg",
+    "/im2/0001.jpg",
    
   ];
   let index = 0;
@@ -222,6 +288,7 @@
 </script>
 
 
+  
 <script>
   function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -253,14 +320,6 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
-  }
-
-  function prevImage() {
-    // دعم مستقبلي للصور المتعددة
-  }
-
-  function nextImage() {
-    // دعم مستقبلي للصور المتعددة
   }
 </script>
 

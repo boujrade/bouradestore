@@ -161,10 +161,7 @@
 
   <div class="gallery">
     <img id="mainImage" src="/im1/14.jpg" alt="مرهم Lunatal للعناية بالجلد والقدم" loading="lazy">
-    <div class="buttons">
-      <button class="prev" onclick="prevImage()">❮</button>
-      <button class="next" onclick="nextImage()">❯</button>
-    </div>
+   
   </div><br>
 
   <div class="price">DA 2300</div>
@@ -221,8 +218,9 @@
 <script>
   const images = [
     
-    "images/produits/html.01.jpg",
-    "images/produits/html.001.jpg",
+    "/im2/01.jpg",
+    "/im2/001.jpg",
+    "/im2/0001.jpg",
    
   ];
   let index = 0;
@@ -240,6 +238,7 @@
 </script>
 
 
+  
 <script>
   function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -271,14 +270,6 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
-  }
-
-  function prevImage() {
-    // يمكن إضافة صور لاحقًا
-  }
-
-  function nextImage() {
-    // يمكن إضافة صور لاحقًا
   }
 </script>
 
