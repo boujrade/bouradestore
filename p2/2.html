@@ -110,22 +110,21 @@
     }
 
     .gallery {
-  position: relative;
-  max-width: 100%;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  height: auto;
-}
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-.gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
- 
-}
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
     .buttons {
       position: absolute;
       top: 50%;
@@ -160,10 +159,7 @@
 
   <div class="gallery">
     <img id="mainImage" src="/im2/02.jpg" alt="زيت المسك الأسود - قطر الطبيعة" loading="lazy">
-    <div class="buttons">
-      <button class="prev" onclick="prevImage()">❮</button>
-      <button class="next" onclick="nextImage()">❯</button>
-    </div>
+    
   </div><br>
 
   <div class="price">DA 1300</div>
@@ -220,47 +216,25 @@
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("img.lazy-img").forEach(img => {
-      img.src = img.dataset.src;
-      img.classList.add("loaded");
-  });
-});
-<script>
-  // قائمة الصور
   const images = [
+   
     "/im2/02.jpg",
     "/im2/002.jpg",
-    "/im2/0002.jpg",
-   
+    "/im2/0002.jpg"
   ];
-
-  let currentIndex = 0; // المؤشر الحالي
-
-  const mainImage = document.getElementById("mainImage");
-
-  function showImage(index) {
-    // التأكد من أن المؤشر ضمن النطاق
-    if (index < 0) {
-      currentIndex = images.length - 1;
-    } else if (index >= images.length) {
-      currentIndex = 0;
-    } else {
-      currentIndex = index;
-    }
-    mainImage.src = images[currentIndex];
-  }
+  let index = 0;
+  const img = document.getElementById("mainImage");
 
   function nextImage() {
-    showImage(currentIndex + 1);
+    index = (index + 1) % images.length;
+    img.src = images[index];
   }
 
   function prevImage() {
-    showImage(currentIndex - 1);
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
   }
-</script>
 
-<script>
   function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let link = window.location.href;
@@ -291,14 +265,6 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
-  }
-
-  function prevImage() {
-    // يُمكنك لاحقًا إضافة دعم تبديل الصور
-  }
-
-  function nextImage() {
-    // يُمكنك لاحقًا إضافة دعم تبديل الصور
   }
 </script>
 

@@ -113,18 +113,26 @@
   position: relative;
   max-width: 100%;
   margin: auto;
-  overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  height: auto;
 }
 
 .gallery img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain; /* أو cover حسب ما تريد */
   border-radius: 10px;
- 
+}
+
+.gallery .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(255,255,255,0.7);
+  padding: 5px;
+  border-radius: 50%;
 }
 
     .buttons {
@@ -161,10 +169,7 @@
 
   <div class="gallery">
     <img id="mainImage" src="/im2/05.jpg" alt="زيت نواة المشمش - قطر الطبيعة" loading="lazy">
-    <div class="buttons">
-      <button class="prev" onclick="prevImage()">❮</button>
-      <button class="next" onclick="nextImage()">❯</button>
-    </div>
+    
   </div><br>
 
   <div class="price">DA 1300</div>
@@ -222,20 +227,11 @@
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("img.lazy-img").forEach(img => {
-      img.src = img.dataset.src;
-      img.classList.add("loaded");
-  });
-});
-</script>
-
-<script>
   const images = [
-    
-    "images/produits/html.01.jpg",
-    "images/produits/html.001.jpg",
    
+    "/im2/05.jpg",
+    "/im2/005.jpg",
+    "/im2/0005.jpg"
   ];
   let index = 0;
   const img = document.getElementById("mainImage");
@@ -249,10 +245,7 @@
     index = (index - 1 + images.length) % images.length;
     img.src = images[index];
   }
-</script>
 
-
-<script>
   function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let link = window.location.href;
@@ -283,14 +276,6 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
-  }
-
-  function prevImage() {
-    // يمكن لاحقًا دعم التنقل بين الصور
-  }
-
-  function nextImage() {
-    // يمكن لاحقًا دعم التنقل بين الصور
   }
 </script>
 

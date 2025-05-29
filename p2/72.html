@@ -141,11 +141,8 @@
   <h1>زيت بذور العنب – قطر الطبيعة</h1>
 
   <div class="gallery">
-    <img id="mainImage" src="/im2/72.jpg" alt="زيت بذور العنب – قطر الطبيعة" loading="lazy">
-    <div class="buttons">
-      <button class="prev" onclick="prevImage()">❮</button>
-      <button class="next" onclick="nextImage()">❯</button>
-    </div>
+    <img id="mainImage" src="/im23/72.jpg" alt="زيت بذور العنب – قطر الطبيعة" loading="lazy">
+    
   </div><br>
 
   <div class="price">DA 4800</div>
@@ -194,20 +191,11 @@
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("img.lazy-img").forEach(img => {
-      img.src = img.dataset.src;
-      img.classList.add("loaded");
-  });
-});
-</script>
-
-<script>
   const images = [
-    
-    "images/produits/html.01.jpg",
-    "images/produits/html.001.jpg",
    
+    "/im23/71.jpg",
+    "/im23/071.jpg",
+    
   ];
   let index = 0;
   const img = document.getElementById("mainImage");
@@ -221,9 +209,7 @@
     index = (index - 1 + images.length) % images.length;
     img.src = images[index];
   }
-</script>
 
-<script>
   function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let link = window.location.href;
@@ -254,14 +240,6 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
-  }
-
-  function prevImage() {
-    // سيتم دعم المعرض لاحقًا
-  }
-
-  function nextImage() {
-    // سيتم دعم المعرض لاحقًا
   }
 </script>
 

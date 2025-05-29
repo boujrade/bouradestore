@@ -108,59 +108,48 @@
         flex: 1;
       }
     }
-.gallery {
-  position: relative;
-  max-width: 100%;
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
 
-.gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain; /* أو cover حسب ما تريد */
-  border-radius: 10px;
-}
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-.gallery .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background-color: rgba(255,255,255,0.7);
-  padding: 5px;
-  border-radius: 50%;
-}
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      border-radius: 10px;
+    }
 
-.buttons {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  padding: 0 10px;
-  box-sizing: border-box;
-}
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
 
-.buttons button {
-  background-color: rgba(248, 243, 243, 0.5);
-  border: none;
-  color: white;
-  font-size: 24px;
-  padding: 1px 16px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: background-color 0.3s;
-}
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
 
-.buttons button:hover {
-  background-color: rgba(218, 207, 207, 0.8);
-}
-
-
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
   </style>
 </head>
 <body>
@@ -170,10 +159,7 @@
 
   <div class="gallery">
     <img id="mainImage" src="/im2/01.jpg" alt="زيت التليو قطر الطبيعة" loading="lazy">
-    <div class="buttons">
-      <button class="prev" onclick="prevImage()">❮</button>
-      <button class="next" onclick="nextImage()">❯</button>
-    </div>
+    
   </div><br>
 
   <div class="price">DA 1200</div>
@@ -241,9 +227,9 @@
 <script>
   const images = [
     
-    "im2/01.jpg",
-   "im2/001.jpg",
-   "im2/0001.jpg",
+    "/im2/01.jpg",
+    "/im2/001.jpg",
+    "/im2/0001.jpg",
    
   ];
   let index = 0;

@@ -110,24 +110,30 @@
     }
 
     .gallery {
-      position: relative;
-      max-width: 100%;
-      margin: auto;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      height: auto;
-    }
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-    .gallery img {
+.gallery img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain; /* أو cover حسب ما تريد */
   border-radius: 10px;
-   margin-top: -30px;
-  margin-bottom: -50px;
 }
 
+.gallery .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(255,255,255,0.7);
+  padding: 5px;
+  border-radius: 50%;
+}
     .buttons {
       position: absolute;
       top: 50%;
@@ -161,11 +167,8 @@
   <h1>زيت اللوز الحلو – قطر الطبيعة</h1>
 
   <div class="gallery">
-    <img id="mainImage" src="/im2/29.jpg" alt="زيت اللوز الحلو – قطر الطبيعة" loading="lazy">
-    <div class="buttons">
-      <button class="prev" onclick="prevImage()">❮</button>
-      <button class="next" onclick="nextImage()">❯</button>
-    </div>
+    <img id="mainImage" src="/im22/29.jpg" alt="زيت اللوز الحلو – قطر الطبيعة" loading="lazy">
+    
   </div><br>
 
   <div class="price">DA 3900</div>
@@ -223,20 +226,11 @@
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("img.lazy-img").forEach(img => {
-      img.src = img.dataset.src;
-      img.classList.add("loaded");
-  });
-});
-</script>
-
-<script>
   const images = [
-    
-    "images/produits/html.01.jpg",
-    "images/produits/html.001.jpg",
    
+    "/im22/29.jpg",
+    "/im22/029.jpg",
+    "/im22/0029.jpg"
   ];
   let index = 0;
   const img = document.getElementById("mainImage");
@@ -250,11 +244,7 @@
     index = (index - 1 + images.length) % images.length;
     img.src = images[index];
   }
-</script>
 
-
-
-<script>
   function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let link = window.location.href;
@@ -285,14 +275,6 @@
     } else {
       alert("المشاركة غير مدعومة على هذا المتصفح.");
     }
-  }
-
-  function prevImage() {
-    // يمكن إضافة تغيير الصور لاحقاً
-  }
-
-  function nextImage() {
-    // يمكن إضافة تغيير الصور لاحقاً
   }
 </script>
 
