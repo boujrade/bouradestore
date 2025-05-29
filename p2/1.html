@@ -112,19 +112,26 @@
   position: relative;
   max-width: 100%;
   margin: auto;
-  overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  height: auto;
 }
 
 .gallery img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain; /* أو cover حسب ما تريد */
   border-radius: 10px;
-  margin-top: -100px;
-  margin-bottom: -200px;
+}
+
+.gallery .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(255,255,255,0.7);
+  padding: 5px;
+  border-radius: 50%;
 }
 
 .buttons {
@@ -234,8 +241,9 @@
 <script>
   const images = [
     
-    "images/produits/html.01.jpg",
-    "images/produits/html.001.jpg",
+    "im2/01.jpg",
+   "im2/001.jpg",
+   "im2/0001.jpg",
    
   ];
   let index = 0;
