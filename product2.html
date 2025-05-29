@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+   <title>Chika Store</title>
+
+ <meta name="description" content="أكبر متجر الكتروني لبيع منتجات أصلية للعناية بالبشرة والجمال وزيوت أساسية ,عطور شعبية لضمان تجربة مثالية للعناية الشخصية والصحة الجسمية "التوصيل 58 ولاية و إلى باب المنزل  الدفع عند الإستلام">
+
+    <!-- إضافة أيقونة الموقع -->
+    <link rel="icon" href="images2/html.gnn.jpg" type="image/x-icon">
+ 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #FEFEFE ;
+  font-family: Tahoma, sans-serif;
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  padding:5px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* بطاقتان في كل صف */
+  gap: 0;
+  width: 100%;
+  padding: 0;
+}
+
+.product-card {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #dcdcdc;
+  background-size: cover; /* لملء البطاقة بالكامل */
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 5px rgba(200, 200, 200, 0.3);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+ 
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card h4 {
+  font-size: 12px;
+  color: #333;
+  margin: 6px 0 0;
+  text-align: center;
+}
+
+.product-card p {
+  font-size: 11px;
+  color: #777;
+  text-align: center;
+  margin: 2px 0;
+}
+
+product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    display: none;
+}
+
+.product-card h4,
+.product-card .rating,
+.product-card p,
+.product-card .share-btn {
+    background: none;
+    padding: 5px;
+    border-radius: 5;
+    color: rgb(37, 30, 30);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 76px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 50px) {
+    .products-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+
+  
+    
+}
+
+#searchContainer {
+  position: relative;
+  max-width: 100%;
+  margin: 15px 0;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+#searchBox {
+  width: 100%;
+  padding: 14px 44px 14px 16px; /* مساحة للرمز */
+  border: none;
+  border-radius: 25px;
+  background-color: #ffffff;
+  font-size: 15px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23999" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16a6.471 6.471 0 004.23-1.57l.27.28v.79l5 5L20.49 19l-4.99-5zM10 14a4 4 0 110-8 4 4 0 010 8z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 20px;
+  direction: rtl;
+}
+
+#searchBox::placeholder {
+  color: #999;
+}
+
+#searchBox:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 140, 255, 0.3);
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  right: 12px;
+  left: 12px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: none;
+}
+
+.suggestion-item {
+  padding: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestion-item:hover {
+  background-color: #f5f5f5;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+
+
+.product-card[hidden] {
+  display: none;  /* إخفاء العناصر */
+}
+
+
+  </style>
+</head>
+<body>
+
+
+
+
+<h4 style="text-align: center;">🌸 زيوت نقية وممزوجة للشعر والبشرة🌸</h4><br>
+
+
+    <h5 style="text-align: center;"> ابحث عن المنتج الذي ترغب به</h5>
+
+    <div id="searchContainer">
+        <input type="text" id="searchBox" placeholder="اكتب اسم المنتج...">
+        <div id="suggestions" class="suggestions" style="display: none;"></div>
+      </div><br>
+    
+<div class="products-container">
+
+  <div class="product-card" data-bg="im2/01.jpg" onclick="window.location.href='p2/1.html'">
+    <h4>زيت التليو - قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/02.jpg" onclick="window.location.href='p2/2.html'">
+    <h4e>زيت المسك الأسود – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/03.jpg" onclick="window.location.href='p2/3.html'">
+    <h4>زيت البنفسج – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/04.jpg" onclick="window.location.href='p2/4.html'">
+    <h4>زيت مسك الأبيض – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/05.jpg" onclick="window.location.href='p2/5.html'">
+    <h4>زيت نواة المشمش – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/06.jpg" onclick="window.location.href='p2/6.html'">
+    <h4>زيت جوز الطيب – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/07.jpg" onclick="window.location.href='p2/.html'">
+    <h4>زيت فول السوداني – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/08.jpg" onclick="window.location.href='p2/8.html'">
+    <h4>زيت اللبان – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/009.jpg" onclick="window.location.href='p2/9.html'">
+    <h4>زيت كبد الحوت – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/10.jpg" onclick="window.location.href='p2/10.html'">
+    <h4>زيت الجوز – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/11.jpg" onclick="window.location.href='p2/11.html'">
+    <h4>زيت الخزامة – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/12.jpg" onclick="window.location.href='p2/12.html'">
+    <h4>زيت الجنكو – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/13.jpg" onclick="window.location.href='p2/13.html'">
+    <h4>زيت التفاح – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/14.jpg" onclick="window.location.href='p2/14.html'">
+    <h4>زيت التفاح – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/15.jpg" onclick="window.location.href='p2/15.html'">
+    <h4>زيت البصل – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/16.jpg" onclick="window.location.href='p2/16.html'">
+    <h4>زيت القسط الهندي – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/17.jpg" onclick="window.location.href='p2/17.html'">
+    <h4>زيت الخردل – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/18.jpg" onclick="window.location.href='p2/18.html'">
+    <h4>زيت الفازلين – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/19.jpg" onclick="window.location.href='p2/19.html'">
+    <h4>زيت القطران – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/20.jpg" onclick="window.location.href='p2/20.html'">
+    <h4>زيت بذرة الكتان – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/21.jpg" onclick="window.location.href='p2/21.html'">
+    <h4>زيت الورد – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/22.jpg" onclick="window.location.href='p2/22.html'">
+    <h4>زيت الجنسنغ – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/23.jpg" onclick="window.location.href='p2/23.html'">
+    <h4>زيت القراص – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/24.jpg" onclick="window.location.href='p2/24.html'">
+    <h4>زيت اللوز المر – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/25.jpg" onclick="window.location.href='p2/25.html'">
+    <h4>زيت نخالة الأرز – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/26.jpg" onclick="window.location.href='p2/t26.html'">
+    <h4>زيت الفيتامين E – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/27.jpg" onclick="window.location.href='p2/27.html'">
+    <h4>زيت الفيجل – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/28.jpg" onclick="window.location.href='p2/28.html'">
+    <h4>زيت السمسم – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/29.jpg" onclick="window.location.href='p2/29.html'">
+    <h4>زيت اللوز الحلو – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/30.jpg" onclick="window.location.href='p2/30.html'">
+    <h4>زيت الجلسرين – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/31.jpg" onclick="window.location.href='p2/31.html'">
+    <h4>زيت قرع العسل – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/32.jpg" onclick="window.location.href='p2/32.html'">
+    <h4>زيت نبات السعد – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/33.jpg" onclick="window.location.href='p2/33.html'">
+    <h4>زيت الجزر – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/34.jpg" onclick="window.location.href='p2/34.html'">
+    <h4>زيت الأرغان – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/35.jpg" onclick="window.location.href='p2/35.html'">
+    <h4>زيت النعناع البري – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/36.jpg" onclick="window.location.href='p2/36.html'">
+    <h4>زيت التليو – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/37.jpg" onclick="window.location.href='p2/37.html'">
+    <h4>زيت المورينجا – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/38.jpg" onclick="window.location.href='p2/38.html'">
+    <h4>زيت الثوم – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/39.jpg" onclick="window.location.href='p2/39.html'">
+    <h4>زيت الكاليتوس – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/40.jpg" onclick="window.location.href='p2/40.html'">
+    <h4>زيت ذيل الحصان – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/41.jpg" onclick="window.location.href='p2/41.html'">
+    <h4>زيت الريحان – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/42.jpg" onclick="window.location.href='p2/42.html'">
+    <h4>زيت الأفوكادو – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/43.jpg" onclick="window.location.href='p2/43.html'">
+    <h4>زيت بذور الشوكي – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/44.jpg" onclick="window.location.href='p2/44.html'">
+    <h4>زيت الكرافس – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/45.jpg" onclick="window.location.href='p2/45.html'">
+    <h4>زيت الحلتيت – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/46.jpg" onclick="window.location.href='p2/46.html'">
+    <h4>زيت العرعار – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/47.jpg" onclick="window.location.href='p2/47.html'">
+    <h4>زيت الكبريت – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/48.jpg" onclick="window.location.href='p2/48.html'">
+    <h4>زيت شجرة الشاي – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/49.jpg" onclick="window.location.href='p2/49.html'">
+    <h4>زيت الخس – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/50.jpg" onclick="window.location.href='p2/50.html'">
+    <h4>زيت الياسمين – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/51.jpg" onclick="window.location.href='p2/51.html'">
+    <h4>زيت الضرو – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/52.jpg" onclick="window.location.href='p2/52.html'">
+    <h4>زيت السنامكي – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/53.jpg" onclick="window.location.href='p2/53.html'">
+    <h4>زيت البسباس – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/54.jpg" onclick="window.location.href='p2/54.html'">
+    <h4>زيت القرنفل – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im22/55.jpg" onclick="window.location.href='p2/55.html'">
+    <h4>زيت الصبار – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/56.jpg" onclick="window.location.href='p2/56.html'">
+    <h4>زيت الرمان – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/57.jpg" onclick="window.location.href='p2/57.html'">
+    <h4>زيت اللبان الذكر – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/58.jpg" onclick="window.location.href='p2/58.html'">
+    <h4>زيت الشيح – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/59.jpg" onclick="window.location.href='p2/59.html'">
+    <h4>زيت الأملج – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/60.jpg" onclick="window.location.href='p2/60.html'">
+    <h4>زيت الرند – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/61.jpg" onclick="window.location.href='p2/61.html'">
+    <h4>زيت جنين القمح – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/62.jpg" onclick="window.location.href='p2/62.html'">
+    <h4>زيت السرو – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/63.jpg" onclick="window.location.href='p2/63.html'">
+    <h4>زيت المندرين اليوسفي – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/64.jpg" onclick="window.location.href='p2/64.html'">
+    <h4>زيت الصوجا – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/65.jpg" onclick="window.location.href='p2/65.html'">
+    <h4>زيت حب الرشاد – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/66.jpg" onclick="window.location.href='p2/66.html'">
+    <h4>زيت البطم – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/67.jpg" onclick="window.location.href='p2/67.html'">
+    <h4>زيت المرمية – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/68.jpg" onclick="window.location.href='p2/68.html'">
+    <h4>زيت الزنجبيل – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/69.jpg" onclick="window.location.href='p2/69.html'">
+    <h4>زيت جوز الهند – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/70.jpg" onclick="window.location.href='p2/70.html'">
+    <h4>زيت السانوج – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/71.jpg" onclick="window.location.href='p2/71.html'">
+    <h4>زيت الحنظل – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/12.jpg" onclick="window.location.href='p2/12.html'">
+    <h4>زيت بذور العنب – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/73.jpg" onclick="window.location.href='p2/73.html'">
+    <h4>زيت البقدونس – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/74.jpg" onclick="window.location.href='p2/74.html'">
+    <h4>زيت الكركم – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/75.jpg" onclick="window.location.href='p2/75.html'">
+    <h4>زيت عرق السوس – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/76.jpg" onclick="window.location.href='p2/76.html'">
+    <h4>زيت الحبة السوداء – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/77.jpg" onclick="window.location.href='p2/77.html'">
+    <h4>زيت الخروع – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/78.jpg" onclick="window.location.href='p2/78.html'">
+    <h4>زيت الزعفران – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/79.jpg" onclick="window.location.href='p2/79.html'">
+    <h4>زيت عطرشة – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/80.jpg" onclick="window.location.href='p2/80.html'">
+    <h4>زيت الزعتر – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/81.jpg" onclick="window.location.href='p2/81.html'">
+    <h4>زيت الصندل – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/82.jpg" onclick="window.location.href='p2/82.html'">
+    <h4>زيت الحرمل – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/83.jpg" onclick="window.location.href='p2/83.html'">
+    <h4>زيت الحلبة – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/84.jpg" onclick="window.location.href='p2/84.html'">
+    <h4>زيت الجوجوبا – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/85.jpg" onclick="window.location.href='p2/85.html'">
+    <h4>زيت الفلفل – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/86.jpg" onclick="window.location.href='p2/86.html'">
+    <h4>زيت الجرجير – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/87.jpg" onclick="window.location.href='p2/87.html'">
+    <h4>زيت الكثيراء – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/88.jpg" onclick="window.location.href='p2/88.html'">
+    <h4>زيت العنبر – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/89.jpg" onclick="window.location.href='p2/89.html'">
+    <h4>زيت الصنوبر – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/90.jpg" onclick="window.location.href='p2/90.html'">
+    <h4>زيت الكافور – قطر الطبيعة</h4>
+  </div>
+
+  <div class="product-card" data-bg="im2/91.jpg" onclick="window.location.href='p2/91.html'">
+    <h4>زيت الليمون – قطر الطبيعة</h4>
+  </div>
+
+  
+
+</div>
+
+
+<script>
+    function normalizeArabic(text) {
+      return text
+        .replace(/[إأآا]/g, 'ا')
+        .replace(/ى/g, 'ي')
+        .replace(/ؤ/g, 'و')
+        .replace(/ئ/g, 'ي')
+        .replace(/ة/g, 'ه');
+    }
+    
+    document.getElementById('searchBox').addEventListener('input', searchCards);
+
+function searchCards() {
+  const input = normalizeArabic(document.getElementById('searchBox').value.toLowerCase().trim());
+  const cards = document.querySelectorAll('.product-card');
+
+  // إخفاء البطاقات التي لا تتطابق مع البحث
+  cards.forEach(card => {
+    const titleElement = card.querySelector('h4');
+    const title = normalizeArabic(titleElement ? titleElement.textContent.toLowerCase() : "");
+
+    if (title.includes(input)) {
+      card.hidden = false;  // إظهار البطاقة
+    } else {
+      card.hidden = true;   // إخفاء البطاقة
+    }
+  });
+}
+    </script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".product-card").forEach(card => {
+        const bgImage = card.getAttribute("data-bg");
+        card.style.backgroundImage = `url(${bgImage})`;
+    });
+});
+
+
+</script>
+
+</body>
+</html>
