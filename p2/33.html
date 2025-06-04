@@ -109,21 +109,33 @@
       }
     }
 
-   .gallery {
+    .gallery {
   position: relative;
   max-width: 100%;
   margin: auto;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
 .gallery img {
   width: 100%;
-  height: auto;
+  height: 500px;
   display: block;
-  object-fit: contain; /* أو cover حسب ما تريد */
+  object-fit: cover;
+  object-position: 60% 40%;
   border-radius: 10px;
+  transition: all 0.3s ease;
 }
+
+/* ✅ تحسين العرض على الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .gallery img {
+    height: 300px; /* أقل ارتفاع للهواتف */
+    object-position: center center; /* توسيط الصورة على الهواتف */
+  }
+}
+
 
 .gallery .arrow {
   position: absolute;

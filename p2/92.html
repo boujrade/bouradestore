@@ -93,20 +93,33 @@
         flex: 1;
       }
     }
-    .gallery {
-      position: relative;
-      max-width: 100%;
-      margin: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-      border-radius: 10px;
-    }
+     .gallery {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 100%;
+  height: 500px;
+  display: block;
+  object-fit: cover;
+  object-position: 60% 40%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* ✅ تحسين العرض على الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .gallery img {
+    height: 300px; /* أقل ارتفاع للهواتف */
+    object-position: center center; /* توسيط الصورة على الهواتف */
+  }
+}
+
     .gallery .arrow {
       position: absolute;
       top: 50%;
@@ -150,7 +163,7 @@
     <img id="mainImage" src="/im23/92.jpg" alt="زيت البابونج" loading="lazy" />
   </div><br />
 
-  <div class="price">DA 900</div>
+  <div class="price">DA 250</div>
 
   <div class="desc">
     زيت طبيعي مستخلص من زهور البابونج، يتميز بخصائصه المهدئة والمغذية للبشرة والشعر. يساعد في تهدئة التهابات الجلد، ويعزز نعومة البشرة، كما يُستخدم لعلاج فروة الرأس الحساسة.
