@@ -812,6 +812,18 @@ footer {
   }
 }
 
+.cart-button {
+    position: absolute; 
+    top: 50%; /* يضمن ثبات الأيقونة وسط الشريط */
+    right: 0px; /* يجعلها أقصى اليمين داخل الشريط */
+    transform: translateY(-50%); /* ضبط المحاذاة العمودية */
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    color: #333;
+}
 
 
   </style>
@@ -841,11 +853,9 @@ footer {
 
 
 
-      <button onclick="window.location.href='cart.html'" title="عرض السلة" style="height: 35px; max-height: 8vh; float: right; right: 0px; 
-    position: fixed; top: 40px;right: 15px;background: none;border: none;font-size: 20px;cursor: pointer; padding: 5px;z-index: 999; color: #333;" >
-  🛒
-
-</button> 
+     <nav class="navbar">
+    <button onclick="window.location.href='cart.html'" title="عرض السلة" class="cart-button">🛒</button>
+</nav>
 
 
 
