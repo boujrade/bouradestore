@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>كريمة Scorpion لتخفيف آلام العضلات والمفاصل</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f0f0f0;
+      padding: 15px;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      max-width: 100%;
+      margin: auto;
+    }
+    h1 {
+      font-size: 20px;
+      color: #000;
+      margin-bottom: 8px;
+      text-align: right;
+    }
+    .price {
+      color: rgb(247, 178, 3);
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+    .desc, ul {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #333;
+    }
+    ul {
+      padding-right: 20px;
+    }
+    .btns {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+    }
+    button {
+      flex: 1 1 100%;
+      padding: 10px;
+      background: #706e6e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #000;
+    }
+    .buy-now {
+      background-color: #e75757;
+    }
+    .share-btn {
+      background-color: rgb(238, 184, 49);
+      color: #000;
+    }
+    a {
+      color: rgb(153, 150, 150);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .emoji {
+      font-size: 1.5em;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+    @media (min-width: 600px) {
+      .container {
+        max-width: 700px;
+      }
+      .btns {
+        flex-wrap: nowrap;
+      }
+      button {
+        flex: 1;
+      }
+    }
+     .gallery {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 100%;
+  height: 500px;
+  display: block;
+  object-fit: cover;
+  object-position: 60% 40%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* ✅ تحسين العرض على الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .gallery img {
+    height: 300px; /* أقل ارتفاع للهواتف */
+    object-position: center center; /* توسيط الصورة على الهواتف */
+  }
+}
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    .buttons button {
+      background-color: rgba(248, 243, 243, 0.5);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 1px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+    .buttons button:hover {
+      background-color: rgba(218, 207, 207, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>كريمة Scorpion لتخفيف آلام العضلات والمفاصل</h1>
+
+  <div class="gallery">
+    <img id="mainImage" src="/im12/01.jpg" alt="كريمة Scorpion لتخفيف آلام العضلات والمفاصل" loading="lazy" />
+    
+  </div><br />
+
+  <div class="price">DA 2500</div>
+
+  <div class="desc">
+    كريمة Scorpion تساعد على تخفيف آلام العضلات والمفاصل بسرعة وفعالية.<br />
+    تحتوي على مكونات طبيعية مهدئة ومضادة للالتهاب.<br />
+    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.7/5
+  </div>
+
+  <div>
+    <h3>🎁 المميزات</h3>
+    <ul>
+      <li>تخفيف سريع للآلام والتصلب.</li>
+      <li>تركيبة طبيعية وآمنة للبشرة.</li>
+      <li>سهل الاستخدام ويمتص بسرعة.</li>
+      <li>يقلل الالتهابات ويهدئ الجلد.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>🎀 طريقة الاستخدام</h3>
+    <ul>
+      <li>ضع كمية مناسبة على المنطقة المؤلمة.</li>
+      <li>دلك بلطف حتى يمتص الجلد الكريم.</li>
+      <li>استخدمه مرتين يوميًا أو حسب الحاجة.</li>
+      <li>تجنب ملامسة العينين والأغشية المخاطية.</li>
+    </ul>
+  </div>
+
+  <div class="btns">
+    <button class="share-btn" onclick="shareProduct('كريمة Scorpion لتخفيف آلام العضلات والمفاصل')">
+      <span class="emoji">🔗</span> مشاركة
+    </button>
+    <button onclick="addToCart('كريمة Scorpion لتخفيف آلام العضلات والمفاصل', 2500)">
+      <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
+    </button>
+    <button class="buy-now" onclick="storeProductAndRedirect('كريمة Scorpion لتخفيف آلام العضلات والمفاصل')">
+      <span class="emoji">💳</span> اشترِ الآن
+    </button>
+  </div>
+
+  <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img.lazy-img").forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add("loaded");
+  });
+});
+</script>
+
+<script>
+  const images = [
+    
+    "images/produits/html.01.jpg",
+    "images/produits/html.001.jpg",
+   
+  ];
+  let index = 0;
+  const img = document.getElementById("mainImage");
+
+  function nextImage() {
+    index = (index + 1) % images.length;
+    img.src = images[index];
+  }
+
+  function prevImage() {
+    index = (index - 1 + images.length) % images.length;
+    img.src = images[index];
+  }
+</script>
+
+
+<script>
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let link = window.location.href;
+    let itemIndex = cart.findIndex(item => item.name === name);
+    if (itemIndex !== -1) {
+      cart[itemIndex].qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1, link });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("lastProduct", name);
+    alert(`✅ تمت إضافة "${name}" إلى السلة بسعر ${price} DA!`);
+  }
+
+  function storeProductAndRedirect(productName) {
+    localStorage.setItem("selectedProduct", productName);
+    window.location.href = "demande.html";
+  }
+
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
+  }
+
+  function prevImage() {
+    // دعم مستقبلي للصور المتعددة
+  }
+
+  function nextImage() {
+    // دعم مستقبلي للصور المتعددة
+  }
+</script>
+
+</body>
+</html>
