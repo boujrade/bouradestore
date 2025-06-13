@@ -38,6 +38,19 @@
   }
 }
 </script>
+
+<!-- في <head> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+<!-- قبل </body> -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <!-- Bootstrap RTL -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
@@ -523,66 +536,64 @@ button {
 
 /* البطاقات الأفقية تحويل*/
 
-/* الحاوية الخاصة بالتمرير الأفقي */
-.special-card-container {
-  display: flex;
-  overflow-x: auto; /* تمكين التمرير الأفقي */
-  gap: 5px; /* تقليل المسافة بين البطاقات */
-  padding: 10px;
-  scrollbar-width: thin;
-  justify-content: start; /* الترتيب من اليسار لليمين */
-  padding-bottom: 60px; /* زيادة المسافة بين البطاقات وشريط الإزاحة */
-}
-
-/* تحسين شريط التمرير */
-.special-card-container::-webkit-scrollbar {
-  height: 10px;
-}
-
-.special-card-container::-webkit-scrollbar-thumb {
-  background-color: #292724;
+/* البطاقة داخل السلايدر */
+.product-card {
+  position: relative;
+  background: #fff;
   border-radius: 10px;
-}
-
-/* ضبط حجم البطاقات */
-.special-card {
-  min-width: 200px; /* عرض محدد */
-  height: 220px; /* ارتفاع محدد */
-  background: white;
-  border-radius: 1px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  padding: 0px;
+  padding: 10px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
 }
 
-/* تحسين الصور داخل البطاقات */
-.special-card img {
-  width: 100%;
-  height: 100%; /* ضبط حجم الصورة */
-  object-fit: cover;
-  border-radius: 1px;
-}
-
-/* تأثير عند التحويم */
-.special-card:hover {
+.product-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-.card-title {
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 8px;
-  color: #020202; /* لون ذهبي مخفف */
 }
 
-.divider {
-  width: 50%;
-  margin: 4px auto;
-  border: 0;
-  height: 1px;
-  background: #1f1c1c; /* لون رمادي ناعم */
+/* الصورة */
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* العنوان */
+.product-title {
+  font-size: 1rem;
+  margin: 8px 0 4px;
+  color: #222;
+  font-weight: bold;
+}
+
+/* السعر */
+.product-price {
+  font-size: 0.9rem;
+  color: #000;
+}
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 5px;
+}
+.new-price {
+  color: #e60000;
+  font-weight: bold;
+}
+
+/* شارة الخصم */
+.discount-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #f25022;
+  color: #fff;
+  padding: 4px 7px;
+  font-size: 0.75rem;
+  border-radius: 50px;
+  font-weight: bold;
 }
 
 /* سطر مزخرف بأسلوب فاخر */
@@ -851,6 +862,38 @@ footer {
     color: #333;
 }
 
+/* أزرار التنقل */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #333;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  width: 35px;
+  height: 35px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px;
+}
+
+/* النقاط */
+.swiper-pagination {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.swiper-pagination-bullet {
+  background: #333;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f25022;
+  opacity: 1;
+}
+
 
   </style>
 </head>
@@ -902,8 +945,8 @@ footer {
 
   
 <ul id="searchResults"></ul>
-<ul id="searchResults"></ul>
-  <ul class="menu" style="list-style: none; padding: 0; margin: 0;">
+
+<ul class="menu" style="list-style: none; padding: 0; margin: 0;">
   <li><a href="index.html"><i class="bi bi-house-door-fill"></i> الرئيسية</a></li>
   <li><a href="cart.html"><i class="bi bi-cart-fill"></i> سلة المشتريات</a></li>
   <li><a href="offers.html"><i class="bi bi-fire"></i> عروض اليوم</a></li>
@@ -1077,99 +1120,53 @@ footer {
 
 
 
-<h2 class="elegant-title"> إليك بعض من منتجاتنا المميزة</h2><br><br>
+<h2 class="elegant-title">إليك بعض من منتجاتنا المميزة</h2><br><br>
 
-<div class="special-card-container">
-  <div class="special-card" onclick="window.location.href='p1/21.html'">
-    <img src="im1/21.jpg" alt="منتج 1">
-    <h6 class="card-title">Avene Eau Thermale XeraCalm </h6>
-    <hr class="divider">
-</div>
+<!-- سلايدر Swiper -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
 
-<div class="special-card" onclick="window.location.href='p1/26.html'">
-    <img src="im1/26.jpg" alt="منتج 2">
-    <p class="card-title"> Weleda Skin Food </p>
-    <hr class="divider">
-</div>
+    <!-- منتج بخصم -->
+    <div class="swiper-slide product-card" onclick="window.location.href='p1/21.html'">
+      <div class="discount-badge">-10%</div>
+      <img src="im1/21.jpg" alt="Avene Eau Thermale XeraCalm">
+      <h4 class="product-title">Avene Eau Thermale XeraCalm</h4>
+      <p class="product-price">
+        <span class="old-price">DA 5,000</span>
+        <span class="new-price">DA 4,500</span>
+      </p>
+    </div>
 
-<div class="special-card" onclick="window.location.href='p1/23.html'">
-    <img src="im1/23.jpg" alt="منتج 3">
-    <p class="card-title">Alverde Bio Wildrose</p>
-    <hr class="divider">
-</div>
+    <!-- منتج بدون خصم -->
+    <div class="swiper-slide product-card" onclick="window.location.href='p1/26.html'">
+      <img src="im1/26.jpg" alt="Weleda Skin Food">
+      <h4 class="product-title">Weleda Skin Food</h4>
+      <p class="product-price">DA 4,700</p>
+    </div>
 
-<div class="special-card" onclick="window.location.href='p1/15.html'">
-    <img src="im1/15.jpg" alt="منتج 4">
-    <h6 class="card-title"> Clarins Hydra-Essentiel Silky Cream </h6>
-    <hr class="divider">
-</div>
+    <!-- تابع باقي المنتجات بنفس النموذج -->
+    <div class="swiper-slide product-card" onclick="window.location.href='p1/23.html'">
+      <img src="im1/23.jpg" alt="Alverde Bio Wildrose">
+      <h4 class="product-title">Alverde Bio Wildrose</h4>
+      <p class="product-price">DA 4,200</p>
+    </div>
 
-<div class="special-card" onclick="window.location.href='p1/5.html'">
-    <img src="im1/05.jpg" alt="منتج 5">
-    <h6 class="card-title">Clinique Moisture Surge</h6>
-    <hr class="divider">
-</div>
+    <div class="swiper-slide product-card" onclick="window.location.href='p1/10.html'">
+      <img src="im1/10.jpg" alt="Caudalie Vinosource">
+      <h4 class="product-title">Caudalie Vinosource Cream</h4>
+      <p class="product-price">DA 5,300</p>
+    </div>
 
-<div class="special-card" onclick="window.location.href='p1/16.html'">
-    <img src="im1/16.jpg" alt="منتج 6">
-    <h6 class="card-title">Kiehl's Ultra Facial Cream </h6>
-    <hr class="divider">
-</div>
+  </div>
 
-<div class="special-card" onclick="window.location.href='p1/29.html'">
-    <img src="im1/29.jpg" alt="منتج 7">
-    <h6 class="card-title">Simple Kind to Skin Hydrating Light Moisturizer</h6>
-    <hr class="divider">
-</div>
+   <!-- أزرار التنقل -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
 
-<div class="special-card" onclick="window.location.href='p1/28.html'">
-    <img src="im1/28.jpg" alt="منتج 8">
-    <h6 class="card-title">Himalaya Herbals Nourishing Cream</h6>
-    <hr class="divider">
-</div>
+  <!-- النقاط -->
+  <div class="swiper-pagination"></div>
+</div><br><br><br><br><br><br>
 
-<div class="special-card" onclick="window.location.href='p1/24.html'">
-    <img src="im1/24.jpg" alt="منتج 9">
-    <h6 class="card-title">Yves Rocher Hydra Vegetal</h6>
-    <hr class="divider">
-</div>
-
-<div class="special-card" onclick="window.location.href='p1/10.html'">
-    <img src="im1/10.jpg" alt="منتج 10">
-    <h6 class="card-title">Caudalie Vinosource Moisturizing Cream </h6>
-    <hr class="divider">
-</div>
-
-<div class="special-card" onclick="window.location.href='p1/11.html'">
-    <img src="im1/11.jpg" alt="منتج 11">
-    <h6 class="card-title">Garnier SkinActive Moisture Rescue</h6>
-    <hr class="divider">
-</div>
-
-<div class="special-card" onclick="window.location.href='p1/12.html'">
-    <img src="im1/12.jpg" alt="منتج 12">
-    <p class="card-title">Pond's Dry Skin Cream</p>
-    <hr class="divider">
-</div>
-
-<div class="special-card" onclick="window.location.href='p1/13.html'">
-    <img src="im1/13.jpg" alt="منتج 13">
-    <h6 class="card-title"> Bobbi Brown Vitamin Enriched Face Base</h6>
-    <hr class="divider">
-</div>
-
-<div class="special-card" onclick="window.location.href='p1/14.html'">
-    <img src="im1/14.jpg" alt="منتج 14">
-    <h6 class="card-title"> Sukin Hydrating Facial Moisturizer </h6>
-    <hr class="divider">
-</div>
-
-<div class="special-card" onclick="window.location.href='p1/15.html'">
-    <img src="im1/15.jpg" alt="منتج 15">
-    <h6 class="card-title">Clarins Hydra-Essentiel Silky Cream </h6>
-    <hr class="divider">
-</div>
-</div><br><br>
 
 
 <img src="images2/html.gnn.jpg" style="height: 80px; max-height: 30vh; margin-right: 3px;" alt="شعار المتجر" loading="lazy"><br>
@@ -1327,7 +1324,7 @@ footer {
     
       <h4>شركات الشحن المعتمدة:</h4>
       <p>
-        نتعامل مع أفضل شركات الشحن  Yalidine ,  ZR expresse لضمان وصول الطلب بأمان وفي الوقت المحدد.
+        نتعامل مع أفضل شركات الشحن  NOEST ,  ZR expresse لضمان وصول الطلب بأمان وفي الوقت المحدد.
       </p>
     
       <h4>رسوم الشحن:</h4>
@@ -1373,6 +1370,48 @@ footer {
 <div class="skeleton-bar"></div>
 <div class="loading-bar"></div>
 <br><br><br>
+
+
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 2.2,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: { slidesPerView: 3 },
+      992: { slidesPerView: 4 }
+    }
+  });
+</script>
+
+<!-- تهيئة Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 2.2,
+    spaceBetween: 15,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: { slidesPerView: 3 },
+      992: { slidesPerView: 4 },
+    }
+  });
+</script>
+
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
