@@ -583,6 +583,8 @@ button {
   font-weight: bold;
 }
 
+
+
 /* شارة الخصم */
 .discount-badge {
   position: absolute;
@@ -878,21 +880,28 @@ footer {
   font-size: 16px;
 }
 
-/* النقاط */
-.swiper-pagination {
-  text-align: center;
-  margin-top: 10px;
-}
-
+/* النقاط الأساسية */
 .swiper-pagination-bullet {
-  background: #333;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(135deg, #ccc, #999);
   opacity: 0.5;
+  border-radius: 50%;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
+/* النقطة النشطة */
 .swiper-pagination-bullet-active {
-  background: #f25022;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #ff6600, #ff9900);
   opacity: 1;
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(255, 153, 0, 0.4);
 }
+
 
 
   </style>
@@ -1157,12 +1166,9 @@ footer {
       <p class="product-price">DA 5,300</p>
     </div>
 
-  </div>
+  </div><br><br>
 
-   <!-- أزرار التنقل -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-
+   
   <!-- النقاط -->
   <div class="swiper-pagination"></div>
 </div><br><br><br><br><br><br>
