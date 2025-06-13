@@ -1539,7 +1539,6 @@ function debounce(func, delay) {
   </script>
 
   <script>
-  // تحديث عدد الطلبات في أيقونة السلة
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const count = cart.length;
@@ -1553,35 +1552,14 @@ function debounce(func, delay) {
     }
   }
 
-  // إضافة منتج إلى السلة
   function addToCart(productName) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.push({ name: productName });
     localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartCount(); // ← يحدث الشارة فورًا
-    alert("تمت إضافة المنتج إلى السلة ✅");
+    updateCartCount(); // ← هذا هو السر لعدم الحاجة لتحديث الصفحة
   }
 
-  // تحديث الشارة عند تحميل الصفحة
-  updateCartCount();
-</script>
-
-  <script>
-  let products = [
-  { id: 1, name: "هاتف سامسونج", category: "إلكترونيات" },
-  { id: 2, name: "لابتوب ديل", category: "إلكترونيات" }
-];
-
-// إضافة منتج جديد
-products.push({ id: 3, name: "ساعة ذكية", category: "إكسسوارات" });
-
-// تحديث اسم المنتج
-products = products.map(product => 
-  product.id === 1 ? { ...product, name: "هاتف سامسونج الجديد" } : product
-);
-
-console.log(products);
-
+  updateCartCount(); // ← عند فتح الصفحة لأول مرة
 </script>
 
  <script type="application/ld+json">
