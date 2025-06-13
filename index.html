@@ -1539,6 +1539,7 @@ function debounce(func, delay) {
   </script>
 
   <script>
+  // تحديث عدد الطلبات في أيقونة السلة
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const count = cart.length;
@@ -1552,6 +1553,16 @@ function debounce(func, delay) {
     }
   }
 
+  // إضافة منتج إلى السلة
+  function addToCart(productName) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({ name: productName });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount(); // ← يحدث الشارة فورًا
+    alert("تمت إضافة المنتج إلى السلة ✅");
+  }
+
+  // تحديث الشارة عند تحميل الصفحة
   updateCartCount();
 </script>
 
