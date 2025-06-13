@@ -876,6 +876,7 @@ footer {
      <div style="display: flex; align-items: center; gap: 5px;">
   <span style="font-size: 12px; color: #f72a6e; margin-left: 20px;">Découvrez nos meilleures offres</span>
   <button onclick="window.location.href='cart.html'" title="عرض السلة" class="cart-button" style="font-size: 20px; background: none; border: none; cursor: pointer;">🛒</button>
+  <span id="cart-count" style="position: absolute; top: -0px; right: -0px; background: rgb(253, 37, 37); color: white; font-size: 10px; border-radius: 50%; padding: 1px 5px; display: none;"></span>
   <i class="bi bi-person" style="font-size: 17px;"></i>
 </div>
 
@@ -1536,6 +1537,23 @@ function debounce(func, delay) {
       // في موقع فعلي، استبدل هذا بـ window.location.href = 'product1.html';
     }
   </script>
+
+  <script>
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const count = cart.length;
+    const countSpan = document.getElementById("cart-count");
+
+    if (count > 0) {
+      countSpan.textContent = count;
+      countSpan.style.display = "inline-block";
+    } else {
+      countSpan.style.display = "none";
+    }
+  }
+
+  updateCartCount();
+</script>
 
   <script>
   let products = [
