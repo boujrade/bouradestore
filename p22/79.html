@@ -110,11 +110,12 @@
       border-radius: 10px;
       transition: all 0.3s ease;
     }
-    @media (max-width: 768px) {
-      .gallery img {
-        height: 300px;
-      }
-    }
+   @media (max-width: 768px) {
+  .gallery img {
+    height: 500px; /* تكبير مقارنةً بـ 300px السابق */
+    object-position: center center;
+  }
+}
   </style>
 </head>
 <body>
