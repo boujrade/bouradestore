@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>Karina بزيت القنب</title>
+  <title>كريم Karina بزيت القنب</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
@@ -109,32 +109,32 @@
       }
     }
 
-   .gallery {
-  position: relative;
-  max-width: 100%;
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
-}
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
 
-.gallery img {
-  width: 100%;
-  height: 500px;
-  display: block;
-  object-fit: cover;
-  object-position: 60% 40%;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
+    .gallery img {
+      width: 100%;
+      height: 500px;
+      display: block;
+      object-fit: cover;
+      object-position: 60% 40%;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
 
-/* ✅ تحسين العرض على الشاشات الصغيرة */
-@media (max-width: 768px) {
-  .gallery img {
-    height: 300px; /* أقل ارتفاع للهواتف */
-    object-position: center center; /* توسيط الصورة على الهواتف */
-  }
-}
+    @media (max-width: 768px) {
+      .gallery img {
+        height: 300px;
+        object-position: center center;
+      }
+    }
+
     .buttons {
       position: absolute;
       top: 50%;
@@ -165,49 +165,48 @@
 <body>
 
 <div class="container">
-  <h1>Karina بزيت القنب</h1>
+  <h1>كريم Karina بزيت القنب</h1>
 
   <div class="gallery">
-    <img id="mainImage" src="/im1/33.jpg" alt="Karina بزيت القنب" loading="lazy" />
-    
+    <img id="mainImage" src="/im1/33.jpg" alt="كريم Karina بزيت القنب" loading="lazy" />
   </div><br />
 
-  <div class="price">DA 2300</div>
+  <div class="price">DA 300</div>
 
   <div class="desc">
-    زيت Karina بزيت القنب الطبيعي، معروف بخصائصه المهدئة والمغذية للبشرة والشعر.<br />
-    يساعد على ترطيب البشرة وتخفيف التهيجات والالتهابات.<br />
+    كريم Karina بزيت القنب الطبيعي، مثالي لتغذية الشعر وتقويته بفعالية.<br />
+    يعزز صحة فروة الرأس، يقلل من التساقط، ويمنح شعرك لمعانًا طبيعيًا.<br />
     <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.6/5
   </div>
 
   <div>
     <h3>🎁 المميزات</h3>
     <ul>
-      <li>ترطيب عميق للبشرة وفروة الرأس.</li>
-      <li>خصائص مضادة للالتهابات والتهيجات.</li>
-      <li>يعزز صحة الشعر ويقلل من تساقطه.</li>
-      <li>منتج طبيعي 100% وخالي من المواد الكيميائية.</li>
+      <li>يعزز نمو الشعر ويمنع التساقط.</li>
+      <li>يرطّب الشعر ويمنحه مظهرًا صحيًا ولامعًا.</li>
+      <li>يقلل من الجفاف والتقصف.</li>
+      <li>مناسب للاستخدام اليومي ودون الحاجة للغسل.</li>
     </ul>
   </div>
 
   <div>
     <h3>🎀 طريقة الاستخدام</h3>
     <ul>
-      <li>ضع كمية مناسبة من الزيت على اليدين.</li>
-      <li>دلك الزيت بلطف على البشرة أو فروة الرأس.</li>
+      <li>ضع كمية صغيرة من الكريم على الشعر النظيف والجاف أو الرطب.</li>
+      <li>وزّع الكريم على كامل الشعر، خاصةً الأطراف.</li>
+      <li>لا يُشطف – يُترك على الشعر ليمنحه التغذية واللمعان.</li>
       <li>يمكن استخدامه يوميًا أو حسب الحاجة.</li>
-      <li>لأفضل النتائج، يُفضل استخدامه مساءً وتركه حتى الصباح.</li>
     </ul>
   </div>
 
   <div class="btns">
-    <button class="share-btn" onclick="shareProduct('Karina بزيت القنب')">
+    <button class="share-btn" onclick="shareProduct('كريم Karina بزيت القنب')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('Karina بزيت القنب', 2300)">
+    <button onclick="addToCart('كريم Karina بزيت القنب', 2300)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('Karina بزيت القنب')">
+    <button class="buy-now" onclick="storeProductAndRedirect('كريم Karina بزيت القنب')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
@@ -216,22 +215,7 @@
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("img.lazy-img").forEach(img => {
-      img.src = img.dataset.src;
-      img.classList.add("loaded");
-  });
-});
-</script>
-
-<script>
-  const images = [
-    
-    "/im2/01.jpg",
-    "/im2/001.jpg",
-    "/im2/0001.jpg",
-   
-  ];
+  const images = ["/im2/01.jpg", "/im2/001.jpg", "/im2/0001.jpg"];
   let index = 0;
   const img = document.getElementById("mainImage");
 
@@ -246,8 +230,6 @@
   }
 </script>
 
-
-  
 <script>
   function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
