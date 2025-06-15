@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>زيت الحواج جلسرين</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f0f0f0;
+      padding: 15px;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      margin: auto;
+    }
+    h1 {
+      font-size: 20px;
+      color: #000;
+      margin-bottom: 8px;
+      text-align: right;
+    }
+    .price {
+      color: rgb(247, 178, 3);
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+    .desc, ul {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #333;
+    }
+    ul {
+      padding-right: 20px;
+    }
+    .btns {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+    }
+    button {
+      flex: 1 1 100%;
+      padding: 10px;
+      background: #706e6e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #000;
+    }
+    .buy-now {
+      background-color: #e75757;
+    }
+    .share-btn {
+      background-color: rgb(238, 184, 49);
+      color: #000;
+    }
+    a {
+      color: rgb(153, 150, 150);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .emoji {
+      font-size: 1.5em;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+    @media (min-width: 600px) {
+      .container {
+        max-width: 700px;
+      }
+      .btns {
+        flex-wrap: nowrap;
+      }
+      button {
+        flex: 1;
+      }
+    }
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .gallery img {
+      width: 100%;
+      height: 600px;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+      .gallery img {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>زيت الحواج جلسرين</h1>
+
+  <div class="gallery">
+    <img id="mainImage" src="/im24/40.jpg" alt="زيت الحواج جلسرين" loading="lazy">
+  </div><br>
+
+  <div class="price">DA 300</div>
+
+  <div class="desc">
+    زيت <strong>الحواج جلسرين</strong> يعتبر من أفضل الزيوت لترطيب البشرة والشعر. يتميز بقدرته على جذب الرطوبة واحتباسها داخل الجلد، مما يجعله مثالياً للبشرة الجافة والتشققات.
+    <br>
+    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.8/5
+  </div>
+
+  <div>
+    <h3>🎁 المميزات</h3>
+    <ul>
+      <li><strong>مرطب قوي:</strong> يحتفظ بالرطوبة داخل الجلد لفترات طويلة.</li>
+      <li><strong>يحمي من الجفاف:</strong> مثالي للبشرة الجافة والمناطق الخشنة.</li>
+      <li><strong>مناسب للبشرة الحساسة:</strong> لا يسبب تهيجاً، ويهدئ الالتهابات.</li>
+      <li><strong>يمنح الشعر لمعاناً:</strong> يرطب أطراف الشعر ويمنع التقصف.</li>
+      <li><strong>آمن للاستخدام اليومي:</strong> يدخل في وصفات العناية بالبشرة والشعر.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>🎀 طريقة الاستعمال</h3>
+    <ul>
+      <li>يُستخدم مباشرة على الجلد لترطيبه بعد الاستحمام.</li>
+      <li>يُمزج مع زيوت أخرى كزيت الزيتون أو زيت جوز الهند للعناية العميقة.</li>
+      <li>يُدلك على فروة الرأس لتحسين الرطوبة وتقوية بصيلات الشعر.</li>
+      <li>يمكن استخدامه كمرطب شفاه طبيعي.</li>
+    </ul>
+  </div>
+
+  <div class="btns">
+    <button class="share-btn" onclick="shareProduct('زيت الكابتن جلسرين')">
+      <span class="emoji">🔗</span> مشاركة
+    </button>
+    <button onclick="addToCart('زيت الكابتن جلسرين', 1700)">
+      <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
+    </button>
+    <button class="buy-now" onclick="storeProductAndRedirect('زيت الكابتن جلسرين')">
+      <span class="emoji">💳</span> اشترِ الآن
+    </button>
+  </div>
+
+  <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
+</div>
+
+<script>
+  function addToCart(name, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let link = window.location.href;
+    let itemIndex = cart.findIndex(item => item.name === name);
+    if (itemIndex !== -1) {
+      cart[itemIndex].qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1, link });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`✅ تمت إضافة "${name}" إلى السلة بسعر ${price} DA!`);
+  }
+
+  function storeProductAndRedirect(productName) {
+    localStorage.setItem("selectedProduct", productName);
+    window.location.href = "demande.html";
+  }
+
+  function shareProduct(name) {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: name,
+        text: `اطلع على هذا المنتج: ${name}`,
+        url: url
+      }).catch((err) => console.log("لم تتم المشاركة:", err));
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح.");
+    }
+  }
+</script>
+
+</body>
+</html>
