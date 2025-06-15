@@ -1,205 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <title>زيت الكابتن الشاي الأخضر</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #f9f9f9;
-      padding: 15px;
-      margin: 0;
-    }
-    .container {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-      max-width: 100%;
-      margin: auto;
-    }
-    h1 {
-      font-size: 20px;
-      color: #333;
-      margin-bottom: 8px;
-      text-align: right;
-    }
-    .price {
-      color: #28a745;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      text-align: right;
-    }
-    .desc, ul {
-      font-size: 14px;
-      line-height: 1.8;
-      color: #444;
-    }
-    ul {
-      padding-right: 20px;
-    }
-    .btns {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: space-between;
-    }
-    button {
-      flex: 1 1 100%;
-      padding: 10px;
-      background: #666;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background 0.3s ease;
-    }
-    button:hover {
-      background: #000;
-    }
-    .buy-now {
-      background-color: #218838;
-    }
-    .share-btn {
-      background-color: #ffc107;
-      color: #000;
-    }
-    a {
-      color: #888;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 15px;
-      display: block;
-      margin-top: 20px;
-      text-align: center;
-    }
-    .emoji {
-      font-size: 1.4em;
-      vertical-align: middle;
-      margin-left: 5px;
-    }
-    @media (min-width: 600px) {
-      .container {
-        max-width: 700px;
-      }
-      .btns {
-        flex-wrap: nowrap;
-      }
-      button {
-        flex: 1;
-      }
-    }
-    .gallery {
-      max-width: 100%;
-      margin: auto;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .gallery img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      border-radius: 10px;
-    }
-    @media (max-width: 768px) {
-      .gallery img {
-        height: 300px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<div class="container">
-  <h1>زيت الكابتن الشاي الأخضر</h1>
-
-  <div class="gallery">
-    <img id="mainImage" src="/im24/56.jpg" alt="زيت الشاي الأخضر" loading="lazy">
-  </div><br>
-
-  <div class="price">DA 320</div>
-
-  <div class="desc">
-    زيت <strong>الشاي الأخضر</strong> من الكابتن يتمتع بخصائص مضادة للأكسدة والالتهابات، يعزز نضارة البشرة، ويساعد في تنقية الجلد، كما أنه مثالي للعناية بالبشرة الدهنية والمعرضة لحب الشباب.
-    <br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.7/5
-  </div>
-
-  <div>
-    <h3>🌿 المميزات</h3>
-    <ul>
-      <li><strong>مضاد لحب الشباب:</strong> ينظف المسام ويقلل من البثور والالتهابات.</li>
-      <li><strong>مضاد للأكسدة:</strong> يقي البشرة من أضرار الجذور الحرة.</li>
-      <li><strong>يعزز مرونة الجلد:</strong> يساهم في تأخير ظهور التجاعيد.</li>
-      <li><strong>يقلل من إفراز الدهون:</strong> مثالي للبشرة الدهنية.</li>
-      <li><strong>مفيد للشعر:</strong> يعزز نمو الشعر ويقلل من القشرة.</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>🧴 طريقة الاستعمال</h3>
-    <ul>
-      <li>يوضع على بشرة نظيفة قبل النوم ويدلك بلطف.</li>
-      <li>يمكن استخدامه كماسك للبشرة مع العسل أو اللبن.</li>
-      <li>للشعر: يوضع على فروة الرأس ويُترك 30 دقيقة قبل الغسل.</li>
-      <li>يحفظ في مكان بارد وجاف بعيداً عن أشعة الشمس.</li>
-    </ul>
-  </div>
-
-  <div class="btns">
-    <button class="share-btn" onclick="shareProduct('زيت الكابتن الشاي الأخضر')">
-      <span class="emoji">🔗</span> مشاركة
-    </button>
-    <button onclick="addToCart('زيت الكابتن الشاي الأخضر', 320)">
-      <span class="emoji">🛒</span> أضف إلى السلة
-    </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('زيت الكابتن الشاي الأخضر')">
-      <span class="emoji">💳</span> اشترِ الآن
-    </button>
-  </div>
-
-  <a href="cart.html"><span class="emoji">🛒</span> عرض السلة</a>
-</div>
-
-<script>
-  function addToCart(name, price) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let link = window.location.href;
-    let itemIndex = cart.findIndex(item => item.name === name);
-    if (itemIndex !== -1) {
-      cart[itemIndex].qty += 1;
-    } else {
-      cart.push({ name, price, qty: 1, link });
-    }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`✅ تمت إضافة "${name}" إلى السلة بسعر ${price} DA!`);
-  }
-
-  function storeProductAndRedirect(productName) {
-    localStorage.setItem("selectedProduct", productName);
-    window.location.href = "demande.html";
-  }
-
-  function shareProduct(name) {
-    const url = window.location.href;
-    if (navigator.share) {
-      navigator.share({
-        title: name,
-        text: `اطلع على هذا المنتج: ${name}`,
-        url: url
-      }).catch((err) => console.log("لم تتم المشاركة:", err));
-    } else {
-      alert("المشاركة غير مدعومة على هذا المتصفح.");
-    }
-  }
-</script>
-
-</body>
-</html>

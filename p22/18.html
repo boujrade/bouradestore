@@ -1,233 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <title>زيت الكابتن الورد</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* نفس التنسيق بدون تغيير */
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #f0f0f0;
-      padding: 15px;
-      margin: 0;
-    }
-    .container {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-      max-width: 100%;
-      margin: auto;
-    }
-    h1 {
-      font-size: 20px;
-      color: #000;
-      margin-bottom: 8px;
-      text-align: right;
-    }
-    .price {
-      color: rgb(247, 178, 3);
-      font-size: 25px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      text-align: right;
-    }
-    .desc, ul {
-      font-size: 14px;
-      line-height: 1.7;
-      color: #333;
-    }
-    ul {
-      padding-right: 20px;
-    }
-    .btns {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: space-between;
-    }
-    button {
-      flex: 1 1 100%;
-      padding: 10px;
-      background: #706e6e;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 13px;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #000;
-    }
-    .buy-now {
-      background-color: #e75757;
-    }
-    .share-btn {
-      background-color: rgb(238, 184, 49);
-      color: #000;
-    }
-    a {
-      color: rgb(153, 150, 150);
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 15px;
-      display: block;
-      margin-top: 20px;
-      text-align: center;
-    }
-    .emoji {
-      font-size: 1.5em;
-      vertical-align: middle;
-      margin-left: 5px;
-    }
-    @media (min-width: 600px) {
-      .container {
-        max-width: 700px;
-      }
-      .btns {
-        flex-wrap: nowrap;
-      }
-      button {
-        flex: 1;
-      }
-    }
-    .gallery {
-      position: relative;
-      max-width: 100%;
-      margin: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    .gallery img {
-      width: 100%;
-      height: 600px;
-      display: block;
-      object-fit: cover;
-      object-position: 60% 40%;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-    @media (max-width: 768px) {
-      .gallery img {
-        height: 300px;
-        object-position: center center;
-      }
-    }
-    .buttons {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      padding: 0 10px;
-      box-sizing: border-box;
-    }
-    .buttons button {
-      background-color: rgba(248, 243, 243, 0.5);
-      border: none;
-      color: white;
-      font-size: 24px;
-      padding: 1px 16px;
-      cursor: pointer;
-      border-radius: 50%;
-      transition: background-color 0.3s;
-    }
-    .buttons button:hover {
-      background-color: rgba(218, 207, 207, 0.8);
-    }
-  </style>
-</head>
-<body>
-
-<div class="container">
-  <h1>زيت الكابتن الورد</h1>
-
-  <div class="gallery">
-    <img id="mainImage" src="/im24/18.jpg" alt="زيت الكابتن الورد" loading="lazy">
-  </div><br>
-
-  <div class="price">DA 300</div>
-
-  <div class="desc">
-    زيت <strong>الكابتن الورد</strong> مستخلص من بتلات الورد الطبيعي، وهو زيت عطري غني بالفيتامينات والمعادن، يساعد في ترطيب البشرة، تقليل التجاعيد، وتفتيح لون الجلد.
-    <br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.8/5
-  </div>
-
-  <div>
-    <h3>🎁 المميزات</h3>
-    <ul>
-      <li><strong>ترطيب عميق للبشرة:</strong> يغذي البشرة ويمنحها النعومة والحيوية.</li>
-      <li><strong>مضاد للأكسدة:</strong> يحمي الجلد من التلف الناتج عن العوامل البيئية والشيخوخة.</li>
-      <li><strong>تفتيح وتوحيد لون البشرة:</strong> يقلل من البقع الداكنة والتصبغات.</li>
-      <li><strong>عطر طبيعي مهدئ:</strong> يساعد على الاسترخاء وتحسين المزاج.</li>
-      <li><strong>يعزز مرونة الجلد:</strong> يقلل من ظهور التجاعيد والخطوط الدقيقة.</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3>🎀 طريقة الاستعمال</h3>
-    <ul>
-      <li>يوضع بضع قطرات على البشرة النظيفة ويدلك بلطف حتى الامتصاص.</li>
-      <li>يمكن خلطه مع كريم الوجه أو الزيت الأساسي المفضل لديك.</li>
-      <li>يستخدم يوميًا صباحًا ومساءً لنتائج أفضل.</li>
-      <li>مناسب لجميع أنواع البشرة، خاصة الجافة والحساسة.</li>
-      <li>تجنب ملامسة العينين مباشرة.</li>
-    </ul>
-  </div>
-
-  <div class="btns">
-    <button class="share-btn" onclick="shareProduct('زيت الكابتن الورد')">
-      <span class="emoji">🔗</span> مشاركة
-    </button>
-    <button onclick="addToCart('زيت الكابتن الورد', 1200)">
-      <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
-    </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('زيت الكابتن الورد')">
-      <span class="emoji">💳</span> اشترِ الآن
-    </button>
-  </div>
-
-  <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
-</div>
-
-<script>
-  function addToCart(name, price) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let link = window.location.href;
-    let itemIndex = cart.findIndex(item => item.name === name);
-    if (itemIndex !== -1) {
-      cart[itemIndex].qty += 1;
-    } else {
-      cart.push({ name, price, qty: 1, link });
-    }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`✅ تمت إضافة "${name}" إلى السلة بسعر ${price} DA!`);
-  }
-
-  function storeProductAndRedirect(productName) {
-    localStorage.setItem("selectedProduct", productName);
-    window.location.href = "demande.html";
-  }
-
-  function shareProduct(name) {
-    const url = window.location.href;
-    if (navigator.share) {
-      navigator.share({
-        title: name,
-        text: `اطلع على هذا المنتج: ${name}`,
-        url: url
-      }).catch((err) => console.log("لم تتم المشاركة:", err));
-    } else {
-      alert("المشاركة غير مدعومة على هذا المتصفح.");
-    }
-  }
-</script>
-
-</body>
-</html>
