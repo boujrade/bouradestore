@@ -1,629 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title>Chika Store</title>
-  <meta name="description" content="اكتشفي عالم الجمال والعناية الطبيعية مع منتجاتنا المختارة من كريمات وزيوت الطب البديل. إشراقة طبيعية تبدأ من هنا.">
-  <link rel="icon" href="images2/html.gnn.jpg" type="image/x-icon">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      width: 100%;
-      background: #FEFEFE;
-      font-family: Tahoma, sans-serif;
-      direction: rtl;
-      overflow-x: hidden;
-    }
-
-    .container {
-      width: 100%;
-      padding: 5px;
-      background: #fff;
-    }
-
-    .section-heading {
-      text-align: center;
-      font-size: 1.8rem;
-      color: #222;
-      position: relative;
-      padding-bottom: 15px;
-      margin: 25px auto;
-      font-weight: bold;
-      font-family: 'Cairo', Tahoma, sans-serif;
-      letter-spacing: 0.5px;
-    }
-
-    .section-heading::after {
-      content: "";
-      display: block;
-      width: 90px;
-      height: 4px;
-      background: linear-gradient(to right, #ffcc00, #a67c00);
-      margin: 10px auto 0;
-      border-radius: 2px;
-      animation: fadeLine 1s ease-in-out forwards;
-    }
-
-    @keyframes fadeLine {
-      0% {
-        width: 0;
-        opacity: 0;
-      }
-      100% {
-        width: 90px;
-        opacity: 1;
-      }
-    }
-
-    .products-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0;
-      width: 100%;
-    }
-
-    .product-card {
-      height: 200px;
-      
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 0 5px rgba(200, 200, 200, 0.3);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .product-card:hover {
-      transform: scale(1.05);
-    }
-
-    .product-card h4,
-    .product-card p {
-      font-size: 11px;
-      text-align: center;
-      background: none;
-      padding: 5px;
-      color: #252222;
-      font-weight: bold;
-    }
-
-    .product-card[hidden] {
-      display: none;
-    }
-
-    #searchContainer {
-      position: relative;
-      margin: 15px 0;
-      padding: 0 12px;
-    }
-
-    #searchBox {
-      width: 100%;
-      padding: 14px 44px 14px 16px;
-      border: none;
-      border-radius: 25px;
-      background-color: #ffffff;
-      font-size: 15px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-      background-image: url('data:image/svg+xml;utf8,<svg fill="%23999" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16a6.471 6.471 0 004.23-1.57l.27.28v.79l5 5L20.49 19l-4.99-5zM10 14a4 4 0 110-8 4 4 0 010 8z"/></svg>');
-      background-repeat: no-repeat;
-      background-position: 12px center;
-      background-size: 20px;
-      direction: rtl;
-    }
-
-    #searchBox::placeholder {
-      color: #999;
-    }
-
-    #searchBox:focus {
-      outline: none;
-      box-shadow: 0 0 5px rgba(0, 140, 255, 0.3);
-    }
-
-    .suggestions {
-      position: absolute;
-      top: 100%;
-      right: 12px;
-      left: 12px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      max-height: 200px;
-      overflow-y: auto;
-      z-index: 1000;
-      display: none;
-    }
-
-    .suggestion-item {
-      padding: 12px;
-      cursor: pointer;
-      font-size: 14px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .suggestion-item:hover {
-      background-color: #f5f5f5;
-    }
-
-.header {
-      font-family: 'Arial', sans-serif;
-      font-size: 18px;
-      font-weight: bold;
-      text-align: center;
-      padding: 10px;
-      color: #fff;
-      background-color: #75eb79; /* أخضر أنيق */
-      border-radius: 8px;
-      margin: 10px;
-    }
-
-    @media (max-width: 480px) {
-      .header {
-        font-size: 16px;
-        padding: 8px;
-      }
-    }
-
-
-  </style>
-</head>
-<body><br><br>
-
-
-
-
- <div style="max-width: 90%; margin: 30px auto; padding: 25px; background: linear-gradient(to bottom, #fff, #fdf2f8); border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); text-align: center; font-family: 'Tajawal', sans-serif;">
-  
-  <h4 style="font-size: 28px; font-weight: 700; color: #e91e63; margin-bottom: 12px;">
-    🌸 كريمات للترطيب والتجميل 🌸
-  </h4>
-  
-  <h5 style="font-size: 18px; color: #666; font-weight: 400;">
-    ابحث عن المنتج الذي ترغب به بسهولة
-  </h5>
-
-</div>
-
-    <div id="searchContainer">
-        <input type="text" id="searchBox" placeholder="اكتب اسم المنتج...">
-        <div id="suggestions" class="suggestions" style="display: none;"></div>
-      </div><br>
-    
-
-<div class="products-container">
-  
-<div class="product-card" data-bg="im1/01.jpg" onclick="window.location.href='p1/1.html'"        >
-    <h4>كريم دكتور راشيل لإزالة علامات التمدد</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/02.jpg" onclick="window.location.href='p1/2.html'"  >
-    <h4>كريم تكبير الصدر بزيت حلبة الرومانية Bio Star</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/03.jpg" onclick="window.location.href='p1/3.html'"  >
-    <h4>كريم الجليسيرين Vioryle</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/04.jpg" onclick="window.location.href='p1/4.html'"  >
-    <h4>كريم النيلة الزرقاء Nila Bleu</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/05.jpg" onclick="window.location.href='p1/5.html'"  >
-    <h4>زبدة الشيا الأصيل</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/06.jpg" onclick="window.location.href='p1/6.html'"  >
-    <h4>زبدة الشيا الأصيل</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/08.jpg" onclick="window.location.href='p1/8.html'"  >
-    <h4>كريم ILLIS للأقدام والكعب المتشقق بزيت الصبار</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/09.jpg" onclick="window.location.href='p1/9.html'"   >
-    <h4>كريم ILLIS للأقدام والكعب المتشقق بزيت اللوز</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/10.jpg" onclick="window.location.href='p1/10.html'"  >
-    <h4>كريم ILLIS لعلاج تشققات الأرجل الجافة والكعب</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/11.jpg" onclick="window.location.href='p1/11.html'"  >
-    <h4>كريم ILLIS للأقدام والكعب المتشقق بالعسل الطبيعي</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/12.jpg" onclick="window.location.href='p1/12.html'"  >
-    <h4>كريم ILLIS للأقدام والكعب المتشقق بليمون</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/13.jpg" onclick="window.location.href='p1/13.html'"  >
-    <h4>كريم CADENCE لتشققات كعب القدم</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/14.jpg" onclick="window.location.href='p1/14.html'"   >
-    <h4>مرهم Lunatal للعناية بالجلد والقدم</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/15.jpg" onclick="window.location.href='p1/15.html'"   >
-    <h4>كريم Shabash للأعقاب الجافة والمتشققة</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/16.jpg" onclick="window.location.href='p1/16.html'"  >
-    <h4>كريم حب الشباب Touch Me De Carote</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/17.jpg" onclick="window.location.href='p1/17.html'"  >
-    <h4>كريم ABUSAAD للعناية بحب الشباب</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/18.jpg" onclick="window.location.href='p1/18.html'"  >
-    <h4>دهن الوسيلة لقلع الثآليل ومسامير الأرجل والبواسير الخارجية</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/19.jpg" onclick="window.location.href='p1/19.html'"  >
-    <h4>كريم طب الأخضر لعلاج الآلام والتورمات</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/20.jpg" onclick="window.location.href='p1/20.html'"  >
-    <h4>هلام النعناع البري للتدليك - ABOU IYAD</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/21.jpg" onclick="window.location.href='p1/21.html'"  >
-    <h4>ROBB Cream - كريم التدفئة والتسكين</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/22.jpg" onclick="window.location.href='p1/22.html'"  >
-    <h4>Sansiro ROBB - كريم مسكن طبيعي</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/23.jpg" onclick="window.location.href='p1/23.html'"   >
-    <h4>SABRINAL VITABOME للتدليك والإستراحة</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/24.jpg" onclick="window.location.href='p1/24.html'"   >
-    <h4>دهن القراص الأصيل</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/25.jpg" onclick="window.location.href='p1/25.html'"   >
-    <h4>دهن الحبة السوداء</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/26.jpg" onclick="window.location.href='p1/26.html'"   >
-    <h4>دهن الكبريت الأصيل</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/27.jpg" onclick="window.location.href='p1/27.html'"   >
-    <h4>زبد كريم الحياة</h4>
-  </div>
-
-<div class="product-card" data-bg="im1/28.jpg" onclick="window.location.href='p1/29.html'"   >
-    <h4>زباد كريم AL hayat لمعالجة فراغات الشعر</h4>
-  </div>
-
-
-  <div class="product-card" data-bg="im1/29.jpg" onclick="window.location.href='p1/28.html'"   >
-    <h4>دهن النعام الأصلي - نافع باذر</h4>
-  </div>
-
-  
-
-  <div class="product-card" data-bg="im1/30.jpg" onclick="window.location.href='p1/30.html'"   >
-    <h4>دهن النعام رابيد ريليف</h4>
-  </div>
-
-  
-
-  <div class="product-card" data-bg="im1/31.jpg" onclick="window.location.href='p1/31.html'"   >
-    <h4>كريم تصفيف بجوز الهند - Crème Coiffante Coconut</h4>
-  </div>
-
-  
-  <div class="product-card" data-bg="im1/32.jpg" onclick="window.location.href='p1/32.html'"        >
-    <h4>Karina بزيت جوز الهند</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/33.jpg" onclick="window.location.href='p1/33.html'"  >
-    <h4>Karina بزيت القنب</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/34.jpg" onclick="window.location.href='p1/34.html'"  >
-    <h4>كريم Eleis Crème de Blé للعناية بالشعر</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/35.jpg" onclick="window.location.href='p1/35.html'"  >
-    <h4>كريم Eleis Coconut لتصفيف الشعر</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/36.jpg" onclick="window.location.href='p1/36.html'"  >
-    <h4>كريم الشعر ALIBI</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/37.jpg" onclick="window.location.href='p1/37.html'"  >
-    <h4>كريم الشعر VENUS بزبدة الشيا</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/38.jpg" onclick="window.location.href='p1/38.html'"  >
-    <h4>كريم الشعر VENUS بزيت جنين القمح</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/39.jpg" onclick="window.location.href='p1/39.html'"  >
-    <h4>كريم Nivea Creme</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/40.jpg" onclick="window.location.href='p1/40.html'"   >
-    <h4>كريم الترطيب S'nonas بالصبار</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/41.jpg" onclick="window.location.href='p1/41.html'"  >
-    <h4>كريم Nivea Creme</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/42.jpg" onclick="window.location.href='p1/42.html'"  >
-    <h4>كريم Nivea Soft المرطب</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/43.jpg" onclick="window.location.href='p1/43.html'"  >
-    <h4>زيت جوز الهند سيريلانكي طبيعي</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/44.jpg" onclick="window.location.href='p1/44.html'"  >
-    <h4>لوشن الكركم Mayaliza</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/45.jpg" onclick="window.location.href='p1/45.html'"   >
-    <h4>لوشن حليب الماعز Mayaliza</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/46.jpg" onclick="window.location.href='p1/46.html'"   >
-    <h4>لوشن النيلة الزرقاء Mayaliza</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/47.jpg" onclick="window.location.href='p1/47.html'"  >
-    <h4>كريم مزيل لرائحة العرق فالز</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/48.jpg" onclick="window.location.href='p1/48.html'"  >
-    <h4>كريمة بزيت الحبة السوداء sabrinel</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/49.jpg" onclick="window.location.href='p1/49.html'"  >
-    <h4>RAKA GNS بزيت جوز الهند</h4>
-  </div>
-
-   <div class="product-card" data-bg="im1/50.jpg" onclick="window.location.href='p1/50.html'"  >
-    <h4>كريم الشعر بزيت الخروع - Eleis</h4>
-  </div>
-
-
-  <div class="product-card" data-bg="im1/64.jpg" onclick="window.location.href='p1/64.html'"  >
-    <h4>زيت جامو لتكبير الأرداف</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/65.jpg" onclick="window.location.href='p1/65.html'"  >
-    <h4>زيت اكيبي لتكبير الأرداف والمؤخرة والصدر</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/66.jpg" onclick="window.location.href='p1/66.html'"  >
-    <h4>كريمة أكيبي لتكبير الأرداف والمؤخرة والصدر</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/67.jpg" onclick="window.location.href='p1/67.html'"  >
-    <h4>كريم أيشون بيوتي لمكافحة علامات التمدد</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/68.jpg" onclick="window.location.href='p1/68.html'"  >
-    <h4>دهن بنخاع أنثى الجمل إمتنان</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/69.jpg" onclick="window.location.href='p1/69.html'"  >
-    <h4>قشطة الأميرات إمتنان</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/70.jpg" onclick="window.location.href='p1/70.html'"   >
-    <h4>كريمة إزالة الشعر بالفنيلا Plus Vite</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/71.jpg" onclick="window.location.href='p1/71.html'"  >
-    <h4>كريمة إزالة الشعر بالألوفيرا الطبيعي Plus Vite</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/72.jpg" onclick="window.location.href='p1/72.html'"  >
-    <h4>كريمة إزالة الشعر شافر فاي الطبيعي Plus Vite</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/73.jpg" onclick="window.location.href='p1/73.html'"  >
-    <h4>كريمة إزالة الشعر Silky Fresh Veet</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/74.jpg" onclick="window.location.href='p1/74.html'"  >
-    <h4>Farah عجينة مزيلة للشعر</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/75.jpg" onclick="window.location.href='p1/75.html'"   >
-    <h4>شمع مزيل للشعر EL SAIN</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/76.jpg" onclick="window.location.href='p1/76.html'"   >
-    <h4>عجينة بالليمون ازالة الشعر للجسم والوجه MIM</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/77.jpg" onclick="window.location.href='p1/77.html'"  >
-    <h4>عجينة بالعسل إزالة الشعر للجسم والوجه MIM</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/78.jpg" onclick="window.location.href='p1/78.html'"  >
-    <h4>شرائح إزالة الشعر للوجه بالعسل MIM</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/79.jpg" onclick="window.location.href='p1/79.html'"  >
-    <h4>شمع مزيل الشعر بالليمون EL SAIN</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/80.jpg" onclick="window.location.href='p1/80.html'"  >
-    <h4>شمع مزيل الشعر بماء الورد EL SAIN</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/81.jpg" onclick="window.location.href='p1/81.html'"  >
-    <h4>غبرة مزيلة للشعر ألوي فيرا GHALIA</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/82.jpg" onclick="window.location.href='p1/82.html'"  >
-    <h4>غبرة مزيلة للشعر بعطر الياسمين GHALIA</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/83.jpg" onclick="window.location.href='p1/83.html'"  >
-    <h4>غبرة مزيلة للشعر بعطر الوندا GHALIA</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/84.jpg" onclick="window.location.href='p1/84.html'"   >
-    <h4>غبرة مزيلة للشعر بزيت الأرغان الطبيعي GHALIA</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/85.jpg" onclick="window.location.href='p1/85.html'"   >
-    <h4>غبرة مزيلة للشعر بعطر الورد  GHALIA</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/86.jpg" onclick="window.location.href='p1/86.html'"   >
-    <h4>كريم Bee Venom لتخفيف الآلام</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/87.jpg" onclick="window.location.href='p1/87.html'"   >
-    <h4>بخاخ سم النحل لعلاج المفاصل والعظام</h4>
-  </div>
-
-  <div class="product-card" data-bg="im1/88.jpg" onclick="window.location.href='p1/88.html'"   >
-    <h4>كريمة Loko لعلاج ألم الظهر والمفاصل</h4>
-  </div>
-
-<div class="product-card" data-bg="im1/89.jpg" onclick="window.location.href='p1/89.html'"   >
-    <h4>كريمة Moov لعلاج ألم العضلات والمفاصل</h4>
-  </div>
-
-
-  <div class="product-card" data-bg="im1/90.jpg" onclick="window.location.href='p1/90.html'"   >
-    <h4>كريمة Scorpion لتخفيف آلام العضلات والمفاصل</h4>
-  </div>
-
-
-  <div class="product-card" data-bg="im12/01.jpg" onclick="window.location.href='p12/1.html'"        >
-    <h4>كريمة Scorpion لتخفيف آلام العضلات والمفاصل</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/02.jpg" onclick="window.location.href='p12/2.html'"  >
-    <h4>جال الأرنيكا للتدليك ABUSAAD</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/03.jpg" onclick="window.location.href='p12/3.html'"  >
-    <h4>دهان بلسان العجيب</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/04.jpg" onclick="window.location.href='p12/4.html'"  >
-    <h4>كريمة MOOV لتخفيف آلام المفاصل والعضلات</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/05.jpg" onclick="window.location.href='p12/5.html'"  >
-    <h4>أبو فاس - Vicks Vaporub</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/06.jpg" onclick="window.location.href='p12/6.html'"  >
-    <h4>زيت الروماتيزم وألم المفاصل ROYAL</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/07.jpg" onclick="window.location.href='p12/7.html'"  >
-    <h4>دهان الوسام الذهبي لتخفيف الاحتقان والآلام</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/08.jpg" onclick="window.location.href='p12/8.html'"  >
-    <h4>دهان بلسان العجيب</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/09.jpg" onclick="window.location.href='p12/9.html'"   >
-    <h4>كوري بيوتي كريم تفتيح بالأفوكادو والألوفيرا + حماية من الشمس 30</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/10.jpg" onclick="window.location.href='p12/10.html'"  >
-    <h4>كريم دهن النعام بخلاصة بذور الحبة السوداء</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/11.jpg" onclick="window.location.href='p12/11.html'"  >
-    <h4>دهن النعام جامد الأصلي</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/12.jpg" onclick="window.location.href='p12/12.html'"  >
-    <h4>إيمال مرهم شرجي طبيعي لمعالجة البواسير وتشققات الشرج</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/13.jpg" onclick="window.location.href='p12/13.html'"  >
-    <h4>دهن الورد </h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/14.jpg" onclick="window.location.href='p12/14.html'"   >
-    <h4>Super Rose Cream</h4>
-  </div>
-
-  <div class="product-card" data-bg="im12/15.jpg" onclick="window.location.href='p12/15.html'"   >
-    <h4>Dermovit Itch Allergies Eczema Therapy Cream - 25 grams</h4>
-  </div>
- 
-<div class="product-card" data-bg="im12/16.jpg" onclick="window.location.href='p12/16.html'"   >
-    <h4>Dermovit Itch Allergies Eczema Therapy Cream - 25 grams</h4>
-  </div>
-
-  
-</div><br><br><br><br><br><br>
-<div class="header">Tous les produits actuels</div>
-
-
-<script>
-    function normalizeArabic(text) {
-      return text
-        .replace(/[إأآا]/g, 'ا')
-        .replace(/ى/g, 'ي')
-        .replace(/ؤ/g, 'و')
-        .replace(/ئ/g, 'ي')
-        .replace(/ة/g, 'ه');
-    }
-    
-    document.getElementById('searchBox').addEventListener('input', searchCards);
-
-function searchCards() {
-  const input = normalizeArabic(document.getElementById('searchBox').value.toLowerCase().trim());
-  const cards = document.querySelectorAll('.product-card');
-
-  // إخفاء البطاقات التي لا تتطابق مع البحث
-  cards.forEach(card => {
-    const titleElement = card.querySelector('h4');
-    const title = normalizeArabic(titleElement ? titleElement.textContent.toLowerCase() : "");
-
-    if (title.includes(input)) {
-      card.hidden = false;  // إظهار البطاقة
-    } else {
-      card.hidden = true;   // إخفاء البطاقة
-    }
-  });
-}
-    </script>
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".product-card").forEach(card => {
-        const bgImage = card.getAttribute("data-bg");
-        card.style.backgroundImage = `url(${bgImage})`;
-    });
-});
-
-
-</script>
-
-</body>
-</html>
