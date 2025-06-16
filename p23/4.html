@@ -2,17 +2,15 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>زيت البابونج من شركة الكابتن</title>
+  <title>سيروم أندريا دوتي بتيليسين وزيت الأرغان</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* نفس CSS المستخدم مسبقًا دون تغيير */
     body {
       font-family: 'Arial', sans-serif;
       background: #f0f0f0;
       padding: 15px;
       margin: 0;
     }
-
     .container {
       background: white;
       padding: 20px;
@@ -21,14 +19,12 @@
       max-width: 100%;
       margin: auto;
     }
-
     h1 {
       font-size: 20px;
       color: #000;
       margin-bottom: 8px;
       text-align: right;
     }
-
     .price {
       color: rgb(247, 178, 3);
       font-size: 25px;
@@ -36,17 +32,14 @@
       margin-bottom: 10px;
       text-align: right;
     }
-
     .desc, ul {
       font-size: 14px;
       line-height: 1.7;
       color: #333;
     }
-
     ul {
       padding-right: 20px;
     }
-
     .btns {
       margin-top: 20px;
       display: flex;
@@ -54,7 +47,6 @@
       gap: 10px;
       justify-content: space-between;
     }
-
     button {
       flex: 1 1 100%;
       padding: 10px;
@@ -66,20 +58,16 @@
       font-size: 13px;
       transition: background 0.3s;
     }
-
     button:hover {
       background: #000;
     }
-
     .buy-now {
       background-color: #e75757;
     }
-
     .share-btn {
       background-color: rgb(238, 184, 49);
       color: #000;
     }
-
     a {
       color: rgb(153, 150, 150);
       text-decoration: none;
@@ -89,27 +77,22 @@
       margin-top: 20px;
       text-align: center;
     }
-
     .emoji {
       font-size: 1.5em;
       vertical-align: middle;
       margin-left: 5px;
     }
-
     @media (min-width: 600px) {
       .container {
         max-width: 700px;
       }
-
       .btns {
         flex-wrap: nowrap;
       }
-
       button {
         flex: 1;
       }
     }
-
     .gallery {
       position: relative;
       max-width: 100%;
@@ -118,97 +101,69 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       overflow: hidden;
     }
-
     .gallery img {
       width: 100%;
-      height: 600px;
+      height: 800px;
       display: block;
       object-fit: cover;
-      object-position: 60% 40%;
+      object-position: 60% 45%;
       border-radius: 10px;
       transition: all 0.3s ease;
     }
-
     @media (max-width: 768px) {
       .gallery img {
-        height: 300px;
+        height: 500px;
         object-position: center center;
       }
-    }
-
-    .buttons {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      padding: 0 10px;
-      box-sizing: border-box;
-    }
-
-    .buttons button {
-      background-color: rgba(248, 243, 243, 0.5);
-      border: none;
-      color: white;
-      font-size: 24px;
-      padding: 1px 16px;
-      cursor: pointer;
-      border-radius: 50%;
-      transition: background-color 0.3s;
-    }
-
-    .buttons button:hover {
-      background-color: rgba(218, 207, 207, 0.8);
     }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>زيت البابونج من شركة الكابتن</h1>
+  <h1>سيروم أندريا دوتي بتيليسين وزيت الأرغان</h1>
 
   <div class="gallery">
-    <img id="mainImage" src="/im24/04.jpg" alt="زيت البابونج من شركة الكابتن" loading="lazy">
+    <img id="mainImage" src="/im25/04.jpg" alt="سيروم أندريا دوتي بتيليسين وزيت الأرغان" loading="lazy">
   </div><br>
 
-  <div class="price">DA 300</div>
+  <div class="price">DA 500</div>
 
   <div class="desc">
-    زيت <strong>البابونج من شركة الكابتن</strong> معروف بخصائصه المفيدة لتهدئة البشرة وفروة الرأس وتحسين الاسترخاء.<br>
-    يحتوي على عناصر تساعد على تقليل الالتهابات، وتمنح إحساسًا بالراحة الجسدية والنفسية.<br>
+    💧 <strong>سيروم أندريا دوتي بتيليسين وزيت الأرغان</strong> مزيج فاخر لتغذية الشعر بعمق ✨، يمنحك شعراً ناعماً ولامعاً بفضل قوة زيت الأرغان وفعالية مادة التيليسين المرطبة 🌿.
+    <br>
     <span style="color: goldenrod;">★★★★★</span> تقييم: 5/5
   </div>
 
   <div>
     <h3>🎁 المميزات</h3>
     <ul>
-      <li><strong>مهدئ للبشرة:</strong> يخفف التهيجات الجلدية والحكة.</li>
-      <li><strong>صديق للبشرة الحساسة:</strong> لطيف وآمن على البشرة الرقيقة.</li>
-      <li><strong>رائحة عطرية:</strong> تعزز الاسترخاء وتحسن المزاج.</li>
-      <li><strong>تقليل التهابات فروة الرأس:</strong> يهدئ الحكة ويمنع الجفاف.</li>
-      <li><strong>مفيد قبل النوم:</strong> استخدامه الليلي يساعد على النوم الهادئ.</li>
+      <li><strong>تركيبة مغذية:</strong> تحتوي على زيت الأرغان الطبيعي الغني بالأوميغا والفيتامينات.</li>
+      <li><strong>ترطيب عميق:</strong> بفضل مادة التيليسين التي تحافظ على رطوبة الشعر ولمعانه.</li>
+      <li><strong>حماية من التقصف:</strong> يقوي الشعر من الجذور حتى الأطراف.</li>
+      <li><strong>يحارب الهيشان:</strong> مثالي للشعر المجعد والجاف.</li>
+      <li><strong>نتائج فورية:</strong> يظهر تأثيره من أول استخدام.</li>
     </ul>
   </div>
 
   <div>
     <h3>🎀 طريقة الاستعمال</h3>
     <ul>
-      <li><strong>للبشرة:</strong> يوضع مباشرة على البشرة المتهيجة لتهدئتها.</li>
-      <li><strong>للشعر:</strong> يُدلك على فروة الرأس ويترك نصف ساعة قبل الغسل.</li>
-      <li><strong>للاسترخاء:</strong> أضف قطرات منه إلى ماء الاستحمام.</li>
-     
+      <li>ضعي كمية صغيرة على شعر رطب أو جاف بعد الغسيل.</li>
+      <li>وزعيه جيدًا من الجذور حتى الأطراف.</li>
+      <li>لا يحتاج للغسل، ويمكن استخدامه يوميًا أو عند الحاجة.</li>
+      <li>مثالي قبل التصفيف أو بعده.</li>
     </ul>
   </div>
 
   <div class="btns">
-    <button class="share-btn" onclick="shareProduct('زيت البابونج من شركة الكابتن')">
+    <button class="share-btn" onclick="shareProduct('سيروم أندريا دوتي بتيليسين وزيت الأرغان')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('زيت البابونج من شركة الكابتن', 350)">
+    <button onclick="addToCart('سيروم أندريا دوتي بتيليسين وزيت الأرغان', 1900)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('زيت البابونج من شركة الكابتن')">
+    <button class="buy-now" onclick="storeProductAndRedirect('سيروم أندريا دوتي بتيليسين وزيت الأرغان')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
@@ -240,7 +195,7 @@
     if (navigator.share) {
       navigator.share({
         title: name,
-        text: `اطلع على هذا المنتج: ${name}`,
+        text: `اطّلع على هذا المنتج: ${name}`,
         url: url
       }).catch((err) => console.log("لم تتم المشاركة:", err));
     } else {
