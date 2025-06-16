@@ -131,8 +131,18 @@
 /* ✅ تحسين العرض على الشاشات الصغيرة */
 @media (max-width: 768px) {
   .gallery img {
-    height: 300px; /* أقل ارتفاع للهواتف */
-    object-position: center center; /* توسيط الصورة على الهواتف */
+    width: 100%; /* عرض كامل للمربع */
+    height: 350px; /* تكبير الارتفاع */
+    object-fit: cover; /* لضمان تغطية المربع بدون تشويه */
+    object-position: center center; /* توسيط الصورة داخل المربع */
+    border-radius: 12px; /* حواف ناعمة */
+  }
+
+  .gallery {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr; /* صورة واحدة في كل صف */
+    gap: 15px;
   }
 }
     .buttons {
