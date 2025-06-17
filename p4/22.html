@@ -2,8 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>صابون حليب الأتان ABUSAAD</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زيت الجنسنغ – قطر الطبيعة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -16,7 +16,7 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
       max-width: 100%;
       margin: auto;
     }
@@ -110,30 +110,41 @@
     }
 
     .gallery {
-      position: relative;
-      max-width: 100%;
-      margin: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
 
-    .gallery img {
-      width: 100%;
-      height: 600px;
-      display: block;
-      object-fit: cover;
-      object-position: 60% 45%;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
+.gallery img {
+  width: 100%;
+  height: 500px;
+  display: block;
+  object-fit: cover;
+  object-position: 60% 40%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
 
-    @media (max-width: 768px) {
-      .gallery img {
-        height: 350px;
-        object-position: center center;
-      }
-    }
+/* ✅ تحسين العرض على الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .gallery img {
+    height: 300px; /* أقل ارتفاع للهواتف */
+    object-position: center center; /* توسيط الصورة على الهواتف */
+  }
+}
+
+.gallery .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(255,255,255,0.7);
+  padding: 5px;
+  border-radius: 50%;
+}
     .buttons {
       position: absolute;
       top: 50%;
@@ -164,48 +175,61 @@
 <body>
 
 <div class="container">
-  <h1>صابون حليب الأتان ABUSAAD</h1>
+  <h1>زيت الجنسنغ – قطر الطبيعة</h1>
 
   <div class="gallery">
-    <img id="mainImage" src="/im4/07.jpg" alt="صابون حليب الأتان ABUSAAD" loading="lazy">
+    <img id="mainImage" src="/im22/22.jpg" alt="زيت الجنسنغ – قطر الطبيعة" loading="lazy">
+    
   </div><br>
 
-  <div class="price">DA 300</div>
+  <div class="price">DA 250</div>
 
   <div class="desc">
-    صابون <strong>حليب الأتان ABUSAAD</strong> هو منتج فاخر لتغذية البشرة وتفتيحها بطريقة طبيعية وآمنة.<br>
-    تركيبته المتطورة تحتوي على <strong>لاكتو سيروم</strong> المستخلص من حليب الأتان، بالإضافة إلى <strong>زيوت نباتية خالصة</strong>، <strong>كلوريد الصوديوم</strong>، و<strong>ثاني أكسيد التيتانيوم</strong> المعروف بخصائصه في تفتيح البشرة.<br>
-    يعمل على ترطيب البشرة بعمق، محاربة التجاعيد، وتوحيد لون البشرة.<br>
-    <span style="color: goldenrod;">★★★★★</span> تقييم: 4.9/5
+    زيت <strong>الجنسنغ الطبيعي</strong> من قطر الطبيعة يُستخدم لتحفيز الدورة الدموية وتنشيط الجسم بشكل عام.<br>
+    يساعد في تقوية بصيلات الشعر، وتحسين صحة البشرة، وزيادة الطاقة والحيوية.<br>
+    كما يُعرف بدوره في تقوية المناعة، وتحسين التركيز، وتفتيح البشرة بفضل خصائصه الطبيعية.<br>
+    <span style="color: goldenrod;">★★★★☆</span> تقييم: 4.6/5
   </div>
 
   <div>
-    <h3>المميزات</h3>
+    <h3>🎁 المميزات</h3>
     <ul>
-      <li>تفتيح وتنعيم البشرة من أول استعمال</li>
-      <li>مقاومة فعالة لعلامات التقدم في السن</li>
-      <li>يقلل من مظهر التجاعيد والبقع الداكنة</li>
-      <li>مناسب للاستخدام اليومي ومنتظم</li>
+      <li><strong>يعزز نمو الشعر:</strong> يقوي الجذور ويمنع التساقط.</li>
+      <li><strong>يقضي على الشيب المبكر:</strong> يساعد على استعادة لون الشعر الطبيعي تدريجيًا.</li>
+      <li><strong>يعالج مشكلة الصلع:</strong> بفضل تنشيط الدورة الدموية وتحفيز بصيلات الشعر.</li>
+      <li><strong>مبيض طبيعي للبشرة:</strong> يوحد اللون ويُزيل البقع الداكنة.</li>
+      <li><strong>يقضي على التجاعيد:</strong> يحفّز إنتاج الكولاجين ويؤخر علامات التقدم في السن.</li>
+      <li><strong>ينشط الجسم والذهن:</strong> يرفع الطاقة والتركيز.</li>
+      <li><strong>يرطب البشرة:</strong> يعزز نضارتها ومرونتها.</li>
     </ul>
   </div>
 
   <div>
     <h3>🎀 طريقة الاستعمال</h3>
     <ul>
-      <li>يُستخدم يوميًا على بشرة مبللة.</li>
-      <li>يُرغى على الوجه أو الجسم ويُترك لمدة 1-2 دقيقة.</li>
-      <li>يُغسل جيدًا بالماء الفاتر ويُجفف بلطف.</li>
+      <li>يُدلك الزيت على فروة الرأس لتنشيط الدورة الدموية وتحفيز نمو الشعر.</li>
+      <li>يمكن استخدامه موضعيًا على البشرة بعد تنظيفها لتفتيحها وتغذيتها.</li>
+      <li>يُستعمل مساءً ويُترك لمدة 1 إلى 2 ساعة ثم يُغسل.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>⚠️ احتياطات الاستعمال</h3>
+    <ul>
+      <li>للاستخدام الخارجي فقط.</li>
+      <li>يُحفظ بعيدًا عن متناول الأطفال، وفي مكان بارد وجاف.</li>
+      <li>تُجرى تجربة على جزء صغير من الجلد قبل الاستخدام الكامل.</li>
     </ul>
   </div>
 
   <div class="btns">
-    <button class="share-btn" onclick="shareProduct('صابون حليب الأتان ABUSAAD')">
+    <button class="share-btn" onclick="shareProduct('زيت الجنسنغ – قطر الطبيعة')">
       <span class="emoji">🔗</span> مشاركة
     </button>
-    <button onclick="addToCart('صابون حليب الأتان ABUSAAD', 4800)">
+    <button onclick="addToCart('زيت الجنسنغ – قطر الطبيعة', 3600)">
       <span class="emoji" style="color: gray;">🛒</span> أضف إلى السلة
     </button>
-    <button class="buy-now" onclick="storeProductAndRedirect('صابون حليب الأتان ABUSAAD')">
+    <button class="buy-now" onclick="storeProductAndRedirect('زيت الجنسنغ – قطر الطبيعة')">
       <span class="emoji">💳</span> اشترِ الآن
     </button>
   </div>
@@ -213,8 +237,14 @@
   <a href="cart.html"><span class="emoji" style="color: gray;">🛒</span> عرض السلة</a>
 </div>
 
+
 <script>
-  const images = ["/im1/soap-donkey.jpg", "/im1/soap-donkey2.jpg", "/im1/soap-donkey3.jpg"];
+  const images = [
+   
+    "/im22/22.jpg",
+    "/im22/022.jpg",
+    "/im22/0022.jpg"
+  ];
   let index = 0;
   const img = document.getElementById("mainImage");
 
