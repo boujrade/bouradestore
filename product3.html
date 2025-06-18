@@ -12,12 +12,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body, html {
       width: 100%;
       background: #FEFEFE;
@@ -25,13 +20,11 @@
       direction: rtl;
       overflow-x: hidden;
     }
-
     .container {
       width: 100%;
       padding: 5px;
       background: #fff;
     }
-
     .section-heading {
       text-align: center;
       font-size: 1.8rem;
@@ -43,7 +36,6 @@
       font-family: 'Cairo', Tahoma, sans-serif;
       letter-spacing: 0.5px;
     }
-
     .section-heading::after {
       content: "";
       display: block;
@@ -54,43 +46,34 @@
       border-radius: 2px;
       animation: fadeLine 1s ease-in-out forwards;
     }
-
     @keyframes fadeLine {
-      0% {
-        width: 0;
-        opacity: 0;
-      }
-      100% {
-        width: 90px;
-        opacity: 1;
-      }
+      0% { width: 0; opacity: 0; }
+      100% { width: 90px; opacity: 1; }
     }
-
     .products-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 0;
       width: 100%;
     }
-
     .product-card {
-      height: 200px;
-      
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 0 5px rgba(200, 200, 200, 0.3);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-    }
+  position: relative; /* ضروري لتحديد موضع السعر داخله */
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 5px rgba(200, 200, 200, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
 
     .product-card:hover {
       transform: scale(1.05);
     }
-
     .product-card h4,
     .product-card p {
       font-size: 11px;
@@ -100,12 +83,31 @@
       color: #252222;
       font-weight: bold;
     }
-
     .product-card[hidden] {
       display: none;
     }
+    .card {
+      position: relative;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 250px;
+      background-color: #fff;
+    }
+   .price {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: #d32f2f;
+  background-color: #fdecea;
+  font-weight: bold;
+  font-size: 10px; /* ⬅️ تم تكبير الحجم */
+  padding: 5px 12px; /* ⬅️ تم زيادة البادينغ قليلاً */
+  border-radius: 15px;
+  display: inline-block;
+}
 
-    #searchContainer {
+     #searchContainer {
       position: relative;
       margin: 15px 0;
       padding: 0 12px;
@@ -161,25 +163,23 @@
     }
 
 
- .header {
+    .header {
       font-family: 'Arial', sans-serif;
       font-size: 18px;
       font-weight: bold;
       text-align: center;
       padding: 10px;
       color: #fff;
-      background-color: #4CAF50; /* أخضر أنيق */
+      background-color: #4CAF50;
       border-radius: 8px;
       margin: 10px;
     }
-
     @media (max-width: 480px) {
       .header {
         font-size: 16px;
         padding: 8px;
       }
     }
-
 
    .mask-banner {
   width: 100%;
@@ -211,7 +211,7 @@
 }
 
 @media (max-width: 600px) {
-  .soap-banner {
+  .mask-banner {
     padding: 20px 10px;
     border-radius: 0;
   }
@@ -235,7 +235,7 @@
 
 <!-- محتوى العنوان -->
 <div class="mask-banner">
-  <h5> أقنعة ومقشرات للوجه </h5>
+  <h5> Masques et gommages pour le visage</h5>
   <h6> ابحث عن المنتج الذي ترغب به بسهولة</h6>
 </div>
 
@@ -250,6 +250,7 @@
 
    <div class="product-card" data-bg="im3/01.jpg" onclick="window.location.href='p3/1.html'"  >
     <h4>قناع الطين الأخضر بزيت الأرغان - Maryliss</h4>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
    <div class="product-card" data-bg="im3/02.jpg" onclick="window.location.href='p3/2.html'"  >
