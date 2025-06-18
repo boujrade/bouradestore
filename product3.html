@@ -180,49 +180,51 @@
       }
     }
 
+
+   .mask-banner {
+  width: 100%;
+  margin: 0 auto 30px auto;
+  padding: 25px;
+  background: linear-gradient(to bottom, #ffffff, #abfa8c);
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-family: 'Tajawal', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
 .mask-banner {
-    max-width: 90%;
-    margin: 30px auto;
-    padding: 25px;
-    background: linear-gradient(to bottom, #ffffff, #ff9dbe);
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    font-family: 'Tajawal', sans-serif;
-    transition: all 0.3s ease-in-out;
+  font-size: 28px;
+  font-weight: 800;
+  color: #baffa5;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(0, 121, 107, 0.1);
+  line-height: 1.5;
+}
+
+.mask-banner {
+  font-size: 18px;
+  color: #444;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .soap-banner {
+    padding: 20px 10px;
+    border-radius: 0;
   }
 
-  .mask-banner h4 {
-    font-size: 28px;
-    font-weight: 800;
-    color: #c2185b;
-    margin-bottom: 12px;
-    letter-spacing: 0.5px;
-    text-shadow: 1px 1px 2px rgba(194, 24, 91, 0.1);
-    line-height: 1.5;
+  .mask-banner {
+    font-size: 6vw;
   }
 
-  .mask-banner h5 {
-    font-size: 18px;
-    color: #444;
-    font-weight: 400;
-    line-height: 1.6;
+  .mask-banner {
+    font-size: 4.5vw;
   }
+}
 
-  /* 📱 تنسيق الهاتف */
-  @media (max-width: 600px) {
-    .mask-banner {
-      padding: 20px 15px;
-    }
-
-    .mask-banner h4 {
-      font-size: 6vw;
-    }
-
-    .mask-banner h5 {
-      font-size: 4.5vw;
-    }
-  }
 
   </style>
 </head>
@@ -233,7 +235,7 @@
 
 <!-- محتوى العنوان -->
 <div class="mask-banner">
-  <h5>🌸 أقنعة ومقشرات للوجه 🌸</h5>
+  <h5> أقنعة ومقشرات للوجه </h5>
   <h6> ابحث عن المنتج الذي ترغب به بسهولة</h6>
 </div>
 
