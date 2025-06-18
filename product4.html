@@ -13,12 +13,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body, html {
       width: 100%;
       background: #FEFEFE;
@@ -26,13 +21,11 @@
       direction: rtl;
       overflow-x: hidden;
     }
-
     .container {
       width: 100%;
       padding: 5px;
       background: #fff;
     }
-
     .section-heading {
       text-align: center;
       font-size: 1.8rem;
@@ -44,7 +37,6 @@
       font-family: 'Cairo', Tahoma, sans-serif;
       letter-spacing: 0.5px;
     }
-
     .section-heading::after {
       content: "";
       display: block;
@@ -55,43 +47,34 @@
       border-radius: 2px;
       animation: fadeLine 1s ease-in-out forwards;
     }
-
     @keyframes fadeLine {
-      0% {
-        width: 0;
-        opacity: 0;
-      }
-      100% {
-        width: 90px;
-        opacity: 1;
-      }
+      0% { width: 0; opacity: 0; }
+      100% { width: 90px; opacity: 1; }
     }
-
     .products-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 0;
       width: 100%;
     }
-
     .product-card {
-      height: 200px;
-      
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 0 5px rgba(200, 200, 200, 0.3);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease-in-out;
-    }
+  position: relative; /* ضروري لتحديد موضع السعر داخله */
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 5px rgba(200, 200, 200, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
 
     .product-card:hover {
       transform: scale(1.05);
     }
-
     .product-card h4,
     .product-card p {
       font-size: 11px;
@@ -101,35 +84,31 @@
       color: #252222;
       font-weight: bold;
     }
-
     .product-card[hidden] {
       display: none;
     }
-
     .card {
-  position: relative;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 250px;
-  background-color: #fff;
-  /* أي تنسيقات إضافية للبطاقة */
-}
-
-.price {
-  margin-top: -24px; /* تم رفعه أكثر داخل البطاقة */
-  margin-bottom: 12px;
-  display: inline-block;
-  background-color: #f2f2f2;
-  padding: 4px 10px;
-  border-radius: 4px;
+      position: relative;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 250px;
+      background-color: #fff;
+    }
+   .price {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: #d32f2f;
+  background-color: #fdecea;
   font-weight: bold;
-}
-.card {
-  padding-top: 28px; /* أكثر ارتفاعًا مع المحافظة على الفراغ الداخلي العام */
+  font-size: 10px; /* ⬅️ تم تكبير الحجم */
+  padding: 5px 12px; /* ⬅️ تم زيادة البادينغ قليلاً */
+  border-radius: 15px;
+  display: inline-block;
 }
 
-    #searchContainer {
+     #searchContainer {
       position: relative;
       margin: 15px 0;
       padding: 0 12px;
@@ -184,210 +163,196 @@
       background-color: #f5f5f5;
     }
 
- .header {
+
+    .header {
       font-family: 'Arial', sans-serif;
       font-size: 18px;
       font-weight: bold;
       text-align: center;
       padding: 10px;
       color: #fff;
-      background-color: #4CAF50; /* أخضر أنيق */
+      background-color: #4CAF50;
       border-radius: 8px;
       margin: 10px;
     }
-
     @media (max-width: 480px) {
       .header {
         font-size: 16px;
         padding: 8px;
       }
     }
-
-.soap-banner {
-  width: 100%;
-  margin: 0 auto 30px auto;
-  padding: 25px;
-  background: linear-gradient(to bottom, #ffffff, #91e8f3);
-  border-radius: 0 0 16px 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  font-family: 'Tajawal', sans-serif;
-  transition: all 0.3s ease-in-out;
-}
-
-.soap-banner h4 {
-  font-size: 28px;
-  font-weight: 800;
-  color: #00796b;
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
-  text-shadow: 1px 1px 2px rgba(0, 121, 107, 0.1);
-  line-height: 1.5;
-}
-
-.soap-banner h5 {
-  font-size: 18px;
-  color: #444;
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-@media (max-width: 600px) {
-  .soap-banner {
-    padding: 20px 10px;
-    border-radius: 0;
-  }
-
-  .soap-banner h4 {
-    font-size: 6vw;
-  }
-
-  .soap-banner h5 {
-    font-size: 4.5vw;
-  }
-}
-
-
+    .soap-banner {
+      width: 100%;
+      margin: 0 auto 30px auto;
+      padding: 25px;
+      background: linear-gradient(to bottom, #ffffff, #91e8f3);
+      border-radius: 0 0 16px 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      font-family: 'Tajawal', sans-serif;
+      transition: all 0.3s ease-in-out;
+    }
+    .soap-banner h4 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #00796b;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      text-shadow: 1px 1px 2px rgba(0, 121, 107, 0.1);
+      line-height: 1.5;
+    }
+    .soap-banner h5 {
+      font-size: 18px;
+      color: #444;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+      .soap-banner {
+        padding: 20px 10px;
+        border-radius: 0;
+      }
+      .soap-banner h4 { font-size: 6vw; }
+      .soap-banner h5 { font-size: 4.5vw; }
+    }
   </style>
 </head>
 <body><br>
 
-
-
-
-<!-- العنوان المنسق -->
+<!-- العنوان -->
 <div class="soap-banner">
   <h5> Savons & shampooings pour tous les goûts</h5>
   <h6>ابحث عن المنتج الذي ترغب به بسهولة</h6>
 </div>
 
-    <div id="searchContainer">
-        <input type="text" id="searchBox" placeholder="اكتب اسم المنتج...">
-        <div id="suggestions" class="suggestions" style="display: none;"></div>
-      </div><br>
-    
+<!-- البحث -->
+<div id="searchContainer">
+  <input type="text" id="searchBox" placeholder="اكتب اسم المنتج...">
+  <div id="suggestions" class="suggestions" style="display: none;"></div>
+</div><br>
+
+
 <div class="products-container">
   <div class="product-card" data-bg="im4/01.jpg" onclick="window.location.href='p4/1.html'">
   <h4>صابون حليب المعز ABUSAAD</h4>
- <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
-
+ <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
 
 </div>
 
    <div class="product-card" data-bg="im4/02.jpg" onclick="window.location.href='p4/2.html'">
   
     <h4>صابون الودعة والليمون ABUSAAD</h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
    <div class="product-card" data-bg="im4/03.jpg" onclick="window.location.href='p4/3.html'">
      
     <h4>صابون الودعة ABUSAAD </h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+   <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
    <div class="product-card" data-bg="im4/04.jpg" onclick="window.location.href='p4/4.html'">
   
     <h4>صابون BLACK SOAP ABUSAAD </h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
    <div class="product-card" data-bg="im4/05.jpg" onclick="window.location.href='p4/5.html'">
     
     <h4>صابون الدسة ABUSAAD </h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+   <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
    <div class="product-card" data-bg="im4/06.jpg" onclick="window.location.href='p4/6.html'">
    
     <h4>صابون وجه القمر ABUSAAD</h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+   <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
    <div class="product-card" data-bg="im4/07.jpg" onclick="window.location.href='p4/7.html'">
    
     <h4>صابون حليب الأتان ABUSAAD</h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+   <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
    <div class="product-card" data-bg="im4/08.jpg" onclick="window.location.href='p4/8.html'">
     
     <h4>صابون الكبريت ABUSAAD</h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
    <div class="product-card" data-bg="im4/09.jpg" onclick="window.location.href='p4/9.html'">
     
     <h4>صابون القطران لعلاج الصدفية ABUSAAD </h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
    <div class="product-card" data-bg="im4/10.jpg" onclick="window.location.href='p4/10.html'">
     
     <h4>صابون الودعة بالحليب الطبيعي ABUSAAD </h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
 
    <div class="product-card" data-bg="im4/11.jpg" onclick="window.location.href='p4/11.html'">
    
     <h4>صابون الغليسيرين الطبيعي ABUSAAD </h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
 
 
    <div class="product-card" data-bg="im4/12.jpg" onclick="window.location.href='p4/12.html'">
     <h4>صابون الأرغان الطبيعي ABUSAAD </h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
 
    <div class="product-card" data-bg="im4/13.jpg" onclick="window.location.href='p4/13.html'">
     <h4>صابون عرق السوس للبشرة الجافة والمتصبغة ABUSAAD</h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
   
 
    <div class="product-card" data-bg="im4/14.jpg" onclick="window.location.href='p4/14.html'">
     <h4>صابون الغار للعناية بالبشرة ABUSAAD </h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+   <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
 
    <div class="product-card" data-bg="im4/15.jpg" onclick="window.location.href='p4/15.html'">
     <h4>صابون الودعة بخلاصة الثوم ABUSAAD </h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
    <div class="product-card" data-bg="im4/16.jpg" onclick="window.location.href='p4/16.html'">
     <h4>صابون مستخلص الحلزون لتفتيح وتبييض البشرة </h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
 
    <div class="product-card" data-bg="im4/17.jpg" onclick="window.location.href='p4/17.html'">
     <h4>صابون درما سوفر للبشرة الحساسة </h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
 
 
    <div class="product-card" data-bg="im4/18.jpg" onclick="window.location.href='p4/18.html'">
     <h4>CURCUMA SOAP – صابون الكركم بالعسل </h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
 
    <div class="product-card" data-bg="im4/19.jpg" onclick="window.location.href='p4/19.html'">
     <h4> صابون الفحم مدام راني QUEEN LOVE بمستخلص النعام</h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
 
    <div class="product-card" data-bg="im4/20.jpg" onclick="window.location.href='p4/20.html'">
     <h4> صابون ديرماكتيف DERMACTIVE لعلاج البشرة الدهنية والمتهيجة</h4>
-    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 8px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
+    <p class="price" style="color: #d32f2f; background-color: #fdecea; font-size: 20px; padding: 4px 10px; border-radius: 15px; display: inline-block;">250 DA</p>
   </div>
 
 
