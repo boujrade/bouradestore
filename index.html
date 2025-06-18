@@ -542,8 +542,8 @@ button {
     }
 
     .swiper-slide.special-card {
-      width: 200px;
-      height: 260px;
+      width: 250px;
+      height: 300px;
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
@@ -569,24 +569,26 @@ button {
   height: 100%;
   object-fit: cover;
   border-radius: 12px 12px 0 0;
-  margin-top: 1px; /* ✅ تنزيل الصورة قليلاً داخل البطاقة */
+  margin-top: 0px; /* تقليل المسافة بين الصورة وأعلى البطاقة */
 }
 
-
-    .card-title {
-  font-size: 0.95rem;
+.card-title {
+  font-size: 0.85rem;
   font-weight: bold;
   color: #1a1a1a;
   text-align: center;
-  padding: 10px 5px;
-  margin-top: 8px;
-  margin-bottom: 12px;
+  padding: 4px 6px 2px; /* تقليل الفراغ داخل العنوان */
+  margin-top: 4px;      /* تقليل المسافة من الصورة */
+  margin-bottom: 10px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   border-bottom: 2px solid #ff9900;
+  width: 90%;
+  margin-inline: auto;
 }
+
     .special-card:hover {
       transform: scale(1.04);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
