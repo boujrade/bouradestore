@@ -580,16 +580,17 @@ button {
   font-weight: bold;
   color: #1a1a1a;
   text-align: center;
-  padding: 25px 4px;
+  padding: 40px 4px 10px; /* ✅ padding-bottom لتوسيع المسافة تحت النص */
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   border-bottom: 1px solid #ff3c66;
-  height: 20px;
+  height: 80px; /* ✅ رفع الطول لإنزال الخط */
   line-height: 1.2;
 }
+
 /* دعم العرض على الهاتف */
 @media (max-width: 768px) {
   .swiper-slide.special-card {
