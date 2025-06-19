@@ -580,7 +580,7 @@ button {
   font-weight: bold;
   color: #1a1a1a;
   text-align: center;
-  padding: 40px 4px 10px; /* ✅ padding-bottom لتوسيع المسافة تحت النص */
+  padding: 30px 4px 10px; /* ✅ padding-bottom لتوسيع المسافة تحت النص */
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -590,6 +590,8 @@ button {
   height: 80px; /* ✅ رفع الطول لإنزال الخط */
   line-height: 1.2;
 }
+
+
 
 /* دعم العرض على الهاتف */
 @media (max-width: 768px) {
@@ -606,6 +608,13 @@ button {
     font-size: 0.8rem;
     height: 45px;
   }
+
+.card-title {
+    font-size: 0.8rem;
+    padding: 4px 4px 16px; /* ✅ زيادة المسافة أسفل النص */
+    height: 70px; /* ✅ رفع العنوان أكثر على الهاتف */
+  }
+
 }
 
 
