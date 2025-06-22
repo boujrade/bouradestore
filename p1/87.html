@@ -27,10 +27,14 @@
     }
     .price {
       color: rgb(247, 178, 3);
-      font-size: 25px;
+      font-size: 20px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: right;
+      background: #fff8e1;
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 6px;
     }
     .desc, ul {
       font-size: 14px;
@@ -39,6 +43,11 @@
     }
     ul {
       padding-right: 20px;
+    }
+    h3 {
+      color: #444;
+      font-size: 16px;
+      margin-top: 20px;
     }
     .btns {
       margin-top: 20px;
@@ -78,7 +87,7 @@
       text-align: center;
     }
     .emoji {
-      font-size: 1.5em;
+      font-size: 1.4em;
       vertical-align: middle;
       margin-left: 5px;
     }
@@ -93,21 +102,20 @@
         flex: 1;
       }
     }
-     .gallery {
-  position: relative;
-  max-width: 100%;
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
-}
-
-.gallery img {
+    .gallery {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+   .gallery img {
   width: 100%;
-  height: 500px;
+  height: 800px;
   display: block;
   object-fit: cover;
-  object-position: 60% 40%;
+  object-position: 60% 35%;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
@@ -115,44 +123,22 @@
 /* ✅ تحسين العرض على الشاشات الصغيرة */
 @media (max-width: 768px) {
   .gallery img {
-    height: 300px; /* أقل ارتفاع للهواتف */
+    height: 350px; /* أقل ارتفاع للهواتف */
     object-position: center center; /* توسيط الصورة على الهواتف */
   }
 }
-    .buttons {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      padding: 0 10px;
-      box-sizing: border-box;
-    }
-    .buttons button {
-      background-color: rgba(248, 243, 243, 0.5);
-      border: none;
-      color: white;
-      font-size: 24px;
-      padding: 1px 16px;
-      cursor: pointer;
-      border-radius: 50%;
-      transition: background-color 0.3s;
-    }
-    .buttons button:hover {
-      background-color: rgba(218, 207, 207, 0.8);
-    }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>بخاخ سم النحل لعلاج المفاصل والعظام</h1>
+  <h1> بخاخ سم النحل لعلاج المفاصل والعظام</h1>
 
   <div class="gallery">
-    <img id="mainImage" src="/im1/87.jpg" alt="بخاخ سم النحل لعلاج المفاصل والعظام" loading="lazy" />
+    <img id="mainImage" src="/im1/87.jpg" alt="بخاخ سم النحل" loading="lazy" />
+  </div>
 
-  <div class="price">DA 1000</div>
+  <div class="price"> فقط بـ 1000 DA</div>
 
   <div class="desc">
     بخاخ فعال يحتوي على سم النحل الطبيعي لتخفيف آلام المفاصل والعظام وتعزيز حركة الجسم.<br />
@@ -161,7 +147,7 @@
   </div>
 
   <div>
-    <h3>🎁 المميزات</h3>
+    <h3>🎯 المميزات</h3>
     <ul>
       <li>تخفيف سريع لآلام المفاصل والعظام.</li>
       <li>تركيبة طبيعية وآمنة.</li>
@@ -171,7 +157,7 @@
   </div>
 
   <div>
-    <h3>🎀 طريقة الاستخدام</h3>
+    <h3>📌 طريقة الاستخدام</h3>
     <ul>
       <li>رش كمية مناسبة على المنطقة المصابة.</li>
       <li>قم بتدليك البخاخ بلطف حتى يمتصه الجلد.</li>
@@ -196,21 +182,10 @@
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll("img.lazy-img").forEach(img => {
-      img.src = img.dataset.src;
-      img.classList.add("loaded");
-  });
-});
-</script>
-
-<script>
   const images = [
-    
     "/im2/01.jpg",
     "/im2/001.jpg",
-    "/im2/0001.jpg",
-   
+    "/im2/0001.jpg"
   ];
   let index = 0;
   const img = document.getElementById("mainImage");
@@ -224,11 +199,7 @@
     index = (index - 1 + images.length) % images.length;
     img.src = images[index];
   }
-</script>
 
-
-  
-<script>
   function addToCart(name, price) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let link = window.location.href;
