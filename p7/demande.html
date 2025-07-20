@@ -127,10 +127,12 @@
       <input type="text" class="form-control" id="name" name="name" placeholder="أدخل اسمك" required>
     </div>
 
-    <div class="mb-3">
-      <label for="phone" class="form-label">رقم الهاتف</label>
-      <input type="tel" class="form-control" id="phone" name="phone" placeholder="ادخل رقمك الهاتف" required>
-    </div>
+    <input type="tel" class="form-control" id="phone" name="phone"
+       placeholder="ادخل رقمك الهاتف"
+       pattern="^0[5-7][0-9]{8}$"
+       title="يجب أن يكون الرقم مكونًا من 10 أرقام ويبدأ بـ 05 أو 06 أو 07"
+       required>
+
 
     <div class="mb-3">
   <label for="wilaya" class="form-label">الولاية</label>
@@ -280,6 +282,34 @@
   window.addEventListener("DOMContentLoaded", checkDeliveryOption);
 </script>
 
+<script>
+  document.querySelector("form").addEventListener("submit", function(e) {
+    const product = document.getElementById("product").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const wilaya = document.getElementById("wilaya").value;
+    const delivery = document.getElementById("delivery").value;
+    const address = document.getElementById("address").value.trim();
+    const quantity = document.getElementById("message").value.trim();
+
+    const phoneRegex = /^0[5-7][0-9]{8}$/;
+
+    let errorMsg = "";
+
+    if (product === "") errorMsg += "❌ أدخل اسم المنتج\n";
+    if (name === "") errorMsg += "❌ أدخل اسمك الكامل\n";
+    if (!phoneRegex.test(phone)) errorMsg += "❌ رقم الهاتف غير صحيح (يجب أن يبدأ بـ 05 أو 06 أو 07 ويكون مكونًا من 10 أرقام)\n";
+    if (wilaya === "") errorMsg += "❌ اختر ولايتك\n";
+    if (delivery === "") errorMsg += "❌ اختر طريقة التوصيل\n";
+    if (delivery === "door" && address === "") errorMsg += "❌ أدخل العنوان الكامل\n";
+    if (quantity === "" || isNaN(quantity) || parseInt(quantity) < 1) errorMsg += "❌ أدخل كمية صالحة (رقم أكبر من 0)\n";
+
+    if (errorMsg !== "") {
+      e.preventDefault(); // يمنع إرسال النموذج
+      alert("يرجى تصحيح الأخطاء التالية:\n\n" + errorMsg);
+    }
+  });
+</script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
