@@ -978,7 +978,34 @@ footer {
   box-shadow: 0 0 8px rgba(255, 153, 0, 0.4);
 }
 
+.header {
+  text-align: center;
+  font-family: "Poppins", sans-serif; /* خط أنيق وواضح */
+  color: #222; /* لون جميل وهادئ */
+  padding: 20px;
+  line-height: 1.6;
+}
 
+/* حجم الخط يتغير حسب الجهاز */
+.header {
+  font-size: clamp(14px, 4vw, 22px);
+}
+
+.header h6 {
+  font-size: clamp(12px, 3.5vw, 18px);
+  color: #fff;
+  background-color: #ff4081;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.header h6:hover {
+  background-color: #e91e63;
+}
 
   </style>
 </head>
